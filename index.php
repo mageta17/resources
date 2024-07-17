@@ -2,9 +2,11 @@
 require "connection.php";
 // variable for validation 
 $userpattern = '/[^a-zA-Z\s]/';
-$phonepattern = "/^(07[15678]\d{7}|061\d{7}|062\d{7})$/";
+$phonepattern = '/^(07[15678]\d{7}|061\d{7}|062\d{7})$/';
+$paswordpattern = '/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/';
 $message = "";
 $message_type = "";
+
 
 
 
@@ -17,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    $CITY = mysqli_real_escape_string($conn, $_POST["city"]);
    $GENDER = mysqli_real_escape_string($conn, $_POST["gender"]);
    $PHONE = mysqli_real_escape_string($conn, $_POST["phone"]);
-   $CHECK = mysqli_real_escape_string($conn, $_POST["check"]);
+  
 
    
    // validation 
@@ -26,15 +28,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $message_type = "error";
    }
    elseif( preg_match($userpattern,$LNAME) || strlen($LNAME) < 2  || strlen($LNAME) > 20){
-    $message = "invalid name input, first name should not be less than 3 character or greater than 20 character, only letters required ";
+    $message = "invalid name input, last name should not be less than 3 character or greater than 20 character, only letters required ";
     $message_type = "error";
    }
    elseif (!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)) {
     $message = "Invalid email address!";
     $message_type = "error";
 }
-   
-  
+  elseif(strlen($PASSWORD) < 8 ){
+    $message = "Password should have at least 8 character";
+    $message_type = "error";
+  }
+  // elseif(preg_match($paswordpattern, $PASSWORD)){
+  //   $message = "bla bla ";
+  //   $message_type = "error";
+  // }
+  elseif ($CPASSWORD  != $PASSWORD){
+    $message = "In confirm password, password mismatch";
+    $message_type = "error";
+  }
+  elseif(preg_match($userpattern,$CITY)){
+     $message = "Number are not required in city field";
+     $message_type = "error";
+  }
+  elseif(strlen($PHONE) < 10 || strlen($PHONE) > 10){
+    $message = "invalid phone number";
+    $message_type = "error";
+
+  }
+  // elseif(preg_match($phonepattern,$PHONE )){
+  //    $message = "invalid phone number";
+  //    $message_type = "error";
+  // }
+  if($FNAME && $LNAME && $EMAIL && $PASSWORD &&  $CPASSWORD && )
+ 
   
    
 
@@ -62,9 +89,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h4 class="display-6">Registration</h4>
       </header>
     </div>
-    
-    <section class="container my-2 bg-dark text-light w-50 p-3">
+    <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5">
       <form class="row g-3 r-5 form-container" action="" method="POST">
+      <?php if (!empty($message)): ?>
+        <div class="message <?php echo $message_type; ?>">
+            <?php echo $message; ?>
+        </div>
+        <?php endif; ?>
         <div class="col-md-6">
           <label for="inputFirstName" class="form-label">First name</label>
           <input type="text" class="form-control" id="inputFirstName" name="fname" required>
@@ -81,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <div class="col-md-6">
           <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail" name="email" required>
+          <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@example.com" required>
           <div class="invalid-feedback">
             Please provide a valid email address.
           </div>
@@ -118,9 +149,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
           </select>
         </div>
-        <div class="col-md-2">
-          <label for="inputPhone" class="form-label">Phone</label>
-          <input type="text" class="form-control" id="inputPhone" name="phone" required>
+        <div class="col-md-4">
+          <label for="inputPhone" class="form-label">Phone number</label>
+          <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="07xxxxxxxx" required>
           <div class="invalid-feedback">
             Please provide a phone number.
           </div>
@@ -136,15 +167,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
           </div>
         </div>
-        <div class="col-12">
+        <div class="col-md-4">
           <button type="submit" class="btn btn-primary">Sign in</button>
         </div>
       </form>
-      <?php if (!empty($message)): ?>
-        <div class="message <?php echo $message_type; ?>">
-            <?php echo $message; ?>
-        </div>
-    <?php endif; ?>
     </section>
   </body>
 </html>

@@ -14,3 +14,18 @@ body{
     border-radius: 10%; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
+.message{
+    padding: 30px;
+    margin-bottom: 15px;
+     border-radius: 5px;
+}
+.error{
+    background-color: #c44c43;
+     color: white;
+     text-align: center;
+}
+.success {
+    background-color: #5c885d;
+    color: white;
+    text-align: center;
+}
