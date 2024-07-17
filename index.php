@@ -60,7 +60,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   //    $message = "invalid phone number";
   //    $message_type = "error";
   // }
-  if($FNAME && $LNAME && $EMAIL && $PASSWORD &&  $CPASSWORD && )
+  if($FNAME && $LNAME && $EMAIL && $PASSWORD &&  $CPASSWORD && $CITY && $GENDER && $PHONE ){
+    $query = "INSERT INTO form (F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$FNAME', 
+    '$LNAME',  '$EMAIL', '$PASSWORD', '$CPASSWORD', '$CITY', '$GENDER', '$PHONE' )";
+    $result = mysqli_query($conn, $query);
+    if($result){
+      $message = "Your application has been successfully submitted. ";
+      $message_type = "success";
+    }
+    else{
+      $message = "There is an error occured during sending data to the database";
+      $message_type ="error";
+    }
+  }
+  else{
+    $message = "Please fill all the field ";
+    $message_type =  "error";
+  }
  
   
    
