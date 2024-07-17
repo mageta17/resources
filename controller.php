@@ -13,8 +13,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    $GENDER = mysqli_real_escape_string($connection->getConnection(), $_POST["gender"]);
    $PHONE = mysqli_real_escape_string($connection->getConnection(), $_POST["phone"]);
    $CHECK = mysqli_real_escape_string($connection->getConnection(), $_POST["check"]);
+
    
- 
+   
+  
   
    
 

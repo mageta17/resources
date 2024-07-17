@@ -21,7 +21,7 @@
     </div>
     
     <section class="container my-2 bg-dark text-light w-50 p-3">
-      <form class="row g-3 r-5" action="controller.php" method="POST">
+      <form class="row g-3 r-5 form-container" action="controller.php" method="POST">
         <div class="col-md-6">
           <label for="inputFirstName" class="form-label">First name</label>
           <input type="text" class="form-control" id="inputFirstName" name="fname" required>
