@@ -3,7 +3,7 @@ require "connection.php";
 // variable for validation 
 $userpattern = '/[^a-zA-Z\s]/';
 $phonepattern = '/^07\d{8}|061\d{7}|062\d{7}$/';
-$paswordpattern = '/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/';
+$paswordpattern = '/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$/';
 $message = "";
 $message_type = "";
 
