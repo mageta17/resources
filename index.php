@@ -7,9 +7,6 @@ $paswordpattern = '/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$/';
 $message = "";
 $message_type = "";
 
-
-
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
    $FNAME = mysqli_real_escape_string($conn, $_POST["fname"]);
    $LNAME = mysqli_real_escape_string($conn, $_POST["lname"]);
@@ -19,8 +16,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
    $CITY = mysqli_real_escape_string($conn, $_POST["city"]);
    $GENDER = mysqli_real_escape_string($conn, $_POST["gender"]);
    $PHONE = mysqli_real_escape_string($conn, $_POST["phone"]);
-  
-
    
    // validation 
    if( preg_match($userpattern,$FNAME) || strlen($FNAME) < 2  || strlen($FNAME) > 20){
@@ -100,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h4 class="display-6">Registration</h4>
       </header>
     </div>
-    <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5">
+    <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5 shadow-lg">
       <form class="row g-3 r-5 form-container" action="" method="POST">
       <?php if (!empty($message)): ?>
         <div class="message <?php echo $message_type; ?>">

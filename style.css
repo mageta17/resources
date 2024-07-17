@@ -20,12 +20,12 @@ body{
      border-radius: 5px;
 }
 .error{
-    background-color: #c44c43;
-     color: white;
-     text-align: center;
+    background-color: #FFBABA;
+    color: #D8000C;
+    text-align: center;
 }
 .success {
-    background-color: #5c885d;
-    color: white;
+    color: #4F8A10;
+    background-color: #DFF2BF;
     text-align: center;
 }
