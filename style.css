@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body{
+    background: linear-gradient(#DFD3C3, #F8EDE3);
+} */
+form{
+    margin-top: 20%;
+   border-radius: 5px;
+   
+}
