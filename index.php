@@ -2,7 +2,7 @@
 require "connection.php";
 // variable for validation 
 $userpattern = '/[^a-zA-Z\s]/';
-$phonepattern = '/^(07[15678]\d{7}|061\d{7}|062\d{7})$/';
+$phonepattern = '/^07\d{8}|061\d{7}|062\d{7}$/';
 $paswordpattern = '/^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/';
 $message = "";
 $message_type = "";
@@ -39,10 +39,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $message = "Password should have at least 8 character";
     $message_type = "error";
   }
-  // elseif(preg_match($paswordpattern, $PASSWORD)){
-  //   $message = "bla bla ";
-  //   $message_type = "error";
-  // }
+  elseif(!preg_match($paswordpattern, $PASSWORD)){
+    $message = "The password should at least contain one uppercase , lowercase and special symbol ";
+    $message_type = "error";
+  }
   elseif ($CPASSWORD  != $PASSWORD){
     $message = "In confirm password, password mismatch";
     $message_type = "error";
@@ -56,14 +56,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $message_type = "error";
 
   }
-  // elseif(preg_match($phonepattern,$PHONE )){
-  //    $message = "invalid phone number";
-  //    $message_type = "error";
-  // }
-  if($FNAME && $LNAME && $EMAIL && $PASSWORD &&  $CPASSWORD && $CITY && $GENDER && $PHONE ){
-    $query = "INSERT INTO form (F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$FNAME', 
-    '$LNAME',  '$EMAIL', '$PASSWORD', '$CPASSWORD', '$CITY', '$GENDER', '$PHONE' )";
+  elseif(!preg_match($phonepattern,$PHONE )){
+     $message = "invalid phone number";
+     $message_type = "error";
+  }
+  
+  else{
+    // after all validation to be passed 
+    $enc_password = password_hash($PASSWORD, PASSWORD_BCRYPT);
+    $query = "INSERT INTO form(F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$FNAME', 
+    '$LNAME',  '$EMAIL', '$enc_password', '$CITY', '$GENDER', '$PHONE' )";
     $result = mysqli_query($conn, $query);
+
     if($result){
       $message = "Your application has been successfully submitted. ";
       $message_type = "success";
@@ -72,22 +76,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $message = "There is an error occured during sending data to the database";
       $message_type ="error";
     }
-  }
-  else{
-    $message = "Please fill all the field ";
-    $message_type =  "error";
-  }
- 
   
-   
-
+  }
 }
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
