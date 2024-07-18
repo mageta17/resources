@@ -41,19 +41,19 @@
 
                 header('Location: ../index.php?registration='.$message.'');
             } elseif ($CPASSWORD  != $PASSWORD){
-                $message = "invalidcPassword";
+                $messagge = "invalidcPassword";
 
                 header('Location: ../index.php?registration='.$message.'');
             } elseif(preg_match($userpattern,$CITY)){
-                $message = "invalidcity";
+                $messagge = "invalidcity";
 
                 header('Location: ../index.php?registration='.$message.'');
             } elseif(strlen($PHONE) < 10 || strlen($PHONE) > 10){
-                $message = "invalidphone";
+                $messagge = "invalidphone";
 
                 header('Location: ../index.php?registration='.$message.''); 
             } elseif(!preg_match($phonepattern,$PHONE )){
-                $message = "invalidPphone";
+                $messagge = "invalidPphone";
 
                 header('Location: ../index.php?registration='.$message.'');  
             } else{
