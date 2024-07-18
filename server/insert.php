@@ -23,11 +23,11 @@
             if( preg_match($userpattern,$FNAME) || strlen($FNAME) < 2  || strlen($FNAME) > 20){
                 $message = "invalidFname";
 
-                header('Location: ../index.php?registration=.'.$message.'');
+                header('Location: ../index.php?registration='.$message.'');
             } elseif( preg_match($userpattern,$LNAME) || strlen($LNAME) < 2  || strlen($LNAME) > 20){
                 $message = "invalidLname";
 
-                header('Location: ../index.php?registration=.'.$message.'');
+                header('Location: ../index.php?registration='.$message.'');
             } elseif (!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)) {
                 $message = "Invalid email address!";
                 $message_type = "error";
@@ -59,11 +59,11 @@
                 if($result){
                     $message = "Success";
 
-                    header('Location: ../index.php?registration=.'.$message.'');
+                    header('Location: ../index.php?registration='.$message.'');
                 } else{
                     $message = "Failed";
 
-                    header('Location: ../index.php?registration=.'.$message.'');
+                    header('Location: ../index.php?registration='.$message.'');
                 }
             }
         }
