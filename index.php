@@ -22,7 +22,7 @@
 
     <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5 shadow-lg">
       <?php          
-        if(!empty($message)) {
+        if(!empty($_GET['registration'])) {
           $message = $_GET['registration'];
 
           if($message == "invalidFname") {
