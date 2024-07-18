@@ -87,7 +87,7 @@
           <?php 
            }  elseif($message == "Success"){
             ?>
-               <div class="alert alert-success text-center" role="alert">
+               <div class="alert alert-success text-center " role="alert">
                    <p>You have Successfully submited your form </p>
                </div> 
           <?php 
@@ -95,6 +95,12 @@
             ?>
                <div class="alert alert-danger text-center" role="alert">
                  <p>There is an error in submitting data to the database</p>
+               </div>  
+          <?php 
+           }   elseif($message == "Permission"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>Permission denied, please submit the form</p>
                </div>  
           <?php 
            } 
