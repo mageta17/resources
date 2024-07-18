@@ -52,8 +52,8 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">
-                  Orders
+                <a class="nav-link text-white" href="index.php">
+                  Register
                 </a>
               </li>
               
