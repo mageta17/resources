@@ -30,13 +30,13 @@
           <div class="alert alert-danger" role="alert">
             <p>Please enter valid first name</p>
           </div>            
-        <?
+        <?php
           } elseif($message == "invalidLname") {
         ?>
           <div class="alert alert-danger" role="alert">
             <p>Please enter valid last name</p>
           </div>            
-        <?
+        <?php
           }
         }
       ?>
