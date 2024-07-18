@@ -6,9 +6,9 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 
-    <title>Form</title>
+    <title>Registration</title>
   </head>
 
   <body>
@@ -27,17 +27,66 @@
 
           if($message == "invalidFname") {
         ?>
-          <div class="alert alert-danger" role="alert">
+          <div class="alert alert-danger text-center" role="alert">
             <p>Please enter valid first name</p>
           </div>            
         <?php
           } elseif($message == "invalidLname") {
         ?>
-          <div class="alert alert-danger" role="alert">
+          <div class="alert alert-danger text-center" role="alert">
             <p>Please enter valid last name</p>
           </div>            
         <?php
-          }
+           } elseif($message == "invalidemail"){
+            ?>
+             <div class="alert alert-danger text-center" role="alert">
+               <p>Please enter valid last name</p>
+            </div> 
+        <?php
+           } elseif($message == "invalidLPassword"){
+          ?>
+             <div class="alert alert-danger text-center" role="alert">
+               <p>invalid password length, password should have at least minimum of  8 character</p>
+            </div> 
+        <?php    
+           } elseif($message == "invalidPassword"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>Please enter strong  password, the strong password should have at least one uppercase, lowercase , number and special character</p>
+              </div> 
+          <?php   
+           } elseif($message == "invalidcPassword"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>Error confirm password mismatch</p>
+              </div> 
+          <?php 
+           } elseif($message == "invalidcity"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>Number are not required in city field</p>
+              </div> 
+          <?php 
+           } elseif($message == "invalidcity"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>Number are not required in city field</p>
+              </div> 
+          <?php 
+           }  elseif($message == "invalidphone"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>invalid phone number</p>
+              </div> 
+          <?php 
+           } elseif($message == "invalidPphone"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>invalid phone number</p>
+              </div> 
+          <?php 
+           } 
+           
         }
       ?>
       <form class="row g-3 r-5 form-container" action="server/insert.php" method="POST">        

@@ -2,7 +2,7 @@
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpassword = "root";
-    $dbname = "newform";
+    $dbname = "resource";
 
     $connection = mysqli_connect($dbhost, $dbuser, $dbpassword, $dbname);
 

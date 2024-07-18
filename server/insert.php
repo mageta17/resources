@@ -29,30 +29,37 @@
 
                 header('Location: ../index.php?registration='.$message.'');
             } elseif (!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)) {
-                $message = "Invalid email address!";
-                $message_type = "error";
+                $message = "invalidemail";
+
+                header('Location: ../index.php?registration='.$message.'');
             } elseif(strlen($PASSWORD) < 8 ){
-                $message = "Password should have at least 8 character";
-                $message_type = "error";
+                $message = "invalidLPassword";
+
+                header('Location: ../index.php?registration='.$message.'');
             } elseif(!preg_match($paswordpattern, $PASSWORD)){
-                $message = "The password should at least contain one uppercase , lowercase and special symbol ";
-                $message_type = "error";
+                $message = "invalidPassword";
+
+                header('Location: ../index.php?registration='.$message.'');
             } elseif ($CPASSWORD  != $PASSWORD){
-                $message = "In confirm password, password mismatch";
-                $message_type = "error";
+                $message = "invalidcPassword";
+
+                header('Location: ../index.php?registration='.$message.'');
             } elseif(preg_match($userpattern,$CITY)){
-                $message = "Number are not required in city field";
-                $message_type = "error";
+                $message = "invalidcity";
+
+                header('Location: ../index.php?registration='.$message.'');
             } elseif(strlen($PHONE) < 10 || strlen($PHONE) > 10){
-                $message = "invalid phone number";
-                $message_type = "error";
+                $message = "invalidphone";
+
+                header('Location: ../index.php?registration='.$message.''); 
             } elseif(!preg_match($phonepattern,$PHONE )){
-                $message = "invalid phone number";
-                $message_type = "error";
+                $message = "invalidPphone";
+
+                header('Location: ../index.php?registration='.$message.'');  
             } else{
                 // after all validation to be passed 
                 $enc_password = password_hash($PASSWORD, PASSWORD_BCRYPT);
-                $query = "INSERT INTO form(F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$FNAME', 
+                $query = "INSERT INTO userdata(F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$FNAME', 
                 '$LNAME',  '$EMAIL', '$enc_password', '$CITY', '$GENDER', '$PHONE' )";
                 $result = mysqli_query($connection, $query);
 

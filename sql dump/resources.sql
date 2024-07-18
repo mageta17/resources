@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `newform`
+-- Database: `resource`
 --
 
 -- --------------------------------------------------------
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `form`
 --
 
-CREATE TABLE `form` (
+CREATE TABLE `userdata` (
   `id` int(11) NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `F_name` varchar(255) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `form` (
 --
 -- Indexes for table `form`
 --
-ALTER TABLE `form`
+ALTER TABLE `userdata`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -56,7 +56,7 @@ ALTER TABLE `form`
 --
 -- AUTO_INCREMENT for table `form`
 --
-ALTER TABLE `form`
+ALTER TABLE `userdata`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
