@@ -1,3 +1,4 @@
+
 <?php
     if(isset($_POST['insert'])) {
         require "db.php";
@@ -10,57 +11,57 @@
         $message_type = "";
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $FNAME = mysqli_real_escape_string($connection, $_POST["fname"]);
-            $LNAME = mysqli_real_escape_string($connection, $_POST["lname"]);
-            $EMAIL = mysqli_real_escape_string($connection, $_POST["email"]);
-            $PASSWORD = mysqli_real_escape_string($connection, $_POST["password"]);
-            $CPASSWORD = mysqli_real_escape_string($connection, $_POST["cpassword"]);
-            $CITY = mysqli_real_escape_string($connection, $_POST["city"]);
-            $GENDER = mysqli_real_escape_string($connection, $_POST["gender"]);
-            $PHONE = mysqli_real_escape_string($connection, $_POST["phone"]);
+            $fname = mysqli_real_escape_string($connection, $_POST["fname"]);
+            $lname = mysqli_real_escape_string($connection, $_POST["lname"]);
+            $email = mysqli_real_escape_string($connection, $_POST["email"]);
+            $password = mysqli_real_escape_string($connection, $_POST["password"]);
+            $cpassword = mysqli_real_escape_string($connection, $_POST["cpassword"]);
+            $city = mysqli_real_escape_string($connection, $_POST["city"]);
+            $gender = mysqli_real_escape_string($connection, $_POST["gender"]);
+            $phone = mysqli_real_escape_string($connection, $_POST["phone"]);
 
             // validation 
-            if( preg_match($userpattern,$FNAME) || strlen($FNAME) < 2  || strlen($FNAME) > 20){
+            if( preg_match($userpattern,$fname) || strlen($fname) < 2  || strlen($fname) > 20){
                 $message = "invalidFname";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif( preg_match($userpattern,$LNAME) || strlen($LNAME) < 2  || strlen($LNAME) > 20){
+            } elseif( preg_match($userpattern,$lname) || strlen($lname) < 2  || strlen($lname) > 20){
                 $message = "invalidLname";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif (!filter_var($EMAIL, FILTER_VALIDATE_EMAIL)) {
+            } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $message = "invalidemail";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif(strlen($PASSWORD) < 8 ){
+            } elseif(strlen($password) < 8 ){
                 $message = "invalidLPassword";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif(!preg_match($paswordpattern, $PASSWORD)){
+            } elseif(!preg_match($paswordpattern,$password)){
                 $message = "invalidPassword";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif ($CPASSWORD  != $PASSWORD){
-                $messagge = "invalidcPassword";
+            } elseif ($cpassword  != $password){
+                $message = "invalidcPassword";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif(preg_match($userpattern,$CITY)){
-                $messagge = "invalidcity";
+            } elseif(preg_match($userpattern, $city)){
+                $message = "invalidcity";
 
                 header('Location: ../index.php?registration='.$message.'');
-            } elseif(strlen($PHONE) < 10 || strlen($PHONE) > 10){
-                $messagge = "invalidphone";
+            } elseif(strlen($phone) < 10 || strlen($phone) > 10){
+                $message = "invalidphone";
 
                 header('Location: ../index.php?registration='.$message.''); 
-            } elseif(!preg_match($phonepattern,$PHONE )){
-                $messagge = "invalidPphone";
+            } elseif(!preg_match($phonepattern, $phone)){
+                $message = "invalidPphone";
 
                 header('Location: ../index.php?registration='.$message.'');  
             } else{
                 // after all validation to be passed 
-                $enc_password = password_hash($PASSWORD, PASSWORD_BCRYPT);
-                $query = "INSERT INTO userdata(F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$FNAME', 
-                '$LNAME',  '$EMAIL', '$enc_password', '$CITY', '$GENDER', '$PHONE' )";
+                $enc_password = password_hash($password, PASSWORD_BCRYPT);
+                $query = "INSERT INTO userdata(F_name, L_name, Email, Password, City, Gender, Phone) VALUES ('$fname', 
+                '$lname',  '$email', '$enc_password', ' $city', '$gender', ' $phone' )";
                 $result = mysqli_query($connection, $query);
 
                 if($result){
@@ -75,6 +76,8 @@
             }
         }
     } else {
-        echo "Permision not denided";
+        $message = "Permission";
+
+        header('Location: ../index.php?registration='.$message.'');
     }    
 ?>
