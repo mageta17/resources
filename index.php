@@ -87,7 +87,7 @@
           <?php 
            }  elseif($message == "Success"){
             ?>
-               <div class="alert alert-success text-center" role="alert">
+               <div class="alert alert-success text-center " role="alert">
                    <p>You have Successfully submited your form </p>
                </div> 
           <?php 
