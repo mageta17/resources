@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/style.css">
 
     <title>Registration</title>
+   
   </head>
 
   <body>
@@ -196,6 +197,7 @@
 
         <div class="col-md-4">
           <button type="submit" name="insert" class="btn btn-primary">Sign in</button>
+          <a href="userpage.php">See registers</a>
         </div>
       </form>
     </section>
