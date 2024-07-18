@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+   background-color: #2F3645;
+}
+
+.form-container {
+    
+    padding: 20px;
+    border-radius: 10%; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+.message{
+    padding: 30px;
+    margin-bottom: 15px;
+     border-radius: 5px;
+}
+.error{
+    background-color: #FFBABA;
+    color: #D8000C;
+    text-align: center;
+}
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    text-align: center;
+}
