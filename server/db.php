@@ -9,5 +9,5 @@
     if (mysqli_connect_errno() == 0) {
         echo " "; 
     }
-    // i add comment
+    // this 
 ?>
