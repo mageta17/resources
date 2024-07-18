@@ -83,7 +83,19 @@
             ?>
                <div class="alert alert-danger text-center" role="alert">
                  <p>invalid phone number</p>
-              </div> 
+               </div> 
+          <?php 
+           }  elseif($message == "Success"){
+            ?>
+               <div class="alert alert-success text-center" role="alert">
+                   <p>You have Successfully submited your form </p>
+               </div> 
+          <?php 
+           }  elseif($message == "Failed"){
+            ?>
+               <div class="alert alert-danger text-center" role="alert">
+                 <p>There is an error in submitting data to the database</p>
+               </div>  
           <?php 
            } 
            
