@@ -14,15 +14,24 @@
 
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <div class="container-fluid bg-dark text-light py-3">
-      <header class="text-center">
-        <h4 class="display-6">Registration</h4>
-      </header>
-    </div>
-
+     
+      <nav class="navbar navbar-light bg-dark text-light py-3">
+        <form class="container-fluid justify-content-start">
+          <button class="btn btn-outline-success me-2" id="result" type="button">See results</button>
+          <div class="d-flex justify-content-center w-80">
+                <h4 class="display-6 text-center">Registration</h4>
+          </div>
+          <script>
+             var  button  = document.getElementById("result");
+               button.onclick = function() {
+               window.location.href = "userpage.php";
+             }
+          </script>
+        </form>
+      </nav>
     <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5 shadow-lg">
-      <?php          
+      <?php     
+        isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
         if(!empty($_GET['registration'])) {
           $message = $_GET['registration'];
 
@@ -107,11 +116,13 @@
            } 
            
         }
+         
       ?>
+
       <form class="row g-3 r-5 form-container" action="server/insert.php" method="POST">        
         <div class="col-md-6">
           <label for="inputFirstName" class="form-label">First name</label>
-          <input type="text" class="form-control" id="inputFirstName" name="fname" required>
+          <input type="text" class="form-control" id="inputFirstName" value="<?php if(isset($_GET['fname'])){echo $_GET['fname'];} ?>"  name="fname" required>
           <div class="invalid-feedback">
             Please provide a first name.
           </div>
@@ -119,7 +130,7 @@
 
         <div class="col-md-6">
           <label for="inputLastName" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="inputLastName" name="lname"required>
+          <input type="text" class="form-control" id="inputLastName"   name="lname"required>
           <div class="invalid-feedback">
             Please provide a last name.
           </div>
@@ -127,7 +138,7 @@
 
         <div class="col-md-6">
           <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail" name="email" placeholder="example@example.com" required>
+          <input type="email" class="form-control" id="inputEmail" name="email"  placeholder="example@example.com" required>
           <div class="invalid-feedback">
             Please provide a valid email address.
           </div>
@@ -151,7 +162,7 @@
 
         <div class="col-md-6">
           <label for="inputCity" class="form-label">City</label>
-          <input type="text" class="form-control" id="inputCity" name="city"required>
+          <input type="text" class="form-control" id="inputCity"  name="city" required>
           <div class="invalid-feedback">
             Please provide a city.
           </div>
