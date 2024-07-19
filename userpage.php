@@ -83,7 +83,13 @@
                 }
                 if ($result->num_rows > 0) {
                   while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
+                    ?>
+                    <tr>
+                      <td><?php $row['id']; ?></td>
+                    </tr>
+                   
+
+                    <!-- echo "<tr>";
                     echo "<th scope='row'>{$row['id']}</th>";
                     echo "<td>{$row['F_name']}</td>";
                     echo "<td>{$row['L_name']}</td>";
@@ -93,7 +99,8 @@
                     echo "<td>{$row['Phone']}</td>";
                     echo "<td>{$row['time']}</td>";
                     echo "<td><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@mdo\">Edit</button></td>";
-                    echo "</tr>";
+                    echo "</tr>"; -->
+                    <?php
                   }
                 } else {
                   echo "<tr><td colspan='8'>No records found</td></tr>";
