@@ -57,6 +57,76 @@
 
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <?php     
+                      // isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
+                      if(!empty($_GET['registration'])) {
+                      $message = $_GET['registration'];
+
+                      if($message == "invalidFname") {
+                    ?>
+                      <div class="alert alert-danger text-center" role="alert">
+                        <p>Please enter valid first name</p>
+                      </div>            
+                    <?php
+                      } elseif($message == "invalidLname") {
+                    ?>
+                      <div class="alert alert-danger text-center" role="alert">
+                        <p>Please enter valid last name</p>
+                      </div>            
+                    <?php
+                      } elseif($message == "invalidemail"){
+                        ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>Please enter valid last name</p>
+                        </div> 
+                    <?php
+                      } elseif($message == "invalidcity"){
+                        ?>
+                          <div class="alert alert-danger text-center" role="alert">
+                            <p>Number are not required in city field</p>
+                          </div> 
+                      <?php 
+                      } elseif($message == "invalidcity"){
+                        ?>
+                          <div class="alert alert-danger text-center" role="alert">
+                            <p>Number are not required in city field</p>
+                          </div> 
+                      <?php 
+                      }  elseif($message == "invalidphone"){
+                        ?>
+                          <div class="alert alert-danger text-center" role="alert">
+                            <p>invalid phone number</p>
+                          </div> 
+                      <?php 
+                      } elseif($message == "invalidPphone"){
+                        ?>
+                          <div class="alert alert-danger text-center" role="alert">
+                            <p>invalid phone number</p>
+                          </div> 
+                      <?php 
+                      }  elseif($message == "Success"){
+                        ?>
+                          <div class="alert alert-success text-center " role="alert">
+                              <p>You have Successfully edit the user with id number  </p>
+                          </div> 
+                      <?php 
+                      }  elseif($message == "Failed"){
+                        ?>
+                          <div class="alert alert-danger text-center" role="alert">
+                            <p>There is an error in submitting data to the database</p>
+                          </div>  
+                      <?php 
+                      }   elseif($message == "Permission"){
+                        ?>
+                          <div class="alert alert-danger text-center" role="alert">
+                            <p>Permission denied, please submit the form</p>
+                          </div>  
+                      <?php 
+                      } 
+                      
+                    }
+                    
+                    ?>
           <h3 class="mt-3" style="color: white;">Registered Users</h3>
           <div class="table-responsive">
             <table class="table table-lg table-dark text-center">
@@ -70,6 +140,7 @@
                   <th scope="col">Gender</th>
                   <th scope="col">Phone number</th>
                   <th scope="col">Time Registered</th>
+                  <th scope="col">Edit changes</th>
                 </tr>
               </thead>
               <tbody>
@@ -91,6 +162,7 @@
                     echo "<td>{$row['Gender']}</td>";
                     echo "<td>{$row['Phone']}</td>";
                     echo "<td>{$row['time']}</td>";
+                    echo "<td><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@mdo\">Edit</button></td>";
                     echo "</tr>";
                   }
                 } else {
@@ -99,6 +171,60 @@
                 ?>
               </tbody>
             </table>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content "> 
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Edit changes</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="server/update.php" method="POST">
+                    <div class="row">
+                      <div class="col-md-6 mb-3">
+                        <label for="id-number" class="form-label">Id number:</label>
+                        <input type="number" class="form-control" id="id-number" name="id-number" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="first-name" class="form-label">First name:</label>
+                        <input type="text" class="form-control" id="first-name" name="first-name" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="second-name" class="form-label">Second name:</label>
+                        <input type="text" class="form-control" id="second-name" name="second-name" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="city" class="form-label">City:</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                      </div>
+                      <div class="col-md-4">
+                          <label for="inputGender" class="form-label">Gender</label>
+                          <select id="inputGender" class="form-select" name="gender">
+                             <option selected disabled>Choose...</option>
+                             <option value="male">Male</option>
+                             <option value="female">Female</option>
+                             <div class="invalid-feedback">
+                               Please select a gender.
+                             </div>
+                          </select>
+                        </div>
+                      <div class="col-md-6 mb-3">
+                        <label for="phone-number" class="form-label">Phone number:</label>
+                        <input type="text" class="form-control" id="phone-number" name="phone-number" required>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" name="update" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>

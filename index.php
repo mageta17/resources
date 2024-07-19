@@ -166,16 +166,14 @@
 
         <div class="col-md-4">
           <label for="inputGender" class="form-label">Gender</label>
-
-          <select id="inputGender" class="form-select" name="gender">
-            <option selected disabled>Choose...</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <div class="invalid-feedback">
+           <select id="inputGender" class="form-select" name="gender">
+             <option selected disabled>Choose...</option>
+             <option value="male">Male</option>
+             <option value="female">Female</option>
+             <div class="invalid-feedback">
               Please select a gender.
-            </div>
-          </select>
-
+             </div>
+           </select>
         </div>
 
         <div class="col-md-4">
