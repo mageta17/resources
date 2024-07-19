@@ -197,7 +197,7 @@
 
         <div class="col-md-4">
           <button type="submit" name="insert" class="btn btn-primary">Sign in</button>
-          <a href="userpage.php">See registers</a>
+          <!-- <a href="userpage.php">See registers</a> -->
         </div>
       </form>
     </section>
