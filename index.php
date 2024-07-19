@@ -11,24 +11,20 @@
     <title>Registration</title>
    
   </head>
-
   <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-     
-      <nav class="navbar navbar-light bg-dark text-light py-3">
-        <form class="container-fluid justify-content-start">
-          <button class="btn btn-outline-success me-2" id="result" type="button">See results</button>
-          <div class="d-flex justify-content-center w-80">
-                <h4 class="display-6 text-center">Registration</h4>
-          </div>
+    <nav class="navbar navbar-light bg-dark text-light py-3">
+          <div class="container-fluid d-flex justify-content-between align-items-center">
+              <h4 class="display-6 text-start ms-3">Registration</h4>
+              <button class="btn btn-outline-success me-3" id="result" type="button">See results</button>
+           </div>
           <script>
-             var  button  = document.getElementById("result");
-               button.onclick = function() {
-               window.location.href = "userpage.php";
-             }
+              var button = document.getElementById("result");
+              button.onclick = function() {
+                  window.location.href = "userpage.php";
+              }
           </script>
-        </form>
-      </nav>
+    </nav>
     <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5 shadow-lg">
       <?php     
         isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
