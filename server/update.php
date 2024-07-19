@@ -6,12 +6,11 @@
         // variable for validation 
         $userpattern = '/[^a-zA-Z\s]/';
         $phonepattern = '/^07\d{8}|061\d{7}|062\d{7}$/';
-        $paswordpattern = '/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,}$/';
         $message = "";
         $message_type = "";
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $id = mysqli_real_escape_string($connection, $_POST["id"]);
+            $id = mysqli_real_escape_string($connection, $_POST["id-number"]);
             $fname = mysqli_real_escape_string($connection, $_POST["first-name"]);
             $lname = mysqli_real_escape_string($connection, $_POST["second-name"]);
             $email = mysqli_real_escape_string($connection, $_POST["email"]);
@@ -32,19 +31,8 @@
                 $message = "invalidemail";
 
                 header('Location: ../userpage.php?registration='.$message.'');
-            } elseif(strlen($password) < 8 ){
-                $message = "invalidLPassword";
-
-                header('Location: ../userpage.php?registration='.$message.'');
-            } elseif(!preg_match($paswordpattern,$password)){
-                $message = "invalidPassword";
-
-                header('Location: ../userpage.php?registration='.$message.'');
-            } elseif ($cpassword  != $password){
-                $message = "invalidcPassword";
-
-                header('Location: ../userpage.php?registration='.$message.'');
-            } elseif(preg_match($userpattern, $city)){
+           
+            }  elseif(preg_match($userpattern, $city)){
                 $message = "invalidcity";
 
                 header('Location: ../userpage.php?registration='.$message.'');
@@ -59,18 +47,17 @@
             } else{
                 // after all validation to be passed 
                 
-                $query = "UPDATE userdata  SET F_name = '$fname',  L_name = '$lname', Email = '$email',  
-                City = '$city',  Gender = '$gender', Phone = '$phone'  WHERE id = '$id'";
+                $query = "UPDATE userdata SET F_name = '$fname', L_name = '$lname', Email = '$email', City = '$city', Gender = '$gender', Phone = '$phone' WHERE id = '$id'";
                 $result = mysqli_query($connection, $query);
 
                 if($result){
                     $message = "Success";
 
-                    header('Location: ../index.php?registration='.$message.'');
+                    header('Location: ../userpage.php?registration='.$message.'');
                 } else{
                     $message = "Failed";
 
-                    header('Location: ../index.php?registration='.$message.'');
+                    header('Location: ../userpage.php?registration='.$message.'');
                 }
             }
         }

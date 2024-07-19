@@ -57,7 +57,53 @@
 
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <?php     
+          <h3 class="mt-3" style="color: white;">Registered Users</h3>
+          <div class="table-responsive">
+            <table class="table table-lg table-dark text-center">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">First name</th>
+                  <th scope="col">Last name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Phone number</th>
+                  <th scope="col">Time Registered</th>
+                  <th scope="col">Edit changes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                include 'server/db.php';
+                $query = "SELECT id, time, F_name, L_name, Email, City, Gender, Phone FROM userdata";
+                $result = mysqli_query($connection, $query);
+                if (!$result) {
+                  die("Query failed: " . mysqli_error($connection));
+                }
+                if ($result->num_rows > 0) {
+                  while($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<th scope='row'>{$row['id']}</th>";
+                    echo "<td>{$row['F_name']}</td>";
+                    echo "<td>{$row['L_name']}</td>";
+                    echo "<td>{$row['Email']}</td>";
+                    echo "<td>{$row['City']}</td>";
+                    echo "<td>{$row['Gender']}</td>";
+                    echo "<td>{$row['Phone']}</td>";
+                    echo "<td>{$row['time']}</td>";
+                    echo "<td><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@mdo\">Edit</button></td>";
+                    echo "</tr>";
+                  }
+                } else {
+                  echo "<tr><td colspan='8'>No records found</td></tr>";
+                }
+                ?>
+              </tbody>
+            </table>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <?php     
                       // isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
                       if(!empty($_GET['registration'])) {
                       $message = $_GET['registration'];
@@ -127,52 +173,6 @@
                     }
                     
                     ?>
-          <h3 class="mt-3" style="color: white;">Registered Users</h3>
-          <div class="table-responsive">
-            <table class="table table-lg table-dark text-center">
-              <thead>
-                <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">First name</th>
-                  <th scope="col">Last name</th>
-                  <th scope="col">Email</th>
-                  <th scope="col">City</th>
-                  <th scope="col">Gender</th>
-                  <th scope="col">Phone number</th>
-                  <th scope="col">Time Registered</th>
-                  <th scope="col">Edit changes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                include 'server/db.php';
-                $query = "SELECT id, time, F_name, L_name, Email, City, Gender, Phone FROM userdata";
-                $result = mysqli_query($connection, $query);
-                if (!$result) {
-                  die("Query failed: " . mysqli_error($connection));
-                }
-                if ($result->num_rows > 0) {
-                  while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<th scope='row'>{$row['id']}</th>";
-                    echo "<td>{$row['F_name']}</td>";
-                    echo "<td>{$row['L_name']}</td>";
-                    echo "<td>{$row['Email']}</td>";
-                    echo "<td>{$row['City']}</td>";
-                    echo "<td>{$row['Gender']}</td>";
-                    echo "<td>{$row['Phone']}</td>";
-                    echo "<td>{$row['time']}</td>";
-                    echo "<td><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@mdo\">Edit</button></td>";
-                    echo "</tr>";
-                  }
-                } else {
-                  echo "<tr><td colspan='8'>No records found</td></tr>";
-                }
-                ?>
-              </tbody>
-            </table>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
               <div class="modal-content "> 
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Edit changes</h5>
@@ -229,5 +229,16 @@
         </main>
       </div>
     </div>
+        <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+        
+        // Check if there's an error message and show modal
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('registration')) {
+          modal.show();
+        }
+      });
+    </script>
   </body>
 </html>
