@@ -53,7 +53,8 @@
                 if($result){
                     $message = "Success";
 
-                    header('Location: ../userpage.php?registration='.$message.'');
+                    header('Location: ../userpage.php?registration=' . $message . '&id=' . $id);
+                    exit();
                 } else{
                     $message = "Failed";
 

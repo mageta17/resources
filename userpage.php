@@ -103,7 +103,9 @@
             </table>
           <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-            <?php     
+              <div class="modal-content "> 
+              <?php   
+                      $id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : '';  
                       // isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
                       if(!empty($_GET['registration'])) {
                       $message = $_GET['registration'];
@@ -153,7 +155,7 @@
                       }  elseif($message == "Success"){
                         ?>
                           <div class="alert alert-success text-center " role="alert">
-                              <p>You have Successfully edit the user with id number  </p>
+                              <p>You have successfully edited the user with ID number <?php echo $id; ?></p>
                           </div> 
                       <?php 
                       }  elseif($message == "Failed"){
@@ -173,7 +175,6 @@
                     }
                     
                     ?>
-              <div class="modal-content "> 
                 <div class="modal-header">
                   <h5 class="modal-title" id="exampleModalLabel">Edit changes</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -229,16 +230,23 @@
         </main>
       </div>
     </div>
-        <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-        
-        // Check if there's an error message and show modal
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('registration')) {
-          modal.show();
-        }
-      });
+    <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            const urlParams = new URLSearchParams(window.location.search);
+            const registrationMessage = urlParams.get('registration');
+            
+            if (registrationMessage) {
+              const modalShown = sessionStorage.getItem('modalShown');
+
+              // Show the modal if it's an error or success message and it hasn't been shown yet
+              if (!modalShown || registrationMessage === 'Success') {
+                modal.show();
+                sessionStorage.setItem('modalShown', 'true');
+              }
+            }
+          });
     </script>
+
   </body>
 </html>
