@@ -53,7 +53,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Register</a>
+              <a class="nav-link active" aria-current="page" href="userdata.php">Users details</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -94,7 +94,7 @@
                         <label for="firstName" class="col-form-label">First Name</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="firstName" name="firstName" value="<?php echo $user['F_name']; ?>" class="form-control" aria-describedby="firstNameHelpInline">
+                        <input type="text" id="firstName"  value="<?php echo $user['F_name']; ?>" name="first-name" class="form-control" aria-describedby="firstNameHelpInline">
                       </div>
                     </div>
 
@@ -103,7 +103,7 @@
                         <label for="lastName" class="col-form-label">Last Name</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="lastName" name="lastName" value="<?php echo $user['L_name']; ?>" class="form-control" aria-describedby="lastNameHelpInline">
+                        <input type="text" id="lastName"  value="<?php echo $user['L_name']; ?>"  name="second-name" class="form-control" aria-describedby="lastNameHelpInline">
                       </div>
                     </div>
 
@@ -112,7 +112,7 @@
                         <label for="email" class="col-form-label">Email</label>
                       </div>
                       <div class="col-auto">
-                        <input type="email" id="email" name="email" value="<?php echo $user['Email']; ?>" class="form-control" aria-describedby="emailHelpInline">
+                        <input type="email" id="email"  value="<?php echo $user['Email']; ?>"  name="email" class="form-control" aria-describedby="emailHelpInline">
                       </div>
                     </div>
 
@@ -121,7 +121,7 @@
                         <label for="city" class="col-form-label">City</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="city" name="city" value="<?php echo $user['City']; ?>" class="form-control" aria-describedby="cityHelpInline">
+                        <input type="text" id="city"  value="<?php echo $user['City']; ?>"  name="city" class="form-control" aria-describedby="cityHelpInline">
                       </div>
                     </div>
 
@@ -130,7 +130,7 @@
                         <label for="gender" class="col-form-label">Gender</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="gender" name="gender" value="<?php echo $user['Gender']; ?>" class="form-control" aria-describedby="genderHelpInline">
+                        <input type="text" id="gender"  value="<?php echo $user['Gender']; ?>" name="gender" class="form-control" aria-describedby="genderHelpInline">
                       </div>
                     </div>
 
@@ -139,12 +139,12 @@
                         <label for="phoneNumber" class="col-form-label">Phone Number</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" id="phoneNumber" name="phoneNumber" value="<?php echo $user['Phone']; ?>" class="form-control" aria-describedby="phoneNumberHelpInline">
+                        <input type="text" id="phoneNumber"  value="<?php echo $user['Phone']; ?>" name="phone-number" class="form-control" aria-describedby="phoneNumberHelpInline">
                       </div>
                     </div>
                   <button type="submit" name="update" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </main>
-  </body>
+        </body>
 </html>

@@ -10,7 +10,7 @@
         $message_type = "";
 
         if($_SERVER["REQUEST_METHOD"] == "POST"){
-            $id = mysqli_real_escape_string($connection, $_POST["id-number"]);
+            $id = mysqli_real_escape_string($connection, $_POST["id"]);
             $fname = mysqli_real_escape_string($connection, $_POST["first-name"]);
             $lname = mysqli_real_escape_string($connection, $_POST["second-name"]);
             $email = mysqli_real_escape_string($connection, $_POST["email"]);
