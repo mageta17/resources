@@ -74,7 +74,7 @@
                 </tr>
               </thead>
               <tbody>
-                <?php
+              <?php
                 include 'server/db.php';
                 $query = "SELECT id, time, F_name, L_name, Email, City, Gender, Phone FROM userdata";
                 $result = mysqli_query($connection, $query);
@@ -85,174 +85,32 @@
                   while($row = $result->fetch_assoc()) {
                     ?>
                     <tr>
-                      <td><?php $row['id']; ?></td>
+                      <td><?php echo $row['id']; ?></td>
+                      <td><?php echo $row['F_name']; ?></td>
+                      <td><?php echo $row['L_name']; ?></td>
+                      <td><?php echo $row['Email']; ?></td>
+                      <td><?php echo $row['City']; ?></td>
+                      <td><?php echo $row['Gender']; ?></td>
+                      <td><?php echo $row['Phone']; ?></td>
+                      <td><?php echo $row['time']; ?></td>
+                      <td><button type="button" class="btn btn-primary" onclick="redirectToEdit(<?php echo $row['id']; ?>)">Edit</button></td>
                     </tr>
-                   
-
-                    <!-- echo "<tr>";
-                    echo "<th scope='row'>{$row['id']}</th>";
-                    echo "<td>{$row['F_name']}</td>";
-                    echo "<td>{$row['L_name']}</td>";
-                    echo "<td>{$row['Email']}</td>";
-                    echo "<td>{$row['City']}</td>";
-                    echo "<td>{$row['Gender']}</td>";
-                    echo "<td>{$row['Phone']}</td>";
-                    echo "<td>{$row['time']}</td>";
-                    echo "<td><button type=\"button\" class=\"btn btn-primary\" data-bs-toggle=\"modal\" data-bs-target=\"#exampleModal\" data-bs-whatever=\"@mdo\">Edit</button></td>";
-                    echo "</tr>"; -->
                     <?php
                   }
                 } else {
-                  echo "<tr><td colspan='8'>No records found</td></tr>";
+                  echo "<tr><td colspan='9'>No records found</td></tr>";
                 }
                 ?>
               </tbody>
             </table>
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content "> 
-              <?php   
-                      $id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : '';  
-                      // isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
-                      if(!empty($_GET['registration'])) {
-                      $message = $_GET['registration'];
-
-                      if($message == "invalidFname") {
-                    ?>
-                      <div class="alert alert-danger text-center" role="alert">
-                        <p>Please enter valid first name</p>
-                      </div>            
-                    <?php
-                      } elseif($message == "invalidLname") {
-                    ?>
-                      <div class="alert alert-danger text-center" role="alert">
-                        <p>Please enter valid last name</p>
-                      </div>            
-                    <?php
-                      } elseif($message == "invalidemail"){
-                        ?>
-                        <div class="alert alert-danger text-center" role="alert">
-                          <p>Please enter valid last name</p>
-                        </div> 
-                    <?php
-                      } elseif($message == "invalidcity"){
-                        ?>
-                          <div class="alert alert-danger text-center" role="alert">
-                            <p>Number are not required in city field</p>
-                          </div> 
-                      <?php 
-                      } elseif($message == "invalidcity"){
-                        ?>
-                          <div class="alert alert-danger text-center" role="alert">
-                            <p>Number are not required in city field</p>
-                          </div> 
-                      <?php 
-                      }  elseif($message == "invalidphone"){
-                        ?>
-                          <div class="alert alert-danger text-center" role="alert">
-                            <p>invalid phone number</p>
-                          </div> 
-                      <?php 
-                      } elseif($message == "invalidPphone"){
-                        ?>
-                          <div class="alert alert-danger text-center" role="alert">
-                            <p>invalid phone number</p>
-                          </div> 
-                      <?php 
-                      }  elseif($message == "Success"){
-                        ?>
-                          <div class="alert alert-success text-center " role="alert">
-                              <p>You have successfully edited the user with ID number <?php echo $id; ?></p>
-                          </div> 
-                      <?php 
-                      }  elseif($message == "Failed"){
-                        ?>
-                          <div class="alert alert-danger text-center" role="alert">
-                            <p>There is an error in submitting data to the database</p>
-                          </div>  
-                      <?php 
-                      }   elseif($message == "Permission"){
-                        ?>
-                          <div class="alert alert-danger text-center" role="alert">
-                            <p>Permission denied, please submit the form</p>
-                          </div>  
-                      <?php 
-                      } 
-                      
-                    }
-                    
-                    ?>
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Edit changes</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form action="server/update.php" method="POST">
-                    <div class="row">
-                      <div class="col-md-6 mb-3">
-                        <label for="id-number" class="form-label">Id number:</label>
-                        <input type="number" class="form-control" id="id-number" name="id-number" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="first-name" class="form-label">First name:</label>
-                        <input type="text" class="form-control" id="first-name" name="first-name" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="second-name" class="form-label">Second name:</label>
-                        <input type="text" class="form-control" id="second-name" name="second-name" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Email:</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                      </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="city" class="form-label">City:</label>
-                        <input type="text" class="form-control" id="city" name="city" required>
-                      </div>
-                      <div class="col-md-4">
-                          <label for="inputGender" class="form-label">Gender</label>
-                          <select id="inputGender" class="form-select" name="gender">
-                             <option selected disabled>Choose...</option>
-                             <option value="male">Male</option>
-                             <option value="female">Female</option>
-                             <div class="invalid-feedback">
-                               Please select a gender.
-                             </div>
-                          </select>
-                        </div>
-                      <div class="col-md-6 mb-3">
-                        <label for="phone-number" class="form-label">Phone number:</label>
-                        <input type="text" class="form-control" id="phone-number" name="phone-number" required>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="submit" name="update" class="btn btn-primary">Submit</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
         </main>
       </div>
     </div>
     <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
-            const urlParams = new URLSearchParams(window.location.search);
-            const registrationMessage = urlParams.get('registration');
-            
-            if (registrationMessage) {
-              const modalShown = sessionStorage.getItem('modalShown');
-
-              // Show the modal if it's an error or success message and it hasn't been shown yet
-              if (!modalShown || registrationMessage === 'Success') {
-                modal.show();
-                sessionStorage.setItem('modalShown', 'true');
-              }
-            }
-          });
+          function redirectToEdit(id) 
+          {
+           window.location.href = 'edit.php?id=' + id;
+          }
     </script>
 
   </body>
