@@ -53,7 +53,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="userdata.php">Users details</a>
+              <!-- <a class="nav-link active" aria-current="page" href="userdata.php">Users details</a> -->
             </li>
           </ul>
           <form class="d-flex">
@@ -71,7 +71,7 @@
           <div class="position-sticky pt-3">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">
+                <a class="nav-link text-white" href="userpage.php">
                   Dashboard
                 </a>
               </li>
@@ -87,6 +87,76 @@
         <!-- Main Content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <h3 class="mt-3 text-white">Edit Details</h3>
+          <?php     
+                  isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
+                  if(!empty($_GET['registration'])) {
+                    $message = $_GET['registration'];
+
+                    if($message == "invalidFname") {
+                  ?>
+                    <div class="alert alert-danger text-center" role="alert">
+                      <p>Please enter valid first name</p>
+                    </div>            
+                  <?php
+                    } elseif($message == "invalidLname") {
+                  ?>
+                    <div class="alert alert-danger text-center" role="alert">
+                      <p>Please enter valid last name</p>
+                    </div>            
+                  <?php
+                    } elseif($message == "invalidemail"){
+                      ?>
+                      <div class="alert alert-danger text-center" role="alert">
+                        <p>Please enter valid last name</p>
+                      </div> 
+                  <?php 
+                    } elseif($message == "invalidcity"){
+                      ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>Number are not required in city field</p>
+                        </div> 
+                    <?php 
+                    } elseif($message == "invalidcity"){
+                      ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>Number are not required in city field</p>
+                        </div> 
+                    <?php 
+                    }  elseif($message == "invalidphone"){
+                      ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>invalid phone number</p>
+                        </div> 
+                    <?php 
+                    } elseif($message == "invalidPphone"){
+                      ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>invalid phone number</p>
+                        </div> 
+                    <?php 
+                    }  elseif($message == "Success"){
+                      ?>
+                        <div class="alert alert-success text-center " role="alert">
+                            <p>You have Successfully submited your form </p>
+                        </div> 
+                    <?php 
+                    }  elseif($message == "Failed"){
+                      ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>There is an error in submitting data to the database</p>
+                        </div>  
+                    <?php 
+                    }   elseif($message == "Permission"){
+                      ?>
+                        <div class="alert alert-danger text-center" role="alert">
+                          <p>Permission denied, please submit the form</p>
+                        </div>  
+                    <?php 
+                    } 
+                    
+                  }
+                  
+                ?>
             <form action="server/update.php" method="post">
               <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
                   <div class="mb-5 row">

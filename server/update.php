@@ -22,28 +22,27 @@
             if( preg_match($userpattern,$fname) || strlen($fname) < 2  || strlen($fname) > 20){
                 $message = "invalidFname";
 
-                header('Location: ../userpage.php?registration='.$message.'');
+                header('Location: ../edit.php?registration='.$message.'');
             } elseif( preg_match($userpattern,$lname) || strlen($lname) < 2  || strlen($lname) > 20){
                 $message = "invalidLname";
 
-                header('Location: ../userpage.php?registration='.$message.'');
+                header('Location: ../edit.php?registration='.$message.'');
             } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $message = "invalidemail";
 
-                header('Location: ../userpage.php?registration='.$message.'');
-           
-            }  elseif(preg_match($userpattern, $city)){
+                header('Location: ../edit.php?registration='.$message.'');
+             } elseif(preg_match($userpattern, $city)){
                 $message = "invalidcity";
 
-                header('Location: ../userpage.php?registration='.$message.'');
+                header('Location: ../edit.php?registration='.$message.'');
             } elseif(strlen($phone) < 10 || strlen($phone) > 10){
                 $message = "invalidphone";
 
-                header('Location: ../userpage.php?registration='.$message.''); 
+                header('Location: ../edit.php?registration=' . $message . '&id=' . $id); 
             } elseif(!preg_match($phonepattern, $phone)){
                 $message = "invalidPphone";
 
-                header('Location: ../userpage.php?registration='.$message.'');  
+                header('Location: ../edit.php?registration='.$message.'');  
             } else{
                 // after all validation to be passed 
                 
@@ -58,7 +57,7 @@
                 } else{
                     $message = "Failed";
 
-                    header('Location: ../userpage.php?registration='.$message.'');
+                    header('Location: ../edit.php?registration='.$message.'');
                 }
             }
         }
