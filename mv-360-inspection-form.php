@@ -92,7 +92,7 @@
                         <!-- section-3 -->
                         <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
                             <div class="col-md-3">
-                                <label for="left-side-view">2. Left side view</label>
+                                <label for="left-side-view">3. Left side view</label>
                             </div>
                             <div class="col-md-2">
                                 <label for="compliants">Compliant:</label>
@@ -112,7 +112,7 @@
                         <!-- section-4 -->
                         <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
                             <div class="col-md-3">
-                                <label for="left-side-view">2. Right side view</label>
+                                <label for="left-side-view">4. Right side view</label>
                             </div>
                             <div class="col-md-2">
                                 <label for="compliants">Compliant:</label>
@@ -128,6 +128,107 @@
                                 <input type="file" name="right-side-view-upload" class="form-control-file">
                             </div>
                         </div>
+
+                        <!-- section-5 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="loadbin-cover">5. Loadbin Cover</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="loadbin-cover" id="loadbin-cover" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="loadbin-cover-upload" class="form-control-file">
+                            </div>
+                        </div>
+                     
+                        <!-- section-6 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="windscreen">6. Windscreen</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="windscreen" id="windscreen" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="windscreen-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-7 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="license-disk">7. License Disk</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="license-disk" id="license-disk" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="license-disk-upload" class="form-control-file">
+                            </div>
+                        </div>
+                        
+                        <!-- section-8 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="towbar">8. Towbar</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="towbar" id="towbar" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="towbar-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-9 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="towbar">9. T</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="towbar" id="towbar" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="towbar-upload" class="form-control-file">
+                            </div>
+                        </div>
+
                     </div>
                 </form>
 
