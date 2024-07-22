@@ -45,11 +45,13 @@
                   Dashboard
                 </a>
               </li>
+              <hr class="hr  " />
               <li class="nav-item">
                 <a class="nav-link text-white" href="index.php">
                   Register
                 </a>
               </li>
+              <hr class="hr hr-blurry" />
               
             </ul>
           </div>
@@ -70,10 +72,11 @@
                   <th scope="col">Gender</th>
                   <th scope="col">Phone number</th>
                   <th scope="col">Time Registered</th>
+                  <th scope="col">Edit changes</th>
                 </tr>
               </thead>
               <tbody>
-                <?php
+              <?php
                 include 'server/db.php';
                 $query = "SELECT id, time, F_name, L_name, Email, City, Gender, Phone FROM userdata";
                 $result = mysqli_query($connection, $query);
@@ -82,26 +85,35 @@
                 }
                 if ($result->num_rows > 0) {
                   while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<th scope='row'>{$row['id']}</th>";
-                    echo "<td>{$row['F_name']}</td>";
-                    echo "<td>{$row['L_name']}</td>";
-                    echo "<td>{$row['Email']}</td>";
-                    echo "<td>{$row['City']}</td>";
-                    echo "<td>{$row['Gender']}</td>";
-                    echo "<td>{$row['Phone']}</td>";
-                    echo "<td>{$row['time']}</td>";
-                    echo "</tr>";
+                    ?>
+                    <tr>
+                      <td><?php echo $row['id']; ?></td>
+                      <td><?php echo $row['F_name']; ?></td>
+                      <td><?php echo $row['L_name']; ?></td>
+                      <td><?php echo $row['Email']; ?></td>
+                      <td><?php echo $row['City']; ?></td>
+                      <td><?php echo $row['Gender']; ?></td>
+                      <td><?php echo $row['Phone']; ?></td>
+                      <td><?php echo $row['time']; ?></td>
+                      <td><button type="button" class="btn btn-primary" onclick="redirectToEdit(<?php echo $row['id']; ?>)">Edit</button></td>
+                    </tr>
+                    <?php
                   }
                 } else {
-                  echo "<tr><td colspan='8'>No records found</td></tr>";
+                  echo "<tr><td colspan='9'>No records found</td></tr>";
                 }
                 ?>
               </tbody>
             </table>
-          </div>
         </main>
       </div>
     </div>
+    <script>
+          function redirectToEdit(id) 
+          {
+           window.location.href = 'edit.php?id=' + id;
+          }
+    </script>
+
   </body>
 </html>
