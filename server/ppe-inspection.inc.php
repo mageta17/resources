@@ -59,47 +59,63 @@ if(isset($_POST['submit'])){
      
        $first_aid_kit = mysqli_real_escape_string($connection, $_POST['first-aid-kit']);
 
-       function fileupload($input_file_name){
-            $target_dir = "../resources/images/uploads";
+    //    function fileupload($input_file_name){
+    //         $target_dir = "../resources/images/uploads";
 
-            if (!is_dir($target_dir)) {
-                mkdir($target_dir, 0777, true);
-            }
+    //         if (!is_dir($target_dir)) {
+    //             mkdir($target_dir, 0777, true);
+    //         }
 
-            if (!isset($_FILES[$input_file_name])) {
-                echo "No file uploaded for '$input_file_name'.<br>";
-                return null;
-            }
+    //         if (!isset($_FILES[$input_file_name])) {
+    //             echo "No file uploaded for '$input_file_name'.<br>";
+    //             return null;
+    //         }
 
-            if ($_FILES[$input_file_name]['error'] != UPLOAD_ERR_OK) {
-                echo "Error uploading file: " . $_FILES[$input_file_name]['error'] . "<br>";
-                return null;
-            }
-            $target_file = $target_dir .basename($_FILES[$input_file_name]["name"]);
+    //         if ($_FILES[$input_file_name]['error'] != UPLOAD_ERR_OK) {
+    //             echo "Error uploading file: " . $_FILES[$input_file_name]['error'] . "<br>";
+    //             return null;
+    //         }
+    //         $target_file = $target_dir .basename($_FILES[$input_file_name]["name"]);
 
-            if(move_uploaded_file($_FILES[$input_file_name]["tmp_name"], $target_file)){
+    //         if(move_uploaded_file($_FILES[$input_file_name]["tmp_name"], $target_file)){
 
-                echo "The file " . htmlspecialchars(basename($_FILES[$input_file_name]["name"])) . " has been uploaded.<br>";
-                return $target_file;
-            } else{
-                echo "Sorry, there was an error uploading your file.<br>";
-                return null; // Return null if upload fails
-            }
+    //             echo "The file " . htmlspecialchars(basename($_FILES[$input_file_name]["name"])) . " has been uploaded.<br>";
+    //             return $target_file;
+    //         } else{
+    //             echo "Sorry, there was an error uploading your file.<br>";
+    //             return null; // Return null if upload fails
+    //         }
 
-       }
+    //    }
 
-       $front_view_image = fileupload('front-view-upload');
-
-      
-       
-    
-
-       
-
-       
-
+    //    $front_view_image = fileupload('front-view-upload');
  
-    }
+     
+    $query = "INSERT INTO mv_check_list_360 (
+        front_view, rear_view, left_side_view, right_side_view, 
+        loadbin_view, windscreen_view , license_disk, towbar, 
+        lf_tyre_age, lf_tyre_treat, rf_tyre_age, rf_tyre_treat, 
+        lr_tyre_age, lr_tyre_treat, rr_tyre_age, rr_tyre_treat, 
+        rear_3pt_seatbelts, driver_3pt_seatbelt, co_driver_3p_belt, 
+        bluetooth, odometer, service_book, emergence_triangle, 
+        first_aid_kit
+    ) VALUES (
+        '$front_view', '$rear_view', '$left_side_view', '$right_side_view', 
+        '$loadbin_cover', '$windscreen', '$license_disk', '$towbar', 
+        '$lf_tyre_age', '$lf_tyre_treat', '$rf_tyre_age', '$rf_tyre_treat', 
+        '$lr_tyre_age', '$lr_tyre_treat', '$rr_tyre_age', '$rr_tyre_treat', 
+        '$rear_3pt_seatbelts', '$driver_3pt_seatbelts', '$co_driver', 
+        '$bluetooth', '$odometer', '$service_book', '$emergence_triangle', 
+        '$first_aid_kit'
+    )";
+    $result = mysqli_query($connection, $query);
+    if($result){
+        echo "data submited ";
+    }else{
+        echo "There was an error submitting the data: " . mysqli_error($connection);
+      }
+
+     }
 }
 
 
