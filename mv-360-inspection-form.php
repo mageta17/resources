@@ -218,7 +218,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-ager" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
+                                <select name="lf-tyre-age" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -292,40 +292,40 @@
                         <!-- section-13 -->
                         <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
                             <div class="col-md-3">
-                                <label for="lf-tyre-age">13. Left-Rear Tyre Age</label>
+                                <label for="lr-tyre-age">13. Left-Rear Tyre Age</label>
                             </div>
                             <div class="col-md-2">
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-age" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
+                                <select name="lr-tyre-age" id="lr-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <input type="file" name="lf-tyre-age-upload" class="form-control-file">
+                                <input type="file" name="lr-tyre-age-upload" class="form-control-file">
                             </div>
                         </div>
 
                          <!-- section-14 -->
                          <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
                             <div class="col-md-3">
-                                <label for="lf-tyre-treat">14. Left-Rear Tyre Treat</label>
+                                <label for="lr-tyre-treat">14. Left-Rear Tyre Treat</label>
                             </div>
                             <div class="col-md-2">
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
+                                <select name="lr-tyre-treat" id="lr-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <input type="file" name="lf-tyre-treat-upload" class="form-control-file">
+                                <input type="file" name="lr-tyre-treat-upload" class="form-control-file">
                             </div>
                         </div>
 
