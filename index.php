@@ -166,7 +166,7 @@
 
         <div class="col-md-4">
           <label for="inputGender" class="form-label">Gender</label>
-           <select id="inputGender" class="form-select" name="gender">
+           <select id="inputGender" class="form-select form-control" name="gender">
              <option selected disabled>Choose...</option>
              <option value="male">Male</option>
              <option value="female">Female</option>
@@ -188,10 +188,10 @@
 
         <div class="col-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck" name="check" required>
+            <input class="form-check-input form-control" type="checkbox" id="gridCheck" name="check" required>
 
             <label class="form-check-label" for="gridCheck">
-              Agree to terms and policy
+               Agree to terms and policy
             </label>
 
             <div class="invalid-feedback">
