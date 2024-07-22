@@ -88,7 +88,7 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
           <h3 class="mt-3 text-white">Edit Details</h3>
           <?php     
-                  isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
+
                   if(!empty($_GET['registration'])) {
                     $message = $_GET['registration'];
 
@@ -159,62 +159,63 @@
                 ?>
             <form action="server/update.php" method="post">
               <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+              <form>
                   <div class="mb-5 row">
-                      <div class="col-auto">
-                        <label for="firstName" class="col-form-label">First Name</label>
-                      </div>
-                      <div class="col-auto">
-                        <input type="text" id="firstName"  value="<?php echo $user['F_name']; ?>" name="first-name" class="form-control" aria-describedby="firstNameHelpInline">
-                      </div>
+                    <div class="col-md-2">
+                      <label for="firstName" class="col-form-label">First Name</label>
                     </div>
+                    <div class="col-md-4">
+                      <input type="text" id="firstName" value="<?php echo $user['F_name']; ?>" name="first-name" class="form-control" aria-describedby="firstNameHelpInline">
+                    </div>
+                  </div>
 
-                    <div class="mb-5 row">
-                      <div class="col-auto">
-                        <label for="lastName" class="col-form-label">Last Name</label>
-                      </div>
-                      <div class="col-auto">
-                        <input type="text" id="lastName"  value="<?php echo $user['L_name']; ?>"  name="second-name" class="form-control" aria-describedby="lastNameHelpInline">
-                      </div>
+                  <div class="mb-5 row">
+                    <div class="col-md-2">
+                      <label for="lastName" class="col-form-label">Last Name</label>
                     </div>
+                    <div class="col-md-4">
+                      <input type="text" id="lastName" value="<?php echo $user['L_name']; ?>" name="second-name" class="form-control" aria-describedby="lastNameHelpInline">
+                    </div>
+                  </div>
 
-                    <div class="mb-5 row">
-                      <div class="col-auto">
-                        <label for="email" class="col-form-label">Email</label>
-                      </div>
-                      <div class="col-auto">
-                        <input type="email" id="email"  value="<?php echo $user['Email']; ?>"  name="email" class="form-control" aria-describedby="emailHelpInline">
-                      </div>
+                  <div class="mb-5 row">
+                    <div class="col-md-2">
+                      <label for="email" class="col-form-label">Email</label>
                     </div>
+                    <div class="col-md-4">
+                      <input type="email" id="email" value="<?php echo $user['Email']; ?>" name="email" class="form-control" aria-describedby="emailHelpInline">
+                    </div>
+                  </div>
 
-                    <div class="mb-5 row">
-                      <div class="col-auto">
-                        <label for="city" class="col-form-label">City</label>
-                      </div>
-                      <div class="col-auto">
-                        <input type="text" id="city"  value="<?php echo $user['City']; ?>"  name="city" class="form-control" aria-describedby="cityHelpInline">
-                      </div>
+                  <div class="mb-5 row">
+                    <div class="col-md-2">
+                      <label for="city" class="col-form-label">City</label>
                     </div>
+                    <div class="col-md-4">
+                      <input type="text" id="city" value="<?php echo $user['City']; ?>" name="city" class="form-control" aria-describedby="cityHelpInline">
+                    </div>
+                  </div>
 
-                    <div class="mb-5 row">
-                      <div class="col-auto">
-                        <label for="gender" class="col-form-label">Gender</label>
-                      </div>
-                      <div class="col-auto">
-                        <input type="text" id="gender"  value="<?php echo $user['Gender']; ?>" name="gender" class="form-control" aria-describedby="genderHelpInline">
-                      </div>
+                  <div class="mb-5 row">
+                    <div class="col-md-2">
+                      <label for="gender" class="col-form-label">Gender</label>
                     </div>
+                    <div class="col-md-4">
+                      <input type="text" id="gender" value="<?php echo $user['Gender']; ?>" name="gender" class="form-control" aria-describedby="genderHelpInline">
+                    </div>
+                  </div>
 
-                    <div class="mb-5 row">
-                      <div class="col-auto">
-                        <label for="phoneNumber" class="col-form-label">Phone Number</label>
-                      </div>
-                      <div class="col-auto">
-                        <input type="text" id="phoneNumber"  value="<?php echo $user['Phone']; ?>" name="phone-number" class="form-control" aria-describedby="phoneNumberHelpInline">
-                      </div>
+                  <div class="mb-5 row">
+                    <div class="col-md-2">
+                      <label for="phoneNumber" class="col-form-label">Phone Number</label>
                     </div>
-                  <button type="submit" name="update" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
-            </main>
+                    <div class="col-md-4">
+                      <input type="text" id="phoneNumber" value="<?php echo $user['Phone']; ?>" name="phone-number" class="form-control" aria-describedby="phoneNumberHelpInline">
+                    </div>
+                  </div>
+
+                <button type="submit" name="update" class="btn btn-primary">Submit</button>
+            </form>
+
         </body>
 </html>

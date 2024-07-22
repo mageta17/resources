@@ -45,11 +45,13 @@
                   Dashboard
                 </a>
               </li>
+              <hr class="hr  " />
               <li class="nav-item">
                 <a class="nav-link text-white" href="index.php">
                   Register
                 </a>
               </li>
+              <hr class="hr hr-blurry" />
               
             </ul>
           </div>
