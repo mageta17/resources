@@ -98,7 +98,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="left-side-view" id="left-side-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="left-side-view" id="left-side-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -118,7 +118,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="right-side-view" id="right-side-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="right-side-view" id="right-side-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -138,7 +138,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="loadbin-cover" id="loadbin-cover" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="loadbin-cover" id="loadbin-cover" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -158,7 +158,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="windscreen" id="windscreen" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="windscreen" id="windscreen" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -178,7 +178,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="license-disk" id="license-disk" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="license-disk" id="license-disk" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -198,7 +198,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="towbar" id="towbar" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="towbar" id="towbar" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -218,7 +218,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-ager" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="lf-tyre-ager" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -238,7 +238,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -258,7 +258,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="rf-tyre-age" id="rf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="rf-tyre-age" id="rf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -278,7 +278,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="rf-tyre-treat" id="rf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="rf-tyre-treat" id="rf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -298,7 +298,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-age" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="lf-tyre-age" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -318,7 +318,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -338,7 +338,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="rr-tyre-age" id="rr-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="rr-tyre-age" id="rr-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -358,7 +358,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="rr-tyre-treat" id="rr-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="rr-tyre-treat" id="rr-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -378,7 +378,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="rear-3pt-seatbelts" id="rear-3pt-seatbelts" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="rear-3pt-seatbelts" id="rear-3pt-seatbelts" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -398,7 +398,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="driver-3pt-seatbelts" id="driver-3pt-seatbelts" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="driver-3pt-seatbelts" id="driver-3pt-seatbelts" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -418,7 +418,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="co-driver" id="co-driver" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="co-driver" id="co-driver" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -438,7 +438,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="bluetooth" id="bluetooth" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="bluetooth" id="bluetooth" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -458,7 +458,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="odometer" id="odometer" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="odometer" id="odometer" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -478,7 +478,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="service-book" id="service-book" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="service-book" id="service-book" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -498,7 +498,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="emergence-triangle" id="emergence-triangle" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="emergence-triangle" id="emergence-triangle" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -518,7 +518,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="first-aid-kit" id="first-aid-kit" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="first-aid-kit" id="first-aid-kit" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
