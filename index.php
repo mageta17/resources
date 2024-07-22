@@ -1,210 +1,128 @@
-<!doctype html>
+<?php
+    include 'server/db.php';
+?>
+
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+      <?php include 'server/title.php' ?>
+    </title>    
+    
+    <script src="resources/jquery/jquery-3.5.1.min.js"></script>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css">
+    <?php include 'server/styleLink.php' ?>
 
-    <title>Registration</title>
-   
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-light bg-dark text-light py-3">
-          <div class="container-fluid d-flex justify-content-between align-items-center">
-              <h4 class="display-6 text-start ms-3">Registration</h4>
-              <button class="btn btn-outline-success me-3" id="result" type="button">See results</button>
-           </div>
-          <script>
-              var button = document.getElementById("result");
-              button.onclick = function() {
-                  window.location.href = "userpage.php";
-              }
-          </script>
-    </nav>
-    <section class="container my-2 bg-dark text-light w-50 p-3 rounded-3 mt-5 shadow-lg">
-      <?php     
-        isset($_GET['fname']) ? htmlspecialchars($_GET['fname']) : '';
-        if(!empty($_GET['registration'])) {
-          $message = $_GET['registration'];
-
-          if($message == "invalidFname") {
-        ?>
-          <div class="alert alert-danger text-center" role="alert">
-            <p>Please enter valid first name</p>
-          </div>            
-        <?php
-          } elseif($message == "invalidLname") {
-        ?>
-          <div class="alert alert-danger text-center" role="alert">
-            <p>Please enter valid last name</p>
-          </div>            
-        <?php
-           } elseif($message == "invalidemail"){
-            ?>
-             <div class="alert alert-danger text-center" role="alert">
-               <p>Please enter valid last name</p>
-            </div> 
-        <?php
-           } elseif($message == "invalidLPassword"){
-          ?>
-             <div class="alert alert-danger text-center" role="alert">
-               <p>invalid password length, password should have at least minimum of  8 character</p>
-            </div> 
-        <?php    
-           } elseif($message == "invalidPassword"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>Please enter strong  password, the strong password should have at least one uppercase, lowercase , number and special character</p>
-              </div> 
-          <?php   
-           } elseif($message == "invalidcPassword"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>Error confirm password mismatch</p>
-              </div> 
-          <?php 
-           } elseif($message == "invalidcity"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>Number are not required in city field</p>
-              </div> 
-          <?php 
-           } elseif($message == "invalidcity"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>Number are not required in city field</p>
-              </div> 
-          <?php 
-           }  elseif($message == "invalidphone"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>invalid phone number</p>
-              </div> 
-          <?php 
-           } elseif($message == "invalidPphone"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>invalid phone number</p>
-               </div> 
-          <?php 
-           }  elseif($message == "Success"){
-            ?>
-               <div class="alert alert-success text-center " role="alert">
-                   <p>You have Successfully submited your form </p>
-               </div> 
-          <?php 
-           }  elseif($message == "Failed"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>There is an error in submitting data to the database</p>
-               </div>  
-          <?php 
-           }   elseif($message == "Permission"){
-            ?>
-               <div class="alert alert-danger text-center" role="alert">
-                 <p>Permission denied, please submit the form</p>
-               </div>  
-          <?php 
-           } 
-           
+    <?php include 'server/style.php' ?>
+    
+    <style>
+        #admin-vehicles-table {
+            width: 100%;
+            margin-top: 10px; 
+            border-spacing: 0; 
+            border-collapse: separate;
         }
-         
-      ?>
+        
+        #admin-vehicles-table td, #admin-vehicles-table th {
+            border-bottom:1px solid #ddd;
+            border-left:1px solid #ddd;
+            padding: 8px;
+        }
 
-      <form class="row g-3 r-5 form-container" action="server/insert.php" method="POST">        
-        <div class="col-md-6">
-          <label for="inputFirstName" class="form-label">First name</label>
-          <input type="text" class="form-control" id="inputFirstName" value="<?php if(isset($_GET['fname'])){echo $_GET['fname'];} ?>"  name="fname" required>
-          <div class="invalid-feedback">
-            Please provide a first name.
-          </div>
-        </div>
+        #admin-vehicles-table tr:first-child th {
+            border-top:1px solid #ddd;
+        }
 
-        <div class="col-md-6">
-          <label for="inputLastName" class="form-label">Last name</label>
-          <input type="text" class="form-control" id="inputLastName"   name="lname"required>
-          <div class="invalid-feedback">
-            Please provide a last name.
-          </div>
-        </div>
+        #admin-vehicles-table tr th:first-child {
+            width: 53px;
+        }
 
-        <div class="col-md-6">
-          <label for="inputEmail" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail" name="email"  placeholder="example@example.com" required>
-          <div class="invalid-feedback">
-            Please provide a valid email address.
-          </div>
-        </div>
+        #admin-vehicles-table tr td:last-child, #admin-vehicles-table tr th:last-child {
+            border-right:1px solid #ddd;
+        }
+        #admin-vehicles-table a {
+            font-weight: 400;
+            color: #0d6efd; 
+        }
 
-        <div class="col-md-6">
-          <label for="inputPassword" class="form-label">Create password</label>
-          <input type="password" class="form-control" id="inputPassword" name="password" required>
-          <div class="invalid-feedback">
-            Please provide a password.
-          </div>
-        </div>
+        @media (max-width: 768px) {
+            #filter_table {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            #filter_from, #filter_to  {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
 
-        <div class="col-md-6">
-          <label for="inputConfirmPassword" class="form-label">Confirm password</label>
-          <input type="password" class="form-control" id="inputConfirmPassword" name="cpassword" required>
-          <div class="invalid-feedback">
-            Please confirm your password.
-          </div>
-        </div>
+<body>
+    <div class="wrapper">
+        <?php $pg = 'users'; include 'server/navigation.php' ?>
 
-        <div class="col-md-6">
-          <label for="inputCity" class="form-label">City</label>
-          <input type="text" class="form-control" id="inputCity"  name="city" required>
-          <div class="invalid-feedback">
-            Please provide a city.
-          </div>
-        </div>
+        <div id="content">
+            <nav class="navbar navbar-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-success btn-sm">
+                        <i class="bi bi-list-ul"></i>
+                        <span>Hide / Unhide menu</span>
+                    </button>
 
-        <div class="col-md-4">
-          <label for="inputGender" class="form-label">Gender</label>
-           <select id="inputGender" class="form-select form-control" name="gender">
-             <option selected disabled>Choose...</option>
-             <option value="male">Male</option>
-             <option value="female">Female</option>
-             <div class="invalid-feedback">
-              Please select a gender.
-             </div>
-           </select>
-        </div>
+                    <?php include 'server/title-3.php' ?>
+                </div>
+            </nav>
 
-        <div class="col-md-4">
-          <label for="inputPhone" class="form-label">Phone number</label>
+            <div id="section" class="container-fluid">
+                <div id="section-1" class="row">
+                <form action="#" method="GET">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="container-fluid">
+                          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
 
-          <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="07xxxxxxxx" required>
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">                            
+                            <ul class="navbar-nav me-auto mb-1 mb-lg-0">
+                                <li class="nav-item">
+                                    
+                                </li>
+                            </ul>
+                            
+                            <div class="d-flex">
+                                <input name="search" value="<?php if(isset($_GET['search'])){echo $_GET['search'];}?>" class="form-control me-2 form-control-sm" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
+                            </div>                            
+                          </div>                          
+                        </div>
+                    </nav> 
+                    </form>                    
+                </div>
 
-          <div class="invalid-feedback">
-            Please provide a phone number.
-          </div>
-        </div>
+                <div id="section-2" class="row">
+                    <div class="container-fluid" style="width: 100%; overflow-x: auto; font-size: 12px;">
+                    </div>
+                </div>
 
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input form-control" type="checkbox" id="gridCheck" name="check" required>
-
-            <label class="form-check-label" for="gridCheck">
-               Agree to terms and policy
-            </label>
-
-            <div class="invalid-feedback">
-              You must agree before submitting.
+                <div id="section-3" class="row">
+                    
+                </div>
             </div>
-          </div>
         </div>
+    </div>
 
-        <div class="col-md-4">
-          <button type="submit" name="insert" class="btn btn-primary">Sign in</button>
-          <!-- <a href="userpage.php">See registers</a> -->
-        </div>
-      </form>
-    </section>
-  </body>
+    <script>
+        $(document).ready(function(){
+            $("#sidebarCollapse").on('click',function(){
+                $("#sidebar").toggleClass('active');
+            });
+        });
+    </script>
+
+    <script src="resources/bootstrap5.1.3/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
