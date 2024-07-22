@@ -89,6 +89,7 @@ if(isset($_POST['submit'])){
     //    }
 
     //    $front_view_image = fileupload('front-view-upload');
+     //    $front_view_image = fileupload('front-view-upload');
  
      
     $query = "INSERT INTO mv_check_list_360 (
