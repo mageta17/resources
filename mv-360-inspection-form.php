@@ -47,14 +47,92 @@
         <?php
             menu5();
         ?>
-
-        <div class="row justify-content-center mx-0">
-            <div class="col-lg-6">
-                <form id="checklistForm" method="POST" action="server/ppe-inspection.inc.php" enctype="multipart/form-data">
-                    
+      <div class="row justify-content-center mx-0">
+          <div class="col-lg-6">
+          <form id="checklistForm" method="POST" action="server/ppe-inspection.inc.php" enctype="multipart/form-data">
+                    <div class="container-fluid mt-4">
+                        <!-- Section 1 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="front-view">1. Front view</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="front-view" id="front-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="front-view-upload" class="form-control-file">
+                            </div>
+                        </div>
+                        <!-- Section 2 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="rear-view">2. Rear view</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="rear-view" id="rear-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="rear-view-upload" class="form-control-file">
+                            </div>
+                        </div>
+                        <!-- section-3 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="left-side-view">2. Left side view</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="left-side-view" id="left-side-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="left-side-view-upload" class="form-control-file">
+                            </div>
+                        </div>
+ 
+                        <!-- section-4 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="left-side-view">2. Right side view</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="right-side-view" id="right-side-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="right-side-view-upload" class="form-control-file">
+                            </div>
+                        </div>
+                    </div>
                 </form>
-            </div>            
-        </div>
+
+          </div>
+      </div>
     </div>
 
     <script src="resources/js/ppe-inspection.js"></script>
