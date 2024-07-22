@@ -60,7 +60,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="front-view" id="front-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="front-view" id="front-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example"  required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -79,7 +79,7 @@
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="rear-view" id="rear-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="rear-view" id="rear-view" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example" required>
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
@@ -212,23 +212,327 @@
                         <!-- section-9 -->
                         <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
                             <div class="col-md-3">
-                                <label for="towbar">9. T</label>
+                                <label for="lf-tyre-age">9. Left-Front Tyre Age</label>
                             </div>
                             <div class="col-md-2">
                                 <label for="compliants">Compliant:</label>
                             </div>
                             <div class="col-md-3">
-                                <select name="towbar" id="towbar" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                <select name="lf-tyre-ager" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
                                     <option value="" selected disabled>Choose</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <input type="file" name="towbar-upload" class="form-control-file">
+                                <input type="file" name="lf-tyre-age-upload" class="form-control-file">
                             </div>
                         </div>
 
+                        <!-- section-10 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="lf-tyre-treat">10. Left-Front Tyre Treat</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="lf-tyre-treat-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-11 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="rf-tyre-age">11. Right-Front Tyre Age</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="rf-tyre-age" id="rf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="rf-tyre-age-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-12 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="rf-tyre-treat">12. Right-Front Tyre Treat</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="rf-tyre-treat" id="rf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="rf-tyre-treat-upload" class="form-control-file">
+                            </div>
+                        </div>
+                        
+                        <!-- section-13 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="lf-tyre-age">13. Left-Rear Tyre Age</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="lf-tyre-age" id="lf-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="lf-tyre-age-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                         <!-- section-14 -->
+                         <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="lf-tyre-treat">14. Left-Rear Tyre Treat</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="lf-tyre-treat" id="lf-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="lf-tyre-treat-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-15 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="rr-tyre-age">15. Right-Rear Tyre Age</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="rr-tyre-age" id="rr-tyre-age" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="rr-tyre-age-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                         <!-- section-16 -->
+                         <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="rr-tyre-treat">16. Right-Rear Tyre Treat</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="rr-tyre-treat" id="rr-tyre-treat" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="rr-tyre-treat-upload" class="form-control-file">
+                            </div>
+                        </div>
+                        
+                        <!-- section-17 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="rear-3pt-seatbelts">17. Rear 3pt Seatbelts </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="rear-3pt-seatbelts" id="rear-3pt-seatbelts" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="rear-3pt-seatbelts-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-18 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="driver-3pt-seatbelts">18. Driver 3pt Seatbelts </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="driver-3pt-seatbelts" id="driver-3pt-seatbelts" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="driver-3pt-seatbelts-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-19 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="co-driver">19. Co Driver 3pt S/belt  </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="co-driver" id="co-driver" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="co-driver-upload" class="form-control-file">
+                            </div>
+                        </div>
+                        
+                        <!-- section-20 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="bluetooth">20. Bluetooth </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="bluetooth" id="bluetooth" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="bluetooth-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-21 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="odometer">21. Odometer </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="odometer" id="odometer" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="odometer-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-22 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="service-book">22. Service Book </label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="service-book" id="service-book" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="service-book-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-23 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="emergence-triangle">23. Emergence Triangle</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="emergence-triangle" id="emergence-triangle" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="emergence-triangle-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <!-- section-24 -->
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <div class="col-md-3">
+                                <label for="first-aid-kit">24. First Aid Kit</label>
+                            </div>
+                            <div class="col-md-2">
+                                <label for="compliants">Compliant:</label>
+                            </div>
+                            <div class="col-md-3">
+                                <select name="first-aid-kit" id="first-aid-kit" class="form-select form-select-sm mb-1" aria-label=".form-select-lg example">
+                                    <option value="" selected disabled>Choose</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="file" name="first-aid-kit-upload" class="form-control-file">
+                            </div>
+                        </div>
+
+                        <div class="row align-items-center mb-3 p-2" style="background-color: #f8f9fa;">
+                            <button class="btn btn-primary mt-2" type="submit" name="submit">Submit</button>
+                        </div>
+                        
                     </div>
                 </form>
 
