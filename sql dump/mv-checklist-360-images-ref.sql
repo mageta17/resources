@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jul 23, 2024 at 08:39 AM
+-- Generation Time: Jul 23, 2024 at 11:12 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -30,7 +30,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `mv_checklist_360_images_rep` (
   `img_id` int(11) NOT NULL,
   `img_name` varchar(255) DEFAULT NULL,
-  `checklistId` int(11) DEFAULT NULL
+  `checklistId` int(11) DEFAULT NULL,
+  `category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -42,7 +43,7 @@ CREATE TABLE `mv_checklist_360_images_rep` (
 --
 ALTER TABLE `mv_checklist_360_images_rep`
   ADD PRIMARY KEY (`img_id`),
-  ADD KEY `checklistId` (`checklistId`);
+  ADD KEY `mv_checklist_360_images_rep_ibfk_1` (`checklistId`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -62,7 +63,7 @@ ALTER TABLE `mv_checklist_360_images_rep`
 -- Constraints for table `mv_checklist_360_images_rep`
 --
 ALTER TABLE `mv_checklist_360_images_rep`
-  ADD CONSTRAINT `mv_checklist_360_images_rep_ibfk_1` FOREIGN KEY (`checklistId`) REFERENCES `mv_check_list_360` (`id`);
+  ADD CONSTRAINT `mv_checklist_360_images_rep_ibfk_1` FOREIGN KEY (`checklistId`) REFERENCES `mv_check_list_360` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
