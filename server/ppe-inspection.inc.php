@@ -10,53 +10,29 @@ if(isset($_POST['submit'])){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
       
        $front_view = mysqli_real_escape_string($connection, $_POST['front-view']);
-     
        $rear_view = mysqli_real_escape_string($connection, $_POST['rear-view']);
-      
        $left_side_view = mysqli_real_escape_string($connection, $_POST['left-side-view']);
-      
        $right_side_view = mysqli_real_escape_string($connection,$_POST['right-side-view']);
-     
        $loadbin_cover = mysqli_real_escape_string($connection, $_POST['loadbin-cover']);
-      
        $windscreen = mysqli_real_escape_string($connection, $_POST['windscreen']);
-    
        $license_disk = mysqli_real_escape_string($connection, $_POST['license-disk']);
-    
        $towbar = mysqli_real_escape_string($connection, $_POST['towbar']);
- 
        $lf_tyre_age = mysqli_real_escape_string($connection, $_POST['lf-tyre-age']);
-      
        $lf_tyre_treat = mysqli_real_escape_string($connection, $_POST['lf-tyre-treat']);
-       
        $lf_tyre_treat = mysqli_real_escape_string($connection, $_POST['lf-tyre-treat']);
-        
        $rf_tyre_age = mysqli_real_escape_string($connection, $_POST['rf-tyre-age']);
-
        $rf_tyre_treat = mysqli_real_escape_string($connection, $_POST['rf-tyre-treat']);
- 
        $lr_tyre_age = mysqli_real_escape_string($connection, $_POST['lr-tyre-age']);
-       
        $lr_tyre_treat = mysqli_real_escape_string($connection, $_POST['lr-tyre-treat']);
-    
        $rr_tyre_age = mysqli_real_escape_string($connection, $_POST['rr-tyre-age']);
-     
        $rr_tyre_treat = mysqli_real_escape_string($connection, $_POST['rr-tyre-treat']);
-       
        $rear_3pt_seatbelts = mysqli_real_escape_string($connection, $_POST['rear-3pt-seatbelts']);
-
        $driver_3pt_seatbelts = mysqli_real_escape_string($connection, $_POST['driver-3pt-seatbelts']);
-
        $co_driver = mysqli_real_escape_string($connection, $_POST['co-driver']);
-      
        $bluetooth = mysqli_real_escape_string($connection, $_POST['bluetooth']);
-      
        $odometer = mysqli_real_escape_string($connection, $_POST['odometer']);
-       
        $service_book = mysqli_real_escape_string($connection, $_POST['service-book']);
-     
        $emergence_triangle = mysqli_real_escape_string($connection, $_POST['emergence-triangle']);
-     
        $first_aid_kit = mysqli_real_escape_string($connection, $_POST['first-aid-kit']);
 
     //    function fileupload($input_file_name){
@@ -116,7 +92,7 @@ if(isset($_POST['submit'])){
         echo "There was an error submitting the data: " . mysqli_error($connection);
       }
 
-     }
+    }
 }
 
 
