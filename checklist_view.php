@@ -39,49 +39,64 @@ include 'server/modules/staff-pages.php';
             menu5();
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
-            $query = "SELECT * FROM mv_check_list_360 WHERE id  = $id";
-            $result = mysqli_query($connection, $query);
-            } else{
-
-                echo "id  not found";
-
-            } if (mysqli_num_rows($result) > 0) {
+                $query = "SELECT * FROM mv_check_list_360 WHERE id = $id";
+                $result = mysqli_query($connection, $query);
+            } else {
+                echo "ID not found";
+            } 
+            
+            if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
             <div class="col-lg-6">
                 <form action="">
                     <div class="container mt-5">
                         <div class="row row-cols-1 row-cols-sm-2 g-3">
-                        <?php while ($row = mysqli_fetch_assoc($result)) { 
+                        <?php 
+                        while ($row = mysqli_fetch_assoc($result)) { 
                             $id = $row['id'];
                             // Query to get images related to the current checklist entry
                             $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
                             $result_images = mysqli_query($connection, $query_images);
-                            ?>
-                            <div class="card info-box">
-                                <div class="card-body">
-                                    <p><strong>Inspection ID:</strong> <?php echo $row['id']; ?></p>
-                                    <p><strong>Date and Time:</strong> <?php echo $row['time']; ?></p>
-                                </div>
-                            </div>
 
-                            <?php while ($image_row = mysqli_fetch_assoc($result_images)) {
-                                $imagePath = "resources/images/mv_checklist_360_images/{$image_row['img_name']}";
-                                
-                                $category = ucfirst(str_replace('_', ' ', $image_row['category']));
-                            ?>
-                            <div class="col">
-                                <div class="card">
-                                    <img src="<?php echo $imagePath?>" class="card-img-top" alt="No image found">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $category; ?></h5>
-                                        <p class="card-text"><?php echo $row[$image_row['category']]; ?></p>
+                            // Array to store images
+                            $images = [];
+                            while ($image_row = mysqli_fetch_assoc($result_images)) {
+                                $images[$image_row['category']] = $image_row['img_name'];
+                            }
+
+                            // Define categories
+                            $categories = ['front_view','rear_view', 'left_side_view', 
+                            'right_side_view', 'loadbin_cover', 'windscreen', 'license_disk', 
+                             'towbar', 'lf_tyre_age', 'lf_tyre_treat', 'rf_tyre_age', 'rf_tyre_treat',
+                             'lr_tyre_age', 'lr_tyre_treat', 'rr_tyre_age', 'rr_tyre_treat', 'rear_3pt_seatbelts',
+                             'driver_3pt_seatbelts', 'co_driver', 'bluetooth', 'odometer', 'service_book', 
+                             'emergence_triangle', 'first_aid_kit'
+                            
+                            ];
+
+                            foreach ($categories as $category) {
+                                $categoryDisplay = ucfirst(str_replace('_', ' ', $category));
+                                $imagePath = isset($images[$category]) 
+                                    ? "resources/images/mv_checklist_360_images/{$images[$category]}"
+                                    : "resources/images/placeholder-image.jpg"; // Use a placeholder image if no image exists
+
+                                $answer = $row[$category] ?? 'No data'; // Default to 'No data' if the field is not set
+                                ?>
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="<?php echo $imagePath ?>" class="card-img-top" alt="Image not available">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><?php echo $categoryDisplay; ?></h5>
+                                            <p class="card-text"><?php echo $answer; ?></p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <?php } ?>
-                        <?php } ?>
-                        </div>   
+                                <?php
+                            }
+                        }
+                        ?>
+                        </div>
                     </div>
                 </form>
                 <?php 
