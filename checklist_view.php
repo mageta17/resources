@@ -26,18 +26,25 @@ include 'server/modules/staff-pages.php';
             border-radius: 5px; 
             width: 99%; 
         }
+        .card-img-top {
+            width: 314px;
+            height: 314px;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body> 
     <div id="section" class="container-fluid mx-0 px-0">        
         <?php
             menu5();
-            
-            // Query to get checklist data
-            $query = "SELECT * FROM mv_check_list_360 ORDER BY id DESC";
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+            $query = "SELECT * FROM mv_check_list_360 WHERE id  = $id";
             $result = mysqli_query($connection, $query);
+            } else{
+                echo "id  not found";
 
-            if (mysqli_num_rows($result) > 0) {
+            } if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
             <div class="col-lg-6">
