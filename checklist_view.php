@@ -42,6 +42,7 @@ include 'server/modules/staff-pages.php';
             $query = "SELECT * FROM mv_check_list_360 WHERE id  = $id";
             $result = mysqli_query($connection, $query);
             } else{
+
                 echo "id  not found";
 
             } if (mysqli_num_rows($result) > 0) {
