@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        // Prepare data
+      
         $front_view = mysqli_real_escape_string($connection, $_POST['front-view']);
         $rear_view = mysqli_real_escape_string($connection, $_POST['rear-view']);
         $left_side_view = mysqli_real_escape_string($connection, $_POST['left-side-view']);
@@ -38,10 +38,10 @@ if (isset($_POST['submit'])) {
         // Insert data into `mv_check_list_360`
         $query = "INSERT INTO mv_check_list_360 (
             front_view, rear_view, left_side_view, right_side_view, 
-            loadbin_view, windscreen_view, license_disk, towbar, 
+            loadbin_cover, windscreen, license_disk, towbar, 
             lf_tyre_age, lf_tyre_treat, rf_tyre_age, rf_tyre_treat, 
             lr_tyre_age, lr_tyre_treat, rr_tyre_age, rr_tyre_treat, 
-            rear_3pt_seatbelts, driver_3pt_seatbelt, co_driver_3p_belt, 
+            rear_3pt_seatbelts, driver_3pt_seatbelts, co_driver , 
             bluetooth, odometer, service_book, emergence_triangle, 
             first_aid_kit
         ) VALUES (

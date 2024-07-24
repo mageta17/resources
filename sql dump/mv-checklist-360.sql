@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jul 23, 2024 at 08:34 AM
+-- Generation Time: Jul 24, 2024 at 10:09 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -34,8 +34,8 @@ CREATE TABLE `mv_check_list_360` (
   `rear_view` varchar(255) NOT NULL,
   `left_side_view` varchar(255) NOT NULL,
   `right_side_view` varchar(255) NOT NULL,
-  `loadbin_view` varchar(255) NOT NULL,
-  `windscreen_view` varchar(255) NOT NULL,
+  `loadbin_cover` varchar(255) NOT NULL,
+  `windscreen` varchar(255) NOT NULL,
   `license_disk` varchar(255) NOT NULL,
   `towbar` varchar(255) NOT NULL,
   `lf_tyre_age` varchar(255) NOT NULL,
@@ -47,8 +47,8 @@ CREATE TABLE `mv_check_list_360` (
   `rr_tyre_age` varchar(255) NOT NULL,
   `rr_tyre_treat` varchar(255) NOT NULL,
   `rear_3pt_seatbelts` varchar(255) NOT NULL,
-  `driver_3pt_seatbelt` varchar(255) NOT NULL,
-  `co_driver_3p_belt` varchar(255) NOT NULL,
+  `driver_3pt_seatbelts` varchar(255) NOT NULL,
+  `co_driver` varchar(255) NOT NULL,
   `bluetooth` varchar(255) NOT NULL,
   `odometer` varchar(255) NOT NULL,
   `service_book` varchar(255) NOT NULL,
