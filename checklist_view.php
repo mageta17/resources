@@ -79,9 +79,9 @@ include 'server/modules/staff-pages.php';
                                 $categoryDisplay = ucfirst(str_replace('_', ' ', $category));
                                 $imagePath = isset($images[$category]) 
                                     ? "resources/images/mv_checklist_360_images/{$images[$category]}"
-                                    : "resources/images/placeholder-image.jpg"; // Use a placeholder image if no image exists
+                                    : "resources/images/placeholder-image.jpg"; 
 
-                                $answer = $row[$category] ?? 'No data'; // Default to 'No data' if the field is not set
+                                $answer = $row[$category] ?? 'No data'; 
                                 ?>
                                 <div class="col">
                                     <div class="card">

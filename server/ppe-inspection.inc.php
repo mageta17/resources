@@ -57,7 +57,9 @@ if (isset($_POST['submit'])) {
         $result = mysqli_query($connection, $query);
 
         if ($result) {
-            echo "Data submitted successfully.";
+            //echo "Data submitted successfully.";
+            header("Location: ../mv-360-inspection-history.php");
+
             $checklist_id = mysqli_insert_id($connection);
 
             // Directory to save images
@@ -137,6 +139,9 @@ if (isset($_POST['submit'])) {
                                         VALUES ('$imageFullName', '$checklist_id', '$categorySanitized')";
                                 if (!mysqli_query($connection, $sql)) {
                                     echo "Error inserting image data: " . mysqli_error($connection);
+                                }
+                                elseif(mysqli_query($connection, $sql)){
+                                      header("Location:  ../mv-360-inspection-history.php");
                                 }
                             } else {
                                 echo "Error moving uploaded file: $filePath";
