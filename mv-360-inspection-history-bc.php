@@ -131,8 +131,8 @@
                                 <td>Newl</td>
                                 <td>Toyota landcruser</td>
                                 <td>Yes</td>
-                                <td><a href="checklist_view_bc.php?id=<?php echo $id; ?>"><?php  echo $row['time']; ?></a></td>
-                                <td><a href="checklist_view_bc.php?id=<?php echo $id; ?>">Show</a></td>
+                                <td><a  class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="checklist_view_bc.php?id=<?php echo $id; ?>"><?php  echo $row['time']; ?></a></td>
+                                <td><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="checklist_view_bc.php?id=<?php echo $id; ?>">Show</a></td>
                                 </tr>
                                 <?php }  ?>
                             </tbody>
