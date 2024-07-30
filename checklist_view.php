@@ -27,9 +27,14 @@ include 'server/modules/staff-pages.php';
             width: 99%; 
         }
         .card-img-top {
-            width: 314px;
-            height: 314px;
+            width: 100%;
+            height: 300px; 
             object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .card-img-top {
+                height: 300px; 
+            }
         }
     </style>
 </head>
@@ -48,10 +53,10 @@ include 'server/modules/staff-pages.php';
             if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
-            <div class="col-lg-6">
+            <div class="col-lg-10 mt-5" style="background-color: #f8f9fa;">
                 <form action="">
                     <div class="container mt-5">
-                        <div class="row row-cols-1 row-cols-sm-2 g-3">
+                        <div class="row row-cols-1 row-cols-md-3 g-3">
                         <?php 
                         while ($row = mysqli_fetch_assoc($result)) { 
                             $id = $row['id'];
@@ -83,7 +88,7 @@ include 'server/modules/staff-pages.php';
 
                                 $answer = $row[$category] ?? 'No data'; 
                                 ?>
-                                <div class="col">
+                                <div class="col mb-4">
                                     <div class="card">
                                         <img src="<?php echo $imagePath ?>" class="card-img-top" alt="Image not available">
                                         <div class="card-body">

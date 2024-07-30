@@ -60,8 +60,6 @@
             <div class="form-container">
             <form id="checklistForm" method="POST" action="server/ppe-inspection.inc.php"   enctype="multipart/form-data">
                     <div class="d-flex flex-wrap justify-content-start">
-                        <!-- Repeat the block below for each input group -->
-                        <!-- Total 20 blocks -->
                         <div class="form-item">
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
