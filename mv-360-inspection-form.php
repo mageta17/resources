@@ -1,13 +1,16 @@
 <?php
     include 'server/db.php';
     include 'server/modules/staff-pages.php';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Picture Form</title>
+    <title>
+      <?php include 'server/title.php' ?>
+    </title>   
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -57,7 +60,17 @@
      ?>
     <div class="container mt-5">
         <div class="col-lg-10 mx-auto">
-            <div class="form-container">
+            <?php
+                if (isset($_SESSION['error'])) {
+                    ?>
+                    <div class="alert alert-danger text-center" role="alert">
+                        <p><?php echo $_SESSION['error']; ?></p>
+                    </div>
+                    <?php
+                    unset($_SESSION['error']); // Clear the error message after displaying it
+                }
+            ?>
+         <div class="form-container">
             <form id="checklistForm" method="POST" action="server/ppe-inspection.inc.php"   enctype="multipart/form-data">
                     <div class="d-flex flex-wrap justify-content-start">
                         <div class="form-item">

@@ -66,8 +66,8 @@
             width: 99%; 
         }
         .card-img-top {
-            width: 476.5px;
-            height: 500.325px;
+            width: 374px;
+            height: 314px;
             object-fit: cover;
         }
     </style>
@@ -130,7 +130,7 @@
             if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
-            <div class="col-lg-10">
+            <div class="col-lg-8">
                 <form action="">
                     <div class="container mt-5">
                         <div class="row row-cols-1 row-cols-sm-2 g-3">
