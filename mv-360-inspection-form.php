@@ -12,6 +12,8 @@
       <?php include 'server/title.php' ?>
     </title>   
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         body {
             background-color: #ffffff; 
@@ -45,6 +47,26 @@
             color: #666; 
             margin-bottom: 10px; 
         }
+        .upload {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #488aec;
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .upload-icon {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        #upload {
+            display: none;
+        }
         @media (max-width: 768px) {
             .form-item {
                 flex: 1 1 100%;
@@ -59,7 +81,7 @@
       menu5();
      ?>
     <div class="container mt-5">
-        <div class="col-lg-10 mx-auto">
+        <div class="col-lg-8 mx-auto">
             <?php
                 if (isset($_SESSION['error'])) {
                     ?>
@@ -87,7 +109,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="front-view-upload">
+                                        <input type="file" name="front-view-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +130,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="rear-view-upload">
+                                        <input type="file" name="rear-view-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +143,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">3. Left side view</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="left-side-view" id="left-side-view"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -124,7 +151,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="left-side-view-upload">
+                                        <input type="file" name="left-side-view-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +173,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="right-side-view-upload">
+                                        <input type="file" name="right-side-view-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +195,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="loadbin-cover-upload">
+                                        <input type="file" name="loadbin-cover-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +264,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">9. Left-Front Tyre Age</label>
+                                        <label class="view-label" for="select1">9.LF Tyre Age</label>
                                         <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="lf-tyre-age" id="lf-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
@@ -238,7 +274,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="lf-tyre-age-upload">
+                                        <!-- <input type="file" class="form-control-file" id="image1" name="lf-tyre-age-upload"> -->
+                                        <input type="file" name="f-tyre-age-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -257,7 +297,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="lf-tyre-treat-upload">
+                                        <input type="file" name="lf-tyre-treat-upload" id="upload" hidden/>
+                                        <label for="upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
