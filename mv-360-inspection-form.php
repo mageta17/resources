@@ -109,8 +109,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="front-view-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="front-view-upload" id="front-view-upload" hidden/>
+                                        <label for="front-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -130,8 +130,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rear-view-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="rear-view-upload" id="rear-view-upload" hidden/>
+                                        <label for="rear-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -151,8 +151,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="left-side-view-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="left-side-view-upload" id="left-side-view-upload" hidden/>
+                                        <label for="left-side-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -164,7 +164,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">4. Right side view</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="right-side-view" id="right-side-view"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -173,8 +172,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="right-side-view-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="right-side-view-upload" id="right-side-view-upload" hidden/>
+                                        <label for="right-side-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -186,7 +185,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">5. Loadbin Cover</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="loadbin-cover" id="loadbin-cover"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -195,8 +193,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="loadbin-cover-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="loadbin-cover-upload" id="loadbin-cover-upload" hidden/>
+                                        <label for="loadbin-cover-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -208,7 +206,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">6. Windscreen</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="windscreen" id="windscreen"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -217,7 +214,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="windscreen-upload">
+                                        <input type="file" name="windscreen-upload" id="windscreen-upload" hidden/>
+                                        <label for="windscreen-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +227,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">7. License Disk</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="license-disk" id="license-disk"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -236,7 +235,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="license-disk-upload">
+                                        <input type="file" name="license-disk-upload" id="license-disk-upload" hidden/>
+                                        <label for="license-disk-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -246,7 +248,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">8. Towbar</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="towbar" id="towbar"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -255,7 +256,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="towbar-upload">
+                                        <input type="file" name="towbar-upload" id="towbar-upload" hidden/>
+                                        <label for="towbar-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -265,7 +269,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">9.LF Tyre Age</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="lf-tyre-age" id="lf-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -274,9 +277,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <!-- <input type="file" class="form-control-file" id="image1" name="lf-tyre-age-upload"> -->
-                                        <input type="file" name="f-tyre-age-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="lf-tyre-age-upload" id="lf-tyre-age-upload" hidden/>
+                                        <label for="lf-tyre-age-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -288,7 +290,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">10. Left-Front Tyre Treat</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="lf-tyre-treat" id="lf-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -297,8 +298,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="lf-tyre-treat-upload" id="upload" hidden/>
-                                        <label for="upload" class="upload">
+                                        <input type="file" name="lf-tyre-treat-upload" id="lf-tyre-treat-upload" hidden/>
+                                        <label for="lf-tyre-treat-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -310,7 +311,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">11. Right-Front Tyre Age</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="rf-tyre-age" id="rf-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -319,7 +319,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="rf-tyre-age-upload">
+                                        <input type="file" name="rf-tyre-age-upload" id="rf-tyre-age-upload" hidden/>
+                                        <label for="rf-tyre-age-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -329,7 +332,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">12. Right-Front Tyre Treat</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="rf-tyre-treat" id="rf-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -338,7 +340,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="rf-tyre-treat-upload">
+                                        <input type="file" name="rf-tyre-treat-upload" id="rf-tyre-treat-upload" hidden/>
+                                        <label for="rf-tyre-treat-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -348,7 +353,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">13. Left-Rear Tyre Age</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="lr-tyre-age" id="lr-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -357,7 +361,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="lr-tyre-age-upload">
+                                        <input type="file" name="lr-tyre-age-upload" id="lr-tyre-age-upload" hidden/>
+                                        <label for="lr-tyre-age-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -367,7 +374,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">14. Left-Rear Tyre Treat</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="lr-tyre-treat" id="lr-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -376,7 +382,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="lr-tyre-treat-upload">
+                                        <input type="file" name="lr-tyre-treat-upload" id="lr-tyre-treat-upload" hidden/>
+                                        <label for="lr-tyre-treat-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -386,7 +395,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">15. Right-Rear Tyre Age</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="rr-tyre-age" id="rr-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -395,7 +403,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="rr-tyre-age-upload">
+                                        <input type="file" name="rr-tyre-age-upload" id="rr-tyre-age-upload" hidden/>
+                                        <label for="rr-tyre-age-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +416,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">16. Right-Rear Tyre Treat</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="rr-tyre-treat" id="rr-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -414,7 +424,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="rr-tyre-treat-upload">
+                                        <input type="file" name="rr-tyre-treat-upload" id="rr-tyre-treat-upload" hidden/>
+                                        <label for="rr-tyre-treat-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -424,7 +437,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">17. Rear 3pt Seatbelts </label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="rear-3pt-seatbelts" id="rear-3pt-seatbelts"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -433,7 +445,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="rear-3pt-seatbelts-upload">
+                                        <input type="file" name="rear-3pt-seatbelts-upload" id="rear-3pt-seatbelts-upload" hidden/>
+                                        <label for="rear-3pt-seatbelts-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -443,7 +458,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">18. Driver 3pt Seatbelts </label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="driver-3pt-seatbelts" id="driver-3pt-seatbelts"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -452,7 +466,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="driver-3pt-seatbelts-upload">
+                                        <input type="file" name="driver-3pt-seatbelts-upload" id="driver-3pt-seatbelts-upload" hidden/>
+                                        <label for="driver-3pt-seatbelts-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -461,8 +478,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">19. Co Driver 3pt S/belt  </label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
+                                        <label class="view-label" for="select1">19. Co Driver belt</label>
                                         <select class="form-control" name="co-driver" id="co-driver"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -471,7 +487,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="co-driver-upload">
+                                        <input type="file" name="co-driver-upload" id="co-driver-upload" hidden/>
+                                        <label for="co-driver-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -481,7 +500,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">20. Bluetooth   </label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="bluetooth" id="bluetooth"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -490,7 +508,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="bluetooth-upload">
+                                        <input type="file" name="bluetooth-upload" id="bluetooth-upload" hidden/>
+                                        <label for="bluetooth-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -500,7 +521,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">21. Odometer </label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="odometer" id="odometer"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -509,7 +529,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="odometer-upload">
+                                        <input type="file" name="odometer-upload" id="odometer-upload" hidden/>
+                                        <label for="odometer-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -519,7 +542,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">22. Service Book</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="service-book" id="service-book"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -528,7 +550,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="service-book-upload">
+                                        <input type="file" name="service-book-upload" id="service-book-upload" hidden/>
+                                        <label for="service-book-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -538,7 +563,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">23. Emergence Triangle</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="emergence-triangle" id="emergence-triangle"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -547,7 +571,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="emergence-triangle-upload">
+                                        <input type="file" name="emergence-triangle-upload" id="emergence-triangle-upload" hidden/>
+                                        <label for="emergence-triangle-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -557,7 +584,6 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">24. First Aid Kit</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
                                         <select class="form-control" name="first-aid-kit" id="first-aid-kit"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -566,7 +592,10 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" class="form-control-file" id="image1" name="first-aid-kit-upload">
+                                        <input type="file" name="first-aid-kit-upload" id="first-aid-kit-upload" hidden/>
+                                        <label for="first-aid-kit-upload" class="upload">
+                                            <i class="fas fa-upload upload-icon"></i> Choose file
+                                        </label>
                                     </div>
                                 </div>
                             </div>
