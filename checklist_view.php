@@ -53,10 +53,10 @@ include 'server/modules/staff-pages.php';
             if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
-            <div class="col-lg-10 mt-5" style="background-color: #f8f9fa;">
+            <div class="col-lg-6 mt-5" style="background-color: #f8f9fa;">
                 <form action="">
                     <div class="container mt-5">
-                        <div class="row row-cols-1 row-cols-md-3 g-3">
+                        <div class="row row-cols-1 row-cols-md-2 g-3">
                         <?php 
                         while ($row = mysqli_fetch_assoc($result)) { 
                             $id = $row['id'];

@@ -603,7 +603,10 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-12">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit">Submit</button>
+                            <button class="btn btn-primary btn-lg btn-block" type="submit" name="submit" style="background-color: #488aec; border-color: #488aec;">
+                                    Submit
+                            </button>
+
                         </div>
                     </div>
                 </form>
