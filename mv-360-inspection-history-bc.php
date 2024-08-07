@@ -111,7 +111,7 @@
                             
                     ?>  
                 <div class="row justify-content-center mt-5">   
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 ">
                         <table class="table table-hover table-responsive">
                             <thead>
                                 <tr>
