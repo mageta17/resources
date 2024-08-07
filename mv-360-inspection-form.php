@@ -35,7 +35,7 @@
             margin-right: 0;
         }
         .view-label {
-            font-size: 1.25rem; 
+            font-size: 1.0rem; 
             font-weight: bold;
             margin-bottom: 5px; 
         }
@@ -373,7 +373,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">14. Left-Rear Tyre Treat</label>
+                                        <label class="view-label" for="select1">14. Left-R Tyre Treat</label>
                                         <select class="form-control" name="lr-tyre-treat" id="lr-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -394,7 +394,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">15. Right-Rear Tyre Age</label>
+                                        <label class="view-label" for="select1">15. Right-R Tyre Age</label>
                                         <select class="form-control" name="rr-tyre-age" id="rr-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -415,7 +415,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">16. Right-Rear Tyre Treat</label>
+                                        <label class="view-label" for="select1">16. Right-R Tyre Treat</label>
                                         <select class="form-control" name="rr-tyre-treat" id="rr-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -457,7 +457,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">18. Driver 3pt Seatbelts </label>
+                                        <label class="view-label" for="select1">18. Driver Seatbelts </label>
                                         <select class="form-control" name="driver-3pt-seatbelts" id="driver-3pt-seatbelts"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -562,7 +562,7 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">23. Emergence Triangle</label>
+                                        <label class="view-label" for="select1">23. Em Triangle</label>
                                         <select class="form-control" name="emergence-triangle" id="emergence-triangle"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
