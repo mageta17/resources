@@ -72,6 +72,21 @@
                 flex: 1 1 100%;
                 margin-right: 0;
             }
+
+            .upload {
+                text-align: left;
+                padding: 0.55rem 1.0rem;
+                margin-right: 0;
+            }
+
+            #upload {
+                display: block; 
+                margin-top: 10px; 
+                width: 100%; 
+                font-size: 0.8rem; 
+                padding: 0.5rem;
+                border: 1px solid #ccc; 
+            }
         }
     </style>
 </head>
