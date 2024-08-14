@@ -136,8 +136,8 @@ if (isset($_POST['submit'])) {
                         $totalFileSize += $file['size'];
 
                         // Check if total file size exceeds 100 MB (104857600 bytes)
-                        if ($totalFileSize > 104857600) {
-                            handleError("Total file size exceeds the limit of 100 MB.");
+                        if ($totalFileSize > 150994944) {
+                            handleError("Total file size exceeds the limit of 120 MB, each image should not exceed 5MB");
                         }
 
                         // Sanitize category name for the file name
