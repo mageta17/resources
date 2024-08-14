@@ -115,7 +115,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">1. Front View</label>
-                                        <!-- <label class="compliant-label" for="select1">Compliants:</label> -->
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="front-view" id="front-view"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -137,6 +137,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">2. Rear view</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" id="rear-view" name="rear-view" required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -158,6 +159,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">3. Left side view</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="left-side-view" id="left-side-view"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -179,6 +181,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">4. Right side view</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="right-side-view" id="right-side-view"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -200,6 +203,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">5. Loadbin Cover</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="loadbin-cover" id="loadbin-cover"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -221,6 +225,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">6. Windscreen</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="windscreen" id="windscreen"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -242,6 +247,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">7. License Disk</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="license-disk" id="license-disk"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -262,7 +268,8 @@
                             <div class="card card-background-color">
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
-                                        <label class="view-label" for="select1">8. Towbar</label>
+                                        <label class="view-label" for="select1">8. Towbar </label><br>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="towbar" id="towbar"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -284,6 +291,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">9.LF Tyre Age</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="lf-tyre-age" id="lf-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -305,6 +313,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">10. Left-Front Tyre Treat</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="lf-tyre-treat" id="lf-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -326,6 +335,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">11. Right-Front Tyre Age</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="rf-tyre-age" id="rf-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -347,6 +357,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">12. Right-Front Tyre Treat</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="rf-tyre-treat" id="rf-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -368,6 +379,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">13. Left-Rear Tyre Age</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="lr-tyre-age" id="lr-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -389,6 +401,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">14. Left-R Tyre Treat</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="lr-tyre-treat" id="lr-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -410,6 +423,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">15. Right-R Tyre Age</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="rr-tyre-age" id="rr-tyre-age"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -431,6 +445,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">16. Right-R Tyre Treat</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="rr-tyre-treat" id="rr-tyre-treat"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -452,6 +467,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">17. Rear 3pt Seatbelts </label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="rear-3pt-seatbelts" id="rear-3pt-seatbelts"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -473,6 +489,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">18. Driver Seatbelts </label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="driver-3pt-seatbelts" id="driver-3pt-seatbelts"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -494,6 +511,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">19. Co Driver belt</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="co-driver" id="co-driver"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -515,6 +533,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">20. Bluetooth   </label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="bluetooth" id="bluetooth"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -536,6 +555,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">21. Odometer </label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="odometer" id="odometer"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -557,6 +577,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">22. Service Book</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="service-book" id="service-book"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -578,6 +599,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">23. Em Triangle</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="emergence-triangle" id="emergence-triangle"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
@@ -599,6 +621,7 @@
                                 <div class="card-body d-flex flex-column align-items-stretch">
                                     <div class="form-group">
                                         <label class="view-label" for="select1">24. First Aid Kit</label>
+                                        <label class="compliant-label" for="select1">Compliants:</label>
                                         <select class="form-control" name="first-aid-kit" id="first-aid-kit"required>
                                             <option value="" selected disabled >Choose</option>
                                             <option value="yes">Yes</option>
