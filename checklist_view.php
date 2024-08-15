@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 include 'server/db.php';
 include 'server/modules/staff-pages.php';
 ?>
@@ -79,7 +81,7 @@ include 'server/modules/staff-pages.php';
                             <i class="fa fa-print"></i> Print
                          </button>
                          <button class="btn-download" onclick="downloadPDF();">
-                            <i class="fa fa-download"></i> Download
+                            <i class="fa fa-download"></i>PDF
                          </button>
                     </div>
                 <form action="">
@@ -139,5 +141,15 @@ include 'server/modules/staff-pages.php';
         </div>
         <?php } ?>
     </div>
+    <script>
+    function downloadPDF() {
+        const id = <?php echo json_encode($_GET['id']); ?>;
+        if (id) {
+            window.location.href = 'server/pdfGenerator.php?id=' + id;
+        } else {
+            alert('ID not provided or invalid');
+        }
+    }
+</script>
 </body>
 </html>
