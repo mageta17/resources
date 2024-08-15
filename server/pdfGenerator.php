@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
 
-        $fpdf->Cell(0, 10, 'Checklist Report', 0, 1, 'C');
+        $fpdf->Cell(40, 10, 'Checklist Report');
         $fpdf->Ln(10);
 
         // Query to get images related to the checklist
@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
         if (mysqli_num_rows($result_images) > 0) {
             $fpdf->Ln(10); // Add some space before displaying images
             $fpdf->SetFont('Arial', 'B', 14);
-            $fpdf->Cell(0, 10, 'Checklist Images:', 0, 1);
+            $fpdf->Cell(40, 10, 'Checklist Images:');
             $fpdf->Ln(10);
 
             $image_count = 0; // Counter to track images per row
@@ -42,27 +42,21 @@ if (isset($_GET['id'])) {
 
                 if (file_exists($imagePath)) {
                     try {
-                        // Display the category and result above the image
+                        // Display the category and result
                         $result_value = $row[$image_row['category']] ?? 'No data'; 
-
-                        // Print category name and result
                         $fpdf->SetFont('Arial', 'B', 12);
-                        $fpdf->Cell(90, 10, $category . ': ' . $result_value, 0, 0, 'C');
+                        $fpdf->Cell(40, 10, $category . ': ' . $result_value);
 
-                        // Display the image, centered below the text
-                        $x = $fpdf->GetX(); // Get current X position
-                        $y = $fpdf->GetY(); // Get current Y position
-                        $fpdf->Ln(10);
-                        $fpdf->Image($imagePath, $x + 15, $y + 5, 60, 40);
+                        // Display the image
+                        $fpdf->Image($imagePath, $fpdf->GetX() + 5, $fpdf->GetY(), 60, 40);
 
                         $image_count++;
-
+                        
                         // If two images have been added, move to the next row
                         if ($image_count % 2 == 0) {
-                            $fpdf->Ln(50); // Space after the image row
+                            $fpdf->Ln(30); // Space after the image row
                         } else {
-                            $fpdf->SetX($fpdf->GetX() + 100); // Move to the next column for the second image
-                            $fpdf->Ln(50);
+                            $fpdf->SetX($fpdf->GetX() + 70); // Move to the next column for the second image
                         }
                     } catch (Exception $e) {
                         $fpdf->Ln(10);
