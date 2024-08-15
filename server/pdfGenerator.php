@@ -21,15 +21,8 @@ if (isset($_GET['id'])) {
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
 
-        $fpdf->Cell(40, 10, 'Checklist Report');
+        $fpdf->Cell(0, 10, 'Checklist Report', 0, 1, 'C');
         $fpdf->Ln(10);
-
-        // Display data in PDF
-        foreach ($row as $key => $value) {
-            $fpdf->SetFont('Arial', '', 12);
-            $fpdf->Cell(40, 10, ucfirst(str_replace('_', ' ', $key)) . ': ' . $value);
-            $fpdf->Ln(8);
-        }
 
         // Query to get images related to the checklist
         $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
@@ -38,32 +31,54 @@ if (isset($_GET['id'])) {
         if (mysqli_num_rows($result_images) > 0) {
             $fpdf->Ln(10); // Add some space before displaying images
             $fpdf->SetFont('Arial', 'B', 14);
-            $fpdf->Cell(40, 10, 'Checklist Images:');
+            $fpdf->Cell(0, 10, 'Checklist Images:', 0, 1);
             $fpdf->Ln(10);
-        
+
+            $image_count = 0; // Counter to track images per row
+
             while ($image_row = mysqli_fetch_assoc($result_images)) {
                 $category = ucfirst(str_replace('_', ' ', $image_row['category']));
                 $imagePath = '../resources/images/mv_checklist_360_images/' . $image_row['img_name'];
-        
+
                 if (file_exists($imagePath)) {
                     try {
-                        $fpdf->SetFont('Arial', '', 12);
-                        $fpdf->Cell(40, 10, $category);
-                        $fpdf->Ln(5);
-                        $fpdf->Image($imagePath, $fpdf->GetX(), $fpdf->GetY(), 60, 40);
-                        $fpdf->Ln(45); // Space after the image
-                    } catch (Exception $e) {
-                        // Log or handle the error as needed
-                        $fpdf->Cell(40, 10, $category . ': Image could not be loaded');
+                        // Display the category and result above the image
+                        $result_value = $row[$image_row['category']] ?? 'No data'; 
+
+                        // Print category name and result
+                        $fpdf->SetFont('Arial', 'B', 12);
+                        $fpdf->Cell(90, 10, $category . ': ' . $result_value, 0, 0, 'C');
+
+                        // Display the image, centered below the text
+                        $x = $fpdf->GetX(); // Get current X position
+                        $y = $fpdf->GetY(); // Get current Y position
                         $fpdf->Ln(10);
+                        $fpdf->Image($imagePath, $x + 15, $y + 5, 60, 40);
+
+                        $image_count++;
+
+                        // If two images have been added, move to the next row
+                        if ($image_count % 2 == 0) {
+                            $fpdf->Ln(50); // Space after the image row
+                        } else {
+                            $fpdf->SetX($fpdf->GetX() + 100); // Move to the next column for the second image
+                            $fpdf->Ln(50);
+                        }
+                    } catch (Exception $e) {
+                        $fpdf->Ln(10);
+                        $fpdf->Cell(40, 10, $category . ': Image could not be loaded');
                     }
                 } else {
-                    $fpdf->Cell(40, 10, $category . ': Image not available');
                     $fpdf->Ln(10);
+                    $fpdf->Cell(40, 10, $category . ': Image not available');
                 }
             }
+
+            // Ensure that the final image row is properly spaced
+            if ($image_count % 2 != 0) {
+                $fpdf->Ln(50);
+            }
         }
-        
 
         $fpdf->Output('D', 'Checklist_Report_' . $id . '.pdf');
         exit;
