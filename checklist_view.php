@@ -10,7 +10,7 @@ include 'server/modules/staff-pages.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include 'server/styleLink.php'; ?>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="resources/style/user-checklist-view.css?v=2" rel="stylesheet">
     <link href="resources/style/staff.css?v=2" rel="stylesheet">
     
@@ -36,6 +36,26 @@ include 'server/modules/staff-pages.php';
                 height: 300px; 
             }
         }
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px 0;
+        }
+        .action-buttons button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-print {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-download {
+            background-color: #28a745;
+            color: white;
+        }
     </style>
 </head>
 <body> 
@@ -53,7 +73,15 @@ include 'server/modules/staff-pages.php';
             if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
-            <div class="col-lg-6 mt-5" style="background-color: #f8f9fa;">
+                <div class="col-lg-6 mt-5" style="background-color: #f8f9fa;">
+                    <div class="action-buttons">
+                        <button class="btn-print" onclick="window.print();">
+                            <i class="fa fa-print"></i> Print
+                         </button>
+                         <button class="btn-download" onclick="downloadPDF();">
+                            <i class="fa fa-download"></i> Download
+                         </button>
+                    </div>
                 <form action="">
                     <div class="container mt-5">
                         <div class="row row-cols-1 row-cols-md-2 g-3">
