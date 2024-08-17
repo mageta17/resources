@@ -53,7 +53,7 @@ if (isset($_GET['id'])) {
                         $image_count++;
                         
                         if ($image_count % 2 == 0) {
-                            $fpdf->Ln(50); 
+                            $fpdf->Ln(70); // 50
                         } else {
                             $fpdf->SetX($fpdf->GetX() + 70); 
                         }
