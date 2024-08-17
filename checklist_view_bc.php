@@ -73,6 +73,7 @@
             object-fit: cover;
         }
         .action-buttons {
+            position: fixed;
             display: flex;
             justify-content: flex-end;
             margin: 20px 0;

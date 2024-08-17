@@ -28,58 +28,48 @@ if (isset($_GET['id'])) {
         $result_images = mysqli_query($connection, $query_images);
         
         if (mysqli_num_rows($result_images) > 0) {
-            $fpdf->Ln(10); // Add some space before displaying images
+            $fpdf->Ln(10); 
             $fpdf->SetFont('Arial', 'B', 14);
             $fpdf->Cell(40, 10, 'Checklist Images:');
             $fpdf->Ln(10);
 
-            $image_count = 0; // Counter to track images per row
+            $image_count = 0; 
 
             while ($image_row = mysqli_fetch_assoc($result_images)) {
                 $category = ucfirst(str_replace('_', ' ', $image_row['category']));
                 $imagePath = '../resources/images/mv_checklist_360_images/' . $image_row['img_name'];
 
-                // Debugging log
-                //error_log("Attempting to load image from path: $imagePath", 3, "image_loading.log");
-
+        
                 if (file_exists($imagePath) && is_readable($imagePath)) {
                     try {
-                        // Display the category and result
                         $result_value = $row[$image_row['category']] ?? 'No data'; 
                         $fpdf->SetFont('Arial', 'B', 12);
                         $fpdf->Cell(40, 10, $category . ': ' . $result_value);
 
-                        // Display the image
+                 
                         $fpdf->Image($imagePath, $fpdf->GetX() + 5, $fpdf->GetY(), 60, 40);
 
                         $image_count++;
                         
-                        // If two images have been added, move to the next row
                         if ($image_count % 2 == 0) {
-                            $fpdf->Ln(50); // Space after the image row
+                            $fpdf->Ln(50); 
                         } else {
-                            $fpdf->SetX($fpdf->GetX() + 70); // Move to the next column for the second image
+                            $fpdf->SetX($fpdf->GetX() + 70); 
                         }
                     } catch (Exception $e) {
-                        //error_log("Error loading image: $imagePath - Exception: " . $e->getMessage(), 3, "image_loading.log");
                         $fpdf->Ln(10);
                         $fpdf->Cell(40, 10, $category . ': Image could not be loaded');
                     }
                 } else {
-                    // Log detailed error information to a file
                     error_log("Error: Image not found or inaccessible: $imagePath\n", 3, "image_loading.log");
                     $fpdf->Ln(10);
                     $fpdf->Cell(40, 10, $category . ': Image not available');
                 }
             }
-
-            // Ensure that the final image row is properly spaced
             if ($image_count % 2 != 0) {
                 $fpdf->Ln(50);
             }
         }
-
-        // Output the PDF directly for download
         $fpdf->Output('D', 'Checklist_Report_' . $id . '.pdf');
         exit;
     } else {
