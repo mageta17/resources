@@ -20,10 +20,12 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
+        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 139, $fpdf->GetY() + 10, 40, 20 );
         // get the page width 
         $pageWidth = $fpdf->GetPageWidth();
         $cellWidth = $pageWidth - 20; // 10mm margin on each side
         // positioning the heading to the center 
+        $fpdf->SetTextColor(0, 0, 255);
         $fpdf->Cell($cellWidth, 10, 'Checklist Report', 0, 0, 'C');
         $fpdf->Ln(5);// from checklist header to checklist image
 
@@ -56,10 +58,14 @@ if (isset($_GET['id'])) {
             
             // Add a header for Checklist Images
             $fpdf->SetFont('Arial', 'B', 14);
+            $fpdf->SetTextColor(0, 0, 255); 
+
+            $pageWidth = $fpdf->GetPageWidth();
+            $cellWidth = $pageWidth - 20;
+            $fpdf->Cell($cellWidth, 10, 'Checklist Images:', 0, 0, 'C');
             $fpdf->SetTextColor(0, 0, 0); 
-            $fpdf->Cell(0, 10, 'Checklist Images:', 0, 1, 'L');
-            $fpdf->Ln(5);
-            
+            $fpdf->Ln(15);
+             
             $image_count = 0; 
 
             while ($image_row = mysqli_fetch_assoc($result_images)) {
