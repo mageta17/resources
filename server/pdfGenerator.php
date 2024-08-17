@@ -33,10 +33,33 @@ if (isset($_GET['id'])) {
         
         if (mysqli_num_rows($result_images) > 0) {
             $fpdf->Ln(10);
-            $fpdf->SetFont('Arial', 'B', 14);
-            $fpdf->Cell(40, 10, 'Checklist Images:');
-            $fpdf->Ln(10);
 
+            $fpdf->SetFont('Arial', 'B', 14);
+            $fpdf->SetTextColor(0, 0, 0); // set color
+            $fpdf->Cell(0, 10, 'ID number: ' . $row['id'], 0, 1, 'L'); // Full width of the page
+    
+            $fpdf->Ln(5);
+        
+            $fpdf->SetFont('Arial', '', 12);
+            $fpdf->SetTextColor(0, 0, 0); 
+            $fpdf->Cell(0, 10, 'Owner: NEWL', 0, 1, 'L');
+            
+            $fpdf->Ln(5);
+            
+            $fpdf->Cell(0, 10, 'Status: Inspected', 0, 1, 'L');
+            
+            $fpdf->Ln(5);
+            
+            $fpdf->Cell(0, 10, 'Date and time: ' . $row['time'], 0, 1, 'L');
+        
+            $fpdf->Ln(10);
+            
+            // Add a header for Checklist Images
+            $fpdf->SetFont('Arial', 'B', 14);
+            $fpdf->SetTextColor(0, 0, 0); 
+            $fpdf->Cell(0, 10, 'Checklist Images:', 0, 1, 'L');
+            $fpdf->Ln(5);
+            
             $image_count = 0; 
 
             while ($image_row = mysqli_fetch_assoc($result_images)) {
