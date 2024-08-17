@@ -21,14 +21,14 @@ if (isset($_GET['id'])) {
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
         $fpdf->Cell(40, 10, 'Checklist Report');
-        $fpdf->Ln(10);
+        $fpdf->Ln(5);// from checklist header to checklist image
 
         // Query to get images related to the checklist
         $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
         $result_images = mysqli_query($connection, $query_images);
         
         if (mysqli_num_rows($result_images) > 0) {
-            $fpdf->Ln(10); 
+            $fpdf->Ln(10);
             $fpdf->SetFont('Arial', 'B', 14);
             $fpdf->Cell(40, 10, 'Checklist Images:');
             $fpdf->Ln(10);
@@ -42,12 +42,13 @@ if (isset($_GET['id'])) {
         
                 if (file_exists($imagePath) && is_readable($imagePath)) {
                     try {
+                        // $fpdf->Ln(10);// added 
                         $result_value = $row[$image_row['category']] ?? 'No data'; 
                         $fpdf->SetFont('Arial', 'B', 12);
                         $fpdf->Cell(40, 10, $category . ': ' . $result_value);
-
+                        
                  
-                        $fpdf->Image($imagePath, $fpdf->GetX() + 5, $fpdf->GetY(), 60, 40);
+                        $fpdf->Image($imagePath, $fpdf->GetX() + -35, $fpdf->GetY() + 10, 60, 40);// here was the problem  in position image in x and y axis 
 
                         $image_count++;
                         

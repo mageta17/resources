@@ -44,15 +44,19 @@ include 'server/modules/staff-pages.php';
             display: flex;
             justify-content: flex-end;
             margin: 20px 0;
+            /* Optional: Add width if needed */
+            /* width: 100%; */
         }
+
         .action-buttons button {
-            margin-left: 10px;
+            margin-left: 10px; /* Space between buttons */
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
         }
-        .btn-print {
+
+            .btn-print {
             background-color: #007bff;
             color: white;
         }
