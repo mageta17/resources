@@ -20,7 +20,6 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-
         $fpdf->Cell(40, 10, 'Checklist Report');
         $fpdf->Ln(10);
 
@@ -40,7 +39,7 @@ if (isset($_GET['id'])) {
                 $category = ucfirst(str_replace('_', ' ', $image_row['category']));
                 $imagePath = '../resources/images/mv_checklist_360_images/' . $image_row['img_name'];
 
-                if (file_exists($imagePath)) {
+                if (file_exists($imagePath) && is_readable($imagePath)) {
                     try {
                         // Display the category and result
                         $result_value = $row[$image_row['category']] ?? 'No data'; 
@@ -54,7 +53,7 @@ if (isset($_GET['id'])) {
                         
                         // If two images have been added, move to the next row
                         if ($image_count % 2 == 0) {
-                            $fpdf->Ln(30); // Space after the image row
+                            $fpdf->Ln(50); // Space after the image row
                         } else {
                             $fpdf->SetX($fpdf->GetX() + 70); // Move to the next column for the second image
                         }
@@ -74,6 +73,7 @@ if (isset($_GET['id'])) {
             }
         }
 
+        // Output the PDF directly for download
         $fpdf->Output('D', 'Checklist_Report_' . $id . '.pdf');
         exit;
     } else {
