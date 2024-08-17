@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-        $fpdf->Cell(40, 10, 'Checklist Report');
+        $fpdf->Cell(40, 10, 'Checklist Report', 0, 0, 'C');
         $fpdf->Ln(5);// from checklist header to checklist image
 
         // Query to get images related to the checklist
@@ -46,6 +46,7 @@ if (isset($_GET['id'])) {
                         $result_value = $row[$image_row['category']] ?? 'No data'; 
                         $fpdf->SetFont('Arial', 'B', 12);
                         $fpdf->Cell(40, 10, $category . ': ' . $result_value);
+                        // Cell($width, $height, $text, $border, $ln, $align, $fill, $link)
                         
                  
                         $fpdf->Image($imagePath, $fpdf->GetX() + -35, $fpdf->GetY() + 10, 60, 40);// here was the problem  in position image in x and y axis 
