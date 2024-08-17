@@ -20,7 +20,11 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-        $fpdf->Cell(40, 10, 'Checklist Report', 0, 0, 'C');
+        // get the page width 
+        $pageWidth = $fpdf->GetPageWidth();
+        $cellWidth = $pageWidth - 20; // 10mm margin on each side
+        // positioning the heading to the center 
+        $fpdf->Cell($cellWidth, 10, 'Checklist Report', 0, 0, 'C');
         $fpdf->Ln(5);// from checklist header to checklist image
 
         // Query to get images related to the checklist
