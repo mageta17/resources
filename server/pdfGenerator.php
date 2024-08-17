@@ -39,6 +39,9 @@ if (isset($_GET['id'])) {
                 $category = ucfirst(str_replace('_', ' ', $image_row['category']));
                 $imagePath = '../resources/images/mv_checklist_360_images/' . $image_row['img_name'];
 
+                // Debugging log
+                //error_log("Attempting to load image from path: $imagePath", 3, "image_loading.log");
+
                 if (file_exists($imagePath) && is_readable($imagePath)) {
                     try {
                         // Display the category and result
@@ -58,10 +61,13 @@ if (isset($_GET['id'])) {
                             $fpdf->SetX($fpdf->GetX() + 70); // Move to the next column for the second image
                         }
                     } catch (Exception $e) {
+                        //error_log("Error loading image: $imagePath - Exception: " . $e->getMessage(), 3, "image_loading.log");
                         $fpdf->Ln(10);
                         $fpdf->Cell(40, 10, $category . ': Image could not be loaded');
                     }
                 } else {
+                    // Log detailed error information to a file
+                    error_log("Error: Image not found or inaccessible: $imagePath\n", 3, "image_loading.log");
                     $fpdf->Ln(10);
                     $fpdf->Cell(40, 10, $category . ': Image not available');
                 }
