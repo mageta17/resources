@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 148, $fpdf->GetY() + 10, 30, 15);
+        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 148, $fpdf->GetY() + 10, 30, 18);
         // get the page width 
         $pageWidth = $fpdf->GetPageWidth();
         $cellWidth = $pageWidth - 20; // 10mm margin on each side
@@ -82,12 +82,12 @@ if (isset($_GET['id'])) {
                         // Cell($width, $height, $text, $border, $ln, $align, $fill, $link)
                         
                  
-                        $fpdf->Image($imagePath, $fpdf->GetX() + -35, $fpdf->GetY() + 10, 60, 40);// here was the problem  in position image in x and y axis 
+                        $fpdf->Image($imagePath, $fpdf->GetX() + -40, $fpdf->GetY() + 10, 80, 60);// here was the problem  in position image in x and y axis 
 
                         $image_count++;
                         
                         if ($image_count % 2 == 0) {
-                            $fpdf->Ln(70); // 50
+                            $fpdf->Ln(100); // 70 when image size is 60 by 40 
                         } else {
                             $fpdf->SetX($fpdf->GetX() + 70); 
                         }
