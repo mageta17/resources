@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 139, $fpdf->GetY() + 10, 40, 20 );
+        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 148, $fpdf->GetY() + 10, 30, 15);
         // get the page width 
         $pageWidth = $fpdf->GetPageWidth();
         $cellWidth = $pageWidth - 20; // 10mm margin on each side
