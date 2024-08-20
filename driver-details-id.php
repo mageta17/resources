@@ -313,7 +313,116 @@ include 'server/modules/staff-pages.php';
                         <input type="text" class="form-control" id="dependantrelationship1" name="dependantrelationship1" value="" required>
                     </div>
                 </div>
-                
+
+                 <!-- Row 22 -->
+                 <label for="Separate" class="separator">Third dependant details</label><br><br>
+                <div class="form-row d-flex flex-wrap">
+                <div class="form-group">
+                        <label for="dependantName2">Dependant name</label>
+                        <input type="text" class="form-control" id="dependantName2" name="dependantName2" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependant_dob2">Dependant date of birth</label>
+                        <input type="text" class="form-control" id="dependant_dob2" name="dependant_dob2" value="" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dependantrelationship2">Dependant relationship</label>
+                        <input type="text" class="form-control" id="dependantrelationship2" name="dependantrelationship2" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 23 -->
+                 <label for="Separate" class="separator">Fourth dependant details</label><br><br>
+                <div class="form-row d-flex flex-wrap">
+                <div class="form-group">
+                        <label for="dependantName3">Dependant name</label>
+                        <input type="text" class="form-control" id="dependantName3" name="dependantName3" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependant_dob3">Dependant date of birth</label>
+                        <input type="text" class="form-control" id="dependant_dob3" name="dependant_dob3" value="" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dependantrelationship3">Dependant relationship</label>
+                        <input type="text" class="form-control" id="dependantrelationship3" name="dependantrelationship3" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 24 -->
+                <br><label for="Separate" class="separator">Next of kin details</label><br><br>
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="kin-name">Next of kin name</label>
+                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kindob">Kin date of birth</label>
+                        <input type="date" class="form-control" id="kindob" name="kindob" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 25 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="kin-contact">Next of kin contact</label>
+                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kin-relationship">Next of kin relationship</label>
+                        <input type="text" class="form-control" id="kin-relationship" name="kin-relationship" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 26 -->
+                <br><label for="Separate" class="separator">Second Next of kin details</label><br><br>
+                <div class="form-row d-flex flex-wrap">
+                <div class="form-group">
+                        <label for="kin-name">Next of kin name</label>
+                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kindob1">Kin date of birth</label>
+                        <input type="date" class="form-control" id="kindob1" name="kindob1" value="" required>
+                    </div>
+                </div>
+                  <!-- Row 27 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="kin-contact">Next of kin contact</label>
+                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="kin-relationship1">Next of kin relationship</label>
+                        <input type="text" class="form-control" id="kin-relationship1" name="kin-relationship1" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 28 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="nida-attachment">Nida attachment</label>
+                        <input type="text" class="form-control" id="nida-attachment" name="nida-attachment" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="marriage-certificate-attachment">Marriage certificate attachment</label>
+                        <input type="text" class="form-control" id="marriage-certificate-attachment" name="marriage-certificate-attachment" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 29 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="image-name">image name</label>
+                        <input type="text" class="form-control" id="image-name" name="image-name" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="total-leave">Total leave </label>
+                        <input type="text" class="form-control" id="total-leave" name="total-leave" value="" required>
+                    </div>
+                </div>
+
                 <!-- Final Row (Submit Button) -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group col-12 text-center">
