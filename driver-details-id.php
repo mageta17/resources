@@ -116,48 +116,48 @@ include 'server/modules/staff-pages.php';
                 <!-- Row 5 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Driver License number</label>
+                        <label for="driverlicenseno">Driver License number</label>
                         <input type="text" class="form-control" id="driverlicenseno" name="driverlicenseno" value="<?php  echo $row['drivingLicenseNo']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Driver License numberExpier</label>
-                        <input type="email" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo $row['drivingLicenseNoExpire']?>" required>
+                        <label for="driverlicensenoExp">Driver License numberExpier</label>
+                        <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" required>
                     </div>
                 </div>
 
                   <!-- Row 6 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Driver License image</label>
+                        <label for="driverlicenseimage">Driver License image</label>
                         <input type="text" class="form-control" id="driverlicenseimage" name="driverlicenseimage" value="<?php  echo $row['drivingLicenseImage']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Location</label>
-                        <input type="email" class="form-control" id="location" name="location" value="<?php  echo $row['location']?>" required>
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" value="<?php  echo $row['location']?>" required>
                     </div>
                 </div>
 
                   <!-- Row 7 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Field supervisor </label>
+                        <label for="fieldsupervisor">Field supervisor </label>
                         <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php  echo $row['fieldSupervisor']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Mobile no1</label>
-                        <input type="email" class="form-control" id="mobileno1" name="mobileno" value="<?php  echo $row['mobileNo1']?>" required>
+                        <label for="mobileno">Mobile no1</label>
+                        <input type="text" class="form-control" id="mobileno1" name="mobileno" value="<?php  echo $row['mobileNo1']?>" required>
                     </div>
                 </div>
 
                   <!-- Row 8 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Mobile no2</label>
+                        <label for="mobileno2">Mobile no2</label>
                         <input type="text" class="form-control" id="mobileno2" name="mobileno2" value="<?php  echo $row['mobileNo2']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Project</label>
-                        <input type="email" class="form-control" id="project" name="project" value="<?php  echo $row['project']?>" required>
+                        <label for="project">Project</label>
+                        <input type="text" class="form-control" id="project" name="project" value="<?php  echo $row['project']?>" required>
                     </div>
                 </div>
 
@@ -168,116 +168,103 @@ include 'server/modules/staff-pages.php';
                         <input type="text" class="form-control" id="vehicleno" name="vehicleno" value="<?php  echo $row['vehicleNo']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">User id</label>
-                        <input type="email" class="form-control" id="userid" name="userid" value="<?php  echo $row['user_ID']?>" required>
+                        <label for="userid">User id</label>
+                        <input type="text" class="form-control" id="userid" name="userid" value="<?php  echo $row['user_ID']?>" required>
                     </div>
                 </div>
 
                   <!-- Row 10 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Issued fuel</label>
+                        <label for="issuedfuel">Issued fuel</label>
                         <input type="text" class="form-control" id="issuedfuel" name="issuedfuel" value="<?php  echo $row['issued_fuel']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Company</label>
-                        <input type="email" class="form-control" id="company" name="company" value="<?php  echo $row['company']?>" required>
+                        <label for="company">Company</label>
+                        <input type="text" class="form-control" id="company" name="company" value="<?php  echo $row['company']?>" required>
                     </div>
                 </div>
 
                   <!-- Row 11 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Date of birth</label>
+                        <label for="dob">Date of birth</label>
                         <input type="date" class="form-control" id="dob" name="dob" value="<?php echo date('Y-m-d', strtotime($row['dob'])); ?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Place of birth</label>
-                        <input type="email" class="form-control" id="pob" name="pob" value="<?php  echo $row['pob']?>" required>
+                        <label for="pob">Place of birth</label>
+                        <input type="text" class="form-control" id="pob" name="pob" value="<?php  echo $row['pob']?>" required>
                     </div>
                 </div>
 
                   <!-- Row 12 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Gender</label>
+                        <label for="gender">Gender</label>
                         <input type="text" class="form-control" id="gender" name="gender" value="<?php  echo $row['gender']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Nationality</label>
-                        <input type="email" class="form-control" id="nationality" name="nationality" value="" required>
+                        <label for="nationality">Nationality</label>
+                        <input type="text" class="form-control" id="nationality" name="nationality" value="<?php  echo $row['nationality']?>" required>
                     </div>
                 </div>
 
                  <!-- Row 13 -->
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Martial status</label>
-                        <input type="text" class="form-control" id="martial-status" name="martial-status" value="" required>
+                        <label for="martial-status">Martial status</label>
+                        <input type="text" class="form-control" id="martial-status" name="martial-status" value="<?php  echo $row['marital_status']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Post Address</label>
-                        <input type="email" class="form-control" id="poa" name="poa" value="" required>
+                        <label for="poa">Post Address</label>
+                        <input type="text" class="form-control" id="poa" name="poa" value="<?php  echo $row['box']?>" required>
                     </div>
                 </div>
 
                  <!-- Row 14 -->
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">post code</label>
-                        <input type="text" class="form-control" id="code" name="code" value="" required>
+                        <label for="code">post code</label>
+                        <input type="text" class="form-control" id="code" name="code" value="<?php  echo $row['code']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">City</label>
-                        <input type="email" class="form-control" id="town" name="town" value="" required>
+                        <label for="town">City</label>
+                        <input type="text" class="form-control" id="town" name="town" value="<?php  echo $row['town']?>" required>
                     </div>
                 </div>
 
                  <!-- Row 15 -->
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="email1">Email</label>
-                        <input type="email" class="form-control" id="email1" name="email1" value="" required>
+                        <label for="dateofemployment">date of employment</label>
+                        <input type="date" class="form-control" id="dateofemployment" name="dateofemployment" value="<?php  echo  date('Y-m-d', strtotime($row['date_of_employment']))?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="dateofemployment">date of employment</label>
-                        <input type="date" class="form-control" id="dateofemployment" name="dateofemployment" value="" required>
+                        <label for="employementno">Employement number</label>
+                        <input type="text" class="form-control" id="employementno" name="employementno" value="<?php  echo $row['employment_no']?>" required>
                     </div>
                 </div>
 
                 <!-- Row 16 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="employementno">Employement number</label>
-                        <input type="text" class="form-control" id="employementno" name="employementno" value="" required>
-                    </div>
-                    <div class="form-group">
                         <label for="dateofemployment">Nssf number</label>
-                        <input type="text" class="form-control" id="dateofemployment" name="dateofemployment" value="" required>
+                        <input type="text" class="form-control" id="dateofemployment" name="dateofemployment" value="<?php  echo $row['nssf_no']?>" required>
                     </div>
-                </div>
-
-                <!-- Row 17 -->
-                <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="tin-no">Tin number</label>
-                        <input type="text" class="form-control" id="tin-no" name="tin-no" value="" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="dateofemployment">Nssf number</label>
-                        <input type="text" class="form-control" id="dateofemployment" name="dateofemployment" value="" required>
+                        <input type="text" class="form-control" id="tin-no" name="tin-no" value="<?php  echo $row['tin_no']?>" required>
                     </div>
                 </div>
-
                  <!-- Row 18 -->
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="nida-no">Nida number</label>
-                        <input type="text" class="form-control" id="nida-no" name="nida-no" value="" required>
+                        <input type="text" class="form-control" id="nida-no" name="nida-no" value="<?php  echo $row['nida_no']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="banckacc_no">Bank Account number</label>
-                        <input type="text" class="form-control" id="banckacc_no" name="banckacc_no" value="" required>
+                        <input type="text" class="form-control" id="banckacc_no" name="banckacc_no" value="<?php  echo $row['banckacc_no']?>" required>
                     </div>
                 </div>
 
@@ -285,11 +272,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="bankname">Bank name</label>
-                        <input type="text" class="form-control" id="bankname" name="bankname" value="" required>
+                        <input type="text" class="form-control" id="bankname" name="bankname" value="<?php  echo $row['bankname']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="dependantName1">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="" required>
+                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="<?php  echo $row['dependant_name']?>" required>
                     </div>
                 </div>
 
@@ -297,12 +284,12 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="dependant_dob1">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob" name="dependant_dob" value="" required>
+                        <input type="text" class="form-control" id="dependant_dob" name="dependant_dob" value="<?php  echo $row['dependant_dob']?>" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship1">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship" name="dependantrelationship" value="" required>
+                        <input type="text" class="form-control" id="dependantrelationship" name="dependantrelationship" value="<?php  echo $row['depandant_relationship']?>" required>
                     </div>
                 </div>
 
@@ -311,16 +298,16 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName1">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="" required>
+                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="<?php  echo $row['dependant_name_1']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob1">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob1" name="dependant_dob1" value="" required>
+                        <input type="text" class="form-control" id="dependant_dob1" name="dependant_dob1" value="<?php  echo $row['dependant_dob_1']?>" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship1">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship1" name="dependantrelationship1" value="" required>
+                        <input type="text" class="form-control" id="dependantrelationship1" name="dependantrelationship1" value="<?php  echo $row['depandant_relationship_1']?>" required>
                     </div>
                 </div>
 
@@ -329,16 +316,16 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName2">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName2" name="dependantName2" value="" required>
+                        <input type="text" class="form-control" id="dependantName2" name="dependantName2" value="<?php  echo $row['dependant_name_2']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob2">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob2" name="dependant_dob2" value="" required>
+                        <input type="text" class="form-control" id="dependant_dob2" name="dependant_dob2" value="<?php  echo $row['dependant_dob_2']?>" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship2">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship2" name="dependantrelationship2" value="" required>
+                        <input type="text" class="form-control" id="dependantrelationship2" name="dependantrelationship2" value="<?php  echo $row['depandant_relationship_2']?>" required>
                     </div>
                 </div>
 
@@ -347,16 +334,16 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName3">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName3" name="dependantName3" value="" required>
+                        <input type="text" class="form-control" id="dependantName3" name="dependantName3" value="<?php  echo $row['dependant_name_3']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob3">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob3" name="dependant_dob3" value="" required>
+                        <input type="text" class="form-control" id="dependant_dob3" name="dependant_dob3" value="<?php  echo $row['dependant_dob_3']?>" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship3">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship3" name="dependantrelationship3" value="" required>
+                        <input type="text" class="form-control" id="dependantrelationship3" name="dependantrelationship3" value="<?php  echo $row['depandant_relationship_3']?>" required>
                     </div>
                 </div>
 
@@ -365,11 +352,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="kin-name">Next of kin name</label>
-                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="" required>
+                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="<?php  echo $row['kin_name']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="kindob">Kin date of birth</label>
-                        <input type="date" class="form-control" id="kindob" name="kindob" value="" required>
+                        <input type="date" class="form-control" id="kindob" name="kindob" value="<?php  echo date('Y-m-d', strtotime($row['kin_dob'])) ?>" required>
                     </div>
                 </div>
 
@@ -377,11 +364,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="kin-contact">Next of kin contact</label>
-                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="" required>
+                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="<?php  echo $row['kin_contact']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="kin-relationship">Next of kin relationship</label>
-                        <input type="text" class="form-control" id="kin-relationship" name="kin-relationship" value="" required>
+                        <input type="text" class="form-control" id="kin-relationship" name="kin-relationship" value="<?php  echo $row['kin_relationship']?>" required>
                     </div>
                 </div>
 
@@ -390,22 +377,22 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="kin-name">Next of kin name</label>
-                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="" required>
+                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="<?php  echo $row['kin_name_1']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="kindob1">Kin date of birth</label>
-                        <input type="date" class="form-control" id="kindob1" name="kindob1" value="" required>
+                        <input type="date" class="form-control" id="kindob1" name="kindob1" value="<?php  echo date('Y-m-d', strtotime($row['kin_dob_1'])) ?>" required>
                     </div>
                 </div>
                   <!-- Row 27 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="kin-contact">Next of kin contact</label>
-                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="" required>
+                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="<?php  echo $row['kin_contact_1']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="kin-relationship1">Next of kin relationship</label>
-                        <input type="text" class="form-control" id="kin-relationship1" name="kin-relationship1" value="" required>
+                        <input type="text" class="form-control" id="kin-relationship1" name="kin-relationship1" value="<?php  echo $row['kin_relationship_1']; ?>" required>
                     </div>
                 </div>
 
@@ -413,11 +400,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="nida-attachment">Nida attachment</label>
-                        <input type="text" class="form-control" id="nida-attachment" name="nida-attachment" value="" required>
+                        <input type="text" class="form-control" id="nida-attachment" name="nida-attachment" value="<?php  echo $row['national_id_attachment']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="marriage-certificate-attachment">Marriage certificate attachment</label>
-                        <input type="text" class="form-control" id="marriage-certificate-attachment" name="marriage-certificate-attachment" value="" required>
+                        <input type="text" class="form-control" id="marriage-certificate-attachment" name="marriage-certificate-attachment" value="<?php  echo $row['marriage_certificate_attachment']; ?>" required>
                     </div>
                 </div>
 
@@ -425,11 +412,11 @@ include 'server/modules/staff-pages.php';
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="image-name">image name</label>
-                        <input type="text" class="form-control" id="image-name" name="image-name" value="" required>
+                        <input type="text" class="form-control" id="image-name" name="image-name" value="<?php  echo $row['img_name']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="total-leave">Total leave </label>
-                        <input type="text" class="form-control" id="total-leave" name="total-leave" value="" required>
+                        <input type="text" class="form-control" id="total-leave" name="total-leave" value="<?php  echo $row['total_leave']; ?>" required>
                     </div>
                 </div>
 
@@ -437,11 +424,11 @@ include 'server/modules/staff-pages.php';
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="role">Role</label>
-                        <input type="text" class="form-control" id="role" name="role" value="" required>
+                        <input type="text" class="form-control" id="role" name="role" value="<?php  echo $row['role']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="delete-status">Delete status</label>
-                        <input type="text" class="form-control" id="delete-status" name="delete-status" value="" required>
+                        <input type="text" class="form-control" id="delete-status" name="delete-status" value="<?php  echo $row['delete_status']; ?>" required>
                     </div>
                 </div>
 
@@ -449,11 +436,11 @@ include 'server/modules/staff-pages.php';
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employment-terms">Employment terms</label>
-                        <input type="text" class="form-control" id="employment-terms" name="employment-terms" value="" required>
+                        <input type="text" class="form-control" id="employment-terms" name="employment-terms" value="<?php  echo $row['employment_terms']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="salary">Salary</label>
-                        <input type="text" class="form-control" id="salary" name="salary" value="" required>
+                        <input type="text" class="form-control" id="salary" name="salary" value="<?php  echo $row['salary']; ?>" required>
                     </div>
                 </div>
 
@@ -461,11 +448,11 @@ include 'server/modules/staff-pages.php';
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="terminantion-status">Terminiation status</label>
-                        <input type="text" class="form-control" id="terminantion-status" name="terminantion-status" value="" required>
+                        <input type="text" class="form-control" id="terminantion-status" name="terminantion-status" value="<?php  echo $row['termination_status']; ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="terminantion-reason">Terminiation reason</label>
-                        <input type="text" class="form-control" id="terminantion-reason" name="terminantion-reason" value="" required>
+                        <input type="text" class="form-control" id="terminantion-reason" name="terminantion-reason" value="<?php  echo $row['termination_reason']; ?>" required>
                     </div>
                 </div>
 
@@ -473,11 +460,11 @@ include 'server/modules/staff-pages.php';
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="terminantion-date">Terminiation date</label>
-                        <input type="date" class="form-control" id="terminantion-date" name="terminantion-date" value="" required>
+                        <input type="date" class="form-control" id="terminantion-date" name="terminantion-date" value="<?php  echo date('Y-m-d', strtotime($row['termination_date'])); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="contract_exp">contact Expire date</label>
-                        <input type="date" class="form-control" id="contract_exp" name="contract_exp" value="" required>
+                        <input type="date" class="form-control" id="contract_exp" name="contract_exp" value="<?php  echo date('Y-m-d', strtotime($row['contract_exp'])); ?>" required>
                     </div>
                 </div>
                 <!-- Final Row (Submit Button) -->
