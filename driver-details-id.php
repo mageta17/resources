@@ -41,6 +41,11 @@ include 'server/modules/staff-pages.php';
                 font-size: 14px; /* Make input size medium */
             }
         }
+        .separator{
+            color:green;
+            font-size: medium;
+
+        }
     </style>
 </head>
 <body> 
@@ -263,6 +268,49 @@ include 'server/modules/staff-pages.php';
                     <div class="form-group">
                         <label for="banckacc_no">Bank Account number</label>
                         <input type="text" class="form-control" id="banckacc_no" name="banckacc_no" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 19 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="bankname">Bank name</label>
+                        <input type="text" class="form-control" id="bankname" name="bankname" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependantName1">Dependant name</label>
+                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 20 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="dependant_dob1">Dependant date of birth</label>
+                        <input type="text" class="form-control" id="dependant_dob" name="dependant_dob" value="" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dependantrelationship1">Dependant relationship</label>
+                        <input type="text" class="form-control" id="dependantrelationship" name="dependantrelationship" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 21 -->
+                 <label for="Separate" class="separator">Second dependant details</label><br><br>
+                <div class="form-row d-flex flex-wrap">
+                <div class="form-group">
+                        <label for="dependantName1">Dependant name</label>
+                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependant_dob1">Dependant date of birth</label>
+                        <input type="text" class="form-control" id="dependant_dob1" name="dependant_dob1" value="" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dependantrelationship1">Dependant relationship</label>
+                        <input type="text" class="form-control" id="dependantrelationship1" name="dependantrelationship1" value="" required>
                     </div>
                 </div>
                 
