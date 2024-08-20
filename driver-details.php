@@ -53,7 +53,7 @@ include 'server/modules/staff-pages.php';
                             <td><?php echo $row['employeeName'];  ?></td>
                             <td class="d-none d-lg-table-cell"><?php echo $row['employeePosition'];  ?></td>
                             <td class="d-none d-xl-table-cell"><?php echo $row['department'];  ?></td>
-                            <td><a href="checklist_view.php?id=<?php echo $id; ?>">Edit</a></td>
+                            <td><a href="driver-details-id.php?id=<?php echo $id; ?>">Edit</a></td>
                         </tr>
                         <?php } ?>
                     </tbody>

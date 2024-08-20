@@ -50,8 +50,18 @@ include 'server/modules/staff-pages.php';
 </head>
 <body> 
 <div id="section" class="container-fluid mx-0 px-0">
-    <?php menu5(); ?>
+    <?php menu5();
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        // fetch data from the database 
+        $query = "SELECT * FROM drivers WHERE employeeId = $id ";
+        $result = mysqli_query($connection, $query);
+        if(mysqli_num_rows($result)){
+            $row = mysqli_fetch_array($result);
+   
     
+    
+    ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
             <form action="save_edits.php" method="post">
@@ -59,11 +69,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employeeId">Employer ID</label>
-                        <input type="text" class="form-control" id="employeeId" name="employeeId" value="" required>
+                        <input type="text" class="form-control" id="employeeId" name="employeeId" value="<?php  echo $row['employeeId']?>" required readonly>
                     </div>
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="" required>
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<?php  echo $row['first_name']?>" required>
                     </div>
                 </div>
 
@@ -71,11 +81,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="middleName">Middle Name</label>
-                        <input type="text" class="form-control" id="middleName" name="middleName" value="">
+                        <input type="text" class="form-control" id="middleName" name="middleName" value="<?php  echo $row['middle_name']?>">
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="" required>
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<?php  echo $row['last_name']?>" required>
                     </div>
                 </div>
 
@@ -83,11 +93,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employeeName">Employee Name</label>
-                        <input type="text" class="form-control" id="employeeName" name="employeeName" value="" required>
+                        <input type="text" class="form-control" id="employeeName" name="employeeName" value="<?php  echo $row['employeeName']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="employeePosition">Position</label>
-                        <input type="text" class="form-control" id="employeePosition" name="employeePosition" value="" required>
+                        <input type="text" class="form-control" id="employeePosition" name="employeePosition" value="<?php  echo $row['employeePosition']?>" required>
                     </div>
                 </div>
 
@@ -95,11 +105,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Department</label>
-                        <input type="text" class="form-control" id="department" name="department" value="" required>
+                        <input type="text" class="form-control" id="department" name="department" value="<?php  echo $row['department']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php  echo $row['email']?>" required>
                     </div>
                 </div>
 
@@ -107,11 +117,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Driver License number</label>
-                        <input type="text" class="form-control" id="driverlicenseno" name="driverlicenseno" value="" required>
+                        <input type="text" class="form-control" id="driverlicenseno" name="driverlicenseno" value="<?php  echo $row['drivingLicenseNo']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Driver License numberExpier</label>
-                        <input type="email" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="" required>
+                        <input type="email" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo $row['drivingLicenseNoExpire']?>" required>
                     </div>
                 </div>
 
@@ -119,11 +129,11 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Driver License image</label>
-                        <input type="text" class="form-control" id="driverlicenseimage" name="driverlicenseimage" value="" required>
+                        <input type="text" class="form-control" id="driverlicenseimage" name="driverlicenseimage" value="<?php  echo $row['drivingLicenseImage']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Location</label>
-                        <input type="email" class="form-control" id="location" name="location" value="" required>
+                        <input type="email" class="form-control" id="location" name="location" value="<?php  echo $row['location']?>" required>
                     </div>
                 </div>
 
@@ -131,11 +141,11 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Field supervisor </label>
-                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="" required>
+                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php  echo $row['fieldSupervisor']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Mobile no1</label>
-                        <input type="email" class="form-control" id="mobileno1" name="mobileno" value="" required>
+                        <input type="email" class="form-control" id="mobileno1" name="mobileno" value="<?php  echo $row['mobileNo1']?>" required>
                     </div>
                 </div>
 
@@ -143,23 +153,23 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Mobile no2</label>
-                        <input type="text" class="form-control" id="mobileno2" name="mobileno2" value="" required>
+                        <input type="text" class="form-control" id="mobileno2" name="mobileno2" value="<?php  echo $row['mobileNo2']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Project</label>
-                        <input type="email" class="form-control" id="project" name="project" value="" required>
+                        <input type="email" class="form-control" id="project" name="project" value="<?php  echo $row['project']?>" required>
                     </div>
                 </div>
 
                   <!-- Row 9 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="department">Vehicle number</label>
-                        <input type="text" class="form-control" id="vehicleno" name="vehicleno" value="" required>
+                        <label for="vehicleno">Vehicle number</label>
+                        <input type="text" class="form-control" id="vehicleno" name="vehicleno" value="<?php  echo $row['vehicleNo']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">User id</label>
-                        <input type="email" class="form-control" id="userid" name="userid" value="" required>
+                        <input type="email" class="form-control" id="userid" name="userid" value="<?php  echo $row['user_ID']?>" required>
                     </div>
                 </div>
 
@@ -167,11 +177,11 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Issued fuel</label>
-                        <input type="text" class="form-control" id="issuedfuel" name="issuedfuel" value="" required>
+                        <input type="text" class="form-control" id="issuedfuel" name="issuedfuel" value="<?php  echo $row['issued_fuel']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Company</label>
-                        <input type="email" class="form-control" id="company" name="company" value="" required>
+                        <input type="email" class="form-control" id="company" name="company" value="<?php  echo $row['company']?>" required>
                     </div>
                 </div>
 
@@ -179,11 +189,11 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Date of birth</label>
-                        <input type="date" class="form-control" id="dob" name="dob" value="" required>
+                        <input type="date" class="form-control" id="dob" name="dob" value="<?php echo date('Y-m-d', strtotime($row['dob'])); ?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Place of birth</label>
-                        <input type="email" class="form-control" id="pob" name="pob" value="" required>
+                        <input type="email" class="form-control" id="pob" name="pob" value="<?php  echo $row['pob']?>" required>
                     </div>
                 </div>
 
@@ -191,7 +201,7 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Gender</label>
-                        <input type="text" class="form-control" id="gender" name="gender" value="" required>
+                        <input type="text" class="form-control" id="gender" name="gender" value="<?php  echo $row['gender']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Nationality</label>
@@ -423,13 +433,68 @@ include 'server/modules/staff-pages.php';
                     </div>
                 </div>
 
-                <!-- Final Row (Submit Button) -->
-                <div class="form-row d-flex flex-wrap">
-                    <div class="form-group col-12 text-center">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                 <!-- Row 30 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <input type="text" class="form-control" id="role" name="role" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="delete-status">Delete status</label>
+                        <input type="text" class="form-control" id="delete-status" name="delete-status" value="" required>
                     </div>
                 </div>
+
+                 <!-- Row 31 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="employment-terms">Employment terms</label>
+                        <input type="text" class="form-control" id="employment-terms" name="employment-terms" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="salary">Salary</label>
+                        <input type="text" class="form-control" id="salary" name="salary" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 32 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="terminantion-status">Terminiation status</label>
+                        <input type="text" class="form-control" id="terminantion-status" name="terminantion-status" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="terminantion-reason">Terminiation reason</label>
+                        <input type="text" class="form-control" id="terminantion-reason" name="terminantion-reason" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 32 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="terminantion-date">Terminiation date</label>
+                        <input type="date" class="form-control" id="terminantion-date" name="terminantion-date" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contract_exp">contact Expire date</label>
+                        <input type="date" class="form-control" id="contract_exp" name="contract_exp" value="" required>
+                    </div>
+                </div>
+                <!-- Final Row (Submit Button) -->
+                <div class="row mb-3">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit" name="edit" style="background-color: #488aec; border-color: #488aec;">
+                            Save Changes
+                            </button>
+
+                 </div>
+
             </form>
+            <?php }
+                   }else{
+                    echo "id not found";
+                   }
+                   ?>
         </div>
     </div>
 </div>
