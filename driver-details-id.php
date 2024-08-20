@@ -102,11 +102,11 @@ include 'server/modules/staff-pages.php';
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Driver License number</label>
-                        <input type="text" class="form-control" id="department" name="department" value="" required>
+                        <input type="text" class="form-control" id="driverlicenseno" name="driverlicenseno" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Driver License numberExpier</label>
-                        <input type="email" class="form-control" id="email" name="email" value="" required>
+                        <input type="email" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="" required>
                     </div>
                 </div>
 
@@ -114,11 +114,11 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Driver License image</label>
-                        <input type="text" class="form-control" id="department" name="department" value="" required>
+                        <input type="text" class="form-control" id="driverlicenseimage" name="driverlicenseimage" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Location</label>
-                        <input type="email" class="form-control" id="email" name="email" value="" required>
+                        <input type="email" class="form-control" id="location" name="location" value="" required>
                     </div>
                 </div>
 
@@ -126,26 +126,145 @@ include 'server/modules/staff-pages.php';
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Field supervisor </label>
-                        <input type="text" class="form-control" id="department" name="department" value="" required>
+                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Mobile no1</label>
-                        <input type="email" class="form-control" id="email" name="email" value="" required>
+                        <input type="email" class="form-control" id="mobileno1" name="mobileno" value="" required>
                     </div>
                 </div>
 
-                  <!-- Row 6 -->
+                  <!-- Row 8 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Mobile no2</label>
-                        <input type="text" class="form-control" id="department" name="department" value="" required>
+                        <input type="text" class="form-control" id="mobileno2" name="mobileno2" value="" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Project</label>
-                        <input type="email" class="form-control" id="email" name="email" value="" required>
+                        <input type="email" class="form-control" id="project" name="project" value="" required>
                     </div>
                 </div>
 
+                  <!-- Row 9 -->
+                  <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="department">Vehicle number</label>
+                        <input type="text" class="form-control" id="vehicleno" name="vehicleno" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">User id</label>
+                        <input type="email" class="form-control" id="userid" name="userid" value="" required>
+                    </div>
+                </div>
+
+                  <!-- Row 10 -->
+                  <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="department">Issued fuel</label>
+                        <input type="text" class="form-control" id="issuedfuel" name="issuedfuel" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Company</label>
+                        <input type="email" class="form-control" id="company" name="company" value="" required>
+                    </div>
+                </div>
+
+                  <!-- Row 11 -->
+                  <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="department">Date of birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Place of birth</label>
+                        <input type="email" class="form-control" id="pob" name="pob" value="" required>
+                    </div>
+                </div>
+
+                  <!-- Row 12 -->
+                  <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="department">Gender</label>
+                        <input type="text" class="form-control" id="gender" name="gender" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Nationality</label>
+                        <input type="email" class="form-control" id="nationality" name="nationality" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 13 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="department">Martial status</label>
+                        <input type="text" class="form-control" id="martial-status" name="martial-status" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Post Address</label>
+                        <input type="email" class="form-control" id="poa" name="poa" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 14 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="department">post code</label>
+                        <input type="text" class="form-control" id="code" name="code" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">City</label>
+                        <input type="email" class="form-control" id="town" name="town" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 15 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="email1">Email</label>
+                        <input type="email" class="form-control" id="email1" name="email1" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateofemployment">date of employment</label>
+                        <input type="date" class="form-control" id="dateofemployment" name="dateofemployment" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 16 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="employementno">Employement number</label>
+                        <input type="text" class="form-control" id="employementno" name="employementno" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateofemployment">Nssf number</label>
+                        <input type="text" class="form-control" id="dateofemployment" name="dateofemployment" value="" required>
+                    </div>
+                </div>
+
+                <!-- Row 17 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="tin-no">Tin number</label>
+                        <input type="text" class="form-control" id="tin-no" name="tin-no" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateofemployment">Nssf number</label>
+                        <input type="text" class="form-control" id="dateofemployment" name="dateofemployment" value="" required>
+                    </div>
+                </div>
+
+                 <!-- Row 18 -->
+                 <div class="form-row d-flex flex-wrap">
+                    <div class="form-group">
+                        <label for="nida-no">Nida number</label>
+                        <input type="text" class="form-control" id="nida-no" name="nida-no" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="banckacc_no">Bank Account number</label>
+                        <input type="text" class="form-control" id="banckacc_no" name="banckacc_no" value="" required>
+                    </div>
+                </div>
                 
                 <!-- Final Row (Submit Button) -->
                 <div class="form-row d-flex flex-wrap">
