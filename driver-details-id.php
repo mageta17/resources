@@ -247,8 +247,8 @@ session_start();
                 <!-- Row 16 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="dateofemployment">Nssf number</label>
-                        <input type="text" class="form-control" id="dateofemployment" name="dateofemployment" value="<?php  echo $row['nssf_no']?>" required>
+                        <label for="nssf-no">Nssf number</label>
+                        <input type="text" class="form-control" id="nssf-no" name="nssf-no" value="<?php  echo $row['nssf_no']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="tin-no">Tin number</label>
@@ -346,6 +346,25 @@ session_start();
                     </div>
                 </div>
 
+                <!-- Row 23 -->
+                <label for="Separate" class="separator">Fifth dependant details</label><br><br>
+                <div class="form-row d-flex flex-wrap">
+                <div class="form-group">
+                        <label for="dependantName4">Dependant name</label>
+                        <input type="text" class="form-control" id="dependantName4" name="dependantName4" value="<?php  echo $row['dependant_name_4']?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dependant_dob4">Dependant date of birth</label>
+                        <input type="text" class="form-control" id="dependant_dob4" name="dependant_dob4" value="<?php  echo $row['dependant_dob_4']?>" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dependantrelationship4">Dependant relationship</label>
+                        <input type="text" class="form-control" id="dependantrelationship4" name="dependantrelationship4" value="<?php  echo $row['depandant_relationship_4']?>" required>
+                    </div>
+                </div>
+
+
                 <!-- Row 24 -->
                 <br><label for="Separate" class="separator">Next of kin details</label><br><br>
                 <div class="form-row d-flex flex-wrap">
@@ -375,8 +394,8 @@ session_start();
                 <br><label for="Separate" class="separator">Second Next of kin details</label><br><br>
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
-                        <label for="kin-name">Next of kin name</label>
-                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="<?php  echo $row['kin_name_1']?>" required>
+                        <label for="kin-name1">Next of kin name</label>
+                        <input type="text" class="form-control" id="kin-name1" name="kin-name1" value="<?php  echo $row['kin_name_1']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="kindob1">Kin date of birth</label>
