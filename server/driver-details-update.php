@@ -79,7 +79,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $contract_exp  = mysqli_real_escape_string($connection, $_POST['contract_exp']);
        
         $query = "UPDATE  drivers SET 
-          first_name = '$firstname', middle_name = '$middlename'
+           first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
+           employeeName = '$employeename', employeePosition ='$employeename',  department = '$department',
+           email = '$email', drivingLicenseNo = '$drivingLicense_No',
+           drivingLicenseNoExpire ='$drivingLicenseNoExpire',  
+           drivingLicenseImage ='$drivingLicenseImage', location ='$location',
+           fieldSupervisor = '$fieldSupervisor', mobileNo1 = '$mobileNo1', 
+           mobileNo2 = '$mobileNo2',   project = '$vehicleNo', vehicleNo = '$vehicleNo',
+           user_ID = '$user_ID',  issued_fuel = '$issued_fuel', company = '$company',
+           dob = '$dob', pob = '$pob', gender = '$gender', nationality = '$nationality',
+           marital_status = '$marital_status', box = '$box', code = '$code', town = '$town'
+
 
         
         
