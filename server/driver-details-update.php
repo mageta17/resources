@@ -80,7 +80,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
        
         $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
-           employeeName = '$employeename', employeePosition ='$employeename',  department = '$department',
+           employeeName = '$employeename', employeePosition ='$employeename', 
+           department = '$department',
            email = '$email', drivingLicenseNo = '$drivingLicense_No',
            drivingLicenseNoExpire ='$drivingLicenseNoExpire',  
            drivingLicenseImage ='$drivingLicenseImage', location ='$location',
@@ -88,7 +89,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            mobileNo2 = '$mobileNo2',   project = '$vehicleNo', vehicleNo = '$vehicleNo',
            user_ID = '$user_ID',  issued_fuel = '$issued_fuel', company = '$company',
            dob = '$dob', pob = '$pob', gender = '$gender', nationality = '$nationality',
-           marital_status = '$marital_status', box = '$box', code = '$code', town = '$town'
+           marital_status = '$marital_status', box = '$box', code = '$code', town = '$town',
+           date_of_employment = '$date_of_employment', employment_no = '$employment_no',
+           nssf_no = '$nssf_no', tin_no = '$tin_no', nida_no = '$nida_no', 
+           banckacc_no = '$banckacc_no', bankname = '$bankname', dependant_name = '$dependant_name',
+           dependant_dob = '$dependant_dob', depandant_relationship = '$depandant_relationship',
+           depandant_relationship = '$depandant_relationship', dependant_dob_1 = '$dependant_dob_1',
+           depandant_relationship_1 = '$depandant_relationship_1', 
+           dependant_name_2 = '$dependant_name_2', dependant_dob_2 = '$dependant_dob_2',
+           depandant_relationship_2 = '$depandant_relationship_2',
+           dependant_name_3 = '$dependant_name_3'
+
+
+
 
 
         
