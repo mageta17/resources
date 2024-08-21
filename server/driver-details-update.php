@@ -2,7 +2,9 @@
 require "db.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
     if(isset($_POST['edit'])){
+        $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
         $firstname = mysqli_real_escape_string($connection, $_POST['firstName']);
         $middlename = mysqli_real_escape_string($connection, $_POST['middleName']);
         $lastname = mysqli_real_escape_string($connection, $_POST['lastName']);
@@ -76,6 +78,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $termination_date = mysqli_real_escape_string($connection, $_POST['terminantion-date']);
         $contract_exp  = mysqli_real_escape_string($connection, $_POST['contract_exp']);
        
+        $query = "UPDATE  drivers SET 
+          first_name = '$firstname', middle_name = '$middlename'
+
+        
+        
+        
+        
+        
+         WHERE employeeId = $employeeid";
+
+         $result = mysqli_query($connection, $query);
+         if($result){
+            echo "update succssefully";
+         } else{
+            echo "error in updating data";
+         }
 
 
     }

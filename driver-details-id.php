@@ -63,7 +63,7 @@ session_start();
     ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
-            <form action="save_edits.php" method="post">
+            <form action="server/driver-details-update.php" method="post">
                 <!-- Row 1 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
@@ -274,8 +274,8 @@ session_start();
                         <input type="text" class="form-control" id="bankname" name="bankname" value="<?php  echo $row['bankname']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="dependantName1">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="<?php  echo $row['dependant_name']?>" required>
+                        <label for="dependantName">Dependant name</label>
+                        <input type="text" class="form-control" id="dependantName" name="dependantName" value="<?php  echo $row['dependant_name']?>" required>
                     </div>
                 </div>
 
