@@ -87,8 +87,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            drivingLicenseImage ='$drivingLicenseImage', location ='$location',
            fieldSupervisor = '$fieldSupervisor', mobileNo1 = '$mobileNo1', 
            mobileNo2 = '$mobileNo2',   project = '$vehicleNo', vehicleNo = '$vehicleNo',
-           user_ID = '$user_ID',  issued_fuel = '$issued_fuel', company = '$company',
-           dob = '$dob', pob = '$pob', gender = '$gender', nationality = '$nationality',
+           user_ID = '$user_ID',  issued_fuel =  '$issued_fuel', company = '$company',
+           dob = '$dob', pob = '$pob', gender =  '$gender', nationality = '$nationality',
            marital_status = '$marital_status', box = '$box', code = '$code', town = '$town',
            date_of_employment = '$date_of_employment', employment_no = '$employment_no',
            nssf_no = '$nssf_no', tin_no = '$tin_no', nida_no = '$nida_no', 
@@ -98,17 +98,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            depandant_relationship_1 = '$depandant_relationship_1', 
            dependant_name_2 = '$dependant_name_2', dependant_dob_2 = '$dependant_dob_2',
            depandant_relationship_2 = '$depandant_relationship_2',
-           dependant_name_3 = '$dependant_name_3'
-
-
-
-
-
-        
-        
-        
-        
-        
+           dependant_name_3 = '$dependant_name_3', dependant_dob_3 = '$dependant_dob_3',
+           depandant_relationship_3 = '$depandant_relationship_3', 
+           dependant_name_4 = '$dependant_name_4', dependant_dob_4 = '$dependant_dob_4',
+           depandant_relationship_4 = '$depandant_relationship_4', kin_name = '$kin_name',
+           kin_dob = '$kin_dob', kin_contact = '$kin_contact', kin_relationship = '$kin_relationship',
+           kin_name_1 = '$kin_name_1', kin_dob_1 = '$kin_dob_1', kin_contact_1 = '$kin_contact_1',
+           kin_relationship_1 = '$kin_relationship_1', 
+           national_id_attachment = '$national_id_attachment',
+           marriage_certificate_attachment = '$marriage_certificate_attachment', img_name = '$img_name',
+           total_leave = '$total_leave', role = '$role', delete_status = '$delete_status',employment_terms = '$employment_terms', salary = '$salary', 
+           termination_status ='$termination_status', termination_reason = '$termination_reason',
+           termination_date = '$termination_date', contract_exp = '$contract_exp'
          WHERE employeeId = $employeeid";
 
          $result = mysqli_query($connection, $query);
