@@ -283,7 +283,7 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="dependant_dob1">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob" name="dependant_dob" value="<?php  echo $row['dependant_dob']?>" required>
+                        <input type="date" class="form-control" id="dependant_dob" name="dependant_dob" value="<?php  echo  date('Y-m-d', strtotime($row['dependant_dob']))?>" required>
                     </div>
                     
                     <div class="form-group">
@@ -301,7 +301,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob1">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob1" name="dependant_dob1" value="<?php  echo $row['dependant_dob_1']?>" required>
+                        <input type="date" class="form-control" id="dependant_dob1" name="dependant_dob1" value="<?php  echo  date('Y-m-d', strtotime($row['dependant_dob_1']))?>" required>
                     </div>
                     
                     <div class="form-group">
@@ -319,7 +319,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob2">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob2" name="dependant_dob2" value="<?php  echo $row['dependant_dob_2']?>" required>
+                        <input type="date" class="form-control" id="dependant_dob2" name="dependant_dob2" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_2']))?>" required>
                     </div>
                     
                     <div class="form-group">
@@ -337,7 +337,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob3">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob3" name="dependant_dob3" value="<?php  echo $row['dependant_dob_3']?>" required>
+                        <input type="date" class="form-control" id="dependant_dob3" name="dependant_dob3" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_3']))?>" required>
                     </div>
                     
                     <div class="form-group">
@@ -355,7 +355,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob4">Dependant date of birth</label>
-                        <input type="text" class="form-control" id="dependant_dob4" name="dependant_dob4" value="<?php  echo $row['dependant_dob_4']?>" required>
+                        <input type="date" class="form-control" id="dependant_dob4" name="dependant_dob4" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_4']))?>" required>
                     </div>
                     
                     <div class="form-group">
