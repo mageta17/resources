@@ -129,6 +129,7 @@ session_start();
 
                      <!-- Row 6 -->
                 <div class="form-row d-flex flex-wrap">
+                <label for="driverlicensenoExp">Driver License Image</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
                         <input id="fileName" type="text" class="form-control" name="fileName" placeholder="Additional Info" readonly>
