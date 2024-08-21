@@ -1,6 +1,7 @@
 <?php
 include 'server/db.php';
 include 'server/modules/staff-pages.php';
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -58,9 +59,7 @@ include 'server/modules/staff-pages.php';
         $result = mysqli_query($connection, $query);
         if(mysqli_num_rows($result)){
             $row = mysqli_fetch_array($result);
-   
-    
-    
+            $_SESSION['user_id'] = $row['employeeId'];
     ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -144,8 +143,8 @@ include 'server/modules/staff-pages.php';
                         <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php  echo $row['fieldSupervisor']?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="mobileno">Mobile no1</label>
-                        <input type="text" class="form-control" id="mobileno1" name="mobileno" value="<?php  echo $row['mobileNo1']?>" required>
+                        <label for="mobileno1">Mobile no1</label>
+                        <input type="text" class="form-control" id="mobileno1" name="mobileno1" value="<?php  echo $row['mobileNo1']?>" required>
                     </div>
                 </div>
 
