@@ -19,6 +19,9 @@ session_start();
       <?php include 'server/title.php'; ?>
     </title>
     <style>
+        .form-control {
+                background-color:#E8ECEF; /* Make input size medium */
+            }
         /* For screens above 670px, maintain two inputs per row */
         @media (min-width: 670px) {
             .form-group {
@@ -63,7 +66,7 @@ session_start();
     ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
-            <form action="server/driver-details-update.php" method="post">
+            <form action="server/driver-details-update.php" method="post" >
                 <!-- Row 1 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
@@ -124,15 +127,45 @@ session_start();
                     </div>
                 </div>
 
-                  <!-- Row 6 -->
-                  <div class="form-row d-flex flex-wrap">
-                    <div class="form-group">
-                        <label for="driverlicenseimage">Driver License image</label>
-                        <input type="text" class="form-control" id="driverlicenseimage" name="driverlicenseimage" value="<?php  echo $row['drivingLicenseImage']?>" required>
+                     <!-- Row 6 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
+                        <input id="fileName" type="text" class="form-control" name="fileName" placeholder="Additional Info" readonly>
+                        <div class="input-group-append">
+                            <button id="changeButton" class="btn btn-primary" type="button">Change</button>
+                        </div>
                     </div>
+
+                    <!-- Preview Area -->
+                    <div id="previewArea" style="display: none; margin-top: 10px;">
+                        <img id="imagePreview" src="" alt="Preview" style="max-width: 100%; display: none;">
+                        <embed id="pdfPreview" src="" type="application/pdf" style="width: 50%; height: 100px; display: none;">
+                        
+                    <!-- File input and Action Buttons -->
+                    <input type="file" id="fileInput" style="display: none;">
+                        <div id="actionButtons" class="mt-3" style="display: none;">
+                            <button id="uploadButton" class="btn btn-primary" type="button">Upload</button>
+                            <button id="quitPreview" class="btn btn-danger" type="button">Quit</button>
+                        </div>
+                    </div>
+
+                    <?php
+                        $imageURL = 'resources/images/newl.jpg'; 
+                        $fileName = basename($imageURL); // Extracts the filename
+                        if ($imageURL) {
+                            echo "<script>
+                                document.getElementById('fileName').value = '" . htmlspecialchars($fileName) . "';
+                                document.getElementById('imagePreview').src = '" . htmlspecialchars($imageURL) . "';
+                                document.getElementById('imagePreview').style.display = 'block';
+                                document.getElementById('previewArea').style.display = 'block';
+                            </script>";
+                        }
+                    ?>
+
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input type="text" class="form-control" id="location" name="location" value="<?php  echo $row['location']?>" required>
+                        <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" required>
                     </div>
                 </div>
 
@@ -503,5 +536,69 @@ session_start();
         </div>
     </div>
 </div>
+<script> 
+    document.getElementById('changeButton').addEventListener('click', function() {
+    // Show the file input
+    document.getElementById('fileInput').click();
+});
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Show the preview
+            document.getElementById('imagePreview').src = e.target.result;
+            document.getElementById('imagePreview').style.display = 'block';
+            document.getElementById('previewArea').style.display = 'block';
+            document.getElementById('fileName').value = file.name;
+            document.getElementById('actionButtons').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+    document.getElementById('uploadButton').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action of the button
+        
+        const fileName = document.getElementById('fileName').value;
+        if (!fileName) {
+            alert('Please select a file to upload.');
+            return;
+        }
+        
+        // Create a form to submit the file via POST
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'server/driver-details-update.php';
+
+        // Create a hidden input to send the filename
+        const inputFilename = document.createElement('input');
+        inputFilename.type = 'hidden';
+        inputFilename.name = 'filename';
+        inputFilename.value = fileName;
+        form.appendChild(inputFilename);
+        
+        // Create a hidden input to send the file
+        const fileInput = document.getElementById('fileInput');
+        const clonedFileInput = fileInput.cloneNode(true);
+        clonedFileInput.name = 'file'; // Match the name expected by PHP
+        form.appendChild(clonedFileInput);
+
+        // Append form to the body and submit it
+        document.body.appendChild(form);
+        form.submit();
+    });
+
+    document.getElementById('quitPreview').addEventListener('click', function() {
+        // Hide the preview area and action buttons
+        document.getElementById('previewArea').style.display = 'none';
+        document.getElementById('actionButtons').style.display = 'none';
+    });
+
+</script>
+
+
+</script>
 </body>
 </html>
