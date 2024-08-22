@@ -97,6 +97,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "middle name  should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
+        } else if(!preg_match($userpatterns, trim($lastname))){
+            $_SESSION['error'] = "last  name  should contain only letters.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        } else if(!preg_match($userpatterns, trim($employeename))){
+            $_SESSION['error'] = "Employee name  should contain only letters.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+
 
         }else{
             $query = "UPDATE  drivers SET 
@@ -178,6 +187,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 
                             if ($imageresult) {
                                 // Redirect after successful image upload and update
+                                $_SESSION['succes'] = "Update succssesfully ";
                                 header("Location: ../driver-details-id.php?id=".$user_id);
                                 exit();
                             } else {

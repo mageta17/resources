@@ -16,6 +16,7 @@ session_start();
     <link href="resources/style/staff.css?v=2" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+
     
     <title>
       <?php include 'server/title.php'; ?>
@@ -71,11 +72,11 @@ session_start();
             <form action="server/driver-details-update.php" method="post" enctype="multipart/form-data" >
             <?php
                 if (isset($_SESSION['succes'])) {
-                    echo '<div class="alert alert-success">' . $_SESSION['succes'] . '</div>';
+                    echo '<div class="alert alert-success" style="text-align:center;><i class="fas fa-check-circle"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
                     unset($_SESSION['succes']); 
                 }
                 if (isset($_SESSION['error'])) {
-                    echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'."Error: " . $_SESSION['error'] . '</div>';
+                    echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error'] . '</div>';
                     unset($_SESSION['error']); 
                 }
              ?>
