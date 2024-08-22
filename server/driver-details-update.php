@@ -1,10 +1,24 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 require "db.php";
+session_start();
+$userpatterns = '/^[A-Za-z]+(?:\s[A-Za-z]+)*$/';
+
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     echo "the form was posted";
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        echo "The form was posted.<br>";
+    
+        if (isset($_SESSION['user_id'])) {
+            $user_id = $_SESSION['user_id'];
+            echo  $user_id;
+        } else {
+            echo "User ID not found in session.<br>";
+            exit();
+        }
+    }
     // $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
     if(isset($_POST['edit'])){
         $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
@@ -81,6 +95,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $termination_date = mysqli_real_escape_string($connection, $_POST['terminantion-date']);
         $contract_exp  = mysqli_real_escape_string($connection, $_POST['contract_exp']);
 
+        //validation 
+        if(!preg_match($userpatterns, trim($firstname))){
+            $_SESSION['error'] = "first name should contain only letters.";
+            header("Location: ../driver-details-id.php?Error=nameError"."$$user_id");
+            exit();
+        } else if(!preg_match($userpatterns, trim($middlename))){
+            $_SESSION['error'] = "middle name  should contain only letters.";
+            header("Location: ../driver-details-id.php?Error=nameError"."$$user_id");
+            exit();
+
+        }else{
+
+        }
+
+
+
         $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 
@@ -112,32 +142,57 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            total_leave = '$total_leave', role = '$role', delete_status = '$delete_status',employment_terms = '$employment_terms', salary = '$salary', 
            termination_status ='$termination_status', termination_reason = '$termination_reason',
            termination_date = '$termination_date', contract_exp = '$contract_exp'
-         WHERE employeeId = $employeeid";
+         WHERE employeeId = $user_id";
             $result = mysqli_query($connection, $query);
             echo "result";
             if ($result) {
                 echo "Data updated successfully.";
 
                 // Check if a file was uploaded
-                if(isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK){
-                    echo "image was isset";
-                    $filename = basename($_FILES['file']['name']);
-                    $drivingLicenseImageDir = '../resources/images/';
-                    $drivingLicenseImageFile = $drivingLicenseImageDir . $filename;
-                    echo  "$drivingLicenseImageFile"; // debugging line 
-    
+                if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
+                    echo "Image was isset<br>";
+                
+                    $file = $_FILES['file'];
+                    $name = $file['name'];
+                    $tmp_name = $file['tmp_name'];
+                    $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+                
+                    // Create a unique filename
+                    $imageFullName = $user_id . "-" . $firstname . "-license-" . uniqid("", true) . "." . $ext;
+                    $drivingLicenseImageDir = '../resources/images/drivers/';
+                    $filePath = $drivingLicenseImageDir . $imageFullName;
+                
                     // Attempt to move the uploaded file to the target directory
-                    if (move_uploaded_file($_FILES['file']['tmp_name'], $drivingLicenseImageFile)) {
-                        // Update the database with the new image path
-                        $imageupdate = "UPDATE drivers SET drivingLicenseImage ='$drivingLicenseImageFile' WHERE employeeId = $employeeid";
-                        $imageresult = mysqli_query($connection, $imageupdate);
-
-                        echo "$imageresult ";
-    
-                        if ($imageresult) {
-                            //echo "Image uploaded and updated successfully.";
-                            header("Location:  ../driver-details-id.php");
-                        } else {
+                    if (move_uploaded_file($tmp_name, $filePath)) {
+                        // Resize image
+                        $src = imagecreatefromstring(file_get_contents($filePath));
+                        if ($src === false) {
+                            echo "Error creating image from string.<br>";
+                            exit();
+                        }
+                
+                        list($width, $height) = getimagesize($filePath);
+                        $newWidth = 400;
+                        $newHeight = ($height / $width) * $newWidth;
+                        $newHeight = (int)$newHeight;
+                
+                        $tmp = imagecreatetruecolor($newWidth, $newHeight);
+                        imagecopyresampled($tmp, $src, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+                
+                        // Save the resized image
+                        if (imagejpeg($tmp, $filePath, 100)) {
+                            imagedestroy($tmp);
+                            imagedestroy($src);
+                
+                            // Update the database with the new image path
+                            $imageupdate = "UPDATE drivers SET drivingLicenseImage = '$filePath' WHERE employeeId = '$user_id'";
+                            $imageresult = mysqli_query($connection, $imageupdate);
+                
+                            if ($imageresult) {
+                                // Redirect after successful image upload and update
+                                header("Location: ../driver-details-id.php?id=".$user_id);
+                                exit();
+                            } else {
                             echo "Error in updating image: " . mysqli_error($connection);
                         }
                     } else {
@@ -146,9 +201,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 } else {
                     echo "No image uploaded, retaining the existing image.";
                 }
-            } else {
-                echo "Error in updating data: " . mysqli_error($connection);
-            }
+            } 
         }
     }
+}
     ?>

@@ -152,14 +152,28 @@ session_start();
                     </div>
 
                     <?php
-                        $imageURL = 'resources/images/newl.jpg'; 
-                        $fileName = basename($imageURL); // Extracts the filename
+                        //$imageURL = $row['drivingLicenseImage'];
+                        $imageURL = 'resources/images/drivers/' . $row['drivingLicenseImage'];
+
+                        //$imageURL = "resources/images/newl.jpg";
+                        $fileName = basename($imageURL); 
                         if ($imageURL) {
-                            echo "<script>
-                                document.getElementById('fileName').value = '" . htmlspecialchars($fileName) . "';
-                                document.getElementById('imagePreview').src = '" . htmlspecialchars($imageURL) . "';
-                                document.getElementById('imagePreview').style.display = 'block';
-                                document.getElementById('previewArea').style.display = 'block';
+                        echo "<script>
+                                console.log('Image URL:', '$imageURL');
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    var fileNameInput = document.getElementById('fileName');
+                                    var imagePreview = document.getElementById('imagePreview');
+                                    var previewArea = document.getElementById('previewArea');
+
+                                    if (fileNameInput && imagePreview && previewArea) {
+                                        fileNameInput.value = '$fileName';
+                                        imagePreview.src = '$imageURL';
+                                        imagePreview.style.display = 'block';
+                                        previewArea.style.display = 'block';
+                                    } else {
+                                        console.error('Elements not found: fileNameInput, imagePreview, or previewArea');
+                                    }
+                                });
                             </script>";
                         }
                     ?>
