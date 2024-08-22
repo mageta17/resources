@@ -1,8 +1,11 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 require "db.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
+    echo "the form was posted";
+    // $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
     if(isset($_POST['edit'])){
         $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
         $firstname = mysqli_real_escape_string($connection, $_POST['firstName']);
@@ -78,11 +81,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $termination_date = mysqli_real_escape_string($connection, $_POST['terminantion-date']);
         $contract_exp  = mysqli_real_escape_string($connection, $_POST['contract_exp']);
 
-
-        // $filename = basename($_GET['filename']);
-        // $drivingLicenseImageDir = 'resources/images/';
-        // $drivingLicenseImageFile = $drivingLicenseImageDir . $filename;
-
         $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 
@@ -116,25 +114,41 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            termination_date = '$termination_date', contract_exp = '$contract_exp'
          WHERE employeeId = $employeeid";
             $result = mysqli_query($connection, $query);
+            echo "result";
             if ($result) {
-                echo "Update successfully.";
-                // if (move_uploaded_file($_FILES['file']['tmp_name'], $drivingLicenseImageFile)) {
-                //     $imageupdate = "UPDATE SET drivingLicenseImage ='$drivingLicenseImageFile' WHERE employeeId = $employeeid ";
-                //     $imageresult = mysqli_query($connection, $imageupdate);
+                echo "Data updated successfully.";
+
+                // Check if a file was uploaded
+                if(isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK){
+                    echo "image was isset";
+                    $filename = basename($_FILES['file']['name']);
+                    $drivingLicenseImageDir = '../resources/images/';
+                    $drivingLicenseImageFile = $drivingLicenseImageDir . $filename;
+                    echo  "$drivingLicenseImageFile"; // debugging line 
     
-                // }else {
-                //     echo "error in update picture ";
-                // }
+                    // Attempt to move the uploaded file to the target directory
+                    if (move_uploaded_file($_FILES['file']['tmp_name'], $drivingLicenseImageFile)) {
+                        // Update the database with the new image path
+                        $imageupdate = "UPDATE drivers SET drivingLicenseImage ='$drivingLicenseImageFile' WHERE employeeId = $employeeid";
+                        $imageresult = mysqli_query($connection, $imageupdate);
+
+                        echo "$imageresult ";
+    
+                        if ($imageresult) {
+                            //echo "Image uploaded and updated successfully.";
+                            header("Location:  ../driver-details-id.php");
+                        } else {
+                            echo "Error in updating image: " . mysqli_error($connection);
+                        }
+                    } else {
+                        echo "Error in uploading image.";
+                    }
+                } else {
+                    echo "No image uploaded, retaining the existing image.";
+                }
             } else {
                 echo "Error in updating data: " . mysqli_error($connection);
             }
-        } else {
-            echo "Failed to upload file.";
-        }  
-
+        }
     }
-
-
-
-
-?>
+    ?>

@@ -66,7 +66,7 @@ session_start();
     ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
-            <form action="server/driver-details-update.php" method="post" >
+            <form action="server/driver-details-update.php" method="post" enctype="multipart/form-data" >
                 <!-- Row 1 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
@@ -126,15 +126,14 @@ session_start();
                         <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" required>
                     </div>
                 </div>
-
-                     <!-- Row 6 -->
+                <!-- Row 6 -->
                 <div class="form-row d-flex flex-wrap">
-                <label for="driverlicensenoExp">Driver License Image</label>
+                    <label for="driverlicensenoExp">Driver License Image</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
                         <input id="fileName" type="text" class="form-control" name="fileName" placeholder="Additional Info" readonly>
                         <div class="input-group-append">
-                            <button id="changeButton" class="btn btn-primary" type="button">Change</button>
+                            <button id="changeButton" name="changeButton" class="btn btn-primary" type="button">Change</button>
                         </div>
                     </div>
 
@@ -143,10 +142,11 @@ session_start();
                         <img id="imagePreview" src="" alt="Preview" style="max-width: 100%; display: none;">
                         <embed id="pdfPreview" src="" type="application/pdf" style="width: 50%; height: 100px; display: none;">
                         
-                    <!-- File input and Action Buttons -->
-                    <input type="file" id="fileInput" style="display: none;">
+                        <!-- File input -->
+                        <input type="file" id="fileInput" name="file" style="display: none;">
+                        <!-- File input and Action Buttons -->
                         <div id="actionButtons" class="mt-3" style="display: none;">
-                            <button id="uploadButton" class="btn btn-primary" type="button">Upload</button>
+                            <!-- No need for the upload button as it will be part of the form submission -->
                             <button id="quitPreview" class="btn btn-danger" type="button">Quit</button>
                         </div>
                     </div>
@@ -163,7 +163,6 @@ session_start();
                             </script>";
                         }
                     ?>
-
                     <div class="form-group">
                         <label for="location">Location</label>
                         <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" required>
@@ -538,59 +537,31 @@ session_start();
     </div>
 </div>
 <script> 
-    document.getElementById('changeButton').addEventListener('click', function() {
-    // Show the file input
-    document.getElementById('fileInput').click();
-});
-
-document.getElementById('fileInput').addEventListener('change', function(event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            // Show the preview
-            document.getElementById('imagePreview').src = e.target.result;
-            document.getElementById('imagePreview').style.display = 'block';
-            document.getElementById('previewArea').style.display = 'block';
-            document.getElementById('fileName').value = file.name;
-            document.getElementById('actionButtons').style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-    document.getElementById('uploadButton').addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent the default action of the button
-        
-        const fileName = document.getElementById('fileName').value;
-        if (!fileName) {
-            alert('Please select a file to upload.');
-            return;
-        }
-        
-        // Create a form to submit the file via POST
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'server/driver-details-update.php';
-
-        // Create a hidden input to send the filename
-        const inputFilename = document.createElement('input');
-        inputFilename.type = 'hidden';
-        inputFilename.name = 'filename';
-        inputFilename.value = fileName;
-        form.appendChild(inputFilename);
-        
-        // Create a hidden input to send the file
-        const fileInput = document.getElementById('fileInput');
-        const clonedFileInput = fileInput.cloneNode(true);
-        clonedFileInput.name = 'file'; // Match the name expected by PHP
-        form.appendChild(clonedFileInput);
-
-        // Append form to the body and submit it
-        document.body.appendChild(form);
-        form.submit();
+        document.getElementById('changeButton').addEventListener('click', function() {
+        // Show the file input
+        document.getElementById('fileInput').click();
     });
 
+    document.getElementById('changeButton').addEventListener('click', function() {
+        // Show the file input
+        document.getElementById('fileInput').click();
+    });
+
+    document.getElementById('fileInput').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Show the preview
+                document.getElementById('imagePreview').src = e.target.result;
+                document.getElementById('imagePreview').style.display = 'block';
+                document.getElementById('previewArea').style.display = 'block';
+                document.getElementById('fileName').value = file.name;
+                document.getElementById('actionButtons').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    });
     document.getElementById('quitPreview').addEventListener('click', function() {
         // Hide the preview area and action buttons
         document.getElementById('previewArea').style.display = 'none';
