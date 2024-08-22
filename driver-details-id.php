@@ -134,6 +134,7 @@ session_start();
                         <input id="fileName" type="text" class="form-control" name="fileName" placeholder="Additional Info" readonly>
                         <div class="input-group-append">
                             <button id="changeButton" name="changeButton" class="btn btn-primary" type="button">Change</button>
+                            <button id="previewButton" name="previewButton" class="btn btn-secondary" type="button">Preview</button>
                         </div>
                     </div>
 
@@ -144,37 +145,41 @@ session_start();
                         
                         <!-- File input -->
                         <input type="file" id="fileInput" name="file" style="display: none;">
+                        
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons" class="mt-3" style="display: none;">
-                            <!-- No need for the upload button as it will be part of the form submission -->
                             <button id="quitPreview" class="btn btn-danger" type="button">Quit</button>
                         </div>
                     </div>
 
                     <?php
-                        //$imageURL = $row['drivingLicenseImage'];
-                        $imageURL = 'resources/images/drivers/' . $row['drivingLicenseImage'];
-
-                        //$imageURL = "resources/images/newl.jpg";
-                        $fileName = basename($imageURL); 
+                        
+                        $imageURL =  'resources/images/drivers/'.basename($row['drivingLicenseImage']);
+                        //$imageURL = 'resources/images/newl.jpg';
+                        //  echo "$imageURL";
+                        $fileName = basename($row['drivingLicenseImage']); 
                         if ($imageURL) {
-                        echo "<script>
-                                console.log('Image URL:', '$imageURL');
-                                document.addEventListener('DOMContentLoaded', function() {
-                                    var fileNameInput = document.getElementById('fileName');
-                                    var imagePreview = document.getElementById('imagePreview');
-                                    var previewArea = document.getElementById('previewArea');
+                            echo "<script>
+                                    console.log('Image URL:', '$imageURL');
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        var fileNameInput = document.getElementById('fileName');
+                                        var imagePreview = document.getElementById('imagePreview');
+                                        var previewArea = document.getElementById('previewArea');
+                                        var previewButton = document.getElementById('previewButton');
 
-                                    if (fileNameInput && imagePreview && previewArea) {
-                                        fileNameInput.value = '$fileName';
-                                        imagePreview.src = '$imageURL';
-                                        imagePreview.style.display = 'block';
-                                        previewArea.style.display = 'block';
-                                    } else {
-                                        console.error('Elements not found: fileNameInput, imagePreview, or previewArea');
-                                    }
-                                });
-                            </script>";
+                                        if (fileNameInput && imagePreview && previewArea && previewButton) {
+                                            fileNameInput.value = '$fileName';
+
+                                            previewButton.addEventListener('click', function() {
+                                                imagePreview.src = '$imageURL';
+                                                imagePreview.style.display = 'block';
+                                                previewArea.style.display = 'block';
+                                            });
+                                        } else {
+                                            console.error('Elements not found: fileNameInput, imagePreview, or previewArea');
+                                        }
+                                    });
+                                </script>";
                         }
                     ?>
                     <div class="form-group">
