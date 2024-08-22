@@ -63,6 +63,8 @@ session_start();
         if(mysqli_num_rows($result)){
             $row = mysqli_fetch_array($result);
             $_SESSION['user_id'] = $row['employeeId'];
+            if(isset($_SESSION['error'])){ echo $_SESSION['error']; unset($_SESSION['error']);}
+
     ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
