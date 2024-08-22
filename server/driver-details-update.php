@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             exit();
         } else if(!preg_match($userpatterns, trim($middlename))){
             $_SESSION['error'] = "middle name  should contain only letters.";
-            header("Location: ../driver-details-id.php?id=". $user_id);
+            header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
 
         }else{
