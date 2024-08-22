@@ -7,10 +7,6 @@ $userpatterns = '/^[A-Za-z]+(?:\s[A-Za-z]+)*$/';
 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    echo "the form was posted";
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        echo "The form was posted.<br>";
-    
         if (isset($_SESSION['user_id'])) {
             $user_id = $_SESSION['user_id'];
             echo  $user_id;
@@ -18,8 +14,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "User ID not found in session.<br>";
             exit();
         }
-    }
-    // $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
     if(isset($_POST['edit'])){
         $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
         $firstname = mysqli_real_escape_string($connection, $_POST['firstName']);
@@ -31,7 +25,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $email  = mysqli_real_escape_string($connection, $_POST['email']);
         $drivingLicense_No = mysqli_real_escape_string($connection, $_POST['driverlicenseno']);
         $drivingLicenseNoExpire  = mysqli_real_escape_string($connection, $_POST['driverlicensenoExp']);
-        //$drivingLicenseImage = mysqli_real_escape_string($connection, $_POST['driverlicenseimage']);
         $location = mysqli_real_escape_string($connection, $_POST['location']);
         $fieldSupervisor = mysqli_real_escape_string($connection, $_POST['fieldsupervisor']);
         $mobileNo1 = mysqli_real_escape_string($connection, $_POST['mobileno1']);
