@@ -126,7 +126,7 @@ session_start();
                         <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" required>
                     </div>
                 </div>
-              <!-- Row 6 -->
+                <!-- Row 6 -->
                 <div class="form-row d-flex flex-wrap">
                     <label for="driverlicensenoExp">Driver License Image</label>
                     <div class="input-group">
@@ -139,20 +139,22 @@ session_start();
                     </div>
 
                     <!-- Preview Area -->
-                    <div id="previewArea" style="display: none; margin-top: 10px; margin-bottom: 10px;">
-                        <img id="imagePreview" src="" alt="Preview" style="width: 100%; height: auto; display: block; margin: 0 auto;">
+                    <div id="previewArea" style="display: none; margin-top: 10px; margin-bottom: 10px; ">
+                    <img id="imagePreview" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
                         <embed id="pdfPreview" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
+                        
+                        <!-- File input -->
+                        <input type="file" id="fileInput" name="file" style="display: none;">
                         
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons" class="mt-3">
-                            <button id="quitPreview" class="btn btn-danger" type="button">Close</button>
+                            <button id="quitPreview" class="btn btn-danger" type="button">Quit</button>
                         </div>
                     </div>
-
                     <?php
                         $imageURL = 'resources/images/drivers/' . basename($row['drivingLicenseImage']);
                         $fileName = basename($row['drivingLicenseImage']);
-
+                
                         if ($imageURL) {
                             echo "<script>
                                     document.addEventListener('DOMContentLoaded', function() {
@@ -162,34 +164,34 @@ session_start();
                                         var previewButton = document.getElementById('previewButton');
                                         var quitButton = document.getElementById('quitPreview');
                                         var actionButtons = document.getElementById('actionButtons');
-
+                
                                         if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
                                             fileNameInput.value = '$fileName';
 
                                             previewButton.addEventListener('click', function() {
                                                 var imageUrl = '$imageURL';
                                                 console.log('Preview button clicked, image URL:', imageUrl);
-
+                                                
                                                 // Ensure the image URL is correct
                                                 if (imageUrl) {
                                                     imagePreview.src = imageUrl;
                                                     imagePreview.style.display = 'block';
                                                     previewArea.style.display = 'block';
-                                                    actionButtons.style.display = 'block'; // Show action buttons
+                                                    actionButtons.style.display = 'block';
                                                 } else {
                                                     console.error('Image URL is not defined or incorrect.');
                                                 }
                                             });
 
                                             quitButton.addEventListener('click', function() {
-                                                // Hide preview area, reset image source, and hide action buttons
+                                                // Hide preview area and reset image source
                                                 imagePreview.src = '';
                                                 imagePreview.style.display = 'none';
                                                 previewArea.style.display = 'none';
                                                 actionButtons.style.display = 'none';
                                             });
                                         } else {
-                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, quitButton, or actionButtons');
+                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
                                         }
                                     });
                                 </script>";

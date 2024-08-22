@@ -91,20 +91,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //validation 
         if(!preg_match($userpatterns, trim($firstname))){
             $_SESSION['error'] = "first name should contain only letters.";
-            header("Location: ../driver-details-id.php?Error=nameError"."$$user_id");
+            header("Location: ../driver-details-id.php?nameError%id=".$user_id);
             exit();
         } else if(!preg_match($userpatterns, trim($middlename))){
             $_SESSION['error'] = "middle name  should contain only letters.";
-            header("Location: ../driver-details-id.php?Error=nameError"."$$user_id");
+            header("Location: ../driver-details-id.php?nameError%id=".$user_id);
             exit();
 
         }else{
-
-        }
-
-
-
-        $query = "UPDATE  drivers SET 
+            $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 
            department = '$department',
@@ -196,6 +191,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 }
             } 
         }
+
+        }
+
+
+
+        
     }
 }
-    ?>
+  
