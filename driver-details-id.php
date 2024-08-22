@@ -14,6 +14,8 @@ session_start();
 
     <link href="resources/style/user-checklist-view.css?v=2" rel="stylesheet">
     <link href="resources/style/staff.css?v=2" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     
     <title>
       <?php include 'server/title.php'; ?>
@@ -63,13 +65,21 @@ session_start();
         if(mysqli_num_rows($result)){
             $row = mysqli_fetch_array($result);
             $_SESSION['user_id'] = $row['employeeId'];
-            if(isset($_SESSION['error'])){ echo $_SESSION['error']; unset($_SESSION['error']);}
-
     ?>
     <div class="row justify-content-center mt-5">
         <div class="col-lg-6 col-md-6 col-sm-12" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
             <form action="server/driver-details-update.php" method="post" enctype="multipart/form-data" >
-                <!-- Row 1 -->
+            <?php
+                if (isset($_SESSION['succes'])) {
+                    echo '<div class="alert alert-success">' . $_SESSION['succes'] . '</div>';
+                    unset($_SESSION['succes']); 
+                }
+                if (isset($_SESSION['error'])) {
+                    echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'."Error: " . $_SESSION['error'] . '</div>';
+                    unset($_SESSION['error']); 
+                }
+             ?>
+            <!-- Row 1 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employeeId">Employer ID</label>
