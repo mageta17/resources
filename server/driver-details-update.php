@@ -191,8 +191,63 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "Dependant relationship field  should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
+        }else if(!preg_match($userpatterns, trim($dependant_name_1))){
+            $_SESSION['error'] = " Second dependant  name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($depandant_relationship_1))){
+            $_SESSION['error'] = "Second dependant relationship field  should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($dependant_name_2))){
+            $_SESSION['error'] = "Third dependant  name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($depandant_relationship_2))){
+            $_SESSION['error'] = "Third dependant relationship field  should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($dependant_name_3))){
+            $_SESSION['error'] = "Fourth dependant  name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($depandant_relationship_3))){
+            $_SESSION['error'] = "Fourth dependant relationship field  should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($dependant_name_4))){
+            $_SESSION['error'] = "Fifth dependant  name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($depandant_relationship_4))){
+            $_SESSION['error'] = "Fifth dependant relationship field  should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($kin_name))){
+            $_SESSION['error'] = "Next of Kin name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($phonepattern, trim($kin_contact))){
+            $_SESSION['error'] = "Invalid next of kin contact number, phone number should start with 07 or 06";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($kin_relationship))){
+            $_SESSION['error'] = "Next of Kin relationship should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($kin_name_1))){
+            $_SESSION['error'] = "Second next of Kin name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($phonepattern, trim($kin_contact_1))){
+            $_SESSION['error'] = "Invalid  second next of kin contact number, phone number should start with 07 or 06";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($kin_relationship_1))){
+            $_SESSION['error'] = " Second next of Kin relationship should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
         }
-
         
 
 
@@ -216,7 +271,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            nssf_no = '$nssf_no', tin_no = '$tin_no', nida_no = '$nida_no', 
            banckacc_no = '$banckacc_no', bankname = '$bankname', dependant_name = '$dependant_name',
            dependant_dob = '$dependant_dob', depandant_relationship = '$depandant_relationship',
-           depandant_relationship = '$depandant_relationship', dependant_dob_1 = '$dependant_dob_1',
+           dependant_name_1 = '$dependant_name_1', dependant_dob_1 = '$dependant_dob_1',
            depandant_relationship_1 = '$depandant_relationship_1', 
            dependant_name_2 = '$dependant_name_2', dependant_dob_2 = '$dependant_dob_2',
            depandant_relationship_2 = '$depandant_relationship_2',

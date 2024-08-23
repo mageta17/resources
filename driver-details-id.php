@@ -580,14 +580,34 @@ session_start();
                     </div>
                 </div>
                 <!-- Final Row (Submit Button) -->
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                         <div class="col-lg-6 col-md-6 col-sm-12">
                             <button class="btn btn-primary btn-lg btn-block" type="submit" name="edit" style="background-color: #488aec; border-color: #488aec;">
                             Save Changes
                             </button>
-
-                 </div>
-
+                 </div> -->
+                        <!-- Button trigger modal -->
+                    <button type="button" style="background-color: #488aec; border-color: #488aec;" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#staticBackdrop" >
+                    Save Changes 
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Confirm changes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <span>Please preview your data before submitting.</span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" name="edit">Confirm</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
             </form>
             <?php }
                    }else{
@@ -631,8 +651,6 @@ session_start();
     });
 
 </script>
-
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>
