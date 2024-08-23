@@ -4,7 +4,7 @@
 require "db.php";
 session_start();
 $userpatterns = '/^[A-Za-z]+(?:\s[A-Za-z]+)*$/';
-
+$phonepattern = "/^(07|06)\d{8}$/";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (isset($_SESSION['user_id'])) {
@@ -121,7 +121,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "The field  supervisor name should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
+        }else if(!preg_match($userpatterns, trim($department))){
+
+            $_SESSION['error'] = "The department name should contain only letters.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($phonepattern, trim($mobileNo1))){
+            $_SESSION['error'] = "Invalid mobile no1, phone number should start with 07 or 06";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($phonepattern, trim($mobileNo2))){
+            $_SESSION['error'] = "Invalid mobile no2, phone number should start with 07 or 06";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match("/^T-[A-Z]{3}-\d{3}$/", trim($vehicleNo))) {
+            $_SESSION['error'] = "Valid vehicle number, valid format eg T-ABC-123";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!filter_var($issued_fuel, FILTER_VALIDATE_INT) !== false) {
+            $_SESSION['error'] = "Put quantity of liters in issued fuel in numeric, no letters or symbols required";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
         }
+
+
 
 
 
@@ -161,8 +184,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $result = mysqli_query($connection, $query);
             echo "result";
             if ($result) {
-                echo "Data updated successfully.";
-
                 // Check if a file was uploaded
                 if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
                     echo "Image was isset<br>";
@@ -217,7 +238,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 } else {
                     echo "No image uploaded, retaining the existing image.";
                 }
-            } 
+
+            } $_SESSION['succes'] = "Update succssesfully ";
+              header("Location: ../driver-details-id.php?id=".$user_id);
+              exit();
+
+       
         }
 
         }

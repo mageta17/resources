@@ -72,7 +72,7 @@ session_start();
             <form action="server/driver-details-update.php" method="post" enctype="multipart/form-data" >
             <?php
                 if (isset($_SESSION['succes'])) {
-                    echo '<div class="alert alert-success" style="text-align:center;><i class="fas fa-check-circle"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
+                    echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
                     unset($_SESSION['succes']); 
                 }
                 if (isset($_SESSION['error'])) {
