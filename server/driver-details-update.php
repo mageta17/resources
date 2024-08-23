@@ -5,6 +5,7 @@ require "db.php";
 session_start();
 $userpatterns = '/^[A-Za-z]+(?:\s[A-Za-z]+)*$/';
 $phonepattern = "/^(07|06)\d{8}$/";
+$pattern = '/^P\.O\.Box\s\d{4}$/';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if (isset($_SESSION['user_id'])) {
@@ -122,7 +123,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
         }else if(!preg_match($userpatterns, trim($department))){
-
             $_SESSION['error'] = "The department name should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
@@ -142,7 +142,46 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "Put quantity of liters in issued fuel in numeric, no letters or symbols required";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
+        }else if(!preg_match($userpatterns, trim($pob))){
+            $_SESSION['error'] = "Place of birth name should contain only letters.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($nationality))){
+            $_SESSION['error'] = "Nationality name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($pattern, trim($box))) {
+            $_SESSION['error'] = "Invalid postal address, use P.O.Box 0000";
+            header("Location: ../driver-details-id.php?id=". $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($town))){
+            $_SESSION['error'] = "Town/city  name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!filter_var($code, FILTER_VALIDATE_INT) !== false) {
+            $_SESSION['error'] = "The code should be in numeric.";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
+        } else if(!filter_var($tin_no, FILTER_VALIDATE_INT) !== false) {
+            $_SESSION['error'] = "Tin number should be  numeric in format.";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
+        } else if(strlen($tin_no) <  9 || strlen($tin_no) >  9) {
+            $_SESSION['error'] = "Tin number should contain 9 digits .";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
+        }else if(strlen($nida_no) <  20 || strlen($nida_no) >  20) {
+            $_SESSION['error'] = "Nida  number should contain 20 digits .";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
+        } else if(!filter_var($nida_no, FILTER_VALIDATE_INT) !== false) {
+            $_SESSION['error'] = "Nida number should be  numeric in format.";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
         }
+
+        
+
 
 
 

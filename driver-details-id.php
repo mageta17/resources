@@ -280,8 +280,13 @@ session_start();
                   <!-- Row 12 -->
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <input type="text" class="form-control" id="gender" name="gender" value="<?php  echo $row['gender']?>" required>
+                      <label for="gender">Gender</label>
+                        <select class="form-control" id="gender" name="gender" required>
+                            <option value="" disabled>Select gender</option>
+                            <option value="male" <?php echo $row['gender'] == 'male' ? 'selected' : ''; ?>>Male</option>
+                            <option value="female" <?php echo $row['gender'] == 'female' ? 'selected' : ''; ?>>Female</option>
+                            <option value="other" <?php echo $row['gender'] == 'other' ? 'selected' : ''; ?>>Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="nationality">Nationality</label>
@@ -292,8 +297,16 @@ session_start();
                  <!-- Row 13 -->
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
-                        <label for="martial-status">Martial status</label>
-                        <input type="text" class="form-control" id="martial-status" name="martial-status" value="<?php  echo $row['marital_status']?>" required>
+                    <label for="martial-status">Martial status</label>
+                        <select class="form-control" id="marital-status" name="martial-status" required>
+                            <option value="" disabled>Select marital status</option>
+                            <option value="Single" <?php echo $row['marital_status'] == 'Single' ? 'selected' : ''; ?>>Single</option>
+                            <option value="Married" <?php echo $row['marital_status'] == 'Married' ? 'selected' : ''; ?>>Married</option>
+                            <option value="Divorced" <?php echo $row['marital_status'] == 'Divorced' ? 'selected' : ''; ?>>Divorced</option>
+                            <option value="Widowed" <?php echo $row['marital_status'] == 'Widowed' ? 'selected' : ''; ?>>Widowed</option>
+                            <option value="Separated" <?php echo $row['marital_status'] == 'Separated' ? 'selected' : ''; ?>>Separated</option>
+                            <option value="Other" <?php echo $row['marital_status'] == 'Other' ? 'selected' : ''; ?>>Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="poa">Post Address</label>
