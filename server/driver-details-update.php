@@ -170,13 +170,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "Tin number should contain 9 digits .";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
+        }else if(filter_var($nida_no, FILTER_VALIDATE_INT) !== false) {
+            $_SESSION['error'] = "Nida number should be  numeric in format.";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
         }else if(strlen($nida_no) <  20 || strlen($nida_no) >  20) {
             $_SESSION['error'] = "Nida  number should contain 20 digits .";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        } else if(!filter_var($nida_no, FILTER_VALIDATE_INT) !== false) {
-            $_SESSION['error'] = "Nida number should be  numeric in format.";
-            header("Location: ../driver-details-id.php?id=" . $user_id);
+         }//else if(!preg_match('/^\d+$/',trim($bankacc_no))){
+        //     $_SESSION['error'] = "Bank account number should be numeric in format.";
+        //     header("Location: ../driver-details-id.php?id=" . $user_id);
+        //     exit();
+        // }
+        else if(!preg_match($userpatterns, trim($dependant_name))){
+            $_SESSION['error'] = "Dependant name should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($depandant_relationship))){
+            $_SESSION['error'] = "Dependant relationship field  should only contain letters";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
         }
 
