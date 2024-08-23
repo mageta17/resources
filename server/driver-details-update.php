@@ -105,9 +105,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "Employee name  should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
+        }else if(!preg_match($userpatterns, trim($location))){
+            $_SESSION['error'] = "The name of location should contain only letters.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if(!filter_var(($email), FILTER_VALIDATE_EMAIL)){
+            $_SESSION['error'] = "Invalid email address.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }else if (!preg_match('/^T\d{7}$/', trim($drivingLicense_No))) {
+            $_SESSION['error'] = "The driving license number should start with 'T' followed by 7 digits.";
+            header("Location: ../driver-details-id.php?id=" . $user_id);
+            exit();
+        }else if(!preg_match($userpatterns, trim($fieldSupervisor))){
+            $_SESSION['error'] = "The field  supervisor name should contain only letters.";
+            header("Location: ../driver-details-id.php?id=".  $user_id);
+            exit();
+        }
 
 
-        }else{
+
+        else{
             $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 
