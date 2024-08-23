@@ -247,15 +247,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = " Second next of Kin relationship should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }
-        
 
-
-
-
-
-
-        else{
+        } else{
             $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 
@@ -288,8 +281,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
            termination_status ='$termination_status', termination_reason = '$termination_reason',
            termination_date = '$termination_date', contract_exp = '$contract_exp'
          WHERE employeeId = $user_id";
+
             $result = mysqli_query($connection, $query);
-            echo "result";
             if ($result) {
                 // Check if a file was uploaded
                 if (isset($_FILES['file']) && $_FILES['file']['error'] == UPLOAD_ERR_OK) {
@@ -354,9 +347,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         }
-
-
-
         
     }
 }
