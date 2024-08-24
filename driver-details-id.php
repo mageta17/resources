@@ -139,8 +139,9 @@ session_start();
                         <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" required>
                     </div>
                 </div>
-                <!-- Row 6 -->
-                <div class="form-row d-flex flex-wrap">
+               <!-- Row 6 -->
+                 <!-- Row 6 -->
+                 <div class="form-row d-flex flex-wrap">
                     <label for="driverlicensenoExp">Driver License Image</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
@@ -216,18 +217,22 @@ session_start();
                         <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" required>
                     </div>
                 </div>
-
-                  <!-- Row 7 -->
-                  <div class="form-row d-flex flex-wrap">
-                    <div class="form-group">
-                        <label for="fieldsupervisor">Field supervisor </label>
-                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php  echo $row['fieldSupervisor']?>" required>
+                <!-- Row 7 -->
+                <div class="form-row d-flex flex-wrap">
+                    <div class="form-group col-md-6">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" required>
                     </div>
-                    <div class="form-group">
-                        <label for="mobileno1">Mobile no1</label>
-                        <input type="text" class="form-control" id="mobileno1" name="mobileno1" value="<?php  echo $row['mobileNo1']?>" required>
+                    <div class="form-group col-md-6">
+                        <label for="fieldsupervisor">Field Supervisor</label>
+                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php echo $row['fieldSupervisor']; ?>" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="mobileno1">Mobile No1</label>
+                        <input type="text" class="form-control" id="mobileno1" name="mobileno1" value="<?php echo $row['mobileNo1']; ?>" required>
                     </div>
                 </div>
+
 
                   <!-- Row 8 -->
                   <div class="form-row d-flex flex-wrap">
