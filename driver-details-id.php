@@ -139,7 +139,6 @@ session_start();
                         <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" required>
                     </div>
                 </div>
-               <!-- Row 6 -->
                  <!-- Row 6 -->
                  <div class="form-row d-flex flex-wrap">
                     <label for="driverlicensenoExp">Driver License Image</label>
