@@ -220,10 +220,6 @@ session_start();
                 <!-- Row 7 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group col-md-6">
-                        <label for="location">Location</label>
-                        <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" required>
-                    </div>
-                    <div class="form-group col-md-6">
                         <label for="fieldsupervisor">Field Supervisor</label>
                         <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php echo $row['fieldSupervisor']; ?>" required>
                     </div>

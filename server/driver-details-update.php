@@ -309,7 +309,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         }
                 
                         list($width, $height) = getimagesize($filePath);
-                        $newWidth = 400;
+                        $newWidth = 693;
                         $newHeight = ($height / $width) * $newWidth;
                         $newHeight = (int)$newHeight;
                 
@@ -362,7 +362,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     }
             
                     list($width, $height) = getimagesize($filePath);
-                    $newWidth = 400;
+                    $newWidth = 693;
                     $newHeight = ($height / $width) * $newWidth;
                     $newHeight = (int)$newHeight;
             
@@ -416,7 +416,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 }
         
                 list($width, $height) = getimagesize($filePath);
-                $newWidth = 400;
+                $newWidth = 693;
                 $newHeight = ($height / $width) * $newWidth;
                 $newHeight = (int)$newHeight;
         
