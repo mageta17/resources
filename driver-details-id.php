@@ -514,10 +514,97 @@ session_start();
 
                 <!-- Row 28 -->
                 <div class="form-row d-flex flex-wrap">
-                    <div class="form-group">
-                        <label for="nida-attachment">Nida attachment</label>
-                        <input type="text" class="form-control" id="nida-attachment" name="nida-attachment" value="<?php  echo $row['national_id_attachment']; ?>" required>
+                    <label for="Nida attachment">Nida attachment</label>
+                    <div class="input-group">
+                        <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
+                        <input id="fileName1" type="text" class="form-control" name="fileName1" placeholder="Additional Info" readonly>
+                        <div class="input-group-append">
+                            <button id="changeButton1" name="changeButton1" class="btn btn-primary" type="button">Change</button>
+                            <button id="previewButton1" name="previewButton1" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary" type="button">Preview</button>
+                        </div>
                     </div>
+
+                    <!-- Preview Area -->
+                    <div id="previewArea1" style="display: none; margin-top: 10px; margin-bottom: 10px; ">
+                    <img id="imagePreview1" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
+                        <embed id="pdfPreview1" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
+                        
+                        <!-- File input -->
+                        <input type="file" id="fileInput1" name="file" style="display: none;">
+                        
+                        <!-- File input and Action Buttons -->
+                        <div id="actionButtons1" class="mt-3">
+                            <button id="quitPreview1" class="btn btn-danger" type="button">Quit</button>
+                        </div>
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Nida attachment image</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        <?php
+                        //$imageURL = 'resources/images/drivers/' . basename($row['national_id_attachment ']);
+                        $imageURL = 'resources/images/newl.jpg';// temporary test
+                        //$fileName = basename($row['national_id_attachment ']);
+                
+                        if ($imageURL) {
+                            echo "<script>
+                                    document.addEventListener('DOMContentLoaded', function() {
+                                        var fileNameInput = document.getElementById('fileName1');
+                                        var imagePreview = document.getElementById('imagePreview1');
+                                        var previewArea = document.getElementById('previewArea1');
+                                        var previewButton = document.getElementById('previewButton1');
+                                        var quitButton = document.getElementById('quitPreview1');
+                                        var actionButtons = document.getElementById('actionButtons1');
+                
+                                        if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
+                                            fileNameInput.value = '$fileName';
+
+                                            previewButton.addEventListener('click', function() {
+                                                var imageUrl = '$imageURL';
+                                                console.log('Preview button clicked, image URL:', imageUrl);// for console debbuging  message 
+                                                
+                                                // Ensure the image URL is correct
+                                                if (imageUrl) {
+                                                    imagePreview.src = imageUrl;
+                                                    imagePreview.style.display = 'block';
+                                                    previewArea.style.display = 'block';
+                                                    actionButtons.style.display = 'block';
+                                                } else {
+                                                    console.error('Image URL is not defined or incorrect.');
+                                                }
+                                            });
+
+                                            quitButton.addEventListener('click', function() {
+                                                // Hide preview area and reset image source
+                                                imagePreview.src = '';
+                                                imagePreview.style.display = 'none';
+                                                previewArea.style.display = 'none';
+                                                actionButtons.style.display = 'none';
+                                            });
+                                        } else {
+                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
+                                        }
+                                    });
+                                </script>";
+                        }
+                    ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <!-- php code was here  -->
                     <div class="form-group">
                         <label for="marriage-certificate-attachment">Marriage certificate attachment</label>
                         <input type="text" class="form-control" id="marriage-certificate-attachment" name="marriage-certificate-attachment" value="<?php  echo $row['marriage_certificate_attachment']; ?>" required>
@@ -626,10 +713,14 @@ session_start();
         // Show the file input
         document.getElementById('fileInput').click();
     });
+       document.getElementById('changeButton1').addEventListener('click', function(){
 
-    document.getElementById('changeButton').addEventListener('click', function() {
-        // Show the file input
         document.getElementById('fileInput').click();
+       });
+
+    document.getElementById('changeButton2').addEventListener('click', function() {
+        // Show the file input
+        document.getElementById('fileInput1').click();
     });
 
     document.getElementById('fileInput').addEventListener('change', function(event) {
@@ -643,6 +734,22 @@ session_start();
                 document.getElementById('previewArea').style.display = 'block';
                 document.getElementById('fileName').value = file.name;
                 document.getElementById('actionButtons').style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+       
+    });
+    document.getElementById('fileInput1').addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                // Show the preview
+                document.getElementById('imagePreview1').src = e.target.result;
+                document.getElementById('imagePreview1').style.display = 'block';
+                document.getElementById('previewArea1').style.display = 'block';
+                document.getElementById('fileName1').value = file.name;
+                document.getElementById('actionButtons1').style.display = 'block';
             };
             reader.readAsDataURL(file);
         }
