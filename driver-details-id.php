@@ -640,11 +640,10 @@ session_start();
                         </div>
                         <div class="modal-body">
                         <?php
-                        // $imageURL = 'resources/images/nida-attachment/' . basename($row['national_id_attachment']);
-                       $imageURL = 'resources/images/newl.jpg';// temporary test
-                        // $fileName = basename($row['national_id_attachment']);
-                        $fileName = basename($imageURL);
-                
+                         $imageURL = 'resources/images/marriage-attachment/' . basename($row['marriage_certificate_attachment']);
+                    
+                        $fileName = basename($row['marriage_certificate_attachment']);
+                        
                         if ($imageURL) {
                             echo "<script>
                                     document.addEventListener('DOMContentLoaded', function() {
@@ -652,7 +651,7 @@ session_start();
                                         var imagePreview = document.getElementById('imagePreview2');
                                         var previewArea = document.getElementById('previewArea2');
                                         var previewButton = document.getElementById('previewButton2');
-                                        var quitButton = document.getElementById('quitPreview2);
+                                        var quitButton = document.getElementById('quitPreview2');
                                         var actionButtons = document.getElementById('actionButtons2');
                 
                                         if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
@@ -678,6 +677,7 @@ session_start();
                                                 imagePreview.style.display = 'none';
                                                 previewArea.style.display = 'none';
                                                 actionButtons.style.display = 'none';
+                                                console.log('the quit button is clicked ');
                                             });
                                         } else {
                                             console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
@@ -857,11 +857,11 @@ session_start();
         }
        
     });
-    document.getElementById('quitPreview').addEventListener('click', function() {
-        // Hide the preview area and action buttons
-        document.getElementById('previewArea').style.display = 'none';
-        document.getElementById('actionButtons').style.display = 'none';
-    });
+    // document.getElementById('quitPreview').addEventListener('click', function() {
+    //     // Hide the preview area and action buttons
+    //     document.getElementById('previewArea').style.display = 'none';
+    //     document.getElementById('actionButtons').style.display = 'none';
+    // });
 
     // document.getElementById('quitPreview2').addEventListener('click', function() {
     //     // Hide the preview area and action buttons
