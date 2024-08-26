@@ -202,6 +202,7 @@ session_start();
                                                 imagePreview.style.display = 'none';
                                                 previewArea.style.display = 'none';
                                                 actionButtons.style.display = 'none';
+                                                console.log('quit  button clicked.');
                                             });
                                         } else {
                                             console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
@@ -530,7 +531,7 @@ session_start();
                         <embed id="pdfPreview1" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
                         
                         <!-- File input -->
-                        <input type="file" id="fileInput1" name="file" style="display: none;">
+                        <input type="file" id="fileInput1" name="file1" style="display: none;">
                         
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons1" class="mt-3">
@@ -549,9 +550,9 @@ session_start();
                         </div>
                         <div class="modal-body">
                         <?php
-                        //$imageURL = 'resources/images/drivers/' . basename($row['national_id_attachment ']);
-                        $imageURL = 'resources/images/newl.jpg';// temporary test
-                        //$fileName = basename($row['national_id_attachment ']);
+                        $imageURL = 'resources/images/nida-attachment/' . basename($row['national_id_attachment']);
+                       // $imageURL = 'resources/images/newl.jpg';// temporary test
+                        $fileName = basename($row['national_id_attachment']);
                 
                         if ($imageURL) {
                             echo "<script>
@@ -606,7 +607,7 @@ session_start();
 
                     <!-- php code was here  -->
                     <div class="form-group">
-                        <label for="marriage-certificate-attachment">Marriage certificate attachment</label>
+                        <label for="marriage-certificate-attachment" style="margin-top:2%;">Marriage certificate attachment</label>
                         <input type="text" class="form-control" id="marriage-certificate-attachment" name="marriage-certificate-attachment" value="<?php  echo $row['marriage_certificate_attachment']; ?>" required>
                     </div>
                 </div>
@@ -713,16 +714,6 @@ session_start();
         // Show the file input
         document.getElementById('fileInput').click();
     });
-       document.getElementById('changeButton1').addEventListener('click', function(){
-
-        document.getElementById('fileInput').click();
-       });
-
-    document.getElementById('changeButton2').addEventListener('click', function() {
-        // Show the file input
-        document.getElementById('fileInput1').click();
-    });
-
     document.getElementById('fileInput').addEventListener('change', function(event) {
         const file = event.target.files[0];
         if (file) {
@@ -738,6 +729,10 @@ session_start();
             reader.readAsDataURL(file);
         }
        
+    });
+    document.getElementById('changeButton1').addEventListener('click', function() {
+        // Show the file input
+        document.getElementById('fileInput1').click();
     });
     document.getElementById('fileInput1').addEventListener('change', function(event) {
         const file = event.target.files[0];
