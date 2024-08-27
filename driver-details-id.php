@@ -80,8 +80,8 @@ session_start();
             100% { transform: translateX(0) }
         }
         .alert-danger{
-            animation: horizontal-shaking 0.5s ease-in-out forwards; 
-            animation-iteration-count: 2;
+            animation: horizontal-shaking 0.2s ease-in-out forwards; 
+            animation-iteration-count: 4;
         } 
     </style>
 </head>
