@@ -144,7 +144,7 @@ session_start();
                     <label for="driverlicensenoExp">Driver License Image</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
-                        <input id="fileName" type="text" class="form-control" name="fileName" placeholder="Additional Info" readonly>
+                        <input id="fileName" type="text" class="form-control" style="margin-right:2%; border-radius:4px;  margin-bottom:4%;" name="fileName" placeholder="Additional Info" readonly>
                         <div class="input-group-append">
                             <button id="changeButton" name="changeButton" class="btn btn-primary" type="button">Change</button>
                             <button id="previewButton" name="previewButton" class="btn btn-secondary" type="button">Preview</button>
@@ -483,7 +483,7 @@ session_start();
                     <label for="Nida attachment">Nida attachment</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
-                        <input id="fileName1" type="text" class="form-control" name="fileName1" placeholder="Additional Info" readonly>
+                        <input id="fileName1" type="text" class="form-control" style="margin-right:2%; border-radius:4px; margin-bottom: 4%;" name="fileName1" placeholder="Additional Info" readonly>
                         <div class="input-group-append">
                             <button id="changeButton1" name="changeButton1" class="btn btn-primary" type="button">Change</button>
                             <button id="previewButton1" name="previewButton1" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary" type="button">Preview</button>
@@ -546,7 +546,7 @@ session_start();
                     <label for="marriage-attachment">Marriage attachment</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
-                        <input id="fileName2" type="text" class="form-control" name="fileName2" placeholder="Additional Info" readonly>
+                        <input id="fileName2" type="text" class="form-control" name="fileName2" placeholder="Additional Info" style="margin-right:2%; border-radius:4px;  margin-bottom: 4%;" readonly>
                         <div class="input-group-append">
                             <button id="changeButton2" name="changeButton2" class="btn btn-primary" type="button">Change</button>
                             <button id="previewButton2" name="previewButton2" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary" type="button">Preview</button>
@@ -611,7 +611,7 @@ session_start();
                     <label for="Photo-profile">Photo profile</label>
                     <div class="input-group">
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
-                        <input id="fileName3" type="text" class="form-control" name="fileName3" placeholder="Additional Info" readonly>
+                        <input id="fileName3" type="text" class="form-control" style="margin-right:2%; border-radius:4px;" name="fileName3" placeholder="Additional Info" readonly>
                         <div class="input-group-append">
                             <button id="changeButton3" name="changeButton3" class="btn btn-primary" type="button">Change</button>
                             <button id="previewButton3" name="previewButton3" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary" type="button">Preview</button>
@@ -646,12 +646,12 @@ session_start();
                          $imageURL = 'resources/images/Profile-photo/' . urlencode(basename($row['img_name']));
 
                          
-                        $fileName = urlencode(basename($row['img_name']));
+                        $fileName4 = urlencode(basename($row['img_name']));
                         
                         
                         if ($imageURL) {
                             echo "<script>
-                                     var fileName = '$fileName';
+                                     var fileName = '$fileName4';
                                      var imageURL = '$imageURL';
                                      var showpreview = true;
                                 </script>";
@@ -660,7 +660,7 @@ session_start();
                         }
                        ?> 
                           <input type="hidden" id="imageURL" value="<?php echo $imageURL; ?>">
-                          <input type="hidden" id="fileName" value="<?php echo $fileName; ?>">
+                          <input type="hidden" id="fileName" value="<?php echo $fileName4; ?>">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
