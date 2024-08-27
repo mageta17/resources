@@ -53,6 +53,18 @@ session_start();
             font-size: medium;
 
         }
+        .alert  {
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+           }
+        }
     </style>
 </head>
 <body> 
