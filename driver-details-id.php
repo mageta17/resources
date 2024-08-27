@@ -165,52 +165,21 @@ session_start();
                         </div>
                     </div>
                     <?php
-                        $imageURL = 'resources/images/drivers/' . basename($row['drivingLicenseImage']);
-                        $fileName = basename($row['drivingLicenseImage']);
+                        $imageURL_ = 'resources/images/drivers/' . urlencode(basename($row['drivingLicenseImage']));
+                        $fileName_ = urlencode(basename($row['drivingLicenseImage']));
                 
-                        if ($imageURL) {
+                        if ($imageURL_) {
                             echo "<script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        var fileNameInput = document.getElementById('fileName');
-                                        var imagePreview = document.getElementById('imagePreview');
-                                        var previewArea = document.getElementById('previewArea');
-                                        var previewButton = document.getElementById('previewButton');
-                                        var quitButton = document.getElementById('quitPreview');
-                                        var actionButtons = document.getElementById('actionButtons');
-                
-                                        if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
-                                            fileNameInput.value = '$fileName';
-
-                                            previewButton.addEventListener('click', function() {
-                                                var imageUrl = '$imageURL';
-                                                console.log('Preview button clicked, image URL:', imageUrl);
-                                                
-                                                // Ensure the image URL is correct
-                                                if (imageUrl) {
-                                                    imagePreview.src = imageUrl;
-                                                    imagePreview.style.display = 'block';
-                                                    previewArea.style.display = 'block';
-                                                    actionButtons.style.display = 'block';
-                                                } else {
-                                                    console.error('Image URL is not defined or incorrect.');
-                                                }
-                                            });
-
-                                            quitButton.addEventListener('click', function() {
-                                                // Hide preview area and reset image source
-                                                imagePreview.src = '';
-                                                imagePreview.style.display = 'none';
-                                                previewArea.style.display = 'none';
-                                                actionButtons.style.display = 'none';
-                                                console.log('quit  button clicked.');
-                                            });
-                                        } else {
-                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
-                                        }
-                                    });
+                                     var fileName = '$fileName_';
+                                     var imageURL = '$imageURL_';
+                                     var showpreview = true;
                                 </script>";
+                        } else {
+                            echo "no image found ";
                         }
-                    ?>
+                       ?> 
+                          <input type="hidden" id="imageURL_" value="<?php echo $imageURL_; ?>">
+                          <input type="hidden" id="fileName_" value="<?php echo $fileName_; ?>">
 
                     <div class="form-group">
                         <label for="location">Location</label>
@@ -546,51 +515,23 @@ session_start();
                         </div>
                         <div class="modal-body">
                         <?php
-                        $imageURL = 'resources/images/nida-attachment/' . basename($row['national_id_attachment']);
+                        $imageURL1 = 'resources/images/nida-attachment/' . urldecode(basename($row['national_id_attachment']));
                        // $imageURL = 'resources/images/newl.jpg';// temporary test
-                        $fileName = basename($row['national_id_attachment']);
+                        $fileName1 =  urlencode(basename($row['national_id_attachment']));
                 
-                        if ($imageURL) {
+                        if ($imageURL1) {
                             echo "<script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        var fileNameInput = document.getElementById('fileName1');
-                                        var imagePreview = document.getElementById('imagePreview1');
-                                        var previewArea = document.getElementById('previewArea1');
-                                        var previewButton = document.getElementById('previewButton1');
-                                        var quitButton = document.getElementById('quitPreview1');
-                                        var actionButtons = document.getElementById('actionButtons1');
-                
-                                        if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
-                                            fileNameInput.value = '$fileName';
-
-                                            previewButton.addEventListener('click', function() {
-                                                var imageUrl = '$imageURL';
-                                                console.log('Preview button clicked, image URL:', imageUrl);// for console debbuging  message 
-
-                                                if (imageUrl) {
-                                                    imagePreview.src = imageUrl;
-                                                    imagePreview.style.display = 'block';
-                                                    previewArea.style.display = 'block';
-                                                    actionButtons.style.display = 'block';
-                                                } else {
-                                                    console.error('Image URL is not defined or incorrect.');
-                                                }
-                                            });
-
-                                            quitButton.addEventListener('click', function() {
-                                                // Hide preview area and reset image source
-                                                imagePreview.src = '';
-                                                imagePreview.style.display = 'none';
-                                                previewArea.style.display = 'none';
-                                                actionButtons.style.display = 'none';
-                                            });
-                                        } else {
-                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
-                                        }
-                                    });
+                                     var fileName = '$fileName1';
+                                     var imageURL = '$imageURL1';
+                                     var showpreview = true;
                                 </script>";
+                        } else {
+                            echo "no image found ";
                         }
-                    ?>
+                       ?> 
+                          <input type="hidden" id="imageURL1" value="<?php echo $imageURL1; ?>">
+                          <input type="hidden" id="fileName_1" value="<?php echo $fileName1; ?>">
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -636,52 +577,23 @@ session_start();
                         </div>
                         <div class="modal-body">
                         <?php
-                         $imageURL = 'resources/images/marriage-attachment/' . basename($row['marriage_certificate_attachment']);
+                         $imageURL2 = 'resources/images/marriage-attachment/' . urlencode(basename($row['marriage_certificate_attachment']));
                     
-                        $fileName = basename($row['marriage_certificate_attachment']);
+                        $fileName2 = urlencode(basename($row['marriage_certificate_attachment']));
                         
-                        if ($imageURL) {
+                        if ($imageURL2) {
                             echo "<script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        var fileNameInput = document.getElementById('fileName2');
-                                        var imagePreview = document.getElementById('imagePreview2');
-                                        var previewArea = document.getElementById('previewArea2');
-                                        var previewButton = document.getElementById('previewButton2');
-                                        var quitButton = document.getElementById('quitPreview2');
-                                        var actionButtons = document.getElementById('actionButtons2');
-                
-                                        if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
-                                            fileNameInput.value = '$fileName';
-
-                                            previewButton.addEventListener('click', function() {
-                                                var imageUrl = '$imageURL';
-                                                console.log('Preview button clicked, image URL:', imageUrl);// for console debbuging  message 
-
-                                                if (imageUrl) {
-                                                    imagePreview.src = imageUrl;
-                                                    imagePreview.style.display = 'block';
-                                                    previewArea.style.display = 'block';
-                                                    actionButtons.style.display = 'block';
-                                                } else {
-                                                    console.error('Image URL is not defined or incorrect.');
-                                                }
-                                            });
-
-                                            quitButton.addEventListener('click', function() {
-                                                // Hide preview area and reset image source
-                                                imagePreview.src = '';
-                                                imagePreview.style.display = 'none';
-                                                previewArea.style.display = 'none';
-                                                actionButtons.style.display = 'none';
-                                                console.log('the quit button is clicked ');
-                                            });
-                                        } else {
-                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
-                                        }
-                                    });
+                                     var fileName = '$fileName2';
+                                     var imageURL = '$imageURL2';
+                                     var showpreview = true;
                                 </script>";
+                        } else {
+                            echo "no image found ";
                         }
-                       ?>
+                       ?> 
+                          <input type="hidden" id="imageURL2" value="<?php echo $imageURL2; ?>">
+                          <input type="hidden" id="fileName_2" value="<?php echo $fileName2; ?>">
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -730,52 +642,25 @@ session_start();
                         </div>
                         <div class="modal-body">
                         <?php
-                         $imageURL = 'resources/images/Profile-photo/' . basename($row['img_name']);
+                         //$imageURL = 'resources/images/Profile-photo/' . basename($row['img_name']);
+                         $imageURL = 'resources/images/Profile-photo/' . urlencode(basename($row['img_name']));
+
                          
-                        $fileName = basename($row['img_name']);
+                        $fileName = urlencode(basename($row['img_name']));
+                        
                         
                         if ($imageURL) {
                             echo "<script>
-                                    document.addEventListener('DOMContentLoaded', function() {
-                                        var fileNameInput = document.getElementById('fileName3');
-                                        var imagePreview = document.getElementById('imagePreview3');
-                                        var previewArea = document.getElementById('previewArea3');
-                                        var previewButton = document.getElementById('previewButton3');
-                                        var quitButton = document.getElementById('quitPreview3');
-                                        var actionButtons = document.getElementById('actionButtons3');
-                
-                                        if (fileNameInput && imagePreview && previewArea && previewButton && quitButton && actionButtons) {
-                                            fileNameInput.value = '$fileName';
-
-                                            previewButton.addEventListener('click', function() {
-                                                var imageUrl = '$imageURL';
-                                                console.log('Preview button clicked, image URL:', imageUrl);// for console debbuging  message 
-
-                                                if (imageUrl) {
-                                                    imagePreview.src = imageUrl;
-                                                    imagePreview.style.display = 'block';
-                                                    previewArea.style.display = 'block';
-                                                    actionButtons.style.display = 'block';
-                                                } else {
-                                                    console.error('Image URL is not defined or incorrect.');
-                                                }
-                                            });
-
-                                            quitButton.addEventListener('click', function() {
-                                                // Hide preview area and reset image source
-                                                imagePreview.src = '';
-                                                imagePreview.style.display = 'none';
-                                                previewArea.style.display = 'none';
-                                                actionButtons.style.display = 'none';
-                                                console.log('the quit button is clicked ');
-                                            });
-                                        } else {
-                                            console.error('Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton');
-                                        }
-                                    });
+                                     var fileName = '$fileName';
+                                     var imageURL = '$imageURL';
+                                     var showpreview = true;
                                 </script>";
+                        } else {
+                            echo "no image found ";
                         }
-                       ?>
+                       ?> 
+                          <input type="hidden" id="imageURL" value="<?php echo $imageURL; ?>">
+                          <input type="hidden" id="fileName" value="<?php echo $fileName; ?>">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -877,7 +762,7 @@ session_start();
         </div>
     </div>
 </div>
-<script src="driver-update.js"></script>
+<script src="resources/js/drivers-update.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

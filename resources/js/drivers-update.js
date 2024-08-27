@@ -86,3 +86,214 @@ document
       reader.readAsDataURL(file);
     }
   });
+//code for displaying the image preview
+document.addEventListener("DOMContentLoaded", function () {
+   var imageURL = document.getElementById('imageURL').value;
+   var fileName = document.getElementById('fileName').value;
+ 
+  if (showpreview) {
+    var fileNameInput = document.getElementById("fileName3");
+    var imagePreview = document.getElementById("imagePreview3");
+    var previewArea = document.getElementById("previewArea3");
+    var previewButton = document.getElementById("previewButton3");
+    var quitButton = document.getElementById("quitPreview3");
+    var actionButtons = document.getElementById("actionButtons3");
+
+    if (
+      fileNameInput &&
+      imagePreview &&
+      previewArea &&
+      previewButton &&
+      quitButton &&
+      actionButtons
+    ) {
+      fileNameInput.value = fileName;
+
+      previewButton.addEventListener("click", function () {
+        var imageUrl = imageURL;
+        console.log("Preview button clicked, image URL:", imageUrl); // for console debbuging  message
+
+        if (imageUrl) {
+          imagePreview.src = imageUrl;
+          imagePreview.style.display = "block";
+          previewArea.style.display = "block";
+          actionButtons.style.display = "block";
+        } else {
+          console.error("Image URL is not defined or incorrect.");
+        }
+      });
+
+      quitButton.addEventListener("click", function () {
+        // Hide preview area and reset image source
+        imagePreview.src = "";
+        imagePreview.style.display = "none";
+        previewArea.style.display = "none";
+        actionButtons.style.display = "none";
+        console.log("the quit button is clicked ");
+      });
+    } else {
+      console.error(
+        "Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton"
+      );
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var imageURL = document.getElementById('imageURL2').value;
+    var fileName = document.getElementById('fileName_2').value;
+  
+   if (showpreview) {
+     var fileNameInput = document.getElementById("fileName2");
+     var imagePreview = document.getElementById("imagePreview2");
+     var previewArea = document.getElementById("previewArea2");
+     var previewButton = document.getElementById("previewButton2");
+     var quitButton = document.getElementById("quitPreview2");
+     var actionButtons = document.getElementById("actionButtons2");
+ 
+     if (
+       fileNameInput &&
+       imagePreview &&
+       previewArea &&
+       previewButton &&
+       quitButton &&
+       actionButtons
+     ) {
+       fileNameInput.value = fileName;
+ 
+       previewButton.addEventListener("click", function () {
+         var imageUrl = imageURL;
+         console.log("Preview button clicked, image URL:", imageUrl); // for console debbuging  message
+ 
+         if (imageUrl) {
+           imagePreview.src = imageUrl;
+           imagePreview.style.display = "block";
+           previewArea.style.display = "block";
+           actionButtons.style.display = "block";
+         } else {
+           console.error("Image URL is not defined or incorrect.");
+         }
+       });
+ 
+       quitButton.addEventListener("click", function () {
+         // Hide preview area and reset image source
+         imagePreview.src = "";
+         imagePreview.style.display = "none";
+         previewArea.style.display = "none";
+         actionButtons.style.display = "none";
+         console.log("the quit button is clicked ");
+       });
+     } else {
+       console.error(
+         "Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton"
+       );
+     }
+   }
+ });
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+    var imageURL = document.getElementById('imageURL1').value;
+    var fileName = document.getElementById('fileName_1').value;
+  
+   if (showpreview) {
+     var fileNameInput = document.getElementById("fileName1");
+     var imagePreview = document.getElementById("imagePreview1");
+     var previewArea = document.getElementById("previewArea1");
+     var previewButton = document.getElementById("previewButton1");
+     var quitButton = document.getElementById("quitPreview1");
+     var actionButtons = document.getElementById("actionButtons1");
+ 
+     if (
+       fileNameInput &&
+       imagePreview &&
+       previewArea &&
+       previewButton &&
+       quitButton &&
+       actionButtons
+     ) {
+       fileNameInput.value = fileName;
+ 
+       previewButton.addEventListener("click", function () {
+         var imageUrl = imageURL;
+         console.log("Preview button clicked, image URL:", imageUrl); // for console debbuging  message
+ 
+         if (imageUrl) {
+           imagePreview.src = imageUrl;
+           imagePreview.style.display = "block";
+           previewArea.style.display = "block";
+           actionButtons.style.display = "block";
+         } else {
+           console.error("Image URL is not defined or incorrect.");
+         }
+       });
+ 
+       quitButton.addEventListener("click", function () {
+         // Hide preview area and reset image source
+         imagePreview.src = "";
+         imagePreview.style.display = "none";
+         previewArea.style.display = "none";
+         actionButtons.style.display = "none";
+         console.log("the quit button is clicked ");
+       });
+     } else {
+       console.error(
+         "Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton"
+       );
+     }
+   }
+ });
+
+ document.addEventListener("DOMContentLoaded", function () {
+    var imageURL = document.getElementById('imageURL_').value;
+    var fileName = document.getElementById('fileName_').value;
+  
+   if (showpreview) {
+     var fileNameInput = document.getElementById("fileName");
+     var imagePreview = document.getElementById("imagePreview");
+     var previewArea = document.getElementById("previewArea");
+     var previewButton = document.getElementById("previewButton");
+     var quitButton = document.getElementById("quitPreview");
+     var actionButtons = document.getElementById("actionButtons");
+ 
+     if (
+       fileNameInput &&
+       imagePreview &&
+       previewArea &&
+       previewButton &&
+       quitButton &&
+       actionButtons
+     ) {
+       fileNameInput.value = fileName;
+ 
+       previewButton.addEventListener("click", function () {
+         var imageUrl = imageURL;
+         console.log("Preview button clicked, image URL:", imageUrl); // for console debbuging  message
+ 
+         if (imageUrl) {
+           imagePreview.src = imageUrl;
+           imagePreview.style.display = "block";
+           previewArea.style.display = "block";
+           actionButtons.style.display = "block";
+         } else {
+           console.error("Image URL is not defined or incorrect.");
+         }
+       });
+ 
+       quitButton.addEventListener("click", function () {
+         // Hide preview area and reset image source
+         imagePreview.src = "";
+         imagePreview.style.display = "none";
+         previewArea.style.display = "none";
+         actionButtons.style.display = "none";
+         console.log("the quit button is clicked ");
+       });
+     } else {
+       console.error(
+         "Elements not found: fileNameInput, imagePreview, previewArea, previewButton, or quitButton"
+       );
+     }
+   }
+ });
+ 
+
+ 
