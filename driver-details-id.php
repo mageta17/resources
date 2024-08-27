@@ -54,9 +54,12 @@ session_start();
 
         }
         .alert  {
-        opacity: 0;
-        transform: translateY(-20px);
-        animation: fadeIn 1s forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+        
+        }
+        .alert-success{
+            animation: fadeIn 1s forwards;
         }
 
         @keyframes fadeIn {
@@ -65,6 +68,21 @@ session_start();
             transform: translateY(0);
            }
         }
+        @keyframes horizontal-shaking {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            0% { transform: translateX(0) }
+            25% { transform: translateX(5px) }
+            50% { transform: translateX(-5px) }
+            75% { transform: translateX(5px) }
+            100% { transform: translateX(0) }
+        }
+        .alert-danger{
+            animation: horizontal-shaking 0.5s ease-in-out forwards; 
+            animation-iteration-count: 2;
+        } 
     </style>
 </head>
 <body> 
