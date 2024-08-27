@@ -89,7 +89,7 @@ document
 //code for displaying the image preview
 document.addEventListener("DOMContentLoaded", function () {
    var imageURL = document.getElementById('imageURL').value;
-   var fileName = document.getElementById('fileName').value;
+   var fileName = document.getElementById('fileName4').value;
  
   if (showpreview) {
     var fileNameInput = document.getElementById("fileName3");

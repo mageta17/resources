@@ -613,7 +613,7 @@ session_start();
                         <span class="input-group-addon pd-0" style="padding: 10px;">Preview</span>
                         <input id="fileName3" type="text" class="form-control" style="margin-right:2%; border-radius:4px;" name="fileName3" placeholder="Additional Info" readonly>
                         <div class="input-group-append">
-                            <button id="changeButton3" name="changeButton3" class="btn btn-primary" type="button">Change</button>
+                            
                             <button id="previewButton3" name="previewButton3" data-toggle="modal" data-target="#exampleModalCenter" class="btn btn-secondary" type="button">Preview</button>
                         </div>
                     </div>
@@ -628,6 +628,7 @@ session_start();
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons3" class="mt-3">
                             <button id="quitPreview3" class="btn btn-danger" type="button">Quit</button>
+                            <button id="changeButton3" name="changeButton3" class="btn btn-primary" type="button">Change</button>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -660,7 +661,7 @@ session_start();
                         }
                        ?> 
                           <input type="hidden" id="imageURL" value="<?php echo $imageURL; ?>">
-                          <input type="hidden" id="fileName" value="<?php echo $fileName4; ?>">
+                          <input type="hidden" id="fileName4" value="<?php echo $fileName4; ?>">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
