@@ -283,7 +283,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     'file2' => '../resources/images/marriage-attachment/',
                     'file3' => '../resources/images/Profile-photo/'
                 ];
-                
+            
                 // Define the database columns associated with each file
                 $dbColumns = [
                     'file' => 'drivingLicenseImage',
@@ -291,21 +291,21 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     'file2' => 'marriage_certificate_attachment',
                     'file3' => 'img_name'
                 ];
-                
+            
                 $updateFields = [];
-                
+            
                 // Loop through each expected file
                 foreach ($uploadDirs as $inputName => $uploadDir) {
-                    if (!empty(isset($_FILES[$inputName]) && $_FILES[$inputName]['error'] == UPLOAD_ERR_OK)) {
+                    if (isset($_FILES[$inputName]) && $_FILES[$inputName]['error'] == UPLOAD_ERR_OK) {
                         $file = $_FILES[$inputName];
                         $name = $file['name'];
                         $tmp_name = $file['tmp_name'];
                         $ext = strtolower(pathinfo($name, PATHINFO_EXTENSION));
-                
+            
                         // Create a unique filename
                         $imageFullName = $user_id . "-" . $firstname . "-" . uniqid("", true) . "." . $ext;
                         $filePath = $uploadDir . $imageFullName;
-                
+            
                         // Attempt to move the uploaded file to the target directory
                         if (move_uploaded_file($tmp_name, $filePath)) {
                             // Resize image
@@ -314,19 +314,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 echo "Error creating image from string.<br>";
                                 continue;
                             }
-                
+            
                             list($width, $height) = getimagesize($filePath);
                             $newWidth = ($inputName === 'file3') ? 332.15 : 693; 
                             $newHeight = (int)(($height / $width) * $newWidth);
-                
+            
                             $tmp = imagecreatetruecolor($newWidth, $newHeight);
                             imagecopyresampled($tmp, $src, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
-                
+            
                             // Save the resized image
                             if (imagejpeg($tmp, $filePath, 100)) {
                                 imagedestroy($tmp);
                                 imagedestroy($src);
-                
+            
                                 // Prepare to update the database
                                 $updateFields[] = "{$dbColumns[$inputName]} = '$filePath'";
                             } else {
@@ -335,31 +335,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                         } else {
                             echo "Error uploading file $inputName.<br>";
                         }
-                    } else {
-                        $_SESSION['succes'] = "Update successfully completed.";
-                        header("Location: ../driver-details-id.php?id=".$user_id);
-                        exit();
-                        // echo "No valid file uploaded for $inputName, retaining the existing image.<br>";
                     }
                 }
-                
+            
                 // Update the database with all new image paths
                 if (!empty($updateFields)) {
                     $updateQuery = "UPDATE drivers SET " . implode(', ', $updateFields) . " WHERE employeeId = '$user_id'";
                     if (mysqli_query($connection, $updateQuery)) {
                         $_SESSION['succes'] = "Update successfully completed.";
-                        header("Location: ../driver-details-id.php?id=".$user_id);
+                        header("Location: ../driver-details-id.php?id=" . $user_id);
                         exit();
                     } else {
                         echo "Error updating database: " . mysqli_error($connection);
                     }
+                } else {
+                    // Handle case when no files were uploaded
+                    $_SESSION['succes'] = "No new files uploaded, but update successfully completed.";
+                    header("Location: ../driver-details-id.php?id=" . $user_id);
+                    exit();
                 }
-
-       
             }
-
         }
-        
     }
 }
-  
+            
