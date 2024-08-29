@@ -43,48 +43,53 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $nationality = isset($_POST['nationality'])  ? mysqli_real_escape_string($connection, $_POST['nationality']): null;
         $marital_status =  isset($_POST['martial-status']) ? mysqli_real_escape_string($connection, $_POST['martial-status']): null;
         $box = isset($_POST['poa']) ?  mysqli_real_escape_string($connection, $_POST['poa']): null;
-        $code  = mysqli_real_escape_string($connection, $_POST['code']);
-        $town = mysqli_real_escape_string($connection, $_POST['town']);
-        $date_of_employment = mysqli_real_escape_string($connection, $_POST['dateofemployment']);
-        $employment_no = mysqli_real_escape_string($connection, $_POST['employementno']);
-        $nssf_no = mysqli_real_escape_string($connection, $_POST['nssf-no']);
-        $tin_no = mysqli_real_escape_string($connection, $_POST['tin-no']);
-        $nida_no = mysqli_real_escape_string($connection, $_POST['nida-no']);
-        $banckacc_no = mysqli_real_escape_string($connection, $_POST['banckacc_no']);
-        $bankname = mysqli_real_escape_string($connection, $_POST['bankname']);
-        $dependant_name = mysqli_real_escape_string($connection, $_POST['dependantName']);
+        $code  = isset($_POST['code']) ?  mysqli_real_escape_string($connection, $_POST['code']):
+        null;
+        $town =  isset($_POST['town']) ? mysqli_real_escape_string($connection, $_POST['town']):
+        null;
+        $date_of_employment =  isset($_POST['dateofemployment']) ?  mysqli_real_escape_string($connection, $_POST['dateofemployment']) : null;
+        $employment_no = isset($_POST['employementno']) ?  mysqli_real_escape_string($connection, $_POST['employementno']): null;
+        $nssf_no = isset($_POST['nssf-no']) ?  mysqli_real_escape_string($connection, $_POST['nssf-no']):
+        null;
+        $tin_no =  isset($_POST['tin-no']) ? mysqli_real_escape_string($connection, $_POST['tin-no']):
+        null;
+        $nida_no =  isset($_POST['nida-no']) ? mysqli_real_escape_string($connection, $_POST['nida-no']):
+        null;
+        $banckacc_no =  isset($_POST['banckacc_no']) ? mysqli_real_escape_string($connection, $_POST['banckacc_no']): null;
+        $bankname = isset($_POST['bankname']) ?  mysqli_real_escape_string($connection, $_POST['bankname']): null;
+        $dependant_name = isset($_POST['dependantName'])  ? mysqli_real_escape_string($connection, $_POST['dependantName']): null;
         
-        $dependant_dob = mysqli_real_escape_string($connection, $_POST['dependant_dob']);
-        $depandant_relationship = mysqli_real_escape_string($connection, $_POST['dependantrelationship']);
-        $dependant_name_1 = mysqli_real_escape_string($connection, $_POST['dependantName1']);
-        $dependant_dob_1 = mysqli_real_escape_string($connection, $_POST['dependant_dob1']);
-        $depandant_relationship_1 = mysqli_real_escape_string($connection, $_POST['dependantrelationship1']);
-        $dependant_name_2 = mysqli_real_escape_string($connection, $_POST['dependantName2']);
-        $dependant_dob_2 = mysqli_real_escape_string($connection, $_POST['dependant_dob2']);
-        $depandant_relationship_2 = mysqli_real_escape_string($connection, $_POST['dependantrelationship2']);
-        $dependant_name_3 = mysqli_real_escape_string($connection, $_POST['dependantName3']);
-        $dependant_dob_3 = mysqli_real_escape_string($connection, $_POST['dependant_dob3']);
-        $depandant_relationship_3 = mysqli_real_escape_string($connection, $_POST['dependantrelationship3']);
-        $dependant_name_4 = mysqli_real_escape_string($connection, $_POST['dependantName4']);
-        $dependant_dob_4 = mysqli_real_escape_string($connection, $_POST['dependant_dob4']);
-        $depandant_relationship_4 = mysqli_real_escape_string($connection, $_POST['dependantrelationship4']);
-        $kin_name = mysqli_real_escape_string($connection, $_POST['kin-name']);
-        $kin_dob = mysqli_real_escape_string($connection, $_POST['kindob']);
-        $kin_contact = mysqli_real_escape_string($connection, $_POST['kin-contact']);
-        $kin_relationship = mysqli_real_escape_string($connection, $_POST['kin-relationship']);
-        $kin_name_1 = mysqli_real_escape_string($connection, $_POST['kin-name1']);
-        $kin_dob_1 = mysqli_real_escape_string($connection, $_POST['kindob1']);
-        $kin_contact_1 = mysqli_real_escape_string($connection, $_POST['kin-contact']);
-        $kin_relationship_1 = mysqli_real_escape_string($connection, $_POST['kin-relationship1']);
-        $total_leave = mysqli_real_escape_string($connection, $_POST['total-leave']);
-        $role = mysqli_real_escape_string($connection, $_POST['role']);
-        $delete_status = mysqli_real_escape_string($connection, $_POST['delete-status']);
-        $employment_terms = mysqli_real_escape_string($connection, $_POST['employment-terms']);
-        $salary = mysqli_real_escape_string($connection, $_POST['salary']);
-        $termination_status = mysqli_real_escape_string($connection, $_POST['terminantion-status']);
-        $termination_reason = mysqli_real_escape_string($connection, $_POST['terminantion-reason']); 
-        $termination_date = mysqli_real_escape_string($connection, $_POST['terminantion-date']);
-        $contract_exp  = mysqli_real_escape_string($connection, $_POST['contract_exp']);
+        $dependant_dob =  isset($_POST['dependant_dob']) ? mysqli_real_escape_string($connection, $_POST['dependant_dob']): null;
+        $depandant_relationship =  isset($_POST['dependantrelationship']) ? mysqli_real_escape_string($connection, $_POST['dependantrelationship']): null; 
+        $dependant_name_1 = isset( $_POST['dependantName1']) ?  mysqli_real_escape_string($connection, $_POST['dependantName1']): null;
+        $dependant_dob_1 = isset($_POST['dependant_dob1']) ?  mysqli_real_escape_string($connection, $_POST['dependant_dob1']): null;
+        $depandant_relationship_1 = isset($_POST['dependantrelationship1']) ?  mysqli_real_escape_string($connection, $_POST['dependantrelationship1']): null; 
+        $dependant_name_2 = isset($_POST['dependantName2']) ?  mysqli_real_escape_string($connection, $_POST['dependantName2']): null; 
+        $dependant_dob_2 =  isset($_POST['dependant_dob2']) ?  mysqli_real_escape_string($connection, $_POST['dependant_dob2']): null; 
+        $depandant_relationship_2 =  isset($_POST['dependantrelationship2']) ? mysqli_real_escape_string($connection, $_POST['dependantrelationship2']): null; 
+        $dependant_name_3 = isset($_POST['dependantName3']) ?  mysqli_real_escape_string($connection, $_POST['dependantName3']): null; 
+        $dependant_dob_3 =  isset($_POST['dependant_dob3']) ? mysqli_real_escape_string($connection, $_POST['dependant_dob3']) : null; 
+        $depandant_relationship_3 =  isset($_POST['dependantrelationship3']) ?  mysqli_real_escape_string($connection, $_POST['dependantrelationship3']): null; 
+        $dependant_name_4 = isset($_POST['dependantName4']) ?  mysqli_real_escape_string($connection, $_POST['dependantName4']): null; 
+        $dependant_dob_4 = isset($_POST['dependant_dob4']) ?  mysqli_real_escape_string($connection, $_POST['dependant_dob4']): null; 
+        $depandant_relationship_4 = isset($_POST['dependantrelationship4']) ? mysqli_real_escape_string($connection, $_POST['dependantrelationship4']): null; 
+        $kin_name = isset($_POST['kin-name']) ?  mysqli_real_escape_string($connection, $_POST['kin-name']): null; 
+        $kin_dob = isset($_POST['kindob']) ?  mysqli_real_escape_string($connection, $_POST['kindob']):null; 
+        $kin_contact =  isset($_POST['kin-contact']) ? mysqli_real_escape_string($connection, $_POST['kin-contact']) : null;
+        $kin_relationship = isset($_POST['kin-relationship']) ?  mysqli_real_escape_string($connection, $_POST['kin-relationship']): null; 
+        $kin_name_1 =  isset($_POST['kin-name1']) ? mysqli_real_escape_string($connection, $_POST['kin-name1']): null; 
+        $kin_dob_1 =  isset($_POST['kindob1']) ? mysqli_real_escape_string($connection, $_POST['kindob1']): null;
+        $kin_contact_1 = isset($_POST['kin-contact'])  ? mysqli_real_escape_string($connection, $_POST['kin-contact']): null; 
+        $kin_relationship_1 =  isset($_POST['kin-relationship1']) ? mysqli_real_escape_string($connection, $_POST['kin-relationship1']): null; 
+        $total_leave = isset($_POST['total-leave']) ?  mysqli_real_escape_string($connection, $_POST['total-leave']): null; 
+        $role = isset($_POST['role']) ?  mysqli_real_escape_string($connection, $_POST['role']): null; 
+        $delete_status = isset($_POST['delete-status']) ?  mysqli_real_escape_string($connection, $_POST['delete-status']): null; 
+        $employment_terms = isset($_POST['employment-terms']) ?  mysqli_real_escape_string($connection, $_POST['employment-terms']): null; 
+        $salary = isset($_POST['salary']) ?  mysqli_real_escape_string($connection, $_POST['salary']): null;
+        $termination_status =  isset($_POST['terminantion-status']) ?  mysqli_real_escape_string($connection, $_POST['terminantion-status']): null; 
+        $termination_reason = isset($_POST['terminantion-reason']) ?  mysqli_real_escape_string($connection, $_POST['terminantion-reason']): null;
+        $termination_date = isset($_POST['terminantion-date']) ?  mysqli_real_escape_string($connection, $_POST['terminantion-date']): null;
+        $contract_exp  = isset($_POST['contract_exp']) ?  mysqli_real_escape_string($connection, $_POST['contract_exp']): null; 
 
         //validation 
         if($firstname && !preg_match($userpatterns, trim($firstname))){
