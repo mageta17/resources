@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $employeeposition =  isset($_POST['employeePosition']) ? mysqli_real_escape_string($connection, $_POST['employeePosition']): null;
         $department  =  isset($_POST['department']) ? mysqli_real_escape_string($connection, $_POST['department']): null;
         $email  =  isset($_POST['email']) ? mysqli_real_escape_string($connection, $_POST['email']):null;
-        $drivingLicense_No = isset($_POST[$_POST['driverlicenseno']]) ?  mysqli_real_escape_string($connection, $_POST['driverlicenseno']): null;
+        $drivingLicense_No = isset($_POST['driverlicenseno']) ?  mysqli_real_escape_string($connection, $_POST['driverlicenseno']): null;
         $drivingLicenseNoExpire  = isset($_POST['driverlicensenoExp']) ?  mysqli_real_escape_string($connection, $_POST['driverlicensenoExp']) : null;
         $location =   isset($_POST['location']) ? mysqli_real_escape_string($connection, $_POST['location']): null;
         $fieldSupervisor = isset($_POST['fieldsupervisor']) ?  mysqli_real_escape_string($connection, $_POST['fieldsupervisor']): null;
@@ -96,87 +96,87 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "first name should contain only letters.";
             header("Location: ../driver-details-id.php?id=". $user_id);
             exit();
-        } else if(!preg_match($userpatterns, trim($middlename))){
+        } else if($middlename &&  !preg_match($userpatterns, trim($middlename))){
             $_SESSION['error'] = "middle name  should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        } else if(!preg_match($userpatterns, trim($lastname))){
+        } else if($lastname &&  !preg_match($userpatterns, trim($lastname))){
             $_SESSION['error'] = "last  name  should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        } else if(!preg_match($userpatterns, trim($employeename))){
+        } else if($employeename && !preg_match($userpatterns, trim($employeename))){
             $_SESSION['error'] = "Employee name  should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($location))){
+        }else if($location && !preg_match($userpatterns, trim($location))){
             $_SESSION['error'] = "The name of location should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!filter_var(($email), FILTER_VALIDATE_EMAIL)){
+        }else if($email &&  !filter_var(($email), FILTER_VALIDATE_EMAIL)){
             $_SESSION['error'] = "Invalid email address.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if (!preg_match('/^T\d{7}$/', trim($drivingLicense_No))) {
+        }else if ($drivingLicense_No && !preg_match('/^T\d{7}$/', trim($drivingLicense_No))) {
             $_SESSION['error'] = "The driving license number should start with 'T' followed by 7 digits.";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($fieldSupervisor))){
+        }else if($fieldSupervisor &&  !preg_match($userpatterns, trim($fieldSupervisor))){
             $_SESSION['error'] = "The field  supervisor name should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($department))){
+        }else if($department &&  !preg_match($userpatterns, trim($department))){
             $_SESSION['error'] = "The department name should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($phonepattern, trim($mobileNo1))){
+        }else if($mobileNo1 && !preg_match($phonepattern, trim($mobileNo1))){
             $_SESSION['error'] = "Invalid mobile no1, phone number should start with 07 or 06";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($phonepattern, trim($mobileNo2))){
+        }else if($mobileNo2 && !preg_match($phonepattern, trim($mobileNo2))){
             $_SESSION['error'] = "Invalid mobile no2, phone number should start with 07 or 06";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match("/^T-[A-Z]{3}-\d{3}$/", trim($vehicleNo))) {
+        }else if($vehicleNo && !preg_match("/^T-[A-Z]{3}-\d{3}$/", trim($vehicleNo))) {
             $_SESSION['error'] = "Valid vehicle number, valid format eg T-ABC-123";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!filter_var($issued_fuel, FILTER_VALIDATE_INT) !== false) {
+        }else if($issued_fuel && !filter_var($issued_fuel, FILTER_VALIDATE_INT) !== false) {
             $_SESSION['error'] = "Put quantity of liters in issued fuel in numeric, no letters or symbols required";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($pob))){
+        }else if($pob && !preg_match($userpatterns, trim($pob))){
             $_SESSION['error'] = "Place of birth name should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($nationality))){
+        }else if($nationality && !preg_match($userpatterns, trim($nationality))){
             $_SESSION['error'] = "Nationality name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($pattern, trim($box))) {
+        }else if($box && !preg_match($pattern, trim($box))) {
             $_SESSION['error'] = "Invalid postal address, use P.O.Box 0000";
             header("Location: ../driver-details-id.php?id=". $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($town))){
+        }else if($town && !preg_match($userpatterns, trim($town))){
             $_SESSION['error'] = "Town/city  name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!filter_var($code, FILTER_VALIDATE_INT) !== false) {
+        }else if($code && !filter_var($code, FILTER_VALIDATE_INT) !== false) {
             $_SESSION['error'] = "The code should be in numeric.";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        } else if(!filter_var($tin_no, FILTER_VALIDATE_INT) !== false) {
+        } else if($tin_no && !filter_var($tin_no, FILTER_VALIDATE_INT) !== false) {
             $_SESSION['error'] = "Tin number should be  numeric in format.";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        } else if(strlen($tin_no) <  9 || strlen($tin_no) >  9) {
+        } else if($tin_no && strlen($tin_no) <  9 || strlen($tin_no) >  9) {
             $_SESSION['error'] = "Tin number should contain 9 digits .";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        }else if(filter_var($nida_no, FILTER_VALIDATE_INT) !== false) {
+        }else if($nida_no && filter_var($nida_no, FILTER_VALIDATE_INT) !== false) {
             $_SESSION['error'] = "Nida number should be  numeric in format.";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-        }else if(strlen($nida_no) <  20 || strlen($nida_no) >  20) {
+        }else if($nida_no && strlen($nida_no) <  20 || strlen($nida_no) >  20) {
             $_SESSION['error'] = "Nida  number should contain 20 digits .";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
@@ -186,67 +186,67 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //     exit();
         
         // }
-        else if(!preg_match($userpatterns, trim($dependant_name))){
+        else if($dependant_name && !preg_match($userpatterns, trim($dependant_name))){
             $_SESSION['error'] = "Dependant name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($depandant_relationship))){
+        }else if($depandant_relationship && !preg_match($userpatterns, trim($depandant_relationship))){
             $_SESSION['error'] = "Dependant relationship field  should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($dependant_name_1))){
+        }else if($dependant_name_1 && !preg_match($userpatterns, trim($dependant_name_1))){
             $_SESSION['error'] = " Second dependant  name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($depandant_relationship_1))){
+        }else if($depandant_relationship_1 && !preg_match($userpatterns, trim($depandant_relationship_1))){
             $_SESSION['error'] = "Second dependant relationship field  should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($dependant_name_2))){
+        }else if($dependant_name_2 && !preg_match($userpatterns, trim($dependant_name_2))){
             $_SESSION['error'] = "Third dependant  name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($depandant_relationship_2))){
+        }else if($depandant_relationship_2 && !preg_match($userpatterns, trim($depandant_relationship_2))){
             $_SESSION['error'] = "Third dependant relationship field  should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($dependant_name_3))){
+        }else if($dependant_name_3 && !preg_match($userpatterns, trim($dependant_name_3))){
             $_SESSION['error'] = "Fourth dependant  name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($depandant_relationship_3))){
+        }else if($depandant_relationship_3 && !preg_match($userpatterns, trim($depandant_relationship_3))){
             $_SESSION['error'] = "Fourth dependant relationship field  should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($dependant_name_4))){
+        }else if($dependant_name_4 && !preg_match($userpatterns, trim($dependant_name_4))){
             $_SESSION['error'] = "Fifth dependant  name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($depandant_relationship_4))){
+        }else if($depandant_relationship_4 && !preg_match($userpatterns, trim($depandant_relationship_4))){
             $_SESSION['error'] = "Fifth dependant relationship field  should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($kin_name))){
+        }else if($kin_name && !preg_match($userpatterns, trim($kin_name))){
             $_SESSION['error'] = "Next of Kin name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($phonepattern, trim($kin_contact))){
+        }else if($kin_contact && !preg_match($phonepattern, trim($kin_contact))){
             $_SESSION['error'] = "Invalid next of kin contact number, phone number should start with 07 or 06";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($kin_relationship))){
+        }else if($kin_relationship && !preg_match($userpatterns, trim($kin_relationship))){
             $_SESSION['error'] = "Next of Kin relationship should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($kin_name_1))){
+        }else if($kin_name_1 && !preg_match($userpatterns, trim($kin_name_1))){
             $_SESSION['error'] = "Second next of Kin name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($phonepattern, trim($kin_contact_1))){
+        }else if($kin_contact_1 && !preg_match($phonepattern, trim($kin_contact_1))){
             $_SESSION['error'] = "Invalid  second next of kin contact number, phone number should start with 07 or 06";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        }else if(!preg_match($userpatterns, trim($kin_relationship_1))){
+        }else if($kin_relationship_1 &&  !preg_match($userpatterns, trim($kin_relationship_1))){
             $_SESSION['error'] = " Second next of Kin relationship should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();

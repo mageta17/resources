@@ -123,8 +123,8 @@ session_start();
                         <input type="text" class="form-control" id="employeeId" name="employeeId" value="<?php  echo $row['employeeId']?>" required readonly>
                     </div>
                     <div class="form-group">
-                        <!-- <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="<?php  echo $row['first_name']?>" required> -->
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<?php  echo $row['first_name']?>" required>
                     </div>
                 </div>
 
