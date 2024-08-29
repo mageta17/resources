@@ -357,7 +357,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     }
                 } else {
                     // Handle case when no files were uploaded
-                    $_SESSION['succes'] = "No new files uploaded, but update successfully completed.";
+                    $_SESSION['succes'] = " Update successfully completed.";
                     header("Location: ../driver-details-id.php?id=" . $user_id);
                     exit();
                 }
