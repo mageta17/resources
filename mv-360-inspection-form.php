@@ -124,7 +124,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="front-view-upload" id="front-view-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="front-view-upload" id="front-view-upload" hidden/>
                                         <label for="front-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -146,7 +146,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rear-view-upload" id="rear-view-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="rear-view-upload" id="rear-view-upload" hidden/>
                                         <label for="rear-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -168,7 +168,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="left-side-view-upload" id="left-side-view-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="left-side-view-upload" id="left-side-view-upload" hidden/>
                                         <label for="left-side-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -190,7 +190,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="right-side-view-upload" id="right-side-view-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="right-side-view-upload" id="right-side-view-upload" hidden/>
                                         <label for="right-side-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -212,7 +212,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="loadbin-cover-upload" id="loadbin-cover-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="loadbin-cover-upload" id="loadbin-cover-upload" hidden/>
                                         <label for="loadbin-cover-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -234,7 +234,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="windscreen-upload" id="windscreen-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="windscreen-upload" id="windscreen-upload" hidden/>
                                         <label for="windscreen-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -256,7 +256,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="license-disk-upload" id="license-disk-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="license-disk-upload" id="license-disk-upload" hidden/>
                                         <label for="license-disk-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -278,7 +278,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="towbar-upload" id="towbar-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="towbar-upload" id="towbar-upload" hidden/>
                                         <label for="towbar-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -300,7 +300,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="lf-tyre-age-upload" id="lf-tyre-age-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="lf-tyre-age-upload" id="lf-tyre-age-upload" hidden/>
                                         <label for="lf-tyre-age-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -322,7 +322,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="lf-tyre-treat-upload" id="lf-tyre-treat-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="lf-tyre-treat-upload" id="lf-tyre-treat-upload" hidden/>
                                         <label for="lf-tyre-treat-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -344,7 +344,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rf-tyre-age-upload" id="rf-tyre-age-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="rf-tyre-age-upload" id="rf-tyre-age-upload" hidden/>
                                         <label for="rf-tyre-age-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -366,7 +366,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rf-tyre-treat-upload" id="rf-tyre-treat-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="rf-tyre-treat-upload" id="rf-tyre-treat-upload" hidden/>
                                         <label for="rf-tyre-treat-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -388,7 +388,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="lr-tyre-age-upload" id="lr-tyre-age-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="lr-tyre-age-upload" id="lr-tyre-age-upload" hidden/>
                                         <label for="lr-tyre-age-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -410,7 +410,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="lr-tyre-treat-upload" id="lr-tyre-treat-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="lr-tyre-treat-upload" id="lr-tyre-treat-upload" hidden/>
                                         <label for="lr-tyre-treat-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -432,7 +432,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rr-tyre-age-upload" id="rr-tyre-age-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="rr-tyre-age-upload" id="rr-tyre-age-upload" hidden/>
                                         <label for="rr-tyre-age-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -454,7 +454,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rr-tyre-treat-upload" id="rr-tyre-treat-upload" hidden/>
+                                        <input type="file"  accept="image/x-png,image/jpeg,image/jpg" name="rr-tyre-treat-upload" id="rr-tyre-treat-upload" hidden/>
                                         <label for="rr-tyre-treat-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -476,7 +476,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="rear-3pt-seatbelts-upload" id="rear-3pt-seatbelts-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="rear-3pt-seatbelts-upload" id="rear-3pt-seatbelts-upload" hidden/>
                                         <label for="rear-3pt-seatbelts-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -498,7 +498,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="driver-3pt-seatbelts-upload" id="driver-3pt-seatbelts-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="driver-3pt-seatbelts-upload" id="driver-3pt-seatbelts-upload" hidden/>
                                         <label for="driver-3pt-seatbelts-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -520,7 +520,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="co-driver-upload" id="co-driver-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="co-driver-upload" id="co-driver-upload" hidden/>
                                         <label for="co-driver-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -542,7 +542,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="bluetooth-upload" id="bluetooth-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="bluetooth-upload" id="bluetooth-upload" hidden/>
                                         <label for="bluetooth-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -564,7 +564,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="odometer-upload" id="odometer-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="odometer-upload" id="odometer-upload" hidden/>
                                         <label for="odometer-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -586,7 +586,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="service-book-upload" id="service-book-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="service-book-upload" id="service-book-upload" hidden/>
                                         <label for="service-book-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -608,7 +608,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="emergence-triangle-upload" id="emergence-triangle-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="emergence-triangle-upload" id="emergence-triangle-upload" hidden/>
                                         <label for="emergence-triangle-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
@@ -630,7 +630,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" name="first-aid-kit-upload" id="first-aid-kit-upload" hidden/>
+                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="first-aid-kit-upload" id="first-aid-kit-upload" hidden/>
                                         <label for="first-aid-kit-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
