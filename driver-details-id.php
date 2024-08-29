@@ -61,6 +61,12 @@ session_start();
         .alert-success{
             animation: fadeIn 1s forwards;
         }
+        .slide{
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+
+        }
 
         @keyframes fadeIn {
         to {
@@ -117,8 +123,8 @@ session_start();
                         <input type="text" class="form-control" id="employeeId" name="employeeId" value="<?php  echo $row['employeeId']?>" required readonly>
                     </div>
                     <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="<?php  echo $row['first_name']?>" required>
+                        <!-- <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName" value="<?php  echo $row['first_name']?>" required> -->
                     </div>
                 </div>
 
@@ -183,15 +189,16 @@ session_start();
 
                     <!-- Preview Area -->
                     <div id="previewArea" style="display: none; margin-top: 10px; margin-bottom: 10px; ">
-                    <img id="imagePreview" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
+                    <img id="imagePreview"  class="slide" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
                         <embed id="pdfPreview" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
                         
                         <!-- File input -->
-                        <input type="file" id="fileInput" name="file" style="display: none;">
+                        <input type="file" id="fileInput" accept="image/x-png,image/jpeg,image/jpg" name="file" style="display: none;">
                         
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons" class="mt-3">
                             <button id="quitPreview" class="btn btn-danger" type="button">Quit</button>
+                            <button type="submit" class="btn btn-primary" name="edit">upload</button>
                         </div>
                     </div>
                     <?php
@@ -522,15 +529,16 @@ session_start();
 
                     <!-- Preview Area -->
                     <div id="previewArea1" style="display: none; margin-top: 10px; margin-bottom: 10px; ">
-                    <img id="imagePreview1" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
+                    <img id="imagePreview1" src="" class="slide" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
                         <embed id="pdfPreview1" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
                         
                         <!-- File input -->
-                        <input type="file" id="fileInput1" name="file1" style="display: none;">
+                        <input type="file" id="fileInput1" accept="image/x-png,image/jpeg,image/jpg" name="file1" style="display: none;">
                         
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons1" class="mt-3">
                             <button id="quitPreview1" class="btn btn-danger" type="button">Quit</button>
+                            <button type="submit" class="btn btn-primary" name="edit">upload</button>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -584,15 +592,16 @@ session_start();
                     </div>
                     <!-- Preview Area -->
                     <div id="previewArea2" style="display: none; margin-top: 10px; margin-bottom: 10px; ">
-                    <img id="imagePreview2" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
+                    <img id="imagePreview2" src="" class="slide" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
                         <embed id="pdfPreview2" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
                         
                         <!-- File input -->
-                        <input type="file" id="fileInput2" name="file2" style="display: none;">
+                        <input type="file" id="fileInput2" accept="image/x-png,image/jpeg,image/jpg" name="file2" style="display: none;">
                         
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons2" class="mt-3">
                             <button id="quitPreview2" class="btn btn-danger" type="button">Quit</button>
+                            <button type="submit" class="btn btn-primary" name="edit">upload</button>
                         </div>
                     </div>
                     <!-- Modal -->
@@ -649,16 +658,17 @@ session_start();
                     </div>
                     <!-- Preview Area -->
                     <div id="previewArea3" style="display: none; margin-top: 10px; margin-bottom: 10px; ">
-                    <img id="imagePreview3" src="" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
+                    <img id="imagePreview3" src="" class="slide" alt="Preview" style="width: 100%; display: block; margin: 0 auto;">
                         <embed id="pdfPreview3" src="" type="application/pdf" style="width: 100%; height: auto; display: none;">
                         
                         <!-- File input -->
-                        <input type="file" id="fileInput3" name="file3" style="display: none;">
+                        <input type="file" id="fileInput3" accept="image/x-png,image/jpeg,image/jpg" name="file3" style="display: none;">
                         
                         <!-- File input and Action Buttons -->
                         <div id="actionButtons3" class="mt-3">
                             <button id="quitPreview3" class="btn btn-danger" type="button">Quit</button>
                             <button id="changeButton3" name="changeButton3" class="btn btn-primary" type="button">Change</button>
+                            <button type="submit" class="btn btn-primary" name="edit">upload</button>
                         </div>
                     </div>
                     <!-- Modal -->

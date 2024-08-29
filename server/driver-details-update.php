@@ -15,32 +15,34 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             exit();
         }
     if(isset($_POST['edit'])){
-        $employeeid = mysqli_real_escape_string($connection, $_POST['employeeId']);
-        $firstname = mysqli_real_escape_string($connection, $_POST['firstName']);
-        $middlename = mysqli_real_escape_string($connection, $_POST['middleName']);
-        $lastname = mysqli_real_escape_string($connection, $_POST['lastName']);
-        $employeename = mysqli_real_escape_string($connection, $_POST['employeeName']);
-        $employeeposition = mysqli_real_escape_string($connection, $_POST['employeePosition']);
-        $department  = mysqli_real_escape_string($connection, $_POST['department']);
-        $email  = mysqli_real_escape_string($connection, $_POST['email']);
-        $drivingLicense_No = mysqli_real_escape_string($connection, $_POST['driverlicenseno']);
-        $drivingLicenseNoExpire  = mysqli_real_escape_string($connection, $_POST['driverlicensenoExp']);
-        $location = mysqli_real_escape_string($connection, $_POST['location']);
-        $fieldSupervisor = mysqli_real_escape_string($connection, $_POST['fieldsupervisor']);
-        $mobileNo1 = mysqli_real_escape_string($connection, $_POST['mobileno1']);
-        $mobileNo2 = mysqli_real_escape_string($connection, $_POST['mobileno2']);
-        $project = mysqli_real_escape_string($connection, $_POST['project']);
-        $vehicleNo = mysqli_real_escape_string($connection, $_POST['vehicleno']);
-        $user_ID = mysqli_real_escape_string($connection, $_POST['userid']);
-        $issued_fuel = mysqli_real_escape_string($connection, $_POST['issuedfuel']);
-        $company = mysqli_real_escape_string($connection, $_POST['company']);
+        $employeeid =  isset($_POST['employeeId']) ? mysqli_real_escape_string($connection, $_POST['employeeId']): null;
+        $firstname =  isset($_POST['firstName'])?mysqli_real_escape_string($connection, $_POST['firstName']): null;
+        $middlename =  isset($_POST['middleName']) ? mysqli_real_escape_string($connection, $_POST['middleName']): null;
+        $lastname = isset($_POST['lastName']) ?  mysqli_real_escape_string($connection, $_POST['lastName']): null;
+        $employeename = isset($_POST['employeeName']) ? mysqli_real_escape_string($connection, $_POST['employeeName']): null;
+        $employeeposition =  isset($_POST['employeePosition']) ? mysqli_real_escape_string($connection, $_POST['employeePosition']): null;
+        $department  =  isset($_POST['department']) ? mysqli_real_escape_string($connection, $_POST['department']): null;
+        $email  =  isset($_POST['email']) ? mysqli_real_escape_string($connection, $_POST['email']):null;
+        $drivingLicense_No = isset($_POST[$_POST['driverlicenseno']]) ?  mysqli_real_escape_string($connection, $_POST['driverlicenseno']): null;
+        $drivingLicenseNoExpire  = isset($_POST['driverlicensenoExp']) ?  mysqli_real_escape_string($connection, $_POST['driverlicensenoExp']) : null;
+        $location =   isset($_POST['location']) ? mysqli_real_escape_string($connection, $_POST['location']): null;
+        $fieldSupervisor = isset($_POST['fieldsupervisor']) ?  mysqli_real_escape_string($connection, $_POST['fieldsupervisor']): null;
+        $mobileNo1 =  isset($_POST['mobileno1']) ? mysqli_real_escape_string($connection, $_POST['mobileno1']): null;
+        $mobileNo2 = isset($_POST['mobileno2']) ?  mysqli_real_escape_string($connection, $_POST['mobileno2']): null;
+        $project = isset($_POST['project']) ?  mysqli_real_escape_string($connection, $_POST['project']):null;
+        $vehicleNo = isset($_POST['vehicleno']) ? mysqli_real_escape_string($connection, $_POST['vehicleno']): null;
+        $user_ID =  isset($_POST['userid']) ? mysqli_real_escape_string($connection, $_POST['userid']): null;
+        $issued_fuel =  isset($_POST['issuedfuel']) ?  mysqli_real_escape_string($connection, $_POST['issuedfuel']) : null;
+        $company = isset($_POST['company']) ?  mysqli_real_escape_string($connection, $_POST['company']):
+        null;
 
-        $dob = mysqli_real_escape_string($connection, $_POST['dob']);
-        $pob  = mysqli_real_escape_string($connection, $_POST['pob']);
-        $gender = mysqli_real_escape_string($connection, $_POST['gender']);
-        $nationality = mysqli_real_escape_string($connection, $_POST['nationality']);
-        $marital_status = mysqli_real_escape_string($connection, $_POST['martial-status']);
-        $box = mysqli_real_escape_string($connection, $_POST['poa']);
+        $dob = isset($_POST['dob']) ?  mysqli_real_escape_string($connection, $_POST['dob']): null;
+        $pob  = isset($_POST['pob']) ?  mysqli_real_escape_string($connection, $_POST['pob']): null;
+        $gender = isset($_POST['gender']) ? mysqli_real_escape_string($connection, $_POST['gender']):
+        null; 
+        $nationality = isset($_POST['nationality'])  ? mysqli_real_escape_string($connection, $_POST['nationality']): null;
+        $marital_status =  isset($_POST['martial-status']) ? mysqli_real_escape_string($connection, $_POST['martial-status']): null;
+        $box = isset($_POST['poa']) ?  mysqli_real_escape_string($connection, $_POST['poa']): null;
         $code  = mysqli_real_escape_string($connection, $_POST['code']);
         $town = mysqli_real_escape_string($connection, $_POST['town']);
         $date_of_employment = mysqli_real_escape_string($connection, $_POST['dateofemployment']);
@@ -85,7 +87,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $contract_exp  = mysqli_real_escape_string($connection, $_POST['contract_exp']);
 
         //validation 
-        if(!preg_match($userpatterns, trim($firstname))){
+        if($firstname && !preg_match($userpatterns, trim($firstname))){
             $_SESSION['error'] = "first name should contain only letters.";
             header("Location: ../driver-details-id.php?id=". $user_id);
             exit();
@@ -244,8 +246,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
 
-        } else{
-            $query = "UPDATE  drivers SET 
+        }if(!isset($_SESSION['error'])){
+           $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 
            department = '$department',

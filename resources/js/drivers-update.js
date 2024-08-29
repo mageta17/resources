@@ -86,6 +86,7 @@ document
       reader.readAsDataURL(file);
     }
   });
+
 //code for displaying the image preview
 document.addEventListener("DOMContentLoaded", function () {
    var imageURL = document.getElementById('imageURL').value;
