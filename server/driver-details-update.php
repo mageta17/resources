@@ -19,7 +19,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $firstname =  isset($_POST['firstName'])?mysqli_real_escape_string($connection, $_POST['firstName']): null;
         $middlename =  isset($_POST['middleName']) ? mysqli_real_escape_string($connection, $_POST['middleName']): null;
         $lastname = isset($_POST['lastName']) ?  mysqli_real_escape_string($connection, $_POST['lastName']): null;
-        $employeename = isset($_POST['employeeName']) ? mysqli_real_escape_string($connection, $_POST['employeeName']): null;
+        //$employeename = isset($_POST['employeeName']) ? mysqli_real_escape_string($connection, $_POST['employeeName']): null;
+        $employeename =  "$firstname  $middlename  $lastname";
         $employeeposition =  isset($_POST['employeePosition']) ? mysqli_real_escape_string($connection, $_POST['employeePosition']): null;
         $department  =  isset($_POST['department']) ? mysqli_real_escape_string($connection, $_POST['department']): null;
         $email  =  isset($_POST['email']) ? mysqli_real_escape_string($connection, $_POST['email']):null;
@@ -104,10 +105,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "last  name  should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
-        } else if($employeename && !preg_match($userpatterns, trim($employeename))){
-            $_SESSION['error'] = "Employee name  should contain only letters.";
-            header("Location: ../driver-details-id.php?id=".  $user_id);
-            exit();
         }else if($location && !preg_match($userpatterns, trim($location))){
             $_SESSION['error'] = "The name of location should contain only letters.";
             header("Location: ../driver-details-id.php?id=".  $user_id);
@@ -180,12 +177,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['error'] = "Nida  number should contain 20 digits .";
             header("Location: ../driver-details-id.php?id=" . $user_id);
             exit();
-          }//else if(!preg_match('/^\d+$/',trim($bankacc_no))){
-        //     $_SESSION['error'] = "Bank account number should be numeric in format.";
-        //     header("Location: ../driver-details-id.php?id=" . $user_id);
-        //     exit();
-        
-        // }
+          }
         else if($dependant_name && !preg_match($userpatterns, trim($dependant_name))){
             $_SESSION['error'] = "Dependant name should only contain letters";
             header("Location: ../driver-details-id.php?id=".  $user_id);
@@ -251,7 +243,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             header("Location: ../driver-details-id.php?id=".  $user_id);
             exit();
 
-        }if(!isset($_SESSION['error'])){
+        } 
+
+        if(!isset($_SESSION['error'])){
            $query = "UPDATE  drivers SET 
            first_name = '$firstname', middle_name = '$middlename', last_name = '$lastname',
            employeeName = '$employeename', employeePosition ='$employeeposition', 

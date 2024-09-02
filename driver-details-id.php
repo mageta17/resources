@@ -120,7 +120,7 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employeeId">Employer ID</label>
-                        <input type="text" class="form-control" id="employeeId" name="employeeId" value="<?php  echo $row['employeeId']?>" required readonly>
+                        <input type="text" class="form-control" id="employeeId" name="employeeId" value="<?php  echo $row['employeeId']?>"  readonly>
                     </div>
                     <div class="form-group">
                         <label for="firstName">First Name</label>
@@ -132,11 +132,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="middleName">Middle Name</label>
-                        <input type="text" class="form-control" id="middleName" name="middleName" value="<?php  echo $row['middle_name']?>">
+                        <input type="text" class="form-control" id="middleName" name="middleName" value="<?php  echo $row['middle_name']?>" required>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="<?php  echo $row['last_name']?>" required>
+                        <input type="text" class="form-control" id="lastName" name="lastName" value="<?php  echo $row['last_name']?>"  required>
                     </div>
                 </div>
 
@@ -144,11 +144,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employeeName">Employee Name</label>
-                        <input type="text" class="form-control" id="employeeName" name="employeeName" value="<?php  echo $row['employeeName']?>" required>
+                        <input type="text" class="form-control" id="employeeName" name="employeeName" value="<?php  echo $row['employeeName']?>"  readonly>
                     </div>
                     <div class="form-group">
                         <label for="employeePosition">Position</label>
-                        <input type="text" class="form-control" id="employeePosition" name="employeePosition" value="<?php  echo $row['employeePosition']?>" required>
+                        <input type="text" class="form-control" id="employeePosition" name="employeePosition" value="<?php  echo $row['employeePosition']?>" >
                     </div>
                 </div>
 
@@ -156,11 +156,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="department">Department</label>
-                        <input type="text" class="form-control" id="department" name="department" value="<?php  echo $row['department']?>" required>
+                        <input type="text" class="form-control" id="department" name="department" value="<?php  echo $row['department']?>" >
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" value="<?php  echo $row['email']?>" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php  echo $row['email']?>" >
                     </div>
                 </div>
 
@@ -168,11 +168,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="driverlicenseno">Driver License number</label>
-                        <input type="text" class="form-control" id="driverlicenseno" name="driverlicenseno" value="<?php  echo $row['drivingLicenseNo']?>" required>
+                        <input type="text" class="form-control" id="driverlicenseno" name="driverlicenseno" value="<?php  echo $row['drivingLicenseNo']?>" >
                     </div>
                     <div class="form-group">
                         <label for="driverlicensenoExp">Driver License numberExpier</label>
-                        <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" required>
+                        <input type="date" class="form-control" id="driverlicensenoExp" name="driverlicensenoExp" value="<?php  echo date('Y-m-d', strtotime($row['drivingLicenseNoExpire']));?>" >
                     </div>
                 </div>
                  <!-- Row 6 -->
@@ -220,18 +220,18 @@ session_start();
 
                     <div class="form-group">
                         <label for="location">Location</label>
-                        <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" required>
+                        <input type="text" class="form-control" id="location" name="location" value="<?php echo htmlspecialchars($row['location']); ?>" >
                     </div>
                 </div>
                 <!-- Row 7 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group col-md-6">
                         <label for="fieldsupervisor">Field Supervisor</label>
-                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php echo $row['fieldSupervisor']; ?>" required>
+                        <input type="text" class="form-control" id="fieldsupervisor" name="fieldsupervisor" value="<?php echo $row['fieldSupervisor']; ?>" >
                     </div>
                     <div class="form-group col-md-6">
                         <label for="mobileno1">Mobile No1</label>
-                        <input type="text" class="form-control" id="mobileno1" name="mobileno1" value="<?php echo $row['mobileNo1']; ?>" required>
+                        <input type="text" class="form-control" id="mobileno1" name="mobileno1" value="<?php echo $row['mobileNo1']; ?>" >
                     </div>
                 </div>
 
@@ -240,11 +240,11 @@ session_start();
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="mobileno2">Mobile no2</label>
-                        <input type="text" class="form-control" id="mobileno2" name="mobileno2" value="<?php  echo $row['mobileNo2']?>" required>
+                        <input type="text" class="form-control" id="mobileno2" name="mobileno2" value="<?php  echo $row['mobileNo2']?>" >
                     </div>
                     <div class="form-group">
                         <label for="project">Project</label>
-                        <input type="text" class="form-control" id="project" name="project" value="<?php  echo $row['project']?>" required>
+                        <input type="text" class="form-control" id="project" name="project" value="<?php  echo $row['project']?>" >
                     </div>
                 </div>
 
@@ -252,11 +252,11 @@ session_start();
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="vehicleno">Vehicle number</label>
-                        <input type="text" class="form-control" id="vehicleno" name="vehicleno" value="<?php  echo $row['vehicleNo']?>" required>
+                        <input type="text" class="form-control" id="vehicleno" name="vehicleno" value="<?php  echo $row['vehicleNo']?>" >
                     </div>
                     <div class="form-group">
                         <label for="userid">User id</label>
-                        <input type="text" class="form-control" id="userid" name="userid" value="<?php  echo $row['user_ID']?>" required>
+                        <input type="text" class="form-control" id="userid" name="userid" value="<?php  echo $row['user_ID']?>" >
                     </div>
                 </div>
 
@@ -264,11 +264,11 @@ session_start();
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="issuedfuel">Issued fuel</label>
-                        <input type="text" class="form-control" id="issuedfuel" name="issuedfuel" value="<?php  echo $row['issued_fuel']?>" required>
+                        <input type="text" class="form-control" id="issuedfuel" name="issuedfuel" value="<?php  echo $row['issued_fuel']?>" >
                     </div>
                     <div class="form-group">
                         <label for="company">Company</label>
-                        <input type="text" class="form-control" id="company" name="company" value="<?php  echo $row['company']?>" required>
+                        <input type="text" class="form-control" id="company" name="company" value="<?php  echo $row['company']?>" >
                     </div>
                 </div>
 
@@ -276,11 +276,11 @@ session_start();
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="dob">Date of birth</label>
-                        <input type="date" class="form-control" id="dob" name="dob" value="<?php echo date('Y-m-d', strtotime($row['dob'])); ?>" required>
+                        <input type="date" class="form-control" id="dob" name="dob" value="<?php echo date('Y-m-d', strtotime($row['dob'])); ?>" >
                     </div>
                     <div class="form-group">
                         <label for="pob">Place of birth</label>
-                        <input type="text" class="form-control" id="pob" name="pob" value="<?php  echo $row['pob']?>" required>
+                        <input type="text" class="form-control" id="pob" name="pob" value="<?php  echo $row['pob']?>" >
                     </div>
                 </div>
 
@@ -288,7 +288,7 @@ session_start();
                   <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                       <label for="gender">Gender</label>
-                        <select class="form-control" id="gender" name="gender" required>
+                        <select class="form-control" id="gender" name="gender" >
                             <option value="" disabled>Select gender</option>
                             <option value="male" <?php echo $row['gender'] == 'male' ? 'selected' : ''; ?>>Male</option>
                             <option value="female" <?php echo $row['gender'] == 'female' ? 'selected' : ''; ?>>Female</option>
@@ -297,7 +297,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="nationality">Nationality</label>
-                        <input type="text" class="form-control" id="nationality" name="nationality" value="<?php  echo $row['nationality']?>" required>
+                        <input type="text" class="form-control" id="nationality" name="nationality" value="<?php  echo $row['nationality']?>" >
                     </div>
                 </div>
 
@@ -305,7 +305,7 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                     <label for="martial-status">Martial status</label>
-                        <select class="form-control" id="marital-status" name="martial-status" required>
+                        <select class="form-control" id="marital-status" name="martial-status" >
                             <option value="" disabled>Select marital status</option>
                             <option value="Single" <?php echo $row['marital_status'] == 'Single' ? 'selected' : ''; ?>>Single</option>
                             <option value="Married" <?php echo $row['marital_status'] == 'Married' ? 'selected' : ''; ?>>Married</option>
@@ -317,7 +317,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="poa">Post Address</label>
-                        <input type="text" class="form-control" id="poa" name="poa" value="<?php  echo $row['box']?>" required>
+                        <input type="text" class="form-control" id="poa" name="poa" value="<?php  echo $row['box']?>" >
                     </div>
                 </div>
 
@@ -325,11 +325,11 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="code">post code</label>
-                        <input type="text" class="form-control" id="code" name="code" value="<?php  echo $row['code']?>" required>
+                        <input type="text" class="form-control" id="code" name="code" value="<?php  echo $row['code']?>" >
                     </div>
                     <div class="form-group">
                         <label for="town">City</label>
-                        <input type="text" class="form-control" id="town" name="town" value="<?php  echo $row['town']?>" required>
+                        <input type="text" class="form-control" id="town" name="town" value="<?php  echo $row['town']?>" >
                     </div>
                 </div>
 
@@ -337,11 +337,11 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="dateofemployment">date of employment</label>
-                        <input type="date" class="form-control" id="dateofemployment" name="dateofemployment" value="<?php  echo  date('Y-m-d', strtotime($row['date_of_employment']))?>" required>
+                        <input type="date" class="form-control" id="dateofemployment" name="dateofemployment" value="<?php  echo  date('Y-m-d', strtotime($row['date_of_employment']))?>" >
                     </div>
                     <div class="form-group">
                         <label for="employementno">Employement number</label>
-                        <input type="text" class="form-control" id="employementno" name="employementno" value="<?php  echo $row['employment_no']?>" required>
+                        <input type="text" class="form-control" id="employementno" name="employementno" value="<?php  echo $row['employment_no']?>" >
                     </div>
                 </div>
 
@@ -349,22 +349,22 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="nssf-no">Nssf number</label>
-                        <input type="text" class="form-control" id="nssf-no" name="nssf-no" value="<?php  echo $row['nssf_no']?>" required>
+                        <input type="text" class="form-control" id="nssf-no" name="nssf-no" value="<?php  echo $row['nssf_no']?>" >
                     </div>
                     <div class="form-group">
                         <label for="tin-no">Tin number</label>
-                        <input type="text" class="form-control" id="tin-no" name="tin-no" value="<?php  echo $row['tin_no']?>" required>
+                        <input type="text" class="form-control" id="tin-no" name="tin-no" value="<?php  echo $row['tin_no']?>" >
                     </div>
                 </div>
                  <!-- Row 18 -->
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="nida-no">Nida number</label>
-                        <input type="text" class="form-control" id="nida-no" name="nida-no" value="<?php  echo $row['nida_no']?>" required>
+                        <input type="text" class="form-control" id="nida-no" name="nida-no" value="<?php  echo $row['nida_no']?>" >
                     </div>
                     <div class="form-group">
                         <label for="banckacc_no">Bank Account number</label>
-                        <input type="text" class="form-control" id="banckacc_no" name="banckacc_no" value="<?php  echo $row['banckacc_no']?>" required>
+                        <input type="text" class="form-control" id="banckacc_no" name="banckacc_no" value="<?php  echo $row['banckacc_no']?>" >
                     </div>
                 </div>
 
@@ -372,11 +372,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="bankname">Bank name</label>
-                        <input type="text" class="form-control" id="bankname" name="bankname" value="<?php  echo $row['bankname']?>" required>
+                        <input type="text" class="form-control" id="bankname" name="bankname" value="<?php  echo $row['bankname']?>" >
                     </div>
                     <div class="form-group">
                         <label for="dependantName">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName" name="dependantName" value="<?php  echo $row['dependant_name']?>" required>
+                        <input type="text" class="form-control" id="dependantName" name="dependantName" value="<?php  echo $row['dependant_name']?>" >
                     </div>
                 </div>
 
@@ -384,12 +384,12 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="dependant_dob1">Dependant date of birth</label>
-                        <input type="date" class="form-control" id="dependant_dob" name="dependant_dob" value="<?php  echo  date('Y-m-d', strtotime($row['dependant_dob']))?>" required>
+                        <input type="date" class="form-control" id="dependant_dob" name="dependant_dob" value="<?php  echo  date('Y-m-d', strtotime($row['dependant_dob']))?>" >
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship1">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship" name="dependantrelationship" value="<?php  echo $row['depandant_relationship']?>" required>
+                        <input type="text" class="form-control" id="dependantrelationship" name="dependantrelationship" value="<?php  echo $row['depandant_relationship']?>" >
                     </div>
                 </div>
 
@@ -398,16 +398,16 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName1">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="<?php  echo $row['dependant_name_1']?>" required>
+                        <input type="text" class="form-control" id="dependantName1" name="dependantName1" value="<?php  echo $row['dependant_name_1']?>" >
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob1">Dependant date of birth</label>
-                        <input type="date" class="form-control" id="dependant_dob1" name="dependant_dob1" value="<?php  echo  date('Y-m-d', strtotime($row['dependant_dob_1']))?>" required>
+                        <input type="date" class="form-control" id="dependant_dob1" name="dependant_dob1" value="<?php  echo  date('Y-m-d', strtotime($row['dependant_dob_1']))?>" >
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship1">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship1" name="dependantrelationship1" value="<?php  echo $row['depandant_relationship_1']?>" required>
+                        <input type="text" class="form-control" id="dependantrelationship1" name="dependantrelationship1" value="<?php  echo $row['depandant_relationship_1']?>" >
                     </div>
                 </div>
 
@@ -416,16 +416,16 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName2">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName2" name="dependantName2" value="<?php  echo $row['dependant_name_2']?>" required>
+                        <input type="text" class="form-control" id="dependantName2" name="dependantName2" value="<?php  echo $row['dependant_name_2']?>" >
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob2">Dependant date of birth</label>
-                        <input type="date" class="form-control" id="dependant_dob2" name="dependant_dob2" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_2']))?>" required>
+                        <input type="date" class="form-control" id="dependant_dob2" name="dependant_dob2" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_2']))?>" >
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship2">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship2" name="dependantrelationship2" value="<?php  echo $row['depandant_relationship_2']?>" required>
+                        <input type="text" class="form-control" id="dependantrelationship2" name="dependantrelationship2" value="<?php  echo $row['depandant_relationship_2']?>" >
                     </div>
                 </div>
 
@@ -434,16 +434,16 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName3">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName3" name="dependantName3" value="<?php  echo $row['dependant_name_3']?>" required>
+                        <input type="text" class="form-control" id="dependantName3" name="dependantName3" value="<?php  echo $row['dependant_name_3']?>" >
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob3">Dependant date of birth</label>
-                        <input type="date" class="form-control" id="dependant_dob3" name="dependant_dob3" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_3']))?>" required>
+                        <input type="date" class="form-control" id="dependant_dob3" name="dependant_dob3" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_3']))?>" >
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship3">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship3" name="dependantrelationship3" value="<?php  echo $row['depandant_relationship_3']?>" required>
+                        <input type="text" class="form-control" id="dependantrelationship3" name="dependantrelationship3" value="<?php  echo $row['depandant_relationship_3']?>" >
                     </div>
                 </div>
 
@@ -452,16 +452,16 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="dependantName4">Dependant name</label>
-                        <input type="text" class="form-control" id="dependantName4" name="dependantName4" value="<?php  echo $row['dependant_name_4']?>" required>
+                        <input type="text" class="form-control" id="dependantName4" name="dependantName4" value="<?php  echo $row['dependant_name_4']?>" >
                     </div>
                     <div class="form-group">
                         <label for="dependant_dob4">Dependant date of birth</label>
-                        <input type="date" class="form-control" id="dependant_dob4" name="dependant_dob4" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_4']))?>" required>
+                        <input type="date" class="form-control" id="dependant_dob4" name="dependant_dob4" value="<?php  echo date('Y-m-d', strtotime($row['dependant_dob_4']))?>" >
                     </div>
                     
                     <div class="form-group">
                         <label for="dependantrelationship4">Dependant relationship</label>
-                        <input type="text" class="form-control" id="dependantrelationship4" name="dependantrelationship4" value="<?php  echo $row['depandant_relationship_4']?>" required>
+                        <input type="text" class="form-control" id="dependantrelationship4" name="dependantrelationship4" value="<?php  echo $row['depandant_relationship_4']?>" >
                     </div>
                 </div>
 
@@ -471,11 +471,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="kin-name">Next of kin name</label>
-                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="<?php  echo $row['kin_name']?>" required>
+                        <input type="text" class="form-control" id="kin-name" name="kin-name" value="<?php  echo $row['kin_name']?>" >
                     </div>
                     <div class="form-group">
                         <label for="kindob">Kin date of birth</label>
-                        <input type="date" class="form-control" id="kindob" name="kindob" value="<?php  echo date('Y-m-d', strtotime($row['kin_dob'])) ?>" required>
+                        <input type="date" class="form-control" id="kindob" name="kindob" value="<?php  echo date('Y-m-d', strtotime($row['kin_dob'])) ?>" >
                     </div>
                 </div>
 
@@ -483,11 +483,11 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="kin-contact">Next of kin contact</label>
-                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="<?php  echo $row['kin_contact']?>" required>
+                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="<?php  echo $row['kin_contact']?>" >
                     </div>
                     <div class="form-group">
                         <label for="kin-relationship">Next of kin relationship</label>
-                        <input type="text" class="form-control" id="kin-relationship" name="kin-relationship" value="<?php  echo $row['kin_relationship']?>" required>
+                        <input type="text" class="form-control" id="kin-relationship" name="kin-relationship" value="<?php  echo $row['kin_relationship']?>" >
                     </div>
                 </div>
 
@@ -496,22 +496,22 @@ session_start();
                 <div class="form-row d-flex flex-wrap">
                 <div class="form-group">
                         <label for="kin-name1">Next of kin name</label>
-                        <input type="text" class="form-control" id="kin-name1" name="kin-name1" value="<?php  echo $row['kin_name_1']?>" required>
+                        <input type="text" class="form-control" id="kin-name1" name="kin-name1" value="<?php  echo $row['kin_name_1']?>" >
                     </div>
                     <div class="form-group">
                         <label for="kindob1">Kin date of birth</label>
-                        <input type="date" class="form-control" id="kindob1" name="kindob1" value="<?php  echo date('Y-m-d', strtotime($row['kin_dob_1'])) ?>" required>
+                        <input type="date" class="form-control" id="kindob1" name="kindob1" value="<?php  echo date('Y-m-d', strtotime($row['kin_dob_1'])) ?>" >
                     </div>
                 </div>
                   <!-- Row 27 -->
                 <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="kin-contact">Next of kin contact</label>
-                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="<?php  echo $row['kin_contact_1']; ?>" required>
+                        <input type="text" class="form-control" id="kin-contact" name="kin-contact" value="<?php  echo $row['kin_contact_1']; ?>" >
                     </div>
                     <div class="form-group">
                         <label for="kin-relationship1">Next of kin relationship</label>
-                        <input type="text" class="form-control" id="kin-relationship1" name="kin-relationship1" value="<?php  echo $row['kin_relationship_1']; ?>" required>
+                        <input type="text" class="form-control" id="kin-relationship1" name="kin-relationship1" value="<?php  echo $row['kin_relationship_1']; ?>" >
                     </div>
                 </div>
 
@@ -714,7 +714,7 @@ session_start();
                     </div>
                     <div class="form-group">
                         <label for="total-leave">Total leave </label>
-                        <input type="text" class="form-control" id="total-leave" name="total-leave" value="<?php  echo $row['total_leave']; ?>" required>
+                        <input type="text" class="form-control" id="total-leave" name="total-leave" value="<?php  echo $row['total_leave']; ?>" >
                     </div>
                 </div>
 
@@ -722,11 +722,11 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="role">Role</label>
-                        <input type="text" class="form-control" id="role" name="role" value="<?php  echo $row['role']; ?>" required>
+                        <input type="text" class="form-control" id="role" name="role" value="<?php  echo $row['role']; ?>" >
                     </div>
                     <div class="form-group">
                         <label for="delete-status">Delete status</label>
-                        <input type="text" class="form-control" id="delete-status" name="delete-status" value="<?php  echo $row['delete_status']; ?>" required>
+                        <input type="text" class="form-control" id="delete-status" name="delete-status" value="<?php  echo $row['delete_status']; ?>" >
                     </div>
                 </div>
 
@@ -734,11 +734,11 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="employment-terms">Employment terms</label>
-                        <input type="text" class="form-control" id="employment-terms" name="employment-terms" value="<?php  echo $row['employment_terms']; ?>" required>
+                        <input type="text" class="form-control" id="employment-terms" name="employment-terms" value="<?php  echo $row['employment_terms']; ?>" >
                     </div>
                     <div class="form-group">
                         <label for="salary">Salary</label>
-                        <input type="text" class="form-control" id="salary" name="salary" value="<?php  echo $row['salary']; ?>" required>
+                        <input type="text" class="form-control" id="salary" name="salary" value="<?php  echo $row['salary']; ?>" >
                     </div>
                 </div>
 
@@ -746,11 +746,11 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="terminantion-status">Terminiation status</label>
-                        <input type="text" class="form-control" id="terminantion-status" name="terminantion-status" value="<?php  echo $row['termination_status']; ?>" required>
+                        <input type="text" class="form-control" id="terminantion-status" name="terminantion-status" value="<?php  echo $row['termination_status']; ?>" >
                     </div>
                     <div class="form-group">
                         <label for="terminantion-reason">Terminiation reason</label>
-                        <input type="text" class="form-control" id="terminantion-reason" name="terminantion-reason" value="<?php  echo $row['termination_reason']; ?>" required>
+                        <input type="text" class="form-control" id="terminantion-reason" name="terminantion-reason" value="<?php  echo $row['termination_reason']; ?>" >
                     </div>
                 </div>
 
@@ -758,11 +758,11 @@ session_start();
                  <div class="form-row d-flex flex-wrap">
                     <div class="form-group">
                         <label for="terminantion-date">Terminiation date</label>
-                        <input type="date" class="form-control" id="terminantion-date" name="terminantion-date" value="<?php  echo date('Y-m-d', strtotime($row['termination_date'])); ?>" required>
+                        <input type="date" class="form-control" id="terminantion-date" name="terminantion-date" value="<?php  echo date('Y-m-d', strtotime($row['termination_date'])); ?>" >
                     </div>
                     <div class="form-group">
                         <label for="contract_exp">contact Expire date</label>
-                        <input type="date" class="form-control" id="contract_exp" name="contract_exp" value="<?php  echo date('Y-m-d', strtotime($row['contract_exp'])); ?>" required>
+                        <input type="date" class="form-control" id="contract_exp" name="contract_exp" value="<?php  echo date('Y-m-d', strtotime($row['contract_exp'])); ?>" >
                     </div>
                 </div>
                 <!-- Final Row (Submit Button) -->
