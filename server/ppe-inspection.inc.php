@@ -21,6 +21,12 @@ if (isset($_POST['submit'])) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {  
 
         mysqli_begin_transaction($connection);
+        $vehicle = isset($_POST['vehicle'])? mysqli_real_escape_string($connection, $_POST['vehicle']): null;
+        $last_Service_Date = isset($_POST['lastServiceDate']) ? mysqli_real_escape_string($connection, $_POST['lastServiceDate']): null;
+
+        $location = isset($_POST['location']) ? mysqli_real_escape_string($connection, $_POST['location']) : null;
+
+        $inspector_Name = isset($_POST['inspectorName'])? mysqli_real_escape_string($connection, $_POST['inspectorName']) : null;
 
         $front_view = mysqli_real_escape_string($connection, $_POST['front-view']);
         $rear_view = mysqli_real_escape_string($connection, $_POST['rear-view']);
@@ -55,7 +61,7 @@ if (isset($_POST['submit'])) {
             lr_tyre_age, lr_tyre_treat, rr_tyre_age, rr_tyre_treat, 
             rear_3pt_seatbelts, driver_3pt_seatbelts, co_driver, 
             bluetooth, odometer, service_book, emergence_triangle, 
-            first_aid_kit
+            first_aid_kit, vehicle, lastServiceDate, location, inspectorName
         ) VALUES (
             '$front_view', '$rear_view', '$left_side_view', '$right_side_view', 
             '$loadbin_cover', '$windscreen', '$license_disk', '$towbar', 
@@ -63,7 +69,8 @@ if (isset($_POST['submit'])) {
             '$lr_tyre_age', '$lr_tyre_treat', '$rr_tyre_age', '$rr_tyre_treat', 
             '$rear_3pt_seatbelts', '$driver_3pt_seatbelts', '$co_driver', 
             '$bluetooth', '$odometer', '$service_book', '$emergence_triangle', 
-            '$first_aid_kit'
+            '$first_aid_kit', '$vehicle', '$last_Service_Date', '$location', 
+            '$inspector_Name'
         )";
 
         $result = mysqli_query($connection, $query);

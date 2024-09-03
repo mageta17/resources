@@ -134,34 +134,34 @@
                         <div class="col-md-6 mb-3 mt-4">
                             <div class="form-group">
                                 <label for="vehicle">Vehicle</label>
-                                <select class="form-control" id="vehicle" name="vehicle">
+                                <select class="form-control" id="vehicle" name="vehicle" required>
                                     <option value="" disabled>Select Vehicle</option>
-                                    <option value=""></option>
-                                    <option value=""></option>
-                                    <option value="">Other</option>
+                                    <option value="T123ABC">T123ABC</option>
+                                    <option value="T222CAB">T222CAB</option>
+                                    <option value="T345CDA">T345CDA</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3 mt-4">
                             <div class="form-group">
                                 <label for="lastServiceDate">Last Service date</label>
-                                <input type="date" class="form-control" id="lastServiceDate" name="lastServiceDate" value="">
+                                <input type="date" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="location">Location</label>
-                                <input type="text" class="form-control" id="location" name="location" value="">
+                                <input type="text" class="form-control" id="location" name="location" value="" required>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <div class="form-group">
                                 <label for="inspectorName">Inspector Name</label>
-                                <input type="text" class="form-control" id="inspectorName" name="inspectorName" value="">
+                                <input type="text" class="form-control" id="inspectorName" name="inspectorName" value="" required>
                             </div>
                         </div>
                     </div>
-
+                      <!-- card   Section -->
                     <div class="d-flex flex-wrap justify-content-start">
                         <div class="form-item">
                             <div class="card card-background-color">
