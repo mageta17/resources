@@ -34,6 +34,9 @@
         .form-item:nth-child(3n) {
             margin-right: 0;
         }
+        .form-control {
+            background-color:#E8ECEF; /* Make input size medium */
+        }
         .view-label {
             font-size: 1.0rem; 
             font-weight: bold;
@@ -58,10 +61,18 @@
             font-size: 0.95rem;
             text-align: center;
         }
+        .logo{
+            width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
 
         .upload-icon {
             margin-right: 5px;
             vertical-align: middle;
+        }
+        .inputs-style{
+            border-radius: 5px;
         }
 
         #upload {
@@ -78,7 +89,7 @@
                 padding: 0.55rem 1.0rem;
                 margin-right: 0;
             }
-
+        
             #upload {
                 display: block; 
                 margin-top: 10px; 
@@ -109,6 +120,48 @@
             ?>
          <div class="form-container">
             <form id="checklistForm" method="POST" action="server/ppe-inspection.inc.php"   enctype="multipart/form-data">
+                        <!-- header  Section -->
+                    <div class="d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
+                        <div class="text-center w-100">
+                            <div class="logo mb-3 mt-2">
+                                <img src="resources/images/newl.webp" class="img-fluid" alt="Northern Engineering Works Logo">
+                            </div>
+                            <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                            <h6>Motorvehicle 360 Inspection</h6>
+                        </div>
+                    <!-- </div>
+                    <div class="d-flex flex-wrap justify-content-start mb-4 card-background-color align-items-stretch  inputs-style"> -->
+                        <div class="col-md-6 mb-3 mt-4">
+                            <div class="form-group">
+                                <label for="vehicle">Vehicle</label>
+                                <select class="form-control" id="vehicle" name="vehicle">
+                                    <option value="" disabled>Select Vehicle</option>
+                                    <option value=""></option>
+                                    <option value=""></option>
+                                    <option value="">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3 mt-4">
+                            <div class="form-group">
+                                <label for="lastServiceDate">Last Service date</label>
+                                <input type="date" class="form-control" id="lastServiceDate" name="lastServiceDate" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" value="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="inspectorName">Inspector Name</label>
+                                <input type="text" class="form-control" id="inspectorName" name="inspectorName" value="">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="d-flex flex-wrap justify-content-start">
                         <div class="form-item">
                             <div class="card card-background-color">
