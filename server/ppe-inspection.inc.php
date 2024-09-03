@@ -4,6 +4,8 @@ require "db.php";
 session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+$userpatterns = '/^[A-Za-z]+(?:\s[A-Za-z]+)*$/';
+session_start();
 
 // Function to handle errors and session
 function handleError($message){
@@ -53,7 +55,18 @@ if (isset($_POST['submit'])) {
         $emergence_triangle = mysqli_real_escape_string($connection, $_POST['emergence-triangle']);
         $first_aid_kit = mysqli_real_escape_string($connection, $_POST['first-aid-kit']);
 
+        if($location && !preg_match($userpatterns, trim($location))){
+            $_SESSION['error'] = "Location name should contain only letters.";
+            header("Location: ../mv-360-inspection-form.php");
+            exit();
+        } else if($inspector_Name &&  !preg_match($userpatterns, trim($inspector_Name))){
+            $_SESSION['error'] = "Inspector name  should contain only letters.";
+            header("Location: ../mv-360-inspection-form.php");
+            exit();
+        }
+
         // Insert data into `mv_check_list_360
+        if(!isset($_SESSION['error'])){
         $query = "INSERT INTO mv_check_list_360 (
             front_view, rear_view, left_side_view, right_side_view, 
             loadbin_cover, windscreen, license_disk, towbar, 
@@ -183,6 +196,7 @@ if (isset($_POST['submit'])) {
                         }
                     }
                 }
+              }
                 // end of transaction 
                 mysqli_commit($connection);
 

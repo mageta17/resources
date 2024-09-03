@@ -74,6 +74,42 @@
         .inputs-style{
             border-radius: 5px;
         }
+        .alert  {
+            opacity: 0;
+            transform: translateY(-20px);
+        
+        }
+        .alert-success{
+            animation: fadeIn 1s forwards;
+        }
+        .slide{
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+            transform: translateY(-20px);
+
+        }
+
+        @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+           }
+        }
+        @keyframes horizontal-shaking {
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            0% { transform: translateX(0) }
+            25% { transform: translateX(5px) }
+            50% { transform: translateX(-5px) }
+            75% { transform: translateX(5px) }
+            100% { transform: translateX(0) }
+        }
+        .alert-danger{
+            animation: horizontal-shaking 0.2s ease-in-out forwards; 
+            animation-iteration-count: 4;
+        } 
 
         #upload {
             display: none;
@@ -109,14 +145,16 @@
     <div class="container mt-5">
         <div class="col-lg-8 mx-auto">
             <?php
-                if (isset($_SESSION['error'])) {
-                    ?>
-                    <div class="alert alert-danger text-center" role="alert">
-                        <p><?php echo $_SESSION['error']; ?></p>
-                    </div>
-                    <?php
-                    unset($_SESSION['error']); // Clear the error message after displaying it
-                }
+               
+                 if (isset($_SESSION['succes'])) {
+                     echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
+                     unset($_SESSION['succes']); 
+                 }
+                 if (isset($_SESSION['error'])) {
+                     echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error'] . '</div>';
+                     unset($_SESSION['error']); 
+                 }
+             
             ?>
          <div class="form-container">
             <form id="checklistForm" method="POST" action="server/ppe-inspection.inc.php"   enctype="multipart/form-data">
