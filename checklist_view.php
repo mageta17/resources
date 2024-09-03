@@ -83,21 +83,26 @@ include 'server/modules/staff-pages.php';
                 $id = $_GET['id'];
                 $query = "SELECT * FROM mv_check_list_360 WHERE id = $id";
                 $result = mysqli_query($connection, $query);
-
-                if (!$result) {
-                    die('Query failed: ' . mysqli_error($connection));
-                }
+            } else {
+                echo "ID not found";
+            } 
             
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) { 
-            
-           
-        ?> 
-        
+               
+        ?>
         <div class="row justify-content-center mx-0">
                 <div class="col-lg-6 mt-5" style="background-color: #f8f9fa;">
+                    <div class="action-buttons">
+                        <button class="btn-print" onclick="window.print();">
+                            <i class="fa fa-print"></i> Print
+                         </button>
+                         <button class="btn-download" onclick="downloadPDF();">
+                            <i class="fa fa-download"></i>PDF
+                         </button>
+                    </div>
                 <form action="">
-                  <div class=" row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
+                <div class=" row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
                         <div class="text-center w-100">
                             <div class="logo mb-3 mt-2">
                                 <img src="resources/images/newl.webp" class="img-fluid" alt="Northern Engineering Works Logo">
@@ -133,7 +138,7 @@ include 'server/modules/staff-pages.php';
                     <div class="container mt-5">
                         <div class="row row-cols-1 row-cols-md-2 g-3">
                         <?php 
-                            
+                        
                             $id = $row['id'];
                             // Query to get images related to the current checklist entry
                             $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
@@ -178,24 +183,13 @@ include 'server/modules/staff-pages.php';
                         ?>
                         </div>
                     </div>
-                    <div class="action-buttons">
-                        <button class="btn-print" onclick="window.print();">
-                            <i class="fa fa-print"></i> Print
-                         </button>
-                         <button class="btn-download" onclick="downloadPDF();">
-                            <i class="fa fa-download"></i>PDF
-                         </button>
-                    </div>
                 </form>
                 <?php 
-                    } 
                     // include 'server/pagination.php';                           
                 ?>
             </div>            
         </div>
-        <?php } else {
-                    echo "ID not found";
-                    }  ?>
+        <?php } ?>
     </div>
     <script>
     function downloadPDF() {
