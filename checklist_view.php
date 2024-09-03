@@ -30,6 +30,15 @@ include 'server/modules/staff-pages.php';
             border-radius: 5px; 
             width: 99%; 
         }
+        .form-control {
+            background-color:#E8ECEF; /* Make input size medium */
+            
+        }
+        .logo{
+            width: 100px;
+            height: auto;
+            margin: 0 auto;
+        }
         .card-img-top {
             width: 100%;
             height: 300px; 
@@ -74,27 +83,57 @@ include 'server/modules/staff-pages.php';
                 $id = $_GET['id'];
                 $query = "SELECT * FROM mv_check_list_360 WHERE id = $id";
                 $result = mysqli_query($connection, $query);
-            } else {
-                echo "ID not found";
-            } 
+
+                if (!$result) {
+                    die('Query failed: ' . mysqli_error($connection));
+                }
             
             if (mysqli_num_rows($result) > 0) {
-        ?>
+                while ($row = mysqli_fetch_assoc($result)) { 
+            
+           
+        ?> 
+        
         <div class="row justify-content-center mx-0">
                 <div class="col-lg-6 mt-5" style="background-color: #f8f9fa;">
-                    <div class="action-buttons">
-                        <button class="btn-print" onclick="window.print();">
-                            <i class="fa fa-print"></i> Print
-                         </button>
-                         <button class="btn-download" onclick="downloadPDF();">
-                            <i class="fa fa-download"></i>PDF
-                         </button>
-                    </div>
                 <form action="">
+                  <div class=" row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
+                        <div class="text-center w-100">
+                            <div class="logo mb-3 mt-2">
+                                <img src="resources/images/newl.webp" class="img-fluid" alt="Northern Engineering Works Logo">
+                            </div>
+                            <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                            <h6>Motorvehicle 360 Inspection Checklist </h6>
+                        </div>
+                        <div class="col-md-5 mb-3 mt-4">
+                            <div class="form-group">
+                                <label for="vehicle">Vehicle</label>
+                                <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="<?php echo $row['vehicle']; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3 mt-4">
+                            <div class="form-group">
+                                <label for="lastServiceDate">Last Service date</label>
+                                <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="<?php echo  $row['lastServiceDate']; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" class="form-control" id="location" name="location" value="<?php echo $row['location']; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-5 mb-3">
+                            <div class="form-group">
+                                <label for="inspectorName">Inspector Name</label>
+                                <input type="text" class="form-control" id="inspectorName" name="inspectorName" value="<?php echo $row['inspectorName']; ?>" readonly>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container mt-5">
                         <div class="row row-cols-1 row-cols-md-2 g-3">
                         <?php 
-                        while ($row = mysqli_fetch_assoc($result)) { 
+                            
                             $id = $row['id'];
                             // Query to get images related to the current checklist entry
                             $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
@@ -139,13 +178,24 @@ include 'server/modules/staff-pages.php';
                         ?>
                         </div>
                     </div>
+                    <div class="action-buttons">
+                        <button class="btn-print" onclick="window.print();">
+                            <i class="fa fa-print"></i> Print
+                         </button>
+                         <button class="btn-download" onclick="downloadPDF();">
+                            <i class="fa fa-download"></i>PDF
+                         </button>
+                    </div>
                 </form>
                 <?php 
+                    } 
                     // include 'server/pagination.php';                           
                 ?>
             </div>            
         </div>
-        <?php } ?>
+        <?php } else {
+                    echo "ID not found";
+                    }  ?>
     </div>
     <script>
     function downloadPDF() {
