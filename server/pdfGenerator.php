@@ -105,11 +105,9 @@ if (isset($_GET['id'])) {
             $fpdf->SetFont('Arial', '', 14);
             $fpdf->SetTextColor(0, 0, 0); 
             $fpdf->Cell(0, 10, ' Inspector name: ' . $row['inspectorName'], 0, 1, 'L');
-            //$fpdf->Ln(5);
-
+        
             $fpdf->Cell(0, 10, ' Location : ' . $row['location'], 0, 1, 'L');
             
-            // $fpdf->Ln(-10);
             
             $fpdf->Cell(0, 10, ' Vehicle: ' . $row['vehicle'], 0, 1, 'L');
             
