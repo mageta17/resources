@@ -93,14 +93,6 @@ include 'server/modules/staff-pages.php';
         ?>
         <div class="row justify-content-center mx-0">
                 <div class="col-lg-6 mt-5" style="background-color: #f8f9fa;">
-                    <!-- <div class="action-buttons">
-                        <button class="btn-print" onclick="window.print();">
-                            <i class="fa fa-print"></i> Print
-                         </button>
-                         <button class="btn-download" onclick="downloadPDF();">
-                            <i class="fa fa-download"></i>PDF
-                         </button>
-                    </div> -->
                 <form action="">
                 <div class=" row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
                         <div class="text-center w-100">
