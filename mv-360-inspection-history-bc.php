@@ -108,9 +108,10 @@
                         $query = "SELECT * FROM mv_check_list_360";
                         $result = mysqli_query($connection, $query);
                         if (mysqli_num_rows($result) > 0) {
+                            
                     ?>  
                 <div class="row justify-content-center mt-5">   
-                    <div class="col-lg-10">
+                    <div class="col-lg-12 ">
                         <table class="table table-hover table-responsive">
                             <thead>
                                 <tr>

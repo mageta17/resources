@@ -29,6 +29,8 @@
             <div class="col-lg-6"> 
                 <a href="mv-360-inspection-form.php" type="button" class="btn btn-sm btn-primary my-2">Mv 360 Inspection</a>
                 <a href="mv-360-inspection-history.php" type="button" class="btn btn-sm btn-primary my-2">Mv 360 History</a> 
+                <a href="driver-details.php" type="button" class="btn btn-sm btn-primary my-2">Drivers details</a> 
+                <a href="site-inspection.php" type="button" class="btn btn-sm btn-primary my-2">Site Inspection</a> 
             </div>             
         </div>
     </div>

@@ -8,6 +8,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- link for icons  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <title>
       <?php include 'server/title.php' ?>
     </title>    
@@ -66,9 +68,30 @@
             width: 99%; 
         }
         .card-img-top {
-            width: 476.5px;
-            height: 500.325px;
+            width: 374px;
+            height: 314px;
             object-fit: cover;
+        }
+        .action-buttons {
+            position: fixed;
+            display: flex;
+            justify-content: flex-end;
+            margin: 20px 0;
+        }
+        .action-buttons button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn-print {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-download {
+            background-color: #28a745;
+            color: white;
         }
     </style>
 </head>
@@ -117,7 +140,14 @@
 
                 <div id="section-2" class="row">
                     <div class="container-fluid" style="width: 100%; overflow-x: auto; font-size: 12px;">
-
+                    <div class="action-buttons">
+                        <button class="btn-print" onclick="window.print();">
+                            <i class="fa fa-print"></i> Print
+                         </button>
+                         <button class="btn-download" onclick="downloadPDF();">
+                            <i class="fa fa-download"></i>PDF
+                         </button>
+                    </div>
         <?php                  
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
@@ -130,7 +160,7 @@
             if (mysqli_num_rows($result) > 0) {
         ?>
         <div class="row justify-content-center mx-0">
-            <div class="col-lg-10">
+            <div class="col-lg-8">
                 <form action="">
                     <div class="container mt-5">
                         <div class="row row-cols-1 row-cols-sm-2 g-3">
@@ -205,6 +235,14 @@
                 $("#sidebar").toggleClass('active');
             });
         });
+        function downloadPDF() {
+            const id = <?php echo json_encode($_GET['id']); ?>;
+            if (id) {
+                window.location.href = 'server/pdfGenerator.php?id=' + id;
+            } else {
+                alert('ID not provided or invalid');
+            }
+       }
     </script>
 
     <script src="resources/bootstrap5.1.3/js/bootstrap.bundle.min.js"></script>

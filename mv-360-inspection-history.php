@@ -17,6 +17,14 @@ include 'server/modules/staff-pages.php';
     <title>
       <?php include 'server/title.php'; ?>
     </title>
+    <style>
+        /* .form-container{
+            background-color: #f8f9fa;
+            /* padding: 20px; */
+            /* border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+        /* } */ 
+    </style>
 </head>
 <body> 
     <div id="section" class="container-fluid mx-0 px-0">        
@@ -27,7 +35,7 @@ include 'server/modules/staff-pages.php';
             if (mysqli_num_rows($result) > 0) {
         ?>  
     <div class="row justify-content-center mt-5">   
-        <div class="col-lg-6">
+        <div class="col-lg-6"  style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
             <table class="table table-hover table-responsive">
                 <thead>
                     <tr>
