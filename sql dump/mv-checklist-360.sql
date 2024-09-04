@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jul 24, 2024 at 10:09 AM
+-- Generation Time: Sep 04, 2024 at 07:16 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -53,7 +53,11 @@ CREATE TABLE `mv_check_list_360` (
   `odometer` varchar(255) NOT NULL,
   `service_book` varchar(255) NOT NULL,
   `emergence_triangle` varchar(255) NOT NULL,
-  `first_aid_kit` varchar(255) NOT NULL
+  `first_aid_kit` varchar(255) NOT NULL,
+  `vehicle` varchar(255) NOT NULL,
+  `lastServiceDate` varchar(255) NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `inspectorName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
