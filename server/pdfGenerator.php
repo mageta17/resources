@@ -20,59 +20,36 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 90, $fpdf->GetY() + 0, 40, 22);
+        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 73, $fpdf->GetY() + 0, 40, 22);
         // get the page width 
         $pageWidth = $fpdf->GetPageWidth();
         $cellWidth = $pageWidth - 20; // 10mm margin on each side
         // positioning the heading to the center 
-        $fpdf->Ln(5);
+        $fpdf->Ln(20);
         $fpdf->SetTextColor(0, 0, 0);
         $fpdf->Cell($cellWidth, 10, 'NORTHERN ENGINEERING WORKS LIMITED', 0, 0, 'C');
-        $fpdf->Ln(5);// from checklist header to checklist image
-        $fpdf->Cell($cellWidth, 10, 'Motorvehicle 360 Inspection Checklist', 0, 0, 'C');
+        $fpdf->Ln(10);// from checklist header to checklist image
+        $fpdf->Cell($cellWidth, 8, 'Motorvehicle 360 Inspection Checklist', 0, 0, 'C');
+        $fpdf->Ln(15);
 
+        // Add a header for Checklist Images
+        $fpdf->SetFont('Arial', 'B', 14);
+        $fpdf->SetTextColor(0, 0, 255); 
+        // Draw the header
+        $fpdf->Cell($cellWidth, 7, 'Checklist Compliance Results and Images:', 0, 0, 'C');
+        // i  calculate the position of the underline
+        $x = $fpdf->GetX();
+        $y = $fpdf->GetY() + 7;
+        // Draw the underline
+        $fpdf->Line($x - $cellWidth, $y, $x, $y);
+        $fpdf->SetTextColor(0, 0, 0);
+        $fpdf->Ln(10);   
         // Query to get images related to the checklist
         $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
         $result_images = mysqli_query($connection, $query_images);
         
         if (mysqli_num_rows($result_images) > 0) {
-            $fpdf->Ln(10);
-
-            $fpdf->SetFont('Arial', 'B', 14);
-            $fpdf->SetTextColor(0, 0, 0); // set color
-            $fpdf->Cell(0, 10, 'ID number: ' . $row['id'], 0, 1, 'L'); // Full width of the page
-    
-            $fpdf->Ln(5);
-        
-            $fpdf->SetFont('Arial', '', 12);
-            $fpdf->SetTextColor(0, 0, 0); 
-            $fpdf->Cell(0, 10, ' Inspector name: ' . $row['inspectorName'], 0, 1, 'L');
             
-            $fpdf->Ln(5);
-            
-            $fpdf->Cell(0, 10, ' Location : ' . $row['location'], 0, 1, 'L');
-            
-            $fpdf->Ln(5);
-    
-            
-            $fpdf->Cell(0, 10, ' Vehicle: ' . $row['vehicle'], 0, 1, 'L');
-            
-            $fpdf->Ln(5);
-            
-            $fpdf->Cell(0, 10, ' Last Service date : ' . $row['lastServiceDate'], 0, 1, 'L');
-        
-            $fpdf->Ln(10);
-            
-            // Add a header for Checklist Images
-            $fpdf->SetFont('Arial', 'B', 14);
-            $fpdf->SetTextColor(0, 0, 255); 
-
-            $pageWidth = $fpdf->GetPageWidth();
-            $cellWidth = $pageWidth - 20;
-            $fpdf->Cell($cellWidth, 10, 'Checklist Images:', 0, 0, 'C');
-            $fpdf->SetTextColor(0, 0, 0); 
-            $fpdf->Ln(15);
-             
             $image_count = 0; 
 
             while ($image_row = mysqli_fetch_assoc($result_images)) {
@@ -94,7 +71,7 @@ if (isset($_GET['id'])) {
                         $image_count++;
                         
                         if ($image_count % 2 == 0) {
-                            $fpdf->Ln(100); // 70 when image size is 60 by 40 
+                            $fpdf->Ln(90); // 70 when image size is 60 by 40 
                         } else {
                             $fpdf->SetX($fpdf->GetX() + 70); 
                         }
@@ -111,8 +88,37 @@ if (isset($_GET['id'])) {
             if ($image_count % 2 != 0) {
                 $fpdf->Ln(50);
             }
+            $fpdf->Ln(30);
+            $fpdf->SetFont('Arial', 'B', 14);
+            $fpdf->SetTextColor(0, 0, 255); 
+            // Draw the header
+            $pageWidth = $fpdf->GetPageWidth();
+            $cellWidth = $pageWidth - 20; 
+            $fpdf->Cell($cellWidth, 7, 'Checklist Details:', 0, 0, 'L');
+            // i  calculate the position of the underline
+            $x = $fpdf->GetX();
+            $y = $fpdf->GetY() + 7;
+            // Draw the underline
+            $fpdf->Line($x - $cellWidth, $y, $x, $y);
+            $fpdf->SetTextColor(0, 0, 0);
+            $fpdf->Ln(8);
+            $fpdf->SetFont('Arial', '', 14);
+            $fpdf->SetTextColor(0, 0, 0); 
+            $fpdf->Cell(0, 10, ' Inspector name: ' . $row['inspectorName'], 0, 1, 'L');
+            //$fpdf->Ln(5);
+
+            $fpdf->Cell(0, 10, ' Location : ' . $row['location'], 0, 1, 'L');
+            
+            // $fpdf->Ln(-10);
+            
+            $fpdf->Cell(0, 10, ' Vehicle: ' . $row['vehicle'], 0, 1, 'L');
+            
+            $fpdf->Cell(0, 10, ' Last Service date : ' . $row['lastServiceDate'], 0, 1, 'L');
+        
+            $fpdf->Ln(10);
         }
         $fpdf->Output('D', 'Checklist_Report_' . $id . '.pdf');
+       
         exit;
     } else {
         echo "No data found.";
