@@ -110,6 +110,15 @@
             animation: horizontal-shaking 0.2s ease-in-out forwards; 
             animation-iteration-count: 4;
         } 
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #f7f7f7;
+        }
+
 
         #upload {
             display: none;
@@ -219,6 +228,7 @@
                                         <label for="front-view-upload" class="upload">
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
+                                        <div id="front-view-preview" class="image-preview"></div>
                                     </div>
                                 </div>
                             </div>
@@ -281,8 +291,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image1">Upload Picture</label>
-                                        <input type="file" accept="image/x-png,image/jpeg,image/jpg" name="right-side-view-upload" id="right-side-view-upload" hidden/>
-                                        <label for="right-side-view-upload" class="upload">
+                                        <input type="file"   accept="image/x-png,image/jpeg,image/jpg" name="right-side-view-upload" id="right-side-view-upload" hidden/>
+                                        <label for="right-side-view-upload" class="upload" >
                                             <i class="fas fa-upload upload-icon"></i> Choose file
                                         </label>
                                     </div>
@@ -753,6 +763,7 @@
                 label.innerHTML = '<i class="fas fa-check upload-icon"></i> File Selected';
             });
         });
+    
     </script> 
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

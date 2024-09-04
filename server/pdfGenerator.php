@@ -20,14 +20,16 @@ if (isset($_GET['id'])) {
         $fpdf = new FPDF();
         $fpdf->AddPage();
         $fpdf->SetFont('Arial', 'B', 16);
-        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 148, $fpdf->GetY() + 10, 40, 22);
+        $fpdf->Image('../resources/images/newl.jpg',$fpdf->GetX() + 90, $fpdf->GetY() + 0, 40, 22);
         // get the page width 
         $pageWidth = $fpdf->GetPageWidth();
         $cellWidth = $pageWidth - 20; // 10mm margin on each side
         // positioning the heading to the center 
-        $fpdf->SetTextColor(0, 0, 255);
-        $fpdf->Cell($cellWidth, 10, 'Checklist Report', 0, 0, 'C');
+        $fpdf->Ln(5);
+        $fpdf->SetTextColor(0, 0, 0);
+        $fpdf->Cell($cellWidth, 10, 'NORTHERN ENGINEERING WORKS LIMITED', 0, 0, 'C');
         $fpdf->Ln(5);// from checklist header to checklist image
+        $fpdf->Cell($cellWidth, 10, 'Motorvehicle 360 Inspection Checklist', 0, 0, 'C');
 
         // Query to get images related to the checklist
         $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
@@ -44,15 +46,20 @@ if (isset($_GET['id'])) {
         
             $fpdf->SetFont('Arial', '', 12);
             $fpdf->SetTextColor(0, 0, 0); 
-            $fpdf->Cell(0, 10, 'Owner: NEWL', 0, 1, 'L');
+            $fpdf->Cell(0, 10, ' Inspector name: ' . $row['inspectorName'], 0, 1, 'L');
             
             $fpdf->Ln(5);
             
-            $fpdf->Cell(0, 10, 'Status: Inspected', 0, 1, 'L');
+            $fpdf->Cell(0, 10, ' Location : ' . $row['location'], 0, 1, 'L');
+            
+            $fpdf->Ln(5);
+    
+            
+            $fpdf->Cell(0, 10, ' Vehicle: ' . $row['vehicle'], 0, 1, 'L');
             
             $fpdf->Ln(5);
             
-            $fpdf->Cell(0, 10, 'Date and time: ' . $row['time'], 0, 1, 'L');
+            $fpdf->Cell(0, 10, ' Last Service date : ' . $row['lastServiceDate'], 0, 1, 'L');
         
             $fpdf->Ln(10);
             
