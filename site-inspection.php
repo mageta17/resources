@@ -259,7 +259,6 @@
                                     <textarea name="descriptiontextarea5" id="descriptiontextarea5"></textarea>
                                 </div>
                             </div>
-
                             <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Anti-weed membrane Available?</span>
@@ -282,9 +281,9 @@
                                     <label for="descriptiontextarea6" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                     <textarea name="descriptiontextarea6" id="descriptiontextarea6"></textarea>
                                 </div>
-                                <!-- <button type="button" class="btn btn-primary" onclick="nextPage()">Next Page</button> -->
-                                <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                            </div>
+                            <nav aria-label="Page navigation example">
+                                       <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
                                             <li class="page-item" id="prevButton">
                                                 <a class="page-link disabled" href="#" onclick="previousPage()">Previous</a>
                                             </li>
@@ -296,14 +295,11 @@
                                                 <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                             </li>
                                         </ul>
-                                    </nav>
-                            </div>
+                                </nav>
                         </div>
                     </div>
             </section>
-
-                            <!-- section two  -->
-
+        <!-- section two  -->
             <section id="section-2" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -392,27 +388,26 @@
                                         <label for="descriptiontextarea9" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea9" id="descriptiontextarea9"></textarea>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
-                                            <li class="page-item" id="prevButton">
-                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
-                                            <!-- Add more page links as needed -->
-                                            <li class="page-item" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
+                                        <li class="page-item" id="prevButton">
+                                            <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                        <!-- Add more page links as needed -->
+                                        <li class="page-item" id="nextButton">
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                         </div>
                     </div>
                 </div>
             </section>
-
-
+        <!-- section 3 -->
             <section id="section-3" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -501,27 +496,26 @@
                                         <label for="descriptiontextarea12" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea12" id="descriptiontextarea12"></textarea>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
-                                            <li class="page-item" id="prevButton">
-                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
-                                            </li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
-                                            <!-- Add more page links as needed -->
-                                            <li class="page-item" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
+                                        <li class="page-item" id="prevButton">
+                                            <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                        </li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                        <!-- Add more page links as needed -->
+                                        <li class="page-item" id="nextButton">
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                        </li>
+                                    </ul>
+                               </nav>
                         </div>
                     </div>
                 </div>
             </section>
-
-
+       <!-- section 4 -->
             <section id="section-4" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -610,27 +604,26 @@
                                         <label for="descriptiontextarea15" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea15" id="descriptiontextarea15"></textarea>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
-                                            <li class="page-item" id="prevButton">
-                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
-                                            </li>
-                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
-                                            <li class="page-item" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
-                        </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
+                                        <li class="page-item" id="prevButton">
+                                            <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                        </li>
+                                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
+                                        <li class="page-item" id="nextButton">
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                         </div>
                     </div>
                 </div>
             </section>
-
-
+        <!-- section 5 -->
             <section id="section-5" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -704,8 +697,6 @@
                                         <textarea name="descriptiontextarea18" id="descriptiontextarea18"></textarea>
                                     </div>
                                 </div>
-
-
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
                                         <span>RF Radiation notice Sign</span>
@@ -760,27 +751,27 @@
                                         <label for="descriptiontextarea20" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea20" id="descriptiontextarea20"></textarea>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
-                                            <li class="page-item" id="prevButton">
-                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
-                                            </li>
-                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li> -->
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
-                                            <li class="page-item "><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
-                                            <!-- Add more page links as needed -->
-                                            <li class="page-item" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
+                                        <li class="page-item" id="prevButton">
+                                            <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                        </li>
+                                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li> -->
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
+                                        <li class="page-item "><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                        <!-- Add more page links as needed -->
+                                        <li class="page-item" id="nextButton">
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                        </li>
+                                    </ul>
+                             </nav>
                         </div>
                     </div>
                 </div>
             </section>
-
+         <!-- section 6  -->
             <section id="section-6" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -893,26 +884,26 @@
                                         <label for="descriptiontextarea24" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea24" id="descriptiontextarea24"></textarea>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
-                                            <li class="page-item" id="prevButton">
-                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
-                                            </li>
-                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
-                                            <li class="page-item" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
+                                        <li class="page-item" id="prevButton">
+                                            <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                        </li>
+                                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                        <li class="page-item" id="nextButton">
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                        </li>
+                                    </ul>
+                               </nav>
                         </div>
                     </div>
                 </div>
             </section>
-
+          <!-- section 7  -->
             <section id="section-7" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -1073,26 +1064,26 @@
                                         <label for="descriptiontextarea30" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea30" id="descriptiontextarea30"></textarea>
                                     </div>
-                                    <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
-                                            <li class="page-item" id="prevButton">
-                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
-                                            </li>
-                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
-                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
-                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
-                                            <li class="page-item" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
                                 </div>
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
+                                        <li class="page-item" id="prevButton">
+                                            <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                        </li>
+                                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                        <li class="page-item active"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
+                                        <li class="page-item" id="nextButton">
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
                         </div>
                     </div>
                 </div>
             </section>
-
+          <!-- section 8  -->
             <section id="section-8" style="display:none;">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
@@ -1115,17 +1106,17 @@
                                     <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(a)</span>
-                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-a" name="data-a" value="" required style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
-                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
-                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    <div class="action" id="controlmeasure1" style=" width: 100%; margin-top: 10px;">
+                                        <label for="controlmeasure1" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="controlmeasure1" id="controlmeasure1"></textarea>
                                     </div>
-                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
-                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
-                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    <div id="status1" style="width: 100%; margin-top: 10px;">
+                                        <label for="status1" style="font-weight: bold;">Status</label>
+                                        <textarea name="status1" id="status1"></textarea>
                                     </div>
                                 </div>
 
@@ -1133,34 +1124,34 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(b)</span>
-                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-b" name="data-b" value="" required style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
-                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
-                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    <div class="action" id="controlmeasure2" style=" width: 100%; margin-top: 10px;">
+                                        <label for="controlmeasure2" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="controlmeasure2" id="controlmeasure2"></textarea>
                                     </div>
-                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
-                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
-                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    <div id="status2" style="width: 100%; margin-top: 10px;">
+                                        <label for="status2" style="font-weight: bold;">Status</label>
+                                        <textarea name="status2" id="status2"></textarea>
                                     </div>
                                 </div>
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(c)</span>
-                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-c" name="data-c" value="" required style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
-                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
-                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    <div class="action" id="controlmeasure3" style=" width: 100%; margin-top: 10px;">
+                                        <label for="controlmeasure3" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="controlmeasure3" id="controlmeasure3"></textarea>
                                     </div>
-                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
-                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
-                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    <div id="status3" style="width: 100%; margin-top: 10px;">
+                                        <label for="status3" style="font-weight: bold;">Status</label>
+                                        <textarea name="status3" id="status3"></textarea>
                                     </div>
                                 </div>
 
@@ -1168,17 +1159,17 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(d)</span>
-                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-d" name="data-d" value="" required style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
-                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
-                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    <div class="action" id="controlmeasure4" style=" width: 100%; margin-top: 10px;">
+                                        <label for="controlmeasure4" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="controlmeasure4" id="controlmeasure4"></textarea>
                                     </div>
-                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
-                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
-                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    <div id="status4" style="width: 100%; margin-top: 10px;">
+                                        <label for="status4" style="font-weight: bold;">Status</label>
+                                        <textarea name="status4" id="status4"></textarea>
                                     </div>
                                 </div>
 
@@ -1186,25 +1177,27 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(e)</span>
-                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-e" name="data-e" value="" required style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
-                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
-                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
-                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    <div class="action" id="controlmeasure5" style=" width: 100%; margin-top: 10px;">
+                                        <label for="controlmeasure5" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="controlmeasure5" id="controlmeasure5"></textarea>
                                     </div>
-                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
-                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
-                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    <div id="status5" style="width: 100%; margin-top: 10px;">
+                                        <label for="status5" style="font-weight: bold;">Status</label>
+                                        <textarea name="status5" id="status5"></textarea>
                                         <div class="col-md-5 mb-3 mt-4">
                                             <div class="form-group">
                                                 <label for="inspectorname">Inspector: (Name) </label>
                                                 <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="" required>
                                             </div>
                                         </div>
-                                        <nav aria-label="Page navigation example">
-                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                    </div>
+                                </div>
+                                <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
                                             <li class="page-item" id="prevButton">
                                                 <a class="page-link" href="#" onclick="previousPage()">Previous</a>
                                             </li>
@@ -1213,12 +1206,10 @@
                                             <li class="page-item "><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
                                             <li class="page-item active"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                             <li class="page-item disabled" id="nextButton">
-                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                                <a class="page-link" href="#" onclick="nextPage()">Submit</a>
                                             </li>
                                         </ul>
                                     </nav>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
