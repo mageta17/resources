@@ -134,7 +134,8 @@
                             <div class="form-group" style="margin-bottom: 20px;">
                                 <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
                                 <br>
-                                <span>From general item, if the answer is "NO" please make a comment</span>
+                                <span>From general item, if the answer is "NO" please make a comment.</span>
+                                <span>This form consists of eight pages. Make sure you fill in all fields on each page before submitting the form.</span>
                             </div>
 
                             <h4>1. General Observations</h4>
@@ -1092,11 +1093,137 @@
                 </div>
             </section>
 
+            <section id="section-8" style="display:none;">
+            <div class="row justify-content-center  mt-5">   
+                    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
+                            <div class="text-center">
+                                <div class="logo mb-3">
+                                    <img  src="resources/images/newl.webp" class="img-fluid  text-center" alt="Northern Engineering Works Logo">
+                                </div>
+                                <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                                <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
+                            </div>
+                    <div class="container" style="margin-top: 50px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                    <br>
+                                    <span>From general item, if the answer is "NO" please make a comment</span>
+                            </div>
+                                    <h4>8. Risk Assessiment / Hazards Identified  </h4>
 
+                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <div class="form-group" style="display: flex; align-items: center;">
+                                            <span>(a)</span>
+                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
+                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    </div>
+                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
+                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
+                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    </div>
+                                </div>
 
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                <div class="question" style="width: 100%;">
+                                        <div class="form-group" style="display: flex; align-items: center;">
+                                            <span>(b)</span>
+                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
+                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    </div>
+                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
+                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
+                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    </div>
+                                </div>
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                <div class="question" style="width: 100%;">
+                                        <div class="form-group" style="display: flex; align-items: center;">
+                                            <span>(c)</span>
+                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
+                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    </div>
+                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
+                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
+                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    </div>
+                                </div>
 
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                <div class="question" style="width: 100%;">
+                                        <div class="form-group" style="display: flex; align-items: center;">
+                                            <span>(d)</span>
+                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
+                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    </div>
+                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
+                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
+                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    </div>
+                                </div>
 
-
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                <div class="question" style="width: 100%;">
+                                        <div class="form-group" style="display: flex; align-items: center;">
+                                            <span>(e)</span>
+                                            <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required style="flex: 1; margin-left: 10px;">
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="action" id="commentAction25" style=" width: 100%; margin-top: 10px;">
+                                        <label for="actiontextarea25" style="font-weight: bold;">Control Measures </label>
+                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    </div>
+                                    <div id="descriptionAction25" style="width: 100%; margin-top: 10px;">
+                                        <label for="descriptiontextarea25" style="font-weight: bold;">Status</label>
+                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                        <div class="col-md-5 mb-3 mt-4">
+                                            <div class="form-group">
+                                                <label for="inspectorname">Inspector: (Name) </label>
+                                                <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="" required>
+                                            </div>
+                                        </div>
+                                        <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                            <li class="page-item "><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
+                                            <li class="page-item disabled" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </form>
     </div>
     <script>
