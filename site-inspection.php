@@ -36,6 +36,19 @@
             margin-left: 10;
             
         }
+        .sign {
+        display: block;
+        margin: 0 auto; /* Center the picture */
+        max-width: 100%; /* Ensure the picture does not exceed its container width */
+        }
+
+        .sign-img{
+            width: 50%;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
         textarea{
             width: 100%;
             height: 100px;
@@ -46,6 +59,11 @@
             1px solid #ced4da;
             background-color:#E8ECEF;
         }
+        .page-item.active .page-link {
+            background-color: #007bff;
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 0 10px; /* Reduced padding for smaller screens */
@@ -263,7 +281,21 @@
                                     <label for="descriptiontextarea6" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                     <textarea name="descriptiontextarea6" id="descriptiontextarea6"></textarea>
                                 </div>
-                                <button type="button" class="btn btn-primary" onclick="nextPage()">Next Page</button>
+                                <!-- <button type="button" class="btn btn-primary" onclick="nextPage()">Next Page</button> -->
+                                <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link disabled" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                            <!-- Add more page links as needed -->
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                             </div>
                         </div>
                     </div>
@@ -359,15 +391,712 @@
                                         <label for="descriptiontextarea9" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea9" id="descriptiontextarea9"></textarea>
                                     </div>
-                                    <div class="flex">
-                                        <button type="button" class="btn btn-secondary" onclick="previousPage()">Previous Page</button>
-                                        <button type="button" class="btn btn-primary" onclick="nextPage()">Next Page</button>
-                                    </div>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                            <!-- Add more page links as needed -->
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
                                 </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+
+            <section id="section-3" style="display:none;">
+            <div class="row justify-content-center  mt-5">   
+                    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
+                            <div class="text-center">
+                                <div class="logo mb-3">
+                                    <img  src="resources/images/newl.webp" class="img-fluid  text-center" alt="Northern Engineering Works Logo">
+                                </div>
+                                <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                                <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
+                            </div>
+                    <div class="container" style="margin-top: 50px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                    <br>
+                                    <span>From general item, if the answer is "NO" please make a comment</span>
+                            </div>
+                                    <h4>3. Environmental compliance </h4>
+
+                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Is the site environment good and NO spillage/leak of hydrocarbons?</span>
+                                        <br>
+                                        <label for="response10" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons10" id="response10" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response10', 'commentAction10', 'descriptionAction10')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction10" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea10" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea10" id="actiontextarea10"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction10" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea10" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea10" id="descriptiontextarea10"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Is the site/area generally clean and tidy?</span>
+                                        <br>
+                                        <label for="response11" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons11" id="response11" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response11', 'commentAction11', 'descriptionAction11')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction11" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea11" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea11" id="actiontextarea11"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction11" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea11" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea11" id="descriptiontextarea11"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>No unattended equipments left onsite?</span>
+                                        <br>
+                                        <label for="response12" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="response12" id="response12" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response12', 'commentAction12', 'descriptionAction12')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction12" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea12" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea12" id="actiontextarea12"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction12" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea12" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea12" id="descriptiontextarea12"></textarea>
+                                    </div>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                            <!-- Add more page links as needed -->
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section-4" style="display:none;">
+            <div class="row justify-content-center  mt-5">   
+                    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
+                            <div class="text-center">
+                                <div class="logo mb-3">
+                                    <img  src="resources/images/newl.webp" class="img-fluid  text-center" alt="Northern Engineering Works Logo">
+                                </div>
+                                <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                                <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
+                            </div>
+                    <div class="container" style="margin-top: 50px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                    <br>
+                                    <span>From general item, if the answer is "NO" please make a comment</span>
+                            </div>
+                                    <h4>4. Fire Extingusher </h4>
+
+                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Fire extinguishers posted?</span>
+                                        <br>
+                                        <label for="response13" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons13" id="response13" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response13', 'commentAction13', 'descriptionAction13')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction13" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea13" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea13" id="actiontextarea13"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction13" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea13" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea13" id="descriptiontextarea13"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Fire Extingusher  expired ?</span>
+                                        <br>
+                                        <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction14" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea14" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea14" id="actiontextarea14"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction14" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea14" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea14" id="descriptiontextarea14"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Fire Extingusher  rusted and other  parts not working?</span>
+                                        <br>
+                                        <label for="response15" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="response15" id="response15" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response15', 'commentAction15', 'descriptionAction15')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction15" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea15" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea15" id="actiontextarea15"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction15" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea15" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea15" id="descriptiontextarea15"></textarea>
+                                    </div>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="section-5" style="display:none;">
+            <div class="row justify-content-center  mt-5">   
+                    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
+                            <div class="text-center">
+                                <div class="logo mb-3">
+                                    <img  src="resources/images/newl.webp" class="img-fluid  text-center" alt="Northern Engineering Works Logo">
+                                </div>
+                                <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                                <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
+                            </div>
+                    <div class="container" style="margin-top: 50px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                    <br>
+                                    <span>From general item, if the answer is "NO" please make a comment</span>
+                            </div>
+                                    <h4>5. Site signages ( 5 Sets) </h4>
+
+                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>AC Mains Voltage Signs</span>
+                                        <picture  class="sign">
+                                            <source srcset="" type="image/svg+xml">
+                                            <img  style="width:50%; height: auto;" src="resources/images/Ac.jpg" class="img-fluid img-thumbnail sign-img" alt="ac-image">
+                                        </picture>
+                                        <br>
+                                        <label for="response17" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons17" id="response17" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response17', 'commentAction17', 'descriptionAction17')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction17" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea17" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea17" id="actiontextarea17"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction17" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea17" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea17" id="descriptiontextarea17"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>General warning sign (PPE signs available)</span>
+                                        <picture  class="sign">
+                                            <source srcset="" type="image/svg+xml">
+                                            <img  style="width:50%; height: auto;" src="resources/images/General warning.jpg" class="img-fluid img-thumbnail sign-img" alt="General warning">
+                                        </picture>
+                                        <br>
+                                        <label for="response18" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons18" id="response18" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response18', 'commentAction18', 'descriptionAction18')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction18" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea18" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea18" id="actiontextarea18"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction18" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea18" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea18" id="descriptiontextarea18"></textarea>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>RF Radiation notice Sign</span>
+                                        <picture class="sign">
+                                            <source srcset="" type="image/svg+xml">
+                                            <img src="resources/images/rf.jpg" class="img-fluid img-thumbnail sign-img" alt="rf-image">
+                                        </picture>
+                                        <br>
+                                        <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons19" id="response19" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response19', 'commentAction19', 'descriptionAction19')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction19" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea19" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea19" id="actiontextarea19"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction19" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea19" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea19" id="descriptiontextarea19"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span> RF Guidance notice sign</span>
+                                        <picture class="sign">
+                                            <source srcset="" type="image/svg+xml">
+                                            <img src="resources/images/rfg.png" class="img-fluid img-thumbnail sign-img" alt="rfg-image">
+                                        </picture>
+                                        <br>
+                                        <label for="response20" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="response20" id="response20" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response20', 'commentAction20', 'descriptionAction20')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction20" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea20" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea20" id="actiontextarea20"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction20" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea20" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea20" id="descriptiontextarea20"></textarea>
+                                    </div>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li> -->
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
+                                            <li class="page-item "><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                            <!-- Add more page links as needed -->
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-6" style="display:none;">
+            <div class="row justify-content-center  mt-5">   
+                    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
+                            <div class="text-center">
+                                <div class="logo mb-3">
+                                    <img  src="resources/images/newl.webp" class="img-fluid  text-center" alt="Northern Engineering Works Logo">
+                                </div>
+                                <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                                <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
+                            </div>
+                    <div class="container" style="margin-top: 50px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                    <br>
+                                    <span>From general item, if the answer is "NO" please make a comment</span>
+                            </div>
+                                    <h4>6. Electrical Safety </h4>
+
+                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Electrical earth are present ?</span>
+                                        <br>
+                                        <label for="response21" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons21" id="response21" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response21', 'commentAction21', 'descriptionAction21')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction21" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea21" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea21" id="actiontextarea21"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction21" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea21" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea21" id="descriptiontextarea21"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Is the Aviation beacon present and functioning? </span>
+                                        <br>
+                                        <label for="response22" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons22" id="response22" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response22', 'commentAction22', 'descriptionAction22')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction22" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea22" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea22" id="actiontextarea22"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction22" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea22" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea22" id="descriptiontextarea22"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Are all cables properly secured with cable ties ?</span>
+                                        <br>
+                                        <label for="response23" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons23" id="response23" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response23', 'commentAction23', 'descriptionAction23')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction23" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea23" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea23" id="actiontextarea23"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction23" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea23" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea23" id="descriptiontextarea23"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Are an Electric fence signs present?</span>
+                                        <br>
+                                        <label for="response24" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="response24" id="response24" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response24', 'commentAction24', 'descriptionAction24')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction24" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea24" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea24" id="actiontextarea24"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction24" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea24" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea24" id="descriptiontextarea24"></textarea>
+                                    </div>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="section-7" style="display:none;">
+            <div class="row justify-content-center  mt-5">   
+                    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
+                            <div class="text-center">
+                                <div class="logo mb-3">
+                                    <img  src="resources/images/newl.webp" class="img-fluid  text-center" alt="Northern Engineering Works Logo">
+                                </div>
+                                <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
+                                <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
+                            </div>
+                    <div class="container" style="margin-top: 50px;">
+                            <div class="form-group" style="margin-bottom: 20px;">
+                                    <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                    <br>
+                                    <span>From general item, if the answer is "NO" please make a comment</span>
+                            </div>
+                                    <h4>7. Miscellaneous  </h4>
+
+                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Is there any community complaints on site/area?</span>
+                                        <br>
+                                        <label for="response25" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons25" id="response25" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response25', 'commentAction25', 'descriptionAction25')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction25" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea25" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea25" id="actiontextarea25"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction25" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea25" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea25" id="descriptiontextarea25"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Is there any abnormal condition? .e.g. noises, air pollution etc.</span>
+                                        <br>
+                                        <label for="response26" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons26" id="response26" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response26', 'commentAction26', 'descriptionAction26')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction26" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea26" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea26" id="actiontextarea26"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction26" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea26" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea26" id="descriptiontextarea26"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Noise to be Measure at the distance of 7 m from DG site ?</span>
+                                        <br>
+                                        <label for="response27" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons27" id="response27" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response27', 'commentAction27', 'descriptionAction27')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction27" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea27" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea27" id="actiontextarea27"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction27" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea27" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea27" id="descriptiontextarea27"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Results  in dbA- </span>
+                                        <br>
+                                        <label for="response28" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons28" id="response28" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response28', 'commentAction28', 'descriptionAction28')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction28" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea28" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea28" id="actiontextarea28"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction28" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea28" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea28" id="descriptiontextarea28"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Is there any abnormal condition? .e.g. noises, air pollution etc.</span>
+                                        <br>
+                                        <label for="response29" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="respons29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction29" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea29" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea29" id="actiontextarea29"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction29" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea29" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea29" id="descriptiontextarea29"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                                    <div class="question" style="width: 100%;">
+                                        <span>Other (specify)</span>
+                                        <br>
+                                        <label for="response30" style="font-weight: bold; margin-top: 10px;">Response</label>
+                                        <select name="response30" id="response30" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response30', 'commentAction30', 'descriptionAction30')">
+                                            <option value="" default>Choose</option>
+                                            <option value="Yes">Yes</option>
+                                            <option value="No">No</option>
+                                            <option value="N/A">N/A</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="action" id="commentAction30" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea30" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea30" id="actiontextarea30"></textarea>
+                                    </div>
+
+                                    <div id="descriptionAction30" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea30" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea30" id="descriptiontextarea30"></textarea>
+                                    </div>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center mt-5" style="background-color:#E8ECEF;">
+                                            <li class="page-item" id="prevButton">
+                                                <a class="page-link" href="#" onclick="previousPage()">Previous</a>
+                                            </li>
+                                            <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
+                                            <li class="page-item" id="nextButton">
+                                                <a class="page-link" href="#" onclick="nextPage()">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
         </form>
     </div>
     <script>
@@ -399,32 +1128,50 @@
                     select.id.replace('response', 'descriptionAction'));
             });
         });
+        let currentPage = 1;
+        const totalPages = 8;
 
-        let currentSection = 1;
-        const totalSections = 8;
-
-        function showSection(sectionNumber) {
-            for (let i = 1; i <= totalSections; i++) {
-                document.getElementById('section-' + i).style.display = (i === sectionNumber) ? 'block' : 'none';
-            }
+        function showSection(pageNumber) {
+        for (let i = 1; i <= totalPages; i++) {
+            document.getElementById('section-' + i).style.display = (i === pageNumber) ? 'block' : 'none';
+        }
+        updatePagination();
         }
 
         function nextPage() {
-            if (currentSection < totalSections) {
-                currentSection++;
-                showSection(currentSection);
+            if (currentPage < totalPages) {
+                currentPage++;
+                showSection(currentPage);
             }
         }
 
         function previousPage() {
-            if (currentSection > 1) {
-                currentSection--;
-                showSection(currentSection);
+            if (currentPage > 1) {
+                currentPage--;
+                showSection(currentPage);
             }
         }
 
+        function updatePagination() {
+            const prevButton = document.getElementById('prevButton');
+            const nextButton = document.getElementById('nextButton');
+
+            // Enable/Disable pagination buttons based on the current page
+            prevButton.classList.toggle('disabled', currentPage === 1);
+            nextButton.classList.toggle('disabled', currentPage === totalPages);
+
+            const pageLinks = document.querySelectorAll('.page-item');
+            pageLinks.forEach(link => {
+            if (link.textContent.trim() == currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+         });
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
-            showSection(currentSection);
+            showSection(currentPage);
         });
             
     </script>
