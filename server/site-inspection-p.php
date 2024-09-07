@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $siteId = isset($_POST['siteid']) ? mysqli_real_escape_string($connection, $_POST['siteid']) : null;
     $region = isset($_POST['region']) ? mysqli_real_escape_string($connection, $_POST['region']) : null;
     $inspectorDate = isset($_POST['inspectordate']) ? mysqli_real_escape_string($connection, $_POST['inspectordate']) : null;
-
+    $inspectorname = isset($_POST['inspectorname']) ? mysqli_real_escape_string($connection, $_POST['inspectorname']): null;
     $response1 = isset($_POST['response1']) ? mysqli_real_escape_string($connection, $_POST['response1']) : null;
     $comment1 = isset($_POST['actiontextarea1']) ? mysqli_real_escape_string($connection, $_POST['actiontextarea1']) : null;
     $description1 = isset($_POST['descriptiontextarea1']) ? mysqli_real_escape_string($connection, $_POST['descriptiontextarea1']) : null;
@@ -43,13 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $response6 = isset($_POST['response6'])? mysqli_real_escape_string($connection, $_POST['response6']): null; 
 
-    $comment6  = isset($_POST['actiontextarea6']) ? mysqli_real_escape_string($connection, $_POST['actiontextarea6']): null;
+    $comment6  = isset($_POST['actiontextare6']) ? mysqli_real_escape_string($connection, $_POST['actiontextare6']): null;
 
     $description6 = isset($_POST['descriptiontextarea6']) ? mysqli_real_escape_string($connection, $_POST['descriptiontextarea6']) : null;
 
     $response7 = isset($_POST['response7']) ? mysqli_real_escape_string($connection, $_POST['response7']): null;
 
-    $comment7 = isset($_POST['actiontextarea7']) ? mysqli_real_escape_string($connection, $_POST['actiontextarea8']): null;
+    $comment7 = isset($_POST['actiontextarea7']) ? mysqli_real_escape_string($connection, $_POST['actiontextarea7']): null;
     $description7 = isset($_POST['descriptiontextarea7'])? mysqli_real_escape_string($connection, $_POST['descriptiontextarea7']): null;
 
     $response8 = isset($_POST['response8'])? mysqli_real_escape_string($connection, $_POST['response8']): null;
@@ -225,8 +225,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $insertedId = mysqli_insert_id($connection);
                 // Redirect to the specific section
-                $nextsection = $sectionId+1;
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                // $nextsection = $sectionId+1;
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
             }
 
@@ -242,9 +242,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              ";
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
-                $nextsection = $sectionId+1;
+                // $nextsection = $sectionId+1;
 
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
 
@@ -261,9 +261,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
-                $nextsection = $sectionId+1;
+                // $nextsection = $sectionId+1;
 
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
 
@@ -279,9 +279,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
-                $nextsection = $sectionId+1;
+                // $nextsection = $sectionId+1;
 
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
 
@@ -300,9 +300,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
-                $nextsection = $sectionId+1;
+                // $nextsection = $sectionId+1;
 
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
 
@@ -320,9 +320,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
-                $nextsection = $sectionId+1;
+                // $nextsection = $sectionId+1;
 
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
     }else if($sectionId == 7){
@@ -341,12 +341,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
-                $nextsection = $sectionId+1;
+                // $nextsection = $sectionId+1;
 
-                header("Location: ../site-inspection.php?section=$nextsection&id=$insertedId");
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
-    }if($sectionId == 8){
+    }if($sectionId == 8 && isset($_POST['submit'])){
         $update_query = "
         UPDATE site_inspection_tempo
         SET
@@ -354,8 +354,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             data_e = '$data_e', control_measure1 = '$control_measure1', control_measure2 
             = '$control_measure2', control_measure3 = '$control_measure3', control_measure4
             = '$control_measure4', control_measure5 = '$control_measure5', status1 = '$status1',
-            status2 = '$status2', status3 = '$status3', status4 = '$status4', status5 = '$status5'
-
+            status2 = '$status2', status3 = '$status3', status4 = '$status4', status5 = '$status5',
+            inspector_name = '$inspectorname'
             WHERE id = '$id'
              ";
 
@@ -367,6 +367,69 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              }
 
     }
+    if(isset($_POST['save_changes'])){
+    $Query = "
+        INSERT INTO site_inspection_permanent (
+            id, site_id, site_name, region, inspector_name, inspection_date,
+            response1, comment1, action1, response2, comment2, action2,
+            response3, comment3, action3, response4, comment4, action4,
+            response5, comment5, action5, response6, comment6, action6,
+            response7, comment7, action7, response8, comment8, action8,
+            response9, comment9, action9, response10, comment10, action10,
+            response11, comment11, action11, response12, comment12, action12,
+            response13, comment13, action13, response14, comment14, action14,
+            response15, comment15, action15, response16, comment16, action16,
+            response17, comment17, action17, response18, comment18, action18,
+            response19, comment19, action19, response20, comment20, action20,
+            response21, comment21, action21, response22, comment22, action22,
+            response23, comment23, action23, response24, comment24, action24,
+            response25, comment25, action25, response26, comment26, action26,
+            response27, comment27, action27, response28, comment28, action28,
+            response29, comment29, action29, data_a, data_b, data_c, data_d, data_e,
+            control_measure1, control_measure2, control_measure3, control_measure4, control_measure5,
+            status1, status2, status3, status4, status5
+          )
+          SELECT
+            id, site_id, site_name, region, inspector_name, inspection_date,
+            response1, comment1, action1, response2, comment2, action2,
+            response3, comment3, action3, response4, comment4, action4,
+            response5, comment5, action5, response6, comment6, action6,
+            response7, comment7, action7, response8, comment8, action8,
+            response9, comment9, action9, response10, comment10, action10,
+            response11, comment11, action11, response12, comment12, action12,
+            response13, comment13, action13, response14, comment14, action14,
+            response15, comment15, action15, response16, comment16, action16,
+            response17, comment17, action17, response18, comment18, action18,
+            response19, comment19, action19, response20, comment20, action20,
+            response21, comment21, action21, response22, comment22, action22,
+            response23, comment23, action23, response24, comment24, action24,
+            response25, comment25, action25, response26, comment26, action26,
+            response27, comment27, action27, response28, comment28, action28,
+            response29, comment29, action29, data_a, data_b, data_c, data_d, data_e,
+            control_measure1, control_measure2, control_measure3, control_measure4, control_measure5,
+            status1, status2, status3, status4, status5
+          FROM site_inspection_tempo WHERE id = '$id'
+          ";
+
+          $result = mysqli_query($connection, $Query);
+          if($result){
+            echo "data inserted";
+            $query ="DELETE FROM site_inspection_tempo WHERE id = '$id' ";
+            $runDelete = mysqli_query($connection, $query);
+            if($runDelete){
+                echo "data deleted from the table successfully";
+            }
+            
+          }else{
+            echo "error";
+          }
+
+          
+
+
+
+    }
+     
 
     // Close connection
     mysqli_close($connection);
