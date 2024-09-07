@@ -621,20 +621,20 @@
                                         <label for="response13" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response13" id="response13" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response13', 'commentAction13', 'descriptionAction13')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php echo (show('response13', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No"<?php echo (show('response13', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A"<?php echo (show('response13', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction13" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea13" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea13" id="actiontextarea13"></textarea>
+                                        <textarea name="actiontextarea13" id="actiontextarea13"><?php echo show('comment13', $id, $connection);?></textarea>
                                     </div>
 
                                     <div id="descriptionAction13" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea13" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea13" id="descriptiontextarea13"></textarea>
+                                        <textarea name="descriptiontextarea13" id="descriptiontextarea13"><?php echo show('action13', $id, $connection); ?></textarea>
                                     </div>
                                 </div>
 
@@ -645,20 +645,20 @@
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php echo (show('response14', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No"<?php echo (show('response14', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A"<?php echo (show('response14', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction14" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea14" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea14" id="actiontextarea14"></textarea>
+                                        <textarea name="actiontextarea14" id="actiontextarea14"><?php  echo show('comment14', $id, $connection);?></textarea>
                                     </div>
 
                                     <div id="descriptionAction14" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea14" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea14" id="descriptiontextarea14"></textarea>
+                                        <textarea name="descriptiontextarea14" id="descriptiontextarea14"><?php echo show('action14', $id, $connection) ?></textarea>
                                     </div>
                                 </div>
 
@@ -669,20 +669,20 @@
                                         <label for="response15" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response15" id="response15" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response15', 'commentAction15', 'descriptionAction15')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php  echo (show('response15', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No" <?php  echo (show('response15', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A" <?php  echo (show('response15', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction15" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea15" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea15" id="actiontextarea15"></textarea>
+                                        <textarea name="actiontextarea15" id="actiontextarea15"><?php echo show('comment15', $id, $connection); ?></textarea>
                                     </div>
 
                                     <div id="descriptionAction15" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea15" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea15" id="descriptiontextarea15"></textarea>
+                                        <textarea name="descriptiontextarea15" id="descriptiontextarea15"><?php echo show('action15', $id, $connection); ?></textarea>
                                     </div>
                                     <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
@@ -737,20 +737,20 @@
                                         <label for="response17" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response17" id="response17" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response17', 'commentAction17', 'descriptionAction17')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php echo (show('response17', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No"<?php echo (show('response17', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A"<?php echo (show('response17', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction17" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea17" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea17" id="actiontextarea17"></textarea>
+                                        <textarea name="actiontextarea17" id="actiontextarea17"><?php  echo show('comment17', $id, $connection); ?></textarea>
                                     </div>
 
                                     <div id="descriptionAction17" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea17" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea17" id="descriptiontextarea17"></textarea>
+                                        <textarea name="descriptiontextarea17" id="descriptiontextarea17"><?php echo show('action17', $id, $connection); ?></textarea>
                                     </div>
                                 </div>
 
@@ -765,20 +765,20 @@
                                         <label for="response18" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response18" id="response18" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response18', 'commentAction18', 'descriptionAction18')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php echo (show('response18', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No"<?php echo (show('response18', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A"<?php echo (show('response18', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction18" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea18" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea18" id="actiontextarea18"></textarea>
+                                        <textarea name="actiontextarea18" id="actiontextarea18"><?php echo show('comment18', $id, $connection); ?></textarea>
                                     </div>
 
                                     <div id="descriptionAction18" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea18" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea18" id="descriptiontextarea18"></textarea>
+                                        <textarea name="descriptiontextarea18" id="descriptiontextarea18"><?php echo show('action18', $id, $connection); ?></textarea>
                                     </div>
                                 </div>
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
@@ -792,20 +792,20 @@
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response19" id="response19" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response19', 'commentAction19', 'descriptionAction19')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php echo (show('response19', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No" <?php echo (show('response19', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A" <?php echo (show('response19', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction19" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea19" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea19" id="actiontextarea19"></textarea>
+                                        <textarea name="actiontextarea19" id="actiontextarea19"><?php echo show('comment19', $id, $connection); ?></textarea>
                                     </div>
 
                                     <div id="descriptionAction19" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea19" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea19" id="descriptiontextarea19"></textarea>
+                                        <textarea name="descriptiontextarea19" id="descriptiontextarea19"><?php echo show('action19', $id, $connection);  ?></textarea>
                                     </div>
                                 </div>
 
@@ -820,20 +820,20 @@
                                         <label for="response20" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response20" id="response20" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response20', 'commentAction20', 'descriptionAction20')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
+                                            <option value="Yes" <?php echo (show('response20', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
+                                            <option value="No"<?php echo (show('response20', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="N/A"<?php echo (show('response20', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
 
                                     <div class="action" id="commentAction20" style="display: none; width: 100%; margin-top: 20px;">
                                         <label for="actiontextarea20" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea20" id="actiontextarea20"></textarea>
+                                        <textarea name="actiontextarea20" id="actiontextarea20"><?php echo show('comment20', $id, $connection); ?></textarea>
                                     </div>
 
                                     <div id="descriptionAction20" style="width: 100%; display: none; margin-top: 20px;">
                                         <label for="descriptiontextarea20" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea20" id="descriptiontextarea20"></textarea>
+                                        <textarea name="descriptiontextarea20" id="descriptiontextarea20"><?php echo show('action20', $id, $connection); ?></textarea>
                                     </div>
                                     <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
