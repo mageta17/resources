@@ -2,6 +2,42 @@
     include 'server/db.php';
     include 'server/db.php';
     include 'server/modules/staff-pages.php';
+    session_start();
+
+    // Initialize variables
+    $id = null;
+    $section = 1; // Default to section 1
+
+    // Check if 'id' is set and is a valid numeric value
+    if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+        $id = mysqli_real_escape_string($connection, $_GET['id']);
+        unset($_SESSION['id']);
+        $_SESSION['id'] = $id;
+
+        // Perform the database query to ensure the ID exists
+        $query = "SELECT * FROM site_inspection_tempo WHERE id = '$id'";
+        $result = mysqli_query($connection, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            // ID exists, proceed with processing
+            $data = mysqli_fetch_assoc($result);
+        } else {
+            // ID does not exist, set $id to null
+            $id = null;
+        }
+    } else {
+        // ID is not set or invalid, handle accordingly
+        $id = null;
+    }
+
+    // Get the section from the URL, default to 1 if not set
+    if (isset($_GET['section']) && is_numeric($_GET['section'])) {
+        $section = (int)$_GET['section'];
+
+    }else {
+        // ID is not set or invalid, handle accordingly
+        $id = null;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,8 +106,14 @@
             }
             
             .col-md-5 {
-                width: 100%;    /* Full width columns on small screens */
+                width: calc(50% - 20px);    /* Full width columns on small screens */
                 margin-bottom: 15px; /* Space between columns on small screens */
+            }
+        }
+        @media (min-width: 554px) and (max-width: 754px) {
+            .custom-input-col {
+                width: calc(30% - 20px);
+                margin: 10px; /* Optional: Adjust the spacing between columns */
             }
         }
 
@@ -88,13 +130,15 @@
 
     </style>
 </head>
-<body> 
+<fo> 
     <div id="section" class="container-fluid mx-0 px-0">        
             <?php
                 menu5();
             ?> 
-        <form action="" method="POST" enctype="multipart/form-data ">
+        <!-- <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data"> -->
             <section id="section-1">
+            
+               <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="1">
                 <div class="row justify-content-center mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                         <div class="text-center">
@@ -104,29 +148,30 @@
                             <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                             <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                         </div>
+                        <input type="hidden" name="sectionId" value="1">
                         <div class="row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
-                            <div class="col-md-5 mb-3 mt-4">
+                            <div class="col-4 col-md-5 mb-3 mt-4">
                                     <div class="form-group">
                                         <label for="vehicle">Site Name:</label>
-                                        <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required>
+                                        <input type="text" class="form-control" id="sitename" name="sitename" value="" required>
                                     </div>
                                 </div>
-                            <div class="col-md-5 mb-3 mt-4">
+                            <div class="col-4 col-md-5 mb-3 mt-4">
                                 <div class="form-group">
                                     <label for="lastServiceDate">Site ID:</label>
-                                    <input type="text" class="form-control" id="lastServiceDate" name="lastServiceDate" value="" required>
+                                    <input type="text" class="form-control" id="siteid" name="siteid" value="" required>
                                 </div>
                             </div>
-                            <div class="col-md-5 mb-3">
+                            <div class="col-4 col-md-5 mb-3">
                                 <div class="form-group">
                                     <label for="location">Region:</label>
-                                    <input type="text" class="form-control" id="location" name="location" value="" required>
+                                    <input type="text" class="form-control" id="region" name="region" value="" required>
                                 </div>
                             </div>
-                            <div class="col-md-5 mb-3">
+                            <div class="col-4 col-md-5 mb-3">
                                 <div class="form-group">
                                     <label for="inspectorDate">Inspector Date:</label>
-                                    <input type="date" class="form-control" id="inspectorDate" name="inspectorName" value="" required>
+                                    <input type="date" class="form-control" id="inspectordate" name="inspectordate" value="" required>
                                 </div>
                             </div>
                         </div>
@@ -139,7 +184,6 @@
                             </div>
 
                             <h4>1. General Observations</h4>
-
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Do the staff/contractors (where applicable) adhere to PPE requirements while accessing the site?</span>
@@ -281,6 +325,9 @@
                                     <label for="descriptiontextarea6" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                     <textarea name="descriptiontextarea6" id="descriptiontextarea6"></textarea>
                                 </div>
+                                <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
+                                <!-- <button  onclick="(1, 2);" class="btn btn-info mt-4">Save</button> -->
+                                <!-- <input type="button" class="btn btn-info mt-4" value="Save" onclick="saveAndNavigate(1, 2)"> -->
                             </div>
                             <nav aria-label="Page navigation example">
                                        <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -298,9 +345,12 @@
                                 </nav>
                         </div>
                     </div>
+                </form>
             </section>
         <!-- section two  -->
-            <section id="section-2" style="display:none;">
+        <section id="section-2" style="display:none;">
+          <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="2">
+           <input type="hidden" name="sectionId" value="2">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
@@ -323,7 +373,7 @@
                                         <span>Lifeline / ladder and cage available?</span>
                                         <br>
                                         <label for="response7" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons7" id="response7" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response7', 'commentAction7', 'descriptionAction7')">
+                                        <select name="response7" id="response7" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response7', 'commentAction7', 'descriptionAction7')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -347,7 +397,7 @@
                                         <span>Guard rails/handrails available for rooftops?</span>
                                         <br>
                                         <label for="response8" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons8" id="response8" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response8', 'commentAction8', 'descriptionAction8')">
+                                        <select name="response8" id="response8" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response8', 'commentAction8', 'descriptionAction8')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -371,7 +421,7 @@
                                         <span>Is the climbing ladder securely mounted and straight?</span>
                                         <br>
                                         <label for="response9" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons9" id="response9" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response9', 'commentAction9', 'descriptionAction9')">
+                                        <select name="response9" id="response9" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response9', 'commentAction9', 'descriptionAction9')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -388,6 +438,7 @@
                                         <label for="descriptiontextarea9" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea9" id="descriptiontextarea9"></textarea>
                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -404,11 +455,14 @@
                                     </ul>
                                 </nav>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                 </div>
+              </form>
             </section>
         <!-- section 3 -->
             <section id="section-3" style="display:none;">
+        <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="3">
+            <input type="hidden" name="sectionId" value="3">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
@@ -431,7 +485,7 @@
                                         <span>Is the site environment good and NO spillage/leak of hydrocarbons?</span>
                                         <br>
                                         <label for="response10" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons10" id="response10" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response10', 'commentAction10', 'descriptionAction10')">
+                                        <select name="response10" id="response10" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response10', 'commentAction10', 'descriptionAction10')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -455,7 +509,7 @@
                                         <span>Is the site/area generally clean and tidy?</span>
                                         <br>
                                         <label for="response11" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons11" id="response11" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response11', 'commentAction11', 'descriptionAction11')">
+                                        <select name="response11" id="response11" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response11', 'commentAction11', 'descriptionAction11')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -496,6 +550,7 @@
                                         <label for="descriptiontextarea12" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea12" id="descriptiontextarea12"></textarea>
                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -513,10 +568,13 @@
                                </nav>
                         </div>
                     </div>
-                </div>
+                 </div>
+              </form>
             </section>
        <!-- section 4 -->
             <section id="section-4" style="display:none;">
+        <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="4">
+            <input type="hidden" name="sectionId" value="4">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
@@ -539,7 +597,7 @@
                                         <span>Fire extinguishers posted?</span>
                                         <br>
                                         <label for="response13" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons13" id="response13" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response13', 'commentAction13', 'descriptionAction13')">
+                                        <select name="response13" id="response13" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response13', 'commentAction13', 'descriptionAction13')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -563,7 +621,7 @@
                                         <span>Fire Extingusher  expired ?</span>
                                         <br>
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')">
+                                        <select name="response14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -604,6 +662,7 @@
                                         <label for="descriptiontextarea15" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea15" id="descriptiontextarea15"></textarea>
                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -622,10 +681,13 @@
                          </div>
                     </div>
                 </div>
+              </form>
             </section>
         <!-- section 5 -->
             <section id="section-5" style="display:none;">
+        <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="5">
             <div class="row justify-content-center  mt-5">   
+                <input type="hidden" name="sectionId" value="5">
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
                                 <div class="logo mb-3">
@@ -651,7 +713,7 @@
                                         </picture>
                                         <br>
                                         <label for="response17" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons17" id="response17" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response17', 'commentAction17', 'descriptionAction17')">
+                                        <select name="response17" id="response17" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response17', 'commentAction17', 'descriptionAction17')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -679,7 +741,7 @@
                                         </picture>
                                         <br>
                                         <label for="response18" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons18" id="response18" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response18', 'commentAction18', 'descriptionAction18')">
+                                        <select name="response18" id="response18" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response18', 'commentAction18', 'descriptionAction18')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -706,7 +768,7 @@
                                         </picture>
                                         <br>
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons19" id="response19" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response19', 'commentAction19', 'descriptionAction19')">
+                                        <select name="response19" id="response19" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response19', 'commentAction19', 'descriptionAction19')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -751,6 +813,7 @@
                                         <label for="descriptiontextarea20" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea20" id="descriptiontextarea20"></textarea>
                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -769,10 +832,13 @@
                              </nav>
                         </div>
                     </div>
-                </div>
+                 </div>
+              </form>
             </section>
          <!-- section 6  -->
             <section id="section-6" style="display:none;">
+        <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="6">
+            <input type="hidden" name="sectionId" value="6">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
@@ -795,7 +861,7 @@
                                         <span>Electrical earth are present ?</span>
                                         <br>
                                         <label for="response21" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons21" id="response21" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response21', 'commentAction21', 'descriptionAction21')">
+                                        <select name="response21" id="response21" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response21', 'commentAction21', 'descriptionAction21')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -819,7 +885,7 @@
                                         <span>Is the Aviation beacon present and functioning? </span>
                                         <br>
                                         <label for="response22" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons22" id="response22" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response22', 'commentAction22', 'descriptionAction22')">
+                                        <select name="response22" id="response22" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response22', 'commentAction22', 'descriptionAction22')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -843,7 +909,7 @@
                                         <span>Are all cables properly secured with cable ties ?</span>
                                         <br>
                                         <label for="response23" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons23" id="response23" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response23', 'commentAction23', 'descriptionAction23')">
+                                        <select name="response23" id="response23" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response23', 'commentAction23', 'descriptionAction23')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -884,6 +950,7 @@
                                         <label for="descriptiontextarea24" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
                                         <textarea name="descriptiontextarea24" id="descriptiontextarea24"></textarea>
                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -901,10 +968,13 @@
                                </nav>
                         </div>
                     </div>
-                </div>
+                 </div>
+              </form>
             </section>
           <!-- section 7  -->
             <section id="section-7" style="display:none;">
+        <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="7">
+            <input type="hidden" name="sectionId" value="7">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
@@ -927,7 +997,7 @@
                                         <span>Is there any community complaints on site/area?</span>
                                         <br>
                                         <label for="response25" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons25" id="response25" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response25', 'commentAction25', 'descriptionAction25')">
+                                        <select name="response25" id="response25" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response25', 'commentAction25', 'descriptionAction25')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -951,7 +1021,7 @@
                                         <span>Is there any abnormal condition? .e.g. noises, air pollution etc.</span>
                                         <br>
                                         <label for="response26" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons26" id="response26" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response26', 'commentAction26', 'descriptionAction26')">
+                                        <select name="response26" id="response26" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response26', 'commentAction26', 'descriptionAction26')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -975,7 +1045,7 @@
                                         <span>Noise to be Measure at the distance of 7 m from DG site ?</span>
                                         <br>
                                         <label for="response27" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons27" id="response27" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response27', 'commentAction27', 'descriptionAction27')">
+                                        <select name="response27" id="response27" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response27', 'commentAction27', 'descriptionAction27')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -999,7 +1069,7 @@
                                         <span>Results  in dbA- </span>
                                         <br>
                                         <label for="response28" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons28" id="response28" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response28', 'commentAction28', 'descriptionAction28')">
+                                        <select name="response28" id="response28" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response28', 'commentAction28', 'descriptionAction28')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -1023,7 +1093,7 @@
                                         <span>Is there any abnormal condition? .e.g. noises, air pollution etc.</span>
                                         <br>
                                         <label for="response29" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="respons29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')">
+                                        <select name="response29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -1047,7 +1117,7 @@
                                         <span>Other (specify)</span>
                                         <br>
                                         <label for="response30" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response30" id="response30" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response30', 'commentAction30', 'descriptionAction30')">
+                                        <select name="response16" id="response16" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response16', 'commentAction16', 'descriptionAction16')">
                                             <option value="" default>Choose</option>
                                             <option value="Yes">Yes</option>
                                             <option value="No">No</option>
@@ -1055,15 +1125,16 @@
                                         </select>
                                     </div>
 
-                                    <div class="action" id="commentAction30" style="display: none; width: 100%; margin-top: 20px;">
-                                        <label for="actiontextarea30" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea30" id="actiontextarea30"></textarea>
+                                    <div class="action" id="commentAction16" style="display: none; width: 100%; margin-top: 20px;">
+                                        <label for="actiontextarea16" style="font-weight: bold;">COMMENT</label>
+                                        <textarea name="actiontextarea16" id="actiontextarea16"></textarea>
                                     </div>
 
-                                    <div id="descriptionAction30" style="width: 100%; display: none; margin-top: 20px;">
-                                        <label for="descriptiontextarea30" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea30" id="descriptiontextarea30"></textarea>
+                                    <div id="descriptionAction16" style="width: 100%; display: none; margin-top: 20px;">
+                                        <label for="descriptiontextarea16" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
+                                        <textarea name="descriptiontextarea16" id="descriptiontextarea16"></textarea>
                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                     <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -1079,12 +1150,15 @@
                                         </li>
                                     </ul>
                                 </nav>
-                        </div>
-                    </div>
-                </div>
+                         </div>
+                     </div>
+                  </div>
+               </form>
             </section>
           <!-- section 8  -->
             <section id="section-8" style="display:none;">
+        <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="8">
+            <input type="hidden" name="sectionId" value="8">
             <div class="row justify-content-center  mt-5">   
                     <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa; border-radius: 8px; padding: 20px;">
                             <div class="text-center">
@@ -1194,7 +1268,8 @@
                                                 <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="" required>
                                             </div>
                                         </div>
-                                    </div>
+                                     </div>
+                                    <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
                                 </div>
                                 <nav aria-label="Page navigation example">
                                         <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -1213,9 +1288,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                 </div>
+               </form>
             </section>
-        </form>
+        <!-- </form> -->
     </div>
     <script>
         function toggleDescription(responseId, commentId, descriptionId) {
@@ -1291,7 +1367,66 @@
         document.addEventListener('DOMContentLoaded', function() {
             showSection(currentPage);
         });
+
+
+        function saveAndNavigate(sectionId, nextSectionId) {
+            // Submit the current section data via AJAX
+            const formData = new FormData(document.querySelector(`#section-${sectionId} form`));
             
+            fetch('server/site-inspection-p.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Check if the data is saved successfully, then show the next section
+                if (data.includes('success')) {
+                    showSection(nextSectionId);
+                } else {
+                    alert('Failed to save data. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+        // Get the URL parameter 'section' or fallback to PHP value
+        const urlParams = new URLSearchParams(window.location.search);
+        const sectionId = urlParams.get('section') || <?php echo json_encode($section); ?>;
+
+        // Debugging: Log the section ID
+        console.log("Section ID from URL or PHP:", sectionId);
+
+        // Get all sections
+        const sections = document.querySelectorAll("[id^='section-']");
+
+        // Debugging: Log the IDs of all sections
+        sections.forEach(section => console.log("Available section ID:", section.id));
+
+        // Hide all sections
+        sections.forEach(function(section) {
+            section.style.display = "none";
+        });
+
+        // Show the section based on the 'section' parameter
+        if (sectionId) {
+            const sectionElement = document.getElementById("section-" + sectionId);
+            if (sectionElement) {
+                sectionElement.style.display = "block";
+                // Optionally scroll into view
+                sectionElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.error("Section not found: section-" + sectionId);
+            }
+        } else {
+            console.warn("No section ID specified.");
+        }
+    });
+
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
