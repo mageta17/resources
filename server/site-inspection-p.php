@@ -226,6 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $insertedId = mysqli_insert_id($connection);
                 // Redirect to the specific section
                 // $nextsection = $sectionId+1;
+                $_SESSION['succes'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
             }
@@ -243,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
                 // $nextsection = $sectionId+1;
-
+                $_SESSION['succes2'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
@@ -262,7 +263,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
                 // $nextsection = $sectionId+1;
-
+                $_SESSION['succes3'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
@@ -280,7 +281,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
                 // $nextsection = $sectionId+1;
-
+                $_SESSION['succes4'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
@@ -301,7 +302,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
                 // $nextsection = $sectionId+1;
-
+                $_SESSION['succes5'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
@@ -321,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
                 // $nextsection = $sectionId+1;
-
+                $_SESSION['succes6'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
              }
@@ -342,6 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
                 // $nextsection = $sectionId+1;
+                $_SESSION['succes7'] = "Data saved succssefully, Please procced with the next page";
 
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
@@ -361,6 +363,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
              if(mysqli_query($connection, $update_query)){
                 $insertedId = $id;
+
+                $_SESSION['succes8'] = "Data saved succssefully, Now submit to complete your form.";
                 
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
@@ -417,7 +421,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $query ="DELETE FROM site_inspection_tempo WHERE id = '$id' ";
             $runDelete = mysqli_query($connection, $query);
             if($runDelete){
+                $_SESSION['succes'] = "You have completed your form";
                 echo "data deleted from the table successfully";
+                header("Location: ../site-inspection.php?section=1&id=$insertedId");
+                exit();
             }
             
           }else{

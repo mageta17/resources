@@ -59,8 +59,6 @@
         return isset($data[$message]) ? htmlspecialchars($data[$message]) : '';
     }
     
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -158,7 +156,6 @@
             <?php
                 menu5();
             ?> 
-        <!-- <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data"> -->
             <section id="section-1">
             
                <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="1">
@@ -171,6 +168,16 @@
                             <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                             <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                         </div>
+                        <?php
+                            if (isset($_SESSION['succes'])) {
+                                echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
+                                unset($_SESSION['succes']); 
+                            }
+                            if (isset($_SESSION['error'])) {
+                                echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error'] . '</div>';
+                                unset($_SESSION['error']); 
+                            }
+                        ?>
                         <input type="hidden" name="sectionId" value="1">
                         <div class="row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
                             <div class="col-4 col-md-5 mb-3 mt-4">
@@ -381,6 +388,16 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                             </div>
+                            <?php
+                                    if (isset($_SESSION['succes2'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes2'] . '</div>';
+                                        unset($_SESSION['succes2']); 
+                                    }
+                                    if (isset($_SESSION['error2'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error2'] . '</div>';
+                                        unset($_SESSION['error2']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
@@ -493,6 +510,16 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                             </div>
+                            <?php
+                                    if (isset($_SESSION['succes3'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes3'] . '</div>';
+                                        unset($_SESSION['succes3']); 
+                                    }
+                                    if (isset($_SESSION['error3'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error3'] . '</div>';
+                                        unset($_SESSION['error3']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
@@ -606,6 +633,16 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                             </div>
+                            <?php
+                                    if (isset($_SESSION['succes4'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes4'] . '</div>';
+                                        unset($_SESSION['succes4']); 
+                                    }
+                                    if (isset($_SESSION['error4'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error4'] . '</div>';
+                                        unset($_SESSION['error4']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
@@ -718,6 +755,16 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                             </div>
+                            <?php
+                                    if (isset($_SESSION['succes5'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes5'] . '</div>';
+                                        unset($_SESSION['succes5']); 
+                                    }
+                                    if (isset($_SESSION['error5'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error5'] . '</div>';
+                                        unset($_SESSION['error5']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
@@ -870,6 +917,16 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                             </div>
+                            <?php
+                                    if (isset($_SESSION['succes6'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
+                                        unset($_SESSION['succes6']); 
+                                    }
+                                    if (isset($_SESSION['error6'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error6'] . '</div>';
+                                        unset($_SESSION['error6']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
@@ -1006,6 +1063,16 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
                             </div>
+                            <?php
+                                    if (isset($_SESSION['succes7'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes7'] . '</div>';
+                                        unset($_SESSION['succes7']); 
+                                    }
+                                    if (isset($_SESSION['error7'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error7'] . '</div>';
+                                        unset($_SESSION['error7']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
@@ -1174,7 +1241,7 @@
                                 </nav>
                          </div>
                      </div>
-                  </div>
+                   </div>
                </form>
             </section>
           <!-- section 8  -->
@@ -1189,7 +1256,16 @@
                                 </div>
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST </h6>
-                            </div>
+                            </div><?php
+                                    if (isset($_SESSION['succes8'])) {
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes8'] . '</div>';
+                                        unset($_SESSION['succes8']); 
+                                    }
+                                    if (isset($_SESSION['error8'])) {
+                                        echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error8'] . '</div>';
+                                        unset($_SESSION['error8']); 
+                                    }
+                                ?>
                     <div class="container" style="margin-top: 50px;">
                             <div class="form-group" style="margin-bottom: 20px;">
                                     <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
