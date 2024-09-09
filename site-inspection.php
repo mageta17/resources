@@ -955,7 +955,7 @@
                             </div>
                             <?php
                                     if (isset($_SESSION['succes6'])) {
-                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
+                                        echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes6'] . '</div>';
                                         unset($_SESSION['succes6']); 
                                     }
                                     if (isset($_SESSION['error6'])) {
@@ -1519,27 +1519,32 @@
         sections.forEach(function(section) {
             section.style.display = "none";
         });
-
         // Show the section based on the 'section' parameter
-        if (sectionId) {
+            if (sectionId) {
             const sectionElement = document.getElementById("section-" + sectionId);
             if (sectionElement) {
                 sectionElement.style.display = "block";
-                // const pageLinks = document.querySelectorAll('.page-item');
-                //     pageLinks.forEach(link => {
-                //     if (link.textContent.trim() == currentPage) {
-                //         link.classList.add('active');
-                //     } else {
-                //         link.classList.remove('active');
-                //     }
                 sectionElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update the active state of the page links
+                const pageLinks = document.querySelectorAll('.page-item');
+                pageLinks.forEach(link => {
+                    const pageNumber = link.textContent.trim();
+                    
+                    // Check if this page number matches the section ID
+                    if (pageNumber === sectionId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                        }
+                    });
+                } else {
+                    console.error("Section not found: section-" + sectionId);
+                }
             } else {
-                console.error("Section not found: section-" + sectionId);
+                console.warn("No section ID specified.");
             }
-        } else {
-            console.warn("No section ID specified.");
-        }
-    });
+        });
         document.querySelectorAll('.page-item').forEach(link => {
         link.addEventListener('click', function() {
             const pageNumber = parseInt(this.textContent.trim());
