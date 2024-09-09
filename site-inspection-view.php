@@ -5,18 +5,19 @@
     session_start();
 
     // Initialize variables
-    $id = null;
+    // $id = null;
     $section = 1; // Default to section 1
     $data = [];
 
     // Check if 'id' is set and is a valid numeric value
     if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-        $id = mysqli_real_escape_string($connection, $_GET['id']);
-        unset($_SESSION['id']);
-        $_SESSION['id'] = $id;
+        //$id = mysqli_real_escape_string($connection, $_GET['id']);
+        //unset($_SESSION['id']);
+        // $_SESSION['id'] = $id;
+        $id = $_GET['id'];
 
         // Perform the database query to ensure the ID exists
-        $query = "SELECT * FROM site_inspection_tempo WHERE id = '$id'";
+        $query = "SELECT * FROM site_inspection_permanent WHERE id = '$id'";
         $result = mysqli_query($connection, $query);
 
         if (mysqli_num_rows($result) > 0) {
@@ -44,7 +45,8 @@
     }
     function show($message, $id, $connection) {
         // Query to get data based on ID
-        $query = "SELECT * FROM site_inspection_tempo WHERE id = '$id'";
+        $id = $_GET['id'];
+        $query = "SELECT * FROM site_inspection_permanent WHERE id = '$id'";
         $result = mysqli_query($connection, $query);
     
         // Initialize data as an empty array
@@ -219,25 +221,25 @@
                             <div class="col-4 col-md-5 mb-3 mt-4">
                                     <div class="form-group">
                                         <label for="vehicle">Site Name:</label>
-                                        <input type="text" class="form-control" id="sitename" name="sitename" value="<?php echo  show('site_name', $id, $connection); ?>" required>
+                                        <input type="text" class="form-control" id="sitename" name="sitename" value="<?php echo  show('site_name', $id, $connection); ?>" readonly>
                                     </div>
                                 </div>
                             <div class="col-4 col-md-5 mb-3 mt-4">
                                 <div class="form-group">
                                     <label for="lastServiceDate">Site ID:</label>
-                                    <input type="text" class="form-control" id="siteid" name="siteid"  value="<?php echo show('site_id', $id, $connection); ?>" required>
+                                    <input type="text" class="form-control" id="siteid" name="siteid"  value="<?php echo show('site_id', $id, $connection); ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-4 col-md-5 mb-3">
                                 <div class="form-group">
                                     <label for="location">Region:</label>
-                                    <input type="text" class="form-control" id="region" name="region" value="<?php echo  show('region', $id, $connection); ?>" required>
+                                    <input type="text" class="form-control" id="region" name="region" value="<?php echo  show('region', $id, $connection); ?>" readonly>
                                 </div>
                             </div>
                             <div class="col-4 col-md-5 mb-3">
                                 <div class="form-group">
                                     <label for="inspectorDate">Inspector Date:</label>
-                                    <input type="date" class="form-control" id="inspectordate" name="inspectordate" value="<?php echo show('inspection_date', $id, $connection); ?>" required>
+                                    <input type="date" class="form-control" id="inspectordate" name="inspectordate" value="<?php echo show('inspection_date', $id, $connection); ?>" readonly>
                                 </div>
                             </div>
                         </div>
@@ -256,10 +258,10 @@
                                     <br>
                                     <label for="response1" style="font-weight: bold; margin-top: 10px;">Response</label>
                                     <select name="response1" id="response1" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response1', 'commentAction1', 'descriptionAction1')">
-                                        <option value="" default>Choose</option>
-                                        <option value="Yes"<?php echo (show('response1', $id, $connection) == 'Yes') ? 'selected' : ''; ?>>Yes</option>
-                                        <option value="No"<?php echo (show('response1', $id, $connection) == 'No') ? 'selected' : ''; ?>>No</option>
-                                        <option value="N/A" <?php echo (show('response1', $id, $connection) == 'N/A') ? 'selected' : ''; ?>>N/A</option>
+                                        <option readonly value="" default>Choose</option>
+                                        <option readonly value="Yes"<?php echo (show('response1', $id, $connection) == 'Yes') ? 'selected' : ''; ?>>Yes</option>
+                                        <option readonly value="No"<?php echo (show('response1', $id, $connection) == 'No') ? 'selected' : ''; ?>>No</option>
+                                        <option readonly value="N/A" <?php echo (show('response1', $id, $connection) == 'N/A') ? 'selected' : ''; ?>>N/A</option>
                                     </select>
                                 </div>
 
@@ -351,7 +353,7 @@
                                     <span>Aggregates  evenly distributed?</span>
                                     <br>
                                     <label for="response5" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response5" id="response5" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response5', 'commentAction5', 'descriptionAction5')">
+                                    <select readonly name="response5" id="response5" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response5', 'commentAction5', 'descriptionAction5')">
                                         <option value="" default>Choose</option>
                                         <option value="Yes" <?php echo(show('response5', $id, $connection)=='Yes')? 'selected': ''; ?>>Yes</option>
                                         <option value="No"<?php echo(show('response5', $id, $connection)=='No')? 'selected': ''; ?>>No</option>
@@ -361,12 +363,12 @@
 
                                 <div class="action" id="commentAction5" style="display: none; width: 100%; margin-top: 20px;">
                                     <label for="actiontextarea5" style="font-weight: bold;">COMMENT</label>
-                                    <textarea name="actiontextarea5" id="actiontextarea5"><?php  echo show('comment5', $id, $connection);?></textarea>
+                                    <textarea readonly name="actiontextarea5" id="actiontextarea5"><?php  echo show('comment5', $id, $connection);?></textarea>
                                 </div>
 
                                 <div id="descriptionAction5" style="width: 100%; display: none; margin-top: 20px;">
                                     <label for="descriptiontextarea5" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                    <textarea name="descriptiontextarea5" id="descriptiontextarea5"><?php echo show('action5', $id, $connection); ?></textarea>
+                                    <textarea readonly name="descriptiontextarea5" id="descriptiontextarea5"><?php echo show('action5', $id, $connection); ?></textarea>
                                 </div>
                             </div>
                             <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
@@ -374,7 +376,7 @@
                                     <span>Anti-weed membrane Available?</span>
                                     <br>
                                     <label for="response6" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response6" id="response6" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response6', 'commentAction6', 'descriptionAction6')">
+                                    <select readonly name="response6" id="response6" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response6', 'commentAction6', 'descriptionAction6')">
                                         <option value="" default>Choose</option>
                                         <option value="Yes"<?php echo (show('response6', $id, $connection) == 'Yes')? 'selected': '';?>>Yes</option>
                                         <option value="No"<?php echo (show('response6', $id, $connection) == 'No')? 'selected': '';?>>No</option>
@@ -384,14 +386,14 @@
 
                                 <div class="action" id="commentAction6" style="display: none; width: 100%; margin-top: 20px;">
                                     <label for="actiontextarea6" style="font-weight: bold;">COMMENT</label>
-                                    <textarea name="actiontextare6" id="actiontextarea6"><?php echo show('comment6', $id, $connection); ?></textarea>
+                                    <textarea readonly name="actiontextare6" id="actiontextarea6"><?php echo show('comment6', $id, $connection); ?></textarea>
                                 </div>
 
                                 <div id="descriptionAction6" style="width: 100%; display: none; margin-top: 20px;">
                                     <label for="descriptiontextarea6" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                    <textarea name="descriptiontextarea6" id="descriptiontextarea6"><?php echo show('action6', $id, $connection); ?></textarea>
+                                    <textarea readonly name="descriptiontextarea6" id="descriptiontextarea6"><?php echo show('action6', $id, $connection); ?></textarea>
                                 </div>
-                                <input type="submit" class="btn btn-info mt-4" name="submit" value="Save">
+                                <!-- <input type="submit" class="btn btn-info mt-4" name="submit" value="Save"> -->
                             </div>
                             <nav aria-label="Page navigation example">
                                        <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
@@ -1314,7 +1316,7 @@
                                     <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(a)</span>
-                                            <input type="text" class="form-control" id="data-a" name="data-a" value="<?php echo show('data_a', $id, $connection); ?>" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-a" name="data-a" value="<?php echo show('data_a', $id, $connection); ?>" readonly style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
@@ -1332,7 +1334,7 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(b)</span>
-                                            <input type="text" class="form-control" id="data-b" name="data-b" value="<?php echo show('data_b', $id, $connection); ?>" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-b" name="data-b" value="<?php echo show('data_b', $id, $connection); ?>" readonly style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
@@ -1349,7 +1351,7 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(c)</span>
-                                            <input type="text" class="form-control" id="data-c" name="data-c" value="<?php echo show('data_c', $id, $connection); ?>" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-c" name="data-c" value="<?php echo show('data_c', $id, $connection); ?>" readonly style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
@@ -1367,7 +1369,7 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(d)</span>
-                                            <input type="text" class="form-control" id="data-d" name="data-d" value="<?php echo show('data_d', $id, $connection); ?>" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-d" name="data-d" value="<?php echo show('data_d', $id, $connection); ?>" readonly style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
@@ -1385,7 +1387,7 @@
                                 <div class="question" style="width: 100%;">
                                         <div class="form-group" style="display: flex; align-items: center;">
                                             <span>(e)</span>
-                                            <input type="text" class="form-control" id="data-e" name="data-e" value="<?php echo show('data_e', $id, $connection); ?>" required style="flex: 1; margin-left: 10px;">
+                                            <input type="text" class="form-control" id="data-e" name="data-e" value="<?php echo show('data_e', $id, $connection); ?>" readonly style="flex: 1; margin-left: 10px;">
                                         </div>
                                         <br>
                                     </div>
@@ -1399,7 +1401,7 @@
                                         <div class="col-md-5 mb-3 mt-4">
                                             <div class="form-group">
                                                 <label for="inspectorname">Inspector: (Name) </label>
-                                                <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" required>
+                                                <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" readonly>
                                             </div>
                                         </div>
                                      </div>
