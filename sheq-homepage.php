@@ -31,6 +31,7 @@
                 <a href="mv-360-inspection-history.php" type="button" class="btn btn-sm btn-primary my-2">Mv 360 History</a> 
                 <a href="driver-details.php" type="button" class="btn btn-sm btn-primary my-2">Drivers details</a> 
                 <a href="site-inspection.php" type="button" class="btn btn-sm btn-primary my-2">Site Inspection</a> 
+                <a href="site-inspection-checklist.php" type="button" class="btn btn-sm btn-primary my-2">Site inspection preview</a> 
             </div>             
         </div>
     </div>
