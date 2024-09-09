@@ -1072,12 +1072,11 @@
                                         <li class="page-item" id="prevButton">
                                             <a class="page-link" href="#" onclick="previousPage()">Previous</a>
                                         </li>
-                                        <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
                                         <li class="page-item" id="nextButton">
-                                            <a class="page-link" href="#" onclick="showSection(7)">Next</a>
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                         </li>
                                     </ul>
                                </nav>
@@ -1212,31 +1211,6 @@
                                         <textarea name="descriptiontextarea28" id="descriptiontextarea28"><?php  echo show('action28', $id, $connection);?></textarea>
                                     </div>
                                 </div>
-
-                                <!-- <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
-                                    <div class="question" style="width: 100%;">
-                                        <span>Is there any abnormal condition? .e.g. noises, air pollution etc.</span>
-                                        <br>
-                                        <label for="response29" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')">
-                                            <option value="" default>Choose</option>
-                                            <option value="Yes">Yes</option>
-                                            <option value="No">No</option>
-                                            <option value="N/A">N/A</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="action" id="commentAction29" style="display: none; width: 100%; margin-top: 20px;">
-                                        <label for="actiontextarea29" style="font-weight: bold;">COMMENT</label>
-                                        <textarea name="actiontextarea29" id="actiontextarea29"></textarea>
-                                    </div>
-
-                                    <div id="descriptionAction29" style="width: 100%; display: none; margin-top: 20px;">
-                                        <label for="descriptiontextarea29" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                        <textarea name="descriptiontextarea29" id="descriptiontextarea29"></textarea>
-                                    </div>
-                                </div> -->
-
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
                                         <span>Other (specify)</span>
@@ -1271,7 +1245,7 @@
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                         <li class="page-item" id="nextButton">
-                                            <a class="page-link" href="#" onclick="showSection(8)">Next</a>
+                                            <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                         </li>
                                     </ul>
                                 </nav>

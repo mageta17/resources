@@ -233,7 +233,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     } elseif($sectionId == 2){
 
-        $update_query = "
+        $check_query = "SELECT id FROM site_inspection_tempo WHERE id = '$id'";
+        $result = mysqli_query($connection, $check_query);
+
+        if(mysqli_num_rows(($result)) > 0){
+            $update_query = "
         UPDATE site_inspection_tempo
         SET 
             response7 = '$response7', comment7 = '$comment7', action7 = '$description7',
@@ -242,12 +246,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             WHERE id = '$id'
              ";
              if(mysqli_query($connection, $update_query)){
-                $insertedId = $id;
+                $insertedId = mysqli_insert_id($connection);
                 // $nextsection = $sectionId+1;
                 $_SESSION['succes2'] = "Data saved succssefully, Please procced with the next page";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
+             }else{
+                $_SESSION['error2'] = "Failed to update data for section 2.";
+                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+                exit();
+
              }
+        }else{
+            $_SESSION['error2'] = "Section 1 data not found, please fill in the previous section.";
+            header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+            exit();
+
+         }
+
+        
 
     }else if($sectionId == 3){
 
