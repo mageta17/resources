@@ -232,6 +232,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
 
     } elseif($sectionId == 2){
+           $insertedId = $id;
+           $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+           $run_query = mysqli_query($connection, $query);
+           if(mysqli_num_rows($run_query) > 0){
             $update_query = "
             UPDATE site_inspection_tempo
             SET 
@@ -252,106 +256,165 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     exit();
 
                 }  
+           }else{
+            $_SESSION['error2'] = "Please complete the required data on the previous page.";
+            header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+            exit();
+
+        }
+            
 
     }else if($sectionId == 3){
 
-        $update_query = "
-        UPDATE site_inspection_tempo
-        SET 
-            response10 = '$response10', comment10 = '$comment10', action10 = '$description10',
-            response11 = '$response11', comment11 = '$comment11', action11 = '$description11',
-            response12 = '$response12', comment12 = '$comment12', action12 = '$description12'
-            WHERE id = '$id'
-             ";
+        $insertedId = $id;
+           $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+           $run_query = mysqli_query($connection, $query);
+           if(mysqli_num_rows($run_query) > 0){
+            $update_query = "
+            UPDATE site_inspection_tempo
+            SET 
+                response10 = '$response10', comment10 = '$comment10', action10 = '$description10',
+                response11 = '$response11', comment11 = '$comment11', action11 = '$description11',
+                response12 = '$response12', comment12 = '$comment12', action12 = '$description12'
+                WHERE id = '$id'
+                ";
 
-             if(mysqli_query($connection, $update_query)){
-                $insertedId = $id;
-                // $nextsection = $sectionId+1;
-                $_SESSION['succes3'] = "Data saved succssefully, Please procced with the next page";
-                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
-                exit();
-             }
+                if(mysqli_query($connection, $update_query)){
+                    $insertedId = $id;
+                    // $nextsection = $sectionId+1;
+                    $_SESSION['succes3'] = "Data saved succssefully, Please procced with the next page";
+                    header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+                    exit();
+                }
+
+           }else{
+            $_SESSION['error3'] = "Please complete the required data on the previous page.";
+            header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+            exit();
+        }
+
+        
 
     }else if($sectionId == 4){
-        $update_query = "
-        UPDATE site_inspection_tempo
-        SET 
-            response13 = '$response13', comment13 = '$comment13', action13 = '$description13',
-            response14 = '$response14', comment14 = '$comment14', action14 = '$description14',
-            response15 = '$response15', comment15 = '$comment15', action15 = '$description15'
-            WHERE id = '$id'
-             ";
+        $insertedId = $id;
+        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $run_query = mysqli_query($connection, $query);
+        if(mysqli_num_rows($run_query) > 0){
+            $update_query = "
+            UPDATE site_inspection_tempo
+            SET 
+                response13 = '$response13', comment13 = '$comment13', action13 = '$description13',
+                response14 = '$response14', comment14 = '$comment14', action14 = '$description14',
+                response15 = '$response15', comment15 = '$comment15', action15 = '$description15'
+                WHERE id = '$id'
+                ";
 
-             if(mysqli_query($connection, $update_query)){
-                $insertedId = $id;
-                // $nextsection = $sectionId+1;
-                $_SESSION['succes4'] = "Data saved succssefully, Please procced with the next page";
-                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
-                exit();
-             }
+                if(mysqli_query($connection, $update_query)){
+                    $insertedId = $id;
+                    // $nextsection = $sectionId+1;
+                    $_SESSION['succes4'] = "Data saved succssefully, Please procced with the next page";
+                    header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+                    exit();
+                }
 
-    }else if($sectionId == 5){
-
-        $update_query = "
-        UPDATE site_inspection_tempo
-        SET
+        }else{
+            $_SESSION['error4'] = "Please complete the required data on the previous page.";
+            header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+            exit();
+        }
         
-            response17 = '$response17', comment17 = '$comment17', action17 = '$description17',
-            response18 = '$response18', comment18 = '$comment18', action18 = '$description18',
-            response19 = '$response19', comment19 = '$comment19', action19 = '$description19',
-            response20 = '$response20', comment20 = '$comment20', action20 = '$description20'
-            WHERE id = '$id'
-             ";
+    }else if($sectionId == 5){
+        $insertedId = $id;
+        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $run_query = mysqli_query($connection, $query);
+        if(mysqli_num_rows($run_query) > 0){
+            $update_query = "
+            UPDATE site_inspection_tempo
+            SET
+            
+                response17 = '$response17', comment17 = '$comment17', action17 = '$description17',
+                response18 = '$response18', comment18 = '$comment18', action18 = '$description18',
+                response19 = '$response19', comment19 = '$comment19', action19 = '$description19',
+                response20 = '$response20', comment20 = '$comment20', action20 = '$description20'
+                WHERE id = '$id'
+                ";
 
-             if(mysqli_query($connection, $update_query)){
-                $insertedId = $id;
-                // $nextsection = $sectionId+1;
-                $_SESSION['succes5'] = "Data saved succssefully, Please procced with the next page";
-                header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
-                exit();
-             }
+                if(mysqli_query($connection, $update_query)){
+                    $insertedId = $id;
+                    // $nextsection = $sectionId+1;
+                    $_SESSION['succes5'] = "Data saved succssefully, Please procced with the next page";
+                    header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+                    exit();
+                }
+
+            }else{
+            $_SESSION['error5'] = "Please complete the required data on the previous page.";
+            header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+            exit();
+        }
+        
 
     } else if($sectionId == 6){
+        $insertedId = $id;
+        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $run_query = mysqli_query($connection, $query);
+        if(mysqli_num_rows($run_query) > 0){
+             $update_query = "
+                UPDATE site_inspection_tempo
+                SET
+                    response21 = '$response21', comment21 = '$comment21', action21 = '$description21',
+                    response22 = '$response22', comment22 = '$comment22', action22 = '$description22',
+                    response23 = '$response23', comment23 = '$comment23', action23 = '$description23',
+                    response24 = '$response24', comment24 = '$comment24', action24 = '$description24'
+                    WHERE id = '$id'
+                    ";
 
-        $update_query = "
-        UPDATE site_inspection_tempo
-        SET
-            response21 = '$response21', comment21 = '$comment21', action21 = '$description21',
-            response22 = '$response22', comment22 = '$comment22', action22 = '$description22',
-            response23 = '$response23', comment23 = '$comment23', action23 = '$description23',
-            response24 = '$response24', comment24 = '$comment24', action24 = '$description24'
-            WHERE id = '$id'
-             ";
+                    if(mysqli_query($connection, $update_query)){
+                        $insertedId = $id;
+                        // $nextsection = $sectionId+1;
+                        $_SESSION['succes6'] = "Data saved succssefully, Please procced with the next page";
+                        header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+                        exit();
+                    }
 
-             if(mysqli_query($connection, $update_query)){
-                $insertedId = $id;
-                // $nextsection = $sectionId+1;
-                $_SESSION['succes6'] = "Data saved succssefully, Please procced with the next page";
+                }else{
+                $_SESSION['error6'] = "Please complete the required data on the previous page.";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
-             }
+            }
     }else if($sectionId == 7){
-        $update_query = "
-        UPDATE site_inspection_tempo
-        SET
-          
-            response25 = '$response25', comment25 = '$comment25', action25 = '$description25',
-            response26 = '$response26', comment26 = '$comment26', action26 = '$description26',
-            response27 = '$response27', comment27 = '$comment27', action27 = '$description27',
-            response28 = '$response28', comment28 = '$comment28', action28 = '$description28',
-            response29 = '$response29', comment29 = '$comment29', action29 = '$description29',
-            response16 = '$response16', comment16 = '$comment16', action16 = '$description16'
-            WHERE id = '$id'
-             ";
+        $insertedId = $id;
+        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $run_query = mysqli_query($connection, $query);
+        if(mysqli_num_rows($run_query) > 0){
+            $update_query = "
+            UPDATE site_inspection_tempo
+            SET
+            
+                response25 = '$response25', comment25 = '$comment25', action25 = '$description25',
+                response26 = '$response26', comment26 = '$comment26', action26 = '$description26',
+                response27 = '$response27', comment27 = '$comment27', action27 = '$description27',
+                response28 = '$response28', comment28 = '$comment28', action28 = '$description28',
+                response29 = '$response29', comment29 = '$comment29', action29 = '$description29',
+                response16 = '$response16', comment16 = '$comment16', action16 = '$description16'
+                WHERE id = '$id'
+                ";
 
-             if(mysqli_query($connection, $update_query)){
-                $insertedId = $id;
-                // $nextsection = $sectionId+1;
-                $_SESSION['succes7'] = "Data saved succssefully, Please procced with the next page";
+                if(mysqli_query($connection, $update_query)){
+                    $insertedId = $id;
+                    // $nextsection = $sectionId+1;
+                    $_SESSION['succes7'] = "Data saved succssefully, Please procced with the next page";
 
+                    header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
+                    exit();
+                }
+
+            }else{
+                $_SESSION['error7'] = "Please complete the required data on the previous page.";
                 header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
                 exit();
-             }
+            }
+            
     }if($sectionId == 8 && isset($_POST['submit'])){
         $update_query = "
         UPDATE site_inspection_tempo
@@ -446,7 +509,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_close($connection);
 }
 
-
-?>
 
 
