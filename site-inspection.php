@@ -689,7 +689,7 @@
 
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
-                                        <span>Fire Extingusher  expired ?</span>
+                                        <span>Has the fire extinguisher expired? (If the answer is 'no', please provide the expiration date in the description below.)</span>
                                         <br>
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')">
@@ -713,7 +713,7 @@
 
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
-                                        <span>Fire Extingusher  rusted and other  parts not working?</span>
+                                        <span>Is the fire extinguisher in good working condition, with no rust or malfunctioning parts?</span>
                                         <br>
                                         <label for="response15" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response15" id="response15" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response15', 'commentAction15', 'descriptionAction15')">
@@ -1094,7 +1094,7 @@
 
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
-                                        <span>Is there any community complaints on site/area?</span>
+                                        <span>Are there no community complaints regarding the site/area?</span>
                                         <br>
                                         <label for="response25" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response25" id="response25" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response25', 'commentAction25', 'descriptionAction25')">
@@ -1118,7 +1118,7 @@
 
                                 <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
-                                        <span>Is there any abnormal condition? .e.g. noises, air pollution etc.</span>
+                                        <span>Are there no abnormal conditions present, such as unusual noises, air pollution, etc.?.</span>
                                         <br>
                                         <label for="response26" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response26" id="response26" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response26', 'commentAction26', 'descriptionAction26')">
@@ -1194,8 +1194,8 @@
                                         <label for="response29" style="font-weight: bold; margin-top: 10px;">Response</label>
                                         <select name="response29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')">
                                             <option value="" default>Choose</option>
-                                            <option value="Yes"<?php echo (show('response29', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response29', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
+                                            <option value="Yes"<?php echo (show('response29', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="N/A"<?php echo (show('response29', $id, $connection) == 'N/A')? 'selected': ''; ?>>N/A</option>
                                         </select>
                                     </div>
@@ -1528,8 +1528,6 @@
             goToPage(pageNumber);  // Go to the page when clicked
         });
     });
-
-
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>

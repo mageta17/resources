@@ -1301,11 +1301,12 @@
         const totalPages = 8;
 
         function showSection(pageNumber) {
-        for (let i = 1; i <= totalPages; i++) {
-            document.getElementById('section-' + i).style.display = (i === pageNumber) ? 'block' : 'none';
-        }
-        updatePagination();
-        }
+            currentPage = pageNumber;
+            for (let i = 1; i <= totalPages; i++) {
+                document.getElementById('section-' + i).style.display = (i === pageNumber) ? 'block' : 'none';
+            }
+            updatePagination();
+            }
 
         function nextPage() {
             if (currentPage < totalPages) {
@@ -1361,23 +1362,39 @@
         sections.forEach(function(section) {
             section.style.display = "none";
         });
-
         // Show the section based on the 'section' parameter
-        if (sectionId) {
-            const sectionElement = document.getElementById("section-" + sectionId);
+            if (sectionId) {
+             currentPage = parseInt(sectionId);
+             const sectionElement = document.getElementById("section-" + sectionId);
             if (sectionElement) {
                 sectionElement.style.display = "block";
-                // Optionally scroll into view
                 sectionElement.scrollIntoView({ behavior: 'smooth' });
+                
+                // Update the active state of the page links
+                const pageLinks = document.querySelectorAll('.page-item');
+                pageLinks.forEach(link => {
+                    const pageNumber = link.textContent.trim();
+                    
+                    // Check if this page number matches the section ID
+                    if (pageNumber === sectionId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                        }
+                    });
+                } else {
+                    console.error("Section not found: section-" + sectionId);
+                }
             } else {
-                console.error("Section not found: section-" + sectionId);
+                console.warn("No section ID specified.");
             }
-        } else {
-            console.warn("No section ID specified.");
-        }
+        });
+        document.querySelectorAll('.page-item').forEach(link => {
+        link.addEventListener('click', function() {
+            const pageNumber = parseInt(this.textContent.trim());
+            goToPage(pageNumber);  // Go to the page when clicked
+        });
     });
-
-
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
