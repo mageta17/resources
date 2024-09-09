@@ -1521,7 +1521,8 @@
         });
         // Show the section based on the 'section' parameter
             if (sectionId) {
-            const sectionElement = document.getElementById("section-" + sectionId);
+             currentPage = parseInt(sectionId);
+             const sectionElement = document.getElementById("section-" + sectionId);
             if (sectionElement) {
                 sectionElement.style.display = "block";
                 sectionElement.scrollIntoView({ behavior: 'smooth' });
