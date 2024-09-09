@@ -241,7 +241,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 WHERE id = '$id'
                 ";
                 if(mysqli_query($connection, $update_query)){
-                    $insertedId = mysqli_insert_id($connection);
+                    $insertedId = $id;
                     // $nextsection = $sectionId+1;
                     $_SESSION['succes2'] = "Data saved succssefully, Please procced with the next page";
                     header("Location: ../site-inspection.php?section=$sectionId&id=$insertedId");
