@@ -1458,11 +1458,12 @@
         const totalPages = 8;
 
         function showSection(pageNumber) {
-        for (let i = 1; i <= totalPages; i++) {
-            document.getElementById('section-' + i).style.display = (i === pageNumber) ? 'block' : 'none';
-        }
-        updatePagination();
-        }
+            currentPage = pageNumber;
+            for (let i = 1; i <= totalPages; i++) {
+                document.getElementById('section-' + i).style.display = (i === pageNumber) ? 'block' : 'none';
+            }
+            updatePagination();
+            }
 
         function nextPage() {
             if (currentPage < totalPages) {
@@ -1524,7 +1525,13 @@
             const sectionElement = document.getElementById("section-" + sectionId);
             if (sectionElement) {
                 sectionElement.style.display = "block";
-                // Optionally scroll into view
+                // const pageLinks = document.querySelectorAll('.page-item');
+                //     pageLinks.forEach(link => {
+                //     if (link.textContent.trim() == currentPage) {
+                //         link.classList.add('active');
+                //     } else {
+                //         link.classList.remove('active');
+                //     }
                 sectionElement.scrollIntoView({ behavior: 'smooth' });
             } else {
                 console.error("Section not found: section-" + sectionId);
@@ -1532,6 +1539,12 @@
         } else {
             console.warn("No section ID specified.");
         }
+    });
+        document.querySelectorAll('.page-item').forEach(link => {
+        link.addEventListener('click', function() {
+            const pageNumber = parseInt(this.textContent.trim());
+            goToPage(pageNumber);  // Go to the page when clicked
+        });
     });
 
 
