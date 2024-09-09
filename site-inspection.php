@@ -345,30 +345,6 @@
                                     <textarea name="descriptiontextarea4" id="descriptiontextarea4"><?php  echo show('action4', $id, $connection);?></textarea>
                                 </div>
                             </div>
-
-                            <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
-                                <div class="question" style="width: 100%;">
-                                    <span>Aggregates  evenly distributed?</span>
-                                    <br>
-                                    <label for="response5" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response5" id="response5" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response5', 'commentAction5', 'descriptionAction5')">
-                                        <option value="" default>Choose</option>
-                                        <option value="Yes" <?php echo(show('response5', $id, $connection)=='Yes')? 'selected': ''; ?>>Yes</option>
-                                        <option value="No"<?php echo(show('response5', $id, $connection)=='No')? 'selected': ''; ?>>No</option>
-                                        <option value="N/A"<?php echo(show('response5', $id, $connection)=='N/A')? 'selected': ''; ?>>N/A</option>
-                                    </select>
-                                </div>
-
-                                <div class="action" id="commentAction5" style="display: none; width: 100%; margin-top: 20px;">
-                                    <label for="actiontextarea5" style="font-weight: bold;">COMMENT</label>
-                                    <textarea name="actiontextarea5" id="actiontextarea5"><?php  echo show('comment5', $id, $connection);?></textarea>
-                                </div>
-
-                                <div id="descriptionAction5" style="width: 100%; display: none; margin-top: 20px;">
-                                    <label for="descriptiontextarea5" style="font-weight: bold;">DESCRIBE CORRECTIVE ACTION</label>
-                                    <textarea name="descriptiontextarea5" id="descriptiontextarea5"><?php echo show('action5', $id, $connection); ?></textarea>
-                                </div>
-                            </div>
                             <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Anti-weed membrane Available?</span>
