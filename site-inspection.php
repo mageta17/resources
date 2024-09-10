@@ -243,19 +243,19 @@
                         </div>
                         <div class="container">
                             <div class="form-group" style="margin-bottom: 20px;">
-                                <label for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
+                                <label  for="general-item" style="font-weight: bold;"><h2>Description</h2></label>
                                 <br>
-                                <span>From general item, if the answer is "NO" please make a comment.</span>
+                                <span class="mt-2">From general item, if the answer is "NO" please make a comment.</span>
                                 <span>This form consists of eight pages. Make sure you fill in all fields on each page before submitting the form.</span>
                             </div>
 
                             <h4>1. General Observations</h4>
-                            <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Do the staff/contractors (where applicable) adhere to PPE requirements while accessing the site?</span>
                                     <br>
                                     <label for="response1" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response1" id="response1" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response1', 'commentAction1', 'descriptionAction1')">
+                                    <select name="response1" id="response1" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response1', 'commentAction1', 'descriptionAction1')" required>
                                         <option value="" default>Choose</option>
                                         <option value="Yes"<?php echo (show('response1', $id, $connection) == 'Yes') ? 'selected' : ''; ?>>Yes</option>
                                         <option value="No"<?php echo (show('response1', $id, $connection) == 'No') ? 'selected' : ''; ?>>No</option>
@@ -274,12 +274,12 @@
                                 </div>
                             </div>
 
-                            <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Is the site secured by a lock?</span>
                                     <br>
                                     <label for="response2" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response2" id="response2" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response2', 'commentAction2', 'descriptionAction2')">
+                                    <select name="response2" id="response2" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response2', 'commentAction2', 'descriptionAction2')" required>
                                         <option value="" default>Choose</option>
                                         <option value="Yes"<?php echo(show('response2', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                         <option value="No" <?php echo(show('response2', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -298,12 +298,12 @@
                                 </div>
                             </div>
 
-                            <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Is there a site Logbook?</span>
                                     <br>
                                     <label for="response3" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response3" id="response3" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response3', 'commentAction3', 'descriptionAction3')">
+                                    <select name="response3" id="response3" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response3', 'commentAction3', 'descriptionAction3')" required>
                                         <option value="" default>Choose</option>
                                         <option value="Yes"<?php echo(show('response3', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                         <option value="No"<?php echo(show('response3', $id, $connection)== 'No')? 'selected': ''; ?>>No</option>
@@ -322,12 +322,12 @@
                                 </div>
                             </div>
 
-                            <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Aggregates  evenly distributed?</span>
                                     <br>
                                     <label for="response4" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response4" id="response4" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response4', 'commentAction4', 'descriptionAction4')">
+                                    <select name="response4" id="response4" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response4', 'commentAction4', 'descriptionAction4')" required>
                                         <option value="" default>Choose</option>
                                         <option value="Yes"<?php echo(show('response4', $id, $connection)== 'Yes')? 'selected': ''; ?>>Yes</option>
                                         <option value="No" <?php echo(show('response4', $id, $connection)== 'No')? 'selected': ''; ?>>No</option>
@@ -345,12 +345,12 @@
                                     <textarea name="descriptiontextarea4" id="descriptiontextarea4"><?php  echo show('action4', $id, $connection);?></textarea>
                                 </div>
                             </div>
-                            <div class="flex-container mt-4" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Anti-weed membrane Available?</span>
                                     <br>
                                     <label for="response6" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                    <select name="response6" id="response6" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response6', 'commentAction6', 'descriptionAction6')">
+                                    <select name="response6" id="response6" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response6', 'commentAction6', 'descriptionAction6')" required>
                                         <option value="" default>Choose</option>
                                         <option value="Yes"<?php echo (show('response6', $id, $connection) == 'Yes')? 'selected': '';?>>Yes</option>
                                         <option value="No"<?php echo (show('response6', $id, $connection) == 'No')? 'selected': '';?>>No</option>
@@ -377,6 +377,8 @@
                                             <li class="page-item"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
                                             <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
                                             <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                            <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                             <!-- Add more page links as needed -->
                                             <li class="page-item" id="nextButton">
                                                 <a class="page-link" href="#" onclick="nextPage()">Next</a>
@@ -423,7 +425,7 @@
                                         <span>Lifeline / ladder and cage available?</span>
                                         <br>
                                         <label for="response7" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response7" id="response7" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response7', 'commentAction7', 'descriptionAction7')">
+                                        <select name="response7" id="response7" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response7', 'commentAction7', 'descriptionAction7')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes"<?php echo(show('response7', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo(show('response7', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -447,7 +449,7 @@
                                         <span>Guard rails/handrails available for rooftops?</span>
                                         <br>
                                         <label for="response8" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response8" id="response8" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response8', 'commentAction8', 'descriptionAction8')">
+                                        <select name="response8" id="response8" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response8', 'commentAction8', 'descriptionAction8')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response8', $id, $connection)== 'Yes')? 'selected': null; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response8', $id, $connection)== 'No')? 'selected': null; ?>>No</option>
@@ -471,7 +473,7 @@
                                         <span>Is the climbing ladder securely mounted and straight?</span>
                                         <br>
                                         <label for="response9" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response9" id="response9" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response9', 'commentAction9', 'descriptionAction9')">
+                                        <select name="response9" id="response9" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response9', 'commentAction9', 'descriptionAction9')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php  echo (show('response9', $id, $connection) == 'Yes')? 'selected': '';?>>Yes</option>
                                             <option value="No"<?php  echo (show('response9', $id, $connection) == 'No')? 'selected': '';?>>No</option>
@@ -498,6 +500,8 @@
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
+                                        <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                         <!-- Add more page links as needed -->
                                         <li class="page-item" id="nextButton">
                                             <a class="page-link" href="#" onclick="nextPage()">Next</a>
@@ -545,7 +549,7 @@
                                         <span>Is the site environment good and NO spillage/leak of hydrocarbons?</span>
                                         <br>
                                         <label for="response10" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response10" id="response10" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response10', 'commentAction10', 'descriptionAction10')">
+                                        <select name="response10" id="response10" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response10', 'commentAction10', 'descriptionAction10')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response10', $id, $connection) == 'Yes')? 'selected': null;  ?>>Yes</option>
                                             <option value="No"<?php echo (show('response10', $id, $connection) == 'No')? 'selected': null;  ?>>No</option>
@@ -569,7 +573,7 @@
                                         <span>Is the site/area generally clean and tidy?</span>
                                         <br>
                                         <label for="response11" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response11" id="response11" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response11', 'commentAction11', 'descriptionAction11')">
+                                        <select name="response11" id="response11" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response11', 'commentAction11', 'descriptionAction11')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php  echo (show('response11', $id, $connection) == 'Yes')? 'selected':null; ?>>Yes</option>
                                             <option value="No"<?php  echo (show('response11', $id, $connection) == 'No')? 'selected':null; ?>>No</option>
@@ -593,7 +597,7 @@
                                         <span>No unattended equipments left onsite?</span>
                                         <br>
                                         <label for="response12" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response12" id="response12" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response12', 'commentAction12', 'descriptionAction12')">
+                                        <select name="response12" id="response12" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response12', 'commentAction12', 'descriptionAction12')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response12', $id, $connection) == 'Yes')? 'selected': null;?>>Yes</option>
                                             <option value="No"<?php echo (show('response12', $id, $connection) == 'No')? 'selected': null;?>>No</option>
@@ -621,6 +625,7 @@
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
+                                        <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
                                         <!-- Add more page links as needed -->
                                         <li class="page-item" id="nextButton">
                                             <a class="page-link" href="#" onclick="nextPage()">Next</a>
@@ -668,7 +673,7 @@
                                         <span>Fire extinguishers posted?</span>
                                         <br>
                                         <label for="response13" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response13" id="response13" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response13', 'commentAction13', 'descriptionAction13')">
+                                        <select name="response13" id="response13" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response13', 'commentAction13', 'descriptionAction13')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response13', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response13', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -692,7 +697,7 @@
                                         <span>Has the fire extinguisher expired? (If the answer is 'no', please provide the expiration date in the description below.)</span>
                                         <br>
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')">
+                                        <select name="response14" id="response14" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response14', 'commentAction14', 'descriptionAction14')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response14', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response14', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -716,7 +721,7 @@
                                         <span>Is the fire extinguisher in good working condition, with no rust or malfunctioning parts?</span>
                                         <br>
                                         <label for="response15" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response15" id="response15" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response15', 'commentAction15', 'descriptionAction15')">
+                                        <select name="response15" id="response15" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response15', 'commentAction15', 'descriptionAction15')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php  echo (show('response15', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No" <?php  echo (show('response15', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -744,6 +749,8 @@
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(3)">3</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
+                                        <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                         <li class="page-item" id="nextButton">
                                             <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                         </li>
@@ -794,7 +801,7 @@
                                         </picture>
                                         <br>
                                         <label for="response17" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response17" id="response17" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response17', 'commentAction17', 'descriptionAction17')">
+                                        <select name="response17" id="response17" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response17', 'commentAction17', 'descriptionAction17')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response17', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response17', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -822,7 +829,7 @@
                                         </picture>
                                         <br>
                                         <label for="response18" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response18" id="response18" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response18', 'commentAction18', 'descriptionAction18')">
+                                        <select name="response18" id="response18" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response18', 'commentAction18', 'descriptionAction18')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response18', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response18', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -849,7 +856,7 @@
                                         </picture>
                                         <br>
                                         <label for="response14" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response19" id="response19" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response19', 'commentAction19', 'descriptionAction19')">
+                                        <select name="response19" id="response19" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response19', 'commentAction19', 'descriptionAction19')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response19', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No" <?php echo (show('response19', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -877,7 +884,7 @@
                                         </picture>
                                         <br>
                                         <label for="response20" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response20" id="response20" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response20', 'commentAction20', 'descriptionAction20')">
+                                        <select name="response20" id="response20" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response20', 'commentAction20', 'descriptionAction20')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response20', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response20', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -905,6 +912,8 @@
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
                                         <li class="page-item "><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
+                                        <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                         <!-- Add more page links as needed -->
                                         <li class="page-item" id="nextButton">
                                             <a class="page-link" href="#" onclick="nextPage()">Next</a>
@@ -952,7 +961,7 @@
                                         <span>Electrical earth are present ?</span>
                                         <br>
                                         <label for="response21" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response21" id="response21" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response21', 'commentAction21', 'descriptionAction21')">
+                                        <select name="response21" id="response21" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response21', 'commentAction21', 'descriptionAction21')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php  echo (show('response21', $id, $connection) == 'Yes')? 'selected': '';?>>Yes</option>
                                             <option value="No"<?php  echo (show('response21', $id, $connection) == 'No')? 'selected': '';?>>No</option>
@@ -976,7 +985,7 @@
                                         <span>Is the Aviation beacon present and functioning? </span>
                                         <br>
                                         <label for="response22" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response22" id="response22" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response22', 'commentAction22', 'descriptionAction22')">
+                                        <select name="response22" id="response22" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response22', 'commentAction22', 'descriptionAction22')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response22', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response22', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -1000,7 +1009,7 @@
                                         <span>Are all cables properly secured with cable ties ?</span>
                                         <br>
                                         <label for="response23" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response23" id="response23" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response23', 'commentAction23', 'descriptionAction23')">
+                                        <select name="response23" id="response23" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response23', 'commentAction23', 'descriptionAction23')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php  echo (show('response23', $id, $connection) == 'Yes')? 'selected': '';?>>Yes</option>
                                             <option value="No"<?php  echo (show('response23', $id, $connection) == 'No')? 'selected': '';?>>No</option>
@@ -1024,7 +1033,7 @@
                                         <span>Are an Electric fence signs present?</span>
                                         <br>
                                         <label for="response24" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response24" id="response24" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response24', 'commentAction24', 'descriptionAction24')">
+                                        <select name="response24" id="response24" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response24', 'commentAction24', 'descriptionAction24')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response24', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response24', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -1051,6 +1060,8 @@
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(4)">4</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                        <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                         <li class="page-item" id="nextButton">
                                             <a class="page-link" href="#" onclick="nextPage()">Next</a>
                                         </li>
@@ -1097,7 +1108,7 @@
                                         <span>Are there no community complaints regarding the site/area?</span>
                                         <br>
                                         <label for="response25" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response25" id="response25" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response25', 'commentAction25', 'descriptionAction25')">
+                                        <select name="response25" id="response25" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response25', 'commentAction25', 'descriptionAction25')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response25', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response25', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -1121,7 +1132,7 @@
                                         <span>Are there no abnormal conditions present, such as unusual noises, air pollution, etc.?.</span>
                                         <br>
                                         <label for="response26" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response26" id="response26" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response26', 'commentAction26', 'descriptionAction26')">
+                                        <select name="response26" id="response26" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response26', 'commentAction26', 'descriptionAction26')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes" <?php echo (show('response26', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response26', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -1145,7 +1156,7 @@
                                         <span>Noise to be Measure at the distance of 7 m from DG site ?</span>
                                         <br>
                                         <label for="response27" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response27" id="response27" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response27', 'commentAction27', 'descriptionAction27')">
+                                        <select name="response27" id="response27" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response27', 'commentAction27', 'descriptionAction27')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes"<?php echo (show('response27', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response27', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -1169,7 +1180,7 @@
                                         <span>Results  in dbA- </span>
                                         <br>
                                         <label for="response28" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response28" id="response28" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response28', 'commentAction28', 'descriptionAction28')">
+                                        <select name="response28" id="response28" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response28', 'commentAction28', 'descriptionAction28')" required>
                                             <option value="" default>Choose</option>
                                             <option value="Yes"<?php echo (show('response28', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
                                             <option value="No"<?php echo (show('response28', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
@@ -1192,7 +1203,7 @@
                                         <span>Other (specify)</span>
                                         <br>
                                         <label for="response29" style="font-weight: bold; margin-top: 10px;">Response</label>
-                                        <select name="response29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')">
+                                        <select name="response29" id="response29" style="width: 50%; margin-top: 5px; padding: 5px; border-radius: 4px; border: 1px solid #ced4da;" onchange="toggleDescription('response29', 'commentAction29', 'descriptionAction29')" required>
                                             <option value="" default>Choose</option>
                                             <option value="No"<?php echo (show('response29', $id, $connection) == 'No')? 'selected': ''; ?>>No</option>
                                             <option value="Yes"<?php echo (show('response29', $id, $connection) == 'Yes')? 'selected': ''; ?>>Yes</option>
@@ -1217,8 +1228,10 @@
                                             <a class="page-link" href="#" onclick="previousPage()">Previous</a>
                                         </li>
                                         <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                        <li class="page-item"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                                        <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(3)">-</a></li>
                                         <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                                         <li class="page-item" id="nextButton">
                                             <a class="page-link" href="#" onclick="nextPage()">Next</a>
@@ -1385,6 +1398,8 @@
                                                 <a class="page-link" href="#" onclick="previousPage()">Previous</a>
                                             </li>
                                             <!-- <li class="page-item"><a class="page-link" href="#" onclick="showSection(2)">2</a></li> -->
+                                            <li class="page-item"><a class="page-link" href="#" onclick="showSection(1)">1</a></li>
+                                            <li class="page-item disabled"><a class="page-link" href="#" onclick="showSection(6)">-</a></li>
                                             <li class="page-item"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
                                             <li class="page-item "><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
                                             <li class="page-item"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
