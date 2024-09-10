@@ -187,8 +187,8 @@
 
     </style>
 </head>
-<fo> 
-    <div id="section" class="container-fluid mx-0 px-0">        
+<body>
+<div id="section" class="container-fluid mx-0 px-0">        
             <?php
                 menu5();
             ?> 
@@ -1416,6 +1416,8 @@
             </section>
         <!-- </form> -->
     </div>
+</body>
+   
     <script>
         function toggleDescription(responseId, commentId, descriptionId) {
             var response = document.getElementById(responseId).value;
