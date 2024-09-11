@@ -105,40 +105,45 @@
                 <div id="section-2" class="row">
                     <div class="container-fluid" style="width: 100%; overflow-x: auto; font-size: 14px;">
                     <?php
-                        $query = "SELECT * FROM mv_check_list_360";
+                        $query = "SELECT * FROM site_inspection_permanent";
                         $result = mysqli_query($connection, $query);
                         if (mysqli_num_rows($result) > 0) {
                             
                     ?>  
                 <div class="row justify-content-center mt-5">   
                     <div class="col-lg-12 ">
-                        <table class="table table-hover table-responsive">
-                            <thead>
-                                <tr>
-                                <th scope="row">id</th>
-                                <th scope="col">Owner</th>
-                                <th scope="col">Modal</th>
-                                <th scope="col">Checked</th>
-                                <th scope="col">Date of inspection</th>
-                                <th scope="col">Show more</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php while($row = mysqli_fetch_assoc($result)){ 
-                                    $id = $row['id'];
+                        <div class="table-responsive">
+                            <div class="text-center mb-4">
+                                <h1 class="display-6">Forms Completed </h1>
+                            </di>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Site Id</th>
+                                        <th scope="col">Site Name:</th>
+                                        <th scope="col">Region</th>
+                                        <th scope="col">Inspection Date</th> <!-- Hidden on small screens -->
+                                        <th scope="col" class="d-none d-md-table-cell">Inspector Name</th>
+                                        <th scope="col">View more</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while($row = mysqli_fetch_assoc($result)){ 
+                                        $id = $row['id'];
                                     ?>
-                                <tr>
-                                <th scope="row"><?php echo $row['id'];  ?></th>
-                                <td>Newl</td>
-                                <td>Toyota landcruser</td>
-                                <td>Yes</td>
-                                <td><a  class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="checklist_view_bc.php?id=<?php echo $id; ?>"><?php  echo $row['time']; ?></a></td>
-                                <td><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="checklist_view_bc.php?id=<?php echo $id; ?>">Show</a></td>
-                                </tr>
-                                <?php }  ?>
-                            </tbody>
+                                    <tr>
+                                        <th scope="row"><?php echo $row['site_id'];  ?></th>
+                                        <td><?php echo $row['site_name'];  ?></td>
+                                        <td><?php echo $row['region'];  ?></td>
+                                        <td><?php echo $row['inspection_date'];  ?></td>
+                                        <td class="d-none d-md-table-cell"><?php echo $row['inspector_name'];  ?></td>
+                                        <td><a class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="site-inspection-senior-view.php?id=<?php echo $id; ?>">View</a></td>
+                                    </tr>
+                                    <?php } ?>
+                                </tbody>
                             </table>
                         </div>
+                    </div>
 
                 </div> <?php } ?>
                     </div>

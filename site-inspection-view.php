@@ -147,8 +147,8 @@
         }
     </style>
 </head>
-<fo> 
-    <div id="section" class="container-fluid mx-0 px-0">        
+<body>
+<div id="section" class="container-fluid mx-0 px-0">        
             <?php
                 menu5();
             ?> 
@@ -193,7 +193,6 @@
                             </div>
                         </div>
                         <div class="container">
-                    
                             <h4>1. General Observations</h4>
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
@@ -345,8 +344,8 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST PREVIEW </h6>
                             </div>
-                    <div class="container" style="margin-top: 50px;">
-                             <h4>2. Tower Safety Structure</h4>
+                       <div class="container" style="margin-top: 50px;">
+                            <h4>2. Tower Safety Structure</h4>
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
                                         <span>Lifeline / ladder and cage available?</span>
@@ -437,7 +436,7 @@
                       </div>
                   </div>
               </form>
-            </section>
+        </section>
         <!-- section 3 -->
             <section id="section-3" style="display:none;">
         <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="3">
@@ -452,7 +451,7 @@
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST PREVIEW </h6>
                             </div>
                     <div class="container" style="margin-top: 50px;">
-                                    <h4>3. Environmental compliance </h4>
+                            <h4>3. Environmental compliance </h4>
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                  <div class="question" style="width: 100%;">
                                         <span>Is the site environment good and NO spillage/leak of hydrocarbons?</span>
@@ -1244,6 +1243,7 @@
             </section>
         <!-- </form> -->
     </div>
+</body>
     <script>
         function toggleDescription(responseId, commentId, descriptionId) {
             var response = document.getElementById(responseId).value;
