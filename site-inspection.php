@@ -242,7 +242,7 @@
                             </div>
                         </div>
                         <div class="col-4 col-md-5 mb-3 ms-2">
-                            <div class="form-group w-80">
+                            <div class="form-group w-70"style="width:80%;">
                                 <label for="inspectorname">Inspector: (Name)</label>
                                 <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" required>
                             </div>
