@@ -257,7 +257,12 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <div class="col-12 col-md-6 mb-3 ms-2">
+                                        <div class="form-group w-70"style="width:80%;">
+                                            <label for="inspectorname">Inspector: (Name) </label>
+                                            <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" readonly>
+                                        </div>
+                                    </div>
                                     <div class="container">
                                         <h4>1. General Observations</h4>
                                         <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
@@ -1164,12 +1169,6 @@
                                                     <div id="status5" style="width: 100%; margin-top: 10px;">
                                                         <label for="status5" style="font-weight: bold;">Status</label>
                                                         <textarea readonly name="status5" id="status5"><?php echo show('status5', $id, $connection); ?></textarea>
-                                                        <div class="col-md-5 mb-3 mt-4">
-                                                            <div class="form-group">
-                                                                <label for="inspectorname">Inspector: (Name) </label>
-                                                                <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" readonly>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                     <a class="btn btn-info mt-4"href="site-inspection-senior.php">Return</a>
                                               </div>                          
