@@ -22,7 +22,7 @@ include 'server/modules/staff-pages.php';
     <div id="section" class="container-fluid mx-0 px-0">        
             <?php
                 menu5();
-                $query = "SELECT * FROM site_inspection_tempo";
+                $query = "SELECT * FROM site_inspection_permanent WHERE status = 'not_completed'";
                 $result = mysqli_query($connection, $query);
                 if (mysqli_num_rows($result) > 0) {
             ?>  
@@ -73,7 +73,7 @@ include 'server/modules/staff-pages.php';
     <div id="section" class="container-fluid mx-0 px-0">        
         <?php
             // menu5();
-            $query = "SELECT * FROM site_inspection_permanent";
+            $query = "SELECT * FROM site_inspection_permanent WHERE status = 'completed'";
             $result = mysqli_query($connection, $query);
             if (mysqli_num_rows($result) > 0) {
         ?>  
