@@ -1194,6 +1194,7 @@
                             <li class="page-item d-none d-md-block page-link-item" data-page="5"><a class="page-link" href="#" onclick="showSection(5)">5</a></li>
                             <li class="page-item d-none d-md-block page-link-item" data-page="6"><a class="page-link" href="#" onclick="showSection(6)">6</a></li>
                             <li class="page-item d-none d-md-block page-link-item" data-page="7"><a class="page-link" href="#" onclick="showSection(7)">7</a></li>
+                            <li class="page-item page-link-item disabled"><a class="page-link" href="#" onclick="showSection(7)">-</a></li>
                             <li class="page-item d-none d-md-block page-link-item" data-page="8"><a class="page-link" href="#" onclick="showSection(8)">8</a></li>
                             <li class="page-item" id="nextButton">
                                 <a class="page-link" href="#" onclick="nextPage()">Next</a>

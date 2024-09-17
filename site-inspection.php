@@ -206,38 +206,38 @@
                         </div>
                         <?php
                             if (isset($_SESSION['succes'])) {
-                                echo '<div class="alert alert-success" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
+                                echo '<div class="alert alert-success shadow-lg rounded" style="text-align:center;><i class="fa-regular fa-circle-check"></i>'." Succes: " . $_SESSION['succes'] . '</div>';
                                 unset($_SESSION['succes']); 
                             }
                             if (isset($_SESSION['error'])) {
-                                echo '<div class="alert alert-danger" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error'] . '</div>';
+                                echo '<div class="alert alert-danger shadow-lg rounded" style="text-align:center;"><i class="fas fa-exclamation-circle"></i>'." Error: " . $_SESSION['error'] . '</div>';
                                 unset($_SESSION['error']); 
                             }
                         ?>
                         <input type="hidden" name="sectionId" value="1">
-                        <div class="row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
+                        <div class="row d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style col-md-12">
                             <div class="col-4 col-md-5 mb-3 mt-4">
                                     <div class="form-group">
                                         <label for="vehicle">Site Name:</label>
-                                        <input type="text" class="form-control" id="sitename" name="sitename" value="<?php echo  show('site_name', $id, $connection); ?>" required>
+                                        <input type="text" class="form-control shadow-lg" id="sitename" name="sitename" value="<?php echo  show('site_name', $id, $connection); ?>" required>
                                     </div>
                                 </div>
                             <div class="col-4 col-md-5 mb-3 mt-4">
                                 <div class="form-group">
                                     <label for="lastServiceDate">Site ID:</label>
-                                    <input type="text" class="form-control" id="siteid" name="siteid"  value="<?php echo show('site_id', $id, $connection); ?>" required>
+                                    <input type="text" class="form-control shadow-lg" id="siteid" name="siteid"  value="<?php echo show('site_id', $id, $connection); ?>" required>
                                 </div>
                             </div>
                             <div class="col-4 col-md-5 mb-3">
                                 <div class="form-group">
                                     <label for="location">Region:</label>
-                                    <input type="text" class="form-control" id="region" name="region" value="<?php echo  show('region', $id, $connection); ?>" required>
+                                    <input type="text" class="form-control shadow-lg" id="region" name="region" value="<?php echo  show('region', $id, $connection); ?>" required>
                                 </div>
                             </div>
                             <div class="col-4 col-md-5 mb-3">
                                 <div class="form-group">
                                     <label for="inspectorDate">Inspector Date:</label>
-                                    <input type="date" class="form-control" id="inspectordate" name="inspectordate" value="<?php echo show('inspection_date', $id, $connection); ?>" required>
+                                    <input type="date" class="form-control shadow-lg" id="inspectordate" name="inspectordate" value="<?php echo show('inspection_date', $id, $connection); ?>" required>
                                 </div>
                             </div>
                         </div>
@@ -250,7 +250,7 @@
                             </div>
 
                             <h4>1. General Observations</h4>
-                            <div class="flex-container shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container shadow-lg" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Do the staff/contractors (where applicable) adhere to PPE requirements while accessing the site?</span>
                                     <br>
@@ -274,7 +274,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-lg" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Is the site secured by a lock?</span>
                                     <br>
@@ -298,7 +298,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-lg" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Is there a site Logbook?</span>
                                     <br>
@@ -322,7 +322,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-lg" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Aggregates  evenly distributed?</span>
                                     <br>
@@ -345,7 +345,7 @@
                                     <textarea name="descriptiontextarea4" id="descriptiontextarea4"><?php  echo show('action4', $id, $connection);?></textarea>
                                 </div>
                             </div>
-                            <div class="flex-container mt-4 shadow-sm" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
+                            <div class="flex-container mt-4 shadow-lg" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
                                     <span>Anti-weed membrane Available?</span>
                                     <br>
