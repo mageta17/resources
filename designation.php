@@ -44,6 +44,7 @@
             <div class="col-lg-6">
                 <a href="index.php" type="button" class="btn btn-primary my-2">Senior</a> 
                 <a href="sheq-homepage.php" type="button" class="btn btn-primary my-2">SHEQ</a>
+                <a href="procurement-homepage.php" type="button" class="btn btn-primary my-2">Procurement</a>
             </div>            
         </div>
     </div>

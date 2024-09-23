@@ -212,13 +212,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     if($sectionId == 1){
-        $query = "INSERT INTO site_inspection_tempo (
+        $query = "INSERT INTO site_inspection_permanent (
             site_name, site_id, region, inspection_date, response1, comment1, action1, response2, comment2, action2, response3, comment3, action3, response4, comment4, action4, response5, comment5, action5,
-            response6, comment6, action6
+            response6, comment6, action6, inspector_name 
         
         ) VALUES (
             '$siteName', '$siteId', '$region', '$inspectorDate', '$response1', '$comment1', '$description1', '$response2', '$comment2', '$description2', '$response3', '$comment3', '$description3',
-            '$response4', '$comment4', '$description4', '$response5', '$comment5', '$description5', '$response6', '$comment6', '$description6'
+            '$response4', '$comment4', '$description4', '$response5', '$comment5', '$description5', '$response6', '$comment6', '$description6', '$inspectorname'
          
         )";  
             if (mysqli_query($connection, $query)) {
@@ -233,11 +233,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     } elseif($sectionId == 2){
            $insertedId = $id;
-           $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+           $query = " SELECT id FROM site_inspection_permanent WHERE id = '$insertedId'";
            $run_query = mysqli_query($connection, $query);
            if(mysqli_num_rows($run_query) > 0){
             $update_query = "
-            UPDATE site_inspection_tempo
+            UPDATE site_inspection_permanent
             SET 
                 response7 = '$response7', comment7 = '$comment7', action7 = '$description7',
                 response8 = '$response8', comment8 = '$comment8', action8 = '$description8',
@@ -267,11 +267,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }else if($sectionId == 3){
 
         $insertedId = $id;
-           $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+           $query = " SELECT id FROM site_inspection_permanent WHERE id = '$insertedId'";
            $run_query = mysqli_query($connection, $query);
            if(mysqli_num_rows($run_query) > 0){
             $update_query = "
-            UPDATE site_inspection_tempo
+            UPDATE site_inspection_permanent
             SET 
                 response10 = '$response10', comment10 = '$comment10', action10 = '$description10',
                 response11 = '$response11', comment11 = '$comment11', action11 = '$description11',
@@ -297,11 +297,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     }else if($sectionId == 4){
         $insertedId = $id;
-        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $query = " SELECT id FROM site_inspection_permanent WHERE id = '$insertedId'";
         $run_query = mysqli_query($connection, $query);
         if(mysqli_num_rows($run_query) > 0){
             $update_query = "
-            UPDATE site_inspection_tempo
+            UPDATE site_inspection_permanent
             SET 
                 response13 = '$response13', comment13 = '$comment13', action13 = '$description13',
                 response14 = '$response14', comment14 = '$comment14', action14 = '$description14',
@@ -325,11 +325,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
     }else if($sectionId == 5){
         $insertedId = $id;
-        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $query = " SELECT id FROM site_inspection_permanent WHERE id = '$insertedId'";
         $run_query = mysqli_query($connection, $query);
         if(mysqli_num_rows($run_query) > 0){
             $update_query = "
-            UPDATE site_inspection_tempo
+            UPDATE site_inspection_permanent
             SET
             
                 response17 = '$response17', comment17 = '$comment17', action17 = '$description17',
@@ -356,11 +356,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     } else if($sectionId == 6){
         $insertedId = $id;
-        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $query = " SELECT id FROM site_inspection_permanent WHERE id = '$insertedId'";
         $run_query = mysqli_query($connection, $query);
         if(mysqli_num_rows($run_query) > 0){
              $update_query = "
-                UPDATE site_inspection_tempo
+                UPDATE site_inspection_permanent
                 SET
                     response21 = '$response21', comment21 = '$comment21', action21 = '$description21',
                     response22 = '$response22', comment22 = '$comment22', action22 = '$description22',
@@ -384,11 +384,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
     }else if($sectionId == 7){
         $insertedId = $id;
-        $query = " SELECT id FROM site_inspection_tempo WHERE id = '$insertedId'";
+        $query = " SELECT id FROM site_inspection_permanent WHERE id = '$insertedId'";
         $run_query = mysqli_query($connection, $query);
         if(mysqli_num_rows($run_query) > 0){
             $update_query = "
-            UPDATE site_inspection_tempo
+            UPDATE site_inspection_permanent
             SET
             
                 response25 = '$response25', comment25 = '$comment25', action25 = '$description25',
@@ -417,14 +417,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
     }if($sectionId == 8 && isset($_POST['submit'])){
         $update_query = "
-        UPDATE site_inspection_tempo
+        UPDATE site_inspection_permanent
         SET
             data_a = '$data_a', data_b = '$data_b', data_c = '$data_c', data_d = '$data_d',
             data_e = '$data_e', control_measure1 = '$control_measure1', control_measure2 
             = '$control_measure2', control_measure3 = '$control_measure3', control_measure4
             = '$control_measure4', control_measure5 = '$control_measure5', status1 = '$status1',
-            status2 = '$status2', status3 = '$status3', status4 = '$status4', status5 = '$status5',
-            inspector_name = '$inspectorname'
+            status2 = '$status2', status3 = '$status3', status4 = '$status4', status5 = '$status5'
             WHERE id = '$id'
              ";
 
@@ -438,70 +437,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              }
 
     }
-    if(isset($_POST['save_changes'])){
-    $Query = "
-        INSERT INTO site_inspection_permanent (
-            id, site_id, site_name, region, inspector_name, inspection_date,
-            response1, comment1, action1, response2, comment2, action2,
-            response3, comment3, action3, response4, comment4, action4,
-            response5, comment5, action5, response6, comment6, action6,
-            response7, comment7, action7, response8, comment8, action8,
-            response9, comment9, action9, response10, comment10, action10,
-            response11, comment11, action11, response12, comment12, action12,
-            response13, comment13, action13, response14, comment14, action14,
-            response15, comment15, action15, response16, comment16, action16,
-            response17, comment17, action17, response18, comment18, action18,
-            response19, comment19, action19, response20, comment20, action20,
-            response21, comment21, action21, response22, comment22, action22,
-            response23, comment23, action23, response24, comment24, action24,
-            response25, comment25, action25, response26, comment26, action26,
-            response27, comment27, action27, response28, comment28, action28,
-            response29, comment29, action29, data_a, data_b, data_c, data_d, data_e,
-            control_measure1, control_measure2, control_measure3, control_measure4, control_measure5,
-            status1, status2, status3, status4, status5
-          )
-          SELECT
-            id, site_id, site_name, region, inspector_name, inspection_date,
-            response1, comment1, action1, response2, comment2, action2,
-            response3, comment3, action3, response4, comment4, action4,
-            response5, comment5, action5, response6, comment6, action6,
-            response7, comment7, action7, response8, comment8, action8,
-            response9, comment9, action9, response10, comment10, action10,
-            response11, comment11, action11, response12, comment12, action12,
-            response13, comment13, action13, response14, comment14, action14,
-            response15, comment15, action15, response16, comment16, action16,
-            response17, comment17, action17, response18, comment18, action18,
-            response19, comment19, action19, response20, comment20, action20,
-            response21, comment21, action21, response22, comment22, action22,
-            response23, comment23, action23, response24, comment24, action24,
-            response25, comment25, action25, response26, comment26, action26,
-            response27, comment27, action27, response28, comment28, action28,
-            response29, comment29, action29, data_a, data_b, data_c, data_d, data_e,
-            control_measure1, control_measure2, control_measure3, control_measure4, control_measure5,
-            status1, status2, status3, status4, status5
-          FROM site_inspection_tempo WHERE id = '$id'
-          ";
+    if(isset($_POST['save_changes'])){  
+        $update_query = "
+        UPDATE site_inspection_permanent
+        SET status = 'completed' WHERE id = '$id'";
+        $run_query = mysqli_query($connection, $update_query);
 
-          $result = mysqli_query($connection, $Query);
-          if($result){
-            echo "data inserted";
-            $query ="DELETE FROM site_inspection_tempo WHERE id = '$id' ";
-            $runDelete = mysqli_query($connection, $query);
-            if($runDelete){
-                $_SESSION['succes'] = "You have completed your form";
-                echo "data deleted from the table successfully";
-                header("Location: ../site-inspection.php?section=1&id=$insertedId");
-                exit();
-            }
-            
-          }else{
-            echo "error";
-          }
+        if($run_query){
+            $_SESSION['succes'] = "You have completed your form";
+            header("Location: ../site-inspection.php?section=1&id=$insertedId");
+            exit();
 
-          
-
-
-
+        }
+      
     }
      
 

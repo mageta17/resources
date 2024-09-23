@@ -75,15 +75,22 @@
         .action-buttons {
             position: fixed;
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-start;
             margin: 20px 0;
         }
         .action-buttons button {
             margin-left: 10px;
-            padding: 10px 20px;
+            padding: 5px 10px; 
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            width: 100px; 
+            height: 30px; 
+            font-size: 14px; 
+            text-align: center; 
         }
         .btn-print {
             background-color: #007bff;
@@ -140,90 +147,88 @@
 
                 <div id="section-2" class="row">
                     <div class="container-fluid" style="width: 100%; overflow-x: auto; font-size: 12px;">
-                    <div class="action-buttons">
-                        <button class="btn-print" onclick="window.print();">
-                            <i class="fa fa-print"></i> Print
-                         </button>
-                         <button class="btn-download" onclick="downloadPDF();">
-                            <i class="fa fa-download"></i>PDF
-                         </button>
-                    </div>
-        <?php                  
-            if(isset($_GET['id'])){
-                $id = $_GET['id'];
-                $query = "SELECT * FROM mv_check_list_360 WHERE id = $id";
-                $result = mysqli_query($connection, $query);
-            } else {
-                echo "ID not found";
-            } 
-            
-            if (mysqli_num_rows($result) > 0) {
-        ?>
-        <div class="row justify-content-center mx-0">
-            <div class="col-lg-8">
-                <form action="">
-                    <div class="container mt-5">
-                        <div class="row row-cols-1 row-cols-sm-2 g-3">
-                        <?php 
-                        while ($row = mysqli_fetch_assoc($result)) { 
-                            $id = $row['id'];
-                            // Query to get images related to the current checklist entry
-                            $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
-                            $result_images = mysqli_query($connection, $query_images);
-
-                            // Array to store images
-                            $images = [];
-                            while ($image_row = mysqli_fetch_assoc($result_images)) {
-                                $images[$image_row['category']] = $image_row['img_name'];
-                            }
-
-                            // Define categories
-                            $categories = ['front_view','rear_view', 'left_side_view', 
-                            'right_side_view', 'loadbin_cover', 'windscreen', 'license_disk', 
-                             'towbar', 'lf_tyre_age', 'lf_tyre_treat', 'rf_tyre_age', 'rf_tyre_treat',
-                             'lr_tyre_age', 'lr_tyre_treat', 'rr_tyre_age', 'rr_tyre_treat', 'rear_3pt_seatbelts',
-                             'driver_3pt_seatbelts', 'co_driver', 'bluetooth', 'odometer', 'service_book', 
-                             'emergence_triangle', 'first_aid_kit'
+                                    
+                        <?php                  
+                            if(isset($_GET['id'])){
+                                $id = $_GET['id'];
+                                $query = "SELECT * FROM mv_check_list_360 WHERE id = $id";
+                                $result = mysqli_query($connection, $query);
+                            } else {
+                                echo "ID not found";
+                            } 
                             
-                            ];
+                            if (mysqli_num_rows($result) > 0) {
+                        ?>
+                        <div class="row justify-content-center mx-0">
+                            <div class="col-lg-8">
+                                <form action="">
+                                    <div class="container mt-5">
+                                        <div class="row row-cols-1 row-cols-sm-2 g-3">
+                                        <?php 
+                                        while ($row = mysqli_fetch_assoc($result)) { 
+                                            $id = $row['id'];
+                                            // Query to get images related to the current checklist entry
+                                            $query_images = "SELECT * FROM mv_checklist_360_images_rep WHERE checklistId = $id";
+                                            $result_images = mysqli_query($connection, $query_images);
 
-                            foreach ($categories as $category) {
-                                $categoryDisplay = ucfirst(str_replace('_', ' ', $category));
-                                $imagePath = isset($images[$category]) 
-                                    ? "resources/images/mv_checklist_360_images/{$images[$category]}"
-                                    : "resources/images/placeholder-image.jpg"; 
+                                            // Array to store images
+                                            $images = [];
+                                            while ($image_row = mysqli_fetch_assoc($result_images)) {
+                                                $images[$image_row['category']] = $image_row['img_name'];
+                                            }
 
-                                $answer = $row[$category] ?? 'No data'; 
-                                ?>
-                                <div class="col">
-                                    <div class="card">
-                                        <img src="<?php echo $imagePath ?>" class="card-img-top img-fluid" alt="Image not available">
-                                        <div class="card-body">
-                                            <h5 class="card-title"><?php echo $categoryDisplay; ?></h5>
-                                            <p class="card-text"><?php echo $answer; ?></p>
+                                            // Define categories
+                                            $categories = ['front_view','rear_view', 'left_side_view', 
+                                            'right_side_view', 'loadbin_cover', 'windscreen', 'license_disk', 
+                                            'towbar', 'lf_tyre_age', 'lf_tyre_treat', 'rf_tyre_age', 'rf_tyre_treat',
+                                            'lr_tyre_age', 'lr_tyre_treat', 'rr_tyre_age', 'rr_tyre_treat', 'rear_3pt_seatbelts',
+                                            'driver_3pt_seatbelts', 'co_driver', 'bluetooth', 'odometer', 'service_book', 
+                                            'emergence_triangle', 'first_aid_kit'
+                                            
+                                            ];
+
+                                            foreach ($categories as $category) {
+                                                $categoryDisplay = ucfirst(str_replace('_', ' ', $category));
+                                                $imagePath = isset($images[$category]) 
+                                                    ? "resources/images/mv_checklist_360_images/{$images[$category]}"
+                                                    : "resources/images/placeholder-image.jpg"; 
+
+                                                $answer = $row[$category] ?? 'No data'; 
+                                                ?>
+                                                <div class="col">
+                                                    <div class="card">
+                                                        <img src="<?php echo $imagePath ?>" class="card-img-top img-fluid" alt="Image not available">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title"><?php echo $categoryDisplay; ?></h5>
+                                                            <p class="card-text"><?php echo $answer; ?></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php
+                                            }
+                                        }
+                                        ?>
                                         </div>
                                     </div>
-                                </div>
-                                <?php
-                            }
-                        }
-                        ?>
+                                </form>
+                                <?php 
+                                    // include 'server/pagination.php';                           
+                                ?>
+                            </div>            
                         </div>
-                    </div>
-                </form>
-                <?php 
-                    // include 'server/pagination.php';                           
-                ?>
-            </div>            
-        </div>
-        <?php } ?>
-
-
+                        <?php } ?>
                     </div>
                 </div>
 
                 <div id="section-3" class="row">
-                    
+                <div class="action-buttons">
+                        <button class="btn-print" onclick="window.print();">
+                            <i class="fa fa-print"></i>
+                         </button>
+                         <button class="btn-download" onclick="downloadPDF();">
+                            <i class="fa fa-download"></i>
+                         </button>
+                    </div>
                 </div>
             </div>
         </div>

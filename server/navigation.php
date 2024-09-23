@@ -12,7 +12,12 @@
             }; ?>">
             <a href="profile-1.php">Profile</a>
         </li>
-        <li><a href="mv-360-inspection-history-bc.php">Mv-checklist-360</a></li>
+        <li>
+            <a href="mv-360-inspection-history-bc.php">Mv-checklist-360</a>
+        </li>
+        <li>
+            <a href="site-inspection-senior.php">Site-inspection-view</a>
+        </li>
     </ul>
    
 </nav>

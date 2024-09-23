@@ -147,8 +147,8 @@
         }
     </style>
 </head>
-<fo> 
-    <div id="section" class="container-fluid mx-0 px-0">        
+<body>
+<div id="section" class="container-fluid mx-0 px-0">        
             <?php
                 menu5();
             ?> 
@@ -192,8 +192,13 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-5 mb-3 mt-4 ms-2">
+                            <div class="form-group w-70"style="width:80%;">
+                                <label for="inspectorname">Inspector: (Name) </label>
+                                <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" readonly>
+                            </div>
+                        </div>
                         <div class="container">
-                    
                             <h4>1. General Observations</h4>
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                 <div class="question" style="width: 100%;">
@@ -345,8 +350,8 @@
                                 <h5><b>NORTHERN ENGINEERING WORKS LIMITED</b></h5>
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST PREVIEW </h6>
                             </div>
-                    <div class="container" style="margin-top: 50px;">
-                             <h4>2. Tower Safety Structure</h4>
+                       <div class="container" style="margin-top: 50px;">
+                            <h4>2. Tower Safety Structure</h4>
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                     <div class="question" style="width: 100%;">
                                         <span>Lifeline / ladder and cage available?</span>
@@ -437,7 +442,7 @@
                       </div>
                   </div>
               </form>
-            </section>
+        </section>
         <!-- section 3 -->
             <section id="section-3" style="display:none;">
         <form action="server/site-inspection-p.php" method="POST" enctype="multipart/form-data" id="3">
@@ -452,7 +457,7 @@
                                 <h6>HEALTH, SAFETY & ENVIRONMENT SITE INSPECTION CHECKLIST PREVIEW </h6>
                             </div>
                     <div class="container" style="margin-top: 50px;">
-                                    <h4>3. Environmental compliance </h4>
+                            <h4>3. Environmental compliance </h4>
                             <div class="flex-container" style="display: flex; gap: 20px; flex-direction: column; align-items: flex-start; background-color: #e9ecef; border-radius: 8px; padding: 20px;">
                                  <div class="question" style="width: 100%;">
                                         <span>Is the site environment good and NO spillage/leak of hydrocarbons?</span>
@@ -1187,12 +1192,6 @@
                                     <div id="status5" style="width: 100%; margin-top: 10px;">
                                         <label for="status5" style="font-weight: bold;">Status</label>
                                         <textarea readonly name="status5" id="status5"><?php echo show('status5', $id, $connection); ?></textarea>
-                                        <div class="col-md-5 mb-3 mt-4">
-                                            <div class="form-group">
-                                                <label for="inspectorname">Inspector: (Name) </label>
-                                                <input type="text" class="form-control" id="inspectorname" name="inspectorname" value="<?php echo show('inspector_name', $id, $connection); ?>" readonly>
-                                            </div>
-                                        </div>
                                      </div>
                                     <!-- <input type="submit" class="btn btn-info mt-4" name="pdf" value="Print pdf"> -->
                                     <!-- <input type="submit" class="btn btn-info mt-4" name="pdf" value="Return"> -->
@@ -1244,6 +1243,7 @@
             </section>
         <!-- </form> -->
     </div>
+</body>
     <script>
         function toggleDescription(responseId, commentId, descriptionId) {
             var response = document.getElementById(responseId).value;
