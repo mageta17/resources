@@ -265,7 +265,7 @@
                                         </div>
                                 </div>
                             </div>
-
+                             <!-- Expenditure 3 -->
                             <div class="card">
                                 <div class="card-header">Expenditure 3: <i>Specify</i></div>
                                     <div class="card-body card-background-color">
@@ -298,6 +298,88 @@
                                 </div>
                             </div>
 
+                             <!-- Expenditure 4 -->
+                             <div class="card">
+                                <div class="card-header">Expenditure 4: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description2">Description</label>
+                                                    <input type="text" class="form-control" id="description2" name="description2" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity2">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity2" name="quantity2" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice2">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice2" name="unitPrice2" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount2">Amount</label>
+                                                    <input type="text" class="form-control" id="amount2" name="amount2" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                             </div>
+
+                              <!-- Expenditure 5 -->
+                            <div id="expenditureContainer">
+                               <div class="card" id="expenditureTemplate">
+                                <div class="card-header">Expenditure 5: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description2">Description</label>
+                                                    <input type="text" class="form-control" id="description2" name="description2" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity2">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity2" name="quantity2" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice2">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice2" name="unitPrice2" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount2">Amount</label>
+                                                    <input type="text" class="form-control" id="amount2" name="amount2" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-6">
+                                                <span>Total Amount in TZS/USD</span><input class="form-control" type="text" name="totalAmount" id="totalAmount">
+                                            </div>
+                                            <div class="col-md-6 mt-4">
+                                                <button id="add" class="btn btn-info">Add more</button>
+                                                <button id="submit" type="submit" name="submit" class="btn btn-info">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>  
+                              </div>
+
+                             </div>
+                              
+
+
                         </div>
     
                     </div>
@@ -320,16 +402,40 @@
 
 </div>  
 <script>
-        // JavaScript to handle file input changes for all file inputs
-        document.querySelectorAll('input[type="file"]').forEach(function(inputElement) {
-            inputElement.addEventListener('change', function() {
-                var label = document.querySelector('label[for="' + this.id + '"]');
-                var fileName = this.files[0] ? this.files[0].name : "No file chosen";
-                label.innerHTML = '<i class="fas fa-check upload-icon"></i> File Selected';
+    let expenditureCounter = 5;
+
+// Add event listener to the "Add more" button
+        document.getElementById('add').addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Get the template card to clone
+            let template = document.getElementById('expenditureTemplate');
+
+            // Clone the template node
+            let newCard = template.cloneNode(true);
+
+            // Increment the counter for IDs and labels
+            expenditureCounter++;
+
+            // Update the card header
+            newCard.querySelector('.card-header').innerHTML = 'Expenditure ' + expenditureCounter + ': <i>Specify</i>';
+
+            // Update input fields' IDs and names
+            let inputs = newCard.querySelectorAll('input');
+            inputs.forEach(input => {
+                // Update the ID and name attribute
+                let idName = input.getAttribute('id').replace(/\d+/g, expenditureCounter);
+                input.setAttribute('id', idName);
+                input.setAttribute('name', idName);
+                // Reset the value
+                input.value = '';
             });
+
+            // Append the new expenditure card to the container
+            document.getElementById('expenditureContainer').appendChild(newCard);
         });
-    
-    </script> 
+
+   </script> 
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
