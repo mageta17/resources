@@ -1179,7 +1179,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div id="section-3" class="row">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center mt-5" style="color:#E8ECEF;">
