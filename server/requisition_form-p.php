@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // Execute the query
         if (mysqli_query($connection, $sql)) {
-            $_SESSION['success'] = "Thank you! Your form has been submitted successfully.";
+            $_SESSION['succes'] = "Thank you! Your form has been submitted successfully.";
             header('Location: ../requisition_form.php');
             exit();
         } else {
