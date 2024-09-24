@@ -162,7 +162,7 @@
                 ?> 
                             <!-- form  -->
                 <div class="form-container">
-                    <form id="expenditureForm" method="POST" action="server/ppe-inspection.inc.php"   enctype="multipart/form-data">
+                    <form id="expenditureForm" method="POST" action="server/requisition_form-p.php"   enctype="multipart/form-data">
                            <!-- header section  -->
                         <div class="card-background-color row">
                             <div class="d-flex flex-wrap justify-content-center mb-4 card-background-color align-items-center inputs-style">
@@ -176,13 +176,13 @@
 
                                 <div class="col-md-6 mb-3 mt-4">
                                     <div class="form-group">
-                                        <label for="lastServiceDate">Date:-</label>
+                                        <label for="Date">Date:-</label>
                                         <input type="date" class="form-control" id="date" name="date" value="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3 mt-4">
                                     <div class="form-group">
-                                        <label for="lastServiceDate">Project Name:-</label>
+                                        <label for="project_name">Project Name:-</label>
                                         <input type="text" class="form-control" id="project_name" name="project_name" value="" required>
                                     </div>
                                 </div>
@@ -190,7 +190,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-group">
                                     <label for="location">Amount in Words:</label>
-                                    <input type="text" class="form-control" id="amount" name="amount" value="" required>
+                                    <input type="text" class="form-control" id="amountInwords" name="amountInwords" value="" required>
                                 </div>
                             </div>
                             <!-- end of header section  -->
@@ -246,19 +246,19 @@
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="quantity2">Quantity</label>
-                                                    <input type="text" class="form-control" id="quantity2" name="quantity2" required>
+                                                    <input type="text" class="form-control" id="quantity2" name="quantity2">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="unitPrice2">Unit Price</label>
-                                                    <input type="text" class="form-control" id="unitPrice2" name="unitPrice2" required>
+                                                    <input type="text" class="form-control" id="unitPrice2" name="unitPrice2">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="amount2">Amount</label>
-                                                    <input type="text" class="form-control" id="amount2" name="amount2" required>
+                                                    <input type="text" class="form-control" id="amount2" name="amount2">
                                                 </div>
                                             </div>
                                         </div>
@@ -274,25 +274,25 @@
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="description3">Description</label>
-                                                    <input type="text" class="form-control" id="description3" name="description3" required>
+                                                    <input type="text" class="form-control" id="description3" name="description3">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="quantity3">Quantity</label>
-                                                    <input type="text" class="form-control" id="quantity3" name="quantity3" required>
+                                                    <input type="text" class="form-control" id="quantity3" name="quantity3">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="unitPrice3">Unit Price</label>
-                                                    <input type="text" class="form-control" id="unitPrice3" name="unitPrice3" required>
+                                                    <input type="text" class="form-control" id="unitPrice3" name="unitPrice3">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="amount3">Amount</label>
-                                                    <input type="text" class="form-control" id="amount3" name="amount3" required>
+                                                    <input type="text" class="form-control" id="amount3" name="amount3">
                                                 </div>
                                             </div>
                                         </div>
@@ -308,25 +308,25 @@
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="description4">Description</label>
-                                                    <input type="text" class="form-control" id="description4" name="description4" required>
+                                                    <input type="text" class="form-control" id="description4" name="description4">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="quantity4">Quantity</label>
-                                                    <input type="text" class="form-control" id="quantity4" name="quantity4" required>
+                                                    <input type="text" class="form-control" id="quantity4" name="quantity4">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="unitPrice4">Unit Price</label>
-                                                    <input type="text" class="form-control" id="unitPrice4" name="unitPrice4" required>
+                                                    <input type="text" class="form-control" id="unitPrice4" name="unitPrice4">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="amount4">Amount</label>
-                                                    <input type="text" class="form-control" id="amount4" name="amount4" required>
+                                                    <input type="text" class="form-control" id="amount4" name="amount4">
                                                 </div>
                                             </div>
                                         </div>
@@ -342,32 +342,32 @@
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="description5">Description</label>
-                                                    <input type="text" class="form-control" id="description5" name="description5" required>
+                                                    <input type="text" class="form-control" id="description5" name="description5">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="quantity5">Quantity</label>
-                                                    <input type="text" class="form-control" id="quantity5" name="quantity5" required>
+                                                    <input type="text" class="form-control" id="quantity5" name="quantity5">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="unitPrice5">Unit Price</label>
-                                                    <input type="text" class="form-control" id="unitPrice5" name="unitPrice5" required>
+                                                    <input type="text" class="form-control" id="unitPrice5" name="unitPrice5">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
                                                     <label for="amount5">Amount</label>
-                                                    <input type="text" class="form-control" id="amount5" name="amount5" required>
+                                                    <input type="text" class="form-control" id="amount5" name="amount5">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                     <!-- footer card  -->
-                                <div class="card-footer  card-background-color" id="default-footer">
+                                <div class="card-footer card-footer-1  card-background-color" id="default-footer">
                                     <div class="row align-items-center">
                                         <div class="col-md-6">
                                             <span id="totalAmount">Total Amount in TZS/USD</span>
