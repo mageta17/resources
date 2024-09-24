@@ -1,5 +1,6 @@
 <?php
   require 'db.php';
+  session_start();
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['submit'])) {
         // Collect the required data from the form 
@@ -50,10 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         // Execute the query
         if (mysqli_query($connection, $sql)) {
-            echo "Record added successfully.";
+            $_SESSION['success'] = "Thank you! Your form has been submitted successfully.";
+            header('Location: ../requisition_form.php');
+            exit();
         } else {
-            echo "Error: " . mysqli_error($connection);
+            $_SESSION['error'] = "Oops! Something went wrong while processing your form. Error: " . mysqli_error($connection);
+            header('Location: ../requisition_form.php');
+            exit();
         }
     }
 }
-?>
+

@@ -142,6 +142,24 @@
                 border: 1px solid #ccc; 
             }
         }
+
+
+        /* Style for the footer */
+        card-footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px; /* Adjust according to your footer's height */
+            background-color: #f8f9fa; /* Or whatever background color you prefer */
+            border-top: 1px solid #dee2e6; /* Optional: border for separation */
+            z-index: 1000; /* Ensure it's above other content */
+        }
+
+        /* Ensure the expenditures container is visible above the footer */
+        #expenditures {
+            margin-bottom: 60px; /* Same as the footer's height */
+        }
     </style>
 </head>
     <div id="section" class="container-fluid mx-0 px-0">
@@ -217,7 +235,7 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
-                                                    <label for="unitPrice1">Unit Price</label>
+                                                    <label for="unitPrice1">Unit Price<i class="small text-success">(per one item)</i></label>
                                                     <input type="number" class="form-control" id="unitPrice1" name="unitPrice1" required>
                                                 </div>
                                             </div>
@@ -251,7 +269,7 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
-                                                    <label for="unitPrice2">Unit Price</label>
+                                                    <label for="unitPrice2">Unit Price<i class="small text-success">(per one item)</i></label>
                                                     <input type="number" class="form-control" id="unitPrice2"  name="unitPrice2">
                                                 </div>
                                             </div>
@@ -285,7 +303,7 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
-                                                    <label for="unitPrice3">Unit Price</label>
+                                                    <label for="unitPrice3">Unit Price<i class="small text-success">(per one item)</i></label>
                                                     <input type="number" class="form-control" id="unitPrice3" name="unitPrice3">
                                                 </div>
                                             </div>
@@ -319,7 +337,7 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
-                                                    <label for="unitPrice4">Unit Price</label>
+                                                    <label for="unitPrice4">Unit Price<i class="small text-success">(per one item)</i></label>
                                                     <input type="number" class="form-control" id="unitPrice4" name="unitPrice4">
                                                 </div>
                                             </div>
@@ -353,7 +371,7 @@
                                             </div>
                                             <div class="col-md-6 mb-3">
                                                 <div class="form-group">
-                                                    <label for="unitPrice5">Unit Price</label>
+                                                    <label for="unitPrice5">Unit Price<i class="small text-success">(per one item)</i></label>
                                                     <input type="number" class="form-control" id="unitPrice5" name="unitPrice5">
                                                 </div>
                                             </div>
