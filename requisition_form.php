@@ -197,193 +197,193 @@
 
                             <!-- start of expendicture cards  -->
 
-                            <div class="card">
-                                <!-- Expenditure 1 -->
-                                <div class="card-header">Expenditure 1: <i>Specify</i></div>
-                                <div class="card-body card-background-color">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="description1">Description</label>
-                                                <input type="text" class="form-control" id="description1" name="description1" required>
+                            <div id="expenditures">
+                                 <div class="card" id="expenditure1">
+                                    <!-- Expenditure 1 -->
+                                    <div class="card-header">Expenditure 1: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description1">Description</label>
+                                                    <input type="text" class="form-control" id="description1" name="description1" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="quantity1">Quantity</label>
-                                                <input type="text" class="form-control" id="quantity1" name="quantity1" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity1">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity1" name="quantity1" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="unitPrice1">Unit Price</label>
-                                                <input type="text" class="form-control" id="unitPrice1" name="unitPrice1" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice1">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice1" name="unitPrice1" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="amount1">Amount</label>
-                                                <input type="text" class="form-control" id="amount1" name="amount1" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Expenditure 2 -->
-
-                            <div class="card">
-                                <div class="card-header">Expenditure 2: <i>Specify</i></div>
-                                <div class="card-body card-background-color">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="description2">Description</label>
-                                                <input type="text" class="form-control" id="description2" name="description2" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="quantity2">Quantity</label>
-                                                <input type="text" class="form-control" id="quantity2" name="quantity2" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="unitPrice2">Unit Price</label>
-                                                <input type="text" class="form-control" id="unitPrice2" name="unitPrice2" required>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="amount2">Amount</label>
-                                                <input type="text" class="form-control" id="amount2" name="amount2" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount1">Amount</label>
+                                                    <input type="text" class="form-control" id="amount1" name="amount1" required>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Expenditure 3 -->
+                                <!-- Expenditure 2 -->
 
-                            <div class="card">
-                                <div class="card-header">Expenditure 3: <i>Specify</i></div>
-                                <div class="card-body card-background-color">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="description3">Description</label>
-                                                <input type="text" class="form-control" id="description3" name="description3" required>
+                                 <div class="card" id="expenditure2">
+                                    <div class="card-header">Expenditure 2: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description2">Description</label>
+                                                    <input type="text" class="form-control" id="description2" name="description2" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="quantity3">Quantity</label>
-                                                <input type="text" class="form-control" id="quantity3" name="quantity3" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity2">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity2" name="quantity2" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="unitPrice3">Unit Price</label>
-                                                <input type="text" class="form-control" id="unitPrice3" name="unitPrice3" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice2">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice2" name="unitPrice2" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="amount3">Amount</label>
-                                                <input type="text" class="form-control" id="amount3" name="amount3" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount2">Amount</label>
+                                                    <input type="text" class="form-control" id="amount2" name="amount2" required>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Expenditure 4 -->
+                                <!-- Expenditure 3 -->
 
-                            <div class="card">
-                                <div class="card-header">Expenditure 4: <i>Specify</i></div>
-                                <div class="card-body card-background-color">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="description4">Description</label>
-                                                <input type="text" class="form-control" id="description4" name="description4" required>
+                                 <div class="card" id="expenditure3">
+                                    <div class="card-header">Expenditure 3: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description3">Description</label>
+                                                    <input type="text" class="form-control" id="description3" name="description3" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="quantity4">Quantity</label>
-                                                <input type="text" class="form-control" id="quantity4" name="quantity4" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity3">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity3" name="quantity3" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="unitPrice4">Unit Price</label>
-                                                <input type="text" class="form-control" id="unitPrice4" name="unitPrice4" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice3">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice3" name="unitPrice3" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="amount4">Amount</label>
-                                                <input type="text" class="form-control" id="amount4" name="amount4" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount3">Amount</label>
+                                                    <input type="text" class="form-control" id="amount3" name="amount3" required>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Expenditure 5 -->
+                                <!-- Expenditure 4 -->
 
-                            <div class="card">
-                                <div class="card-header">Expenditure 5: <i>Specify</i></div>
-                                <div class="card-body card-background-color">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="description5">Description</label>
-                                                <input type="text" class="form-control" id="description5" name="description5" required>
+                                 <div class="card" id="expenditure4">
+                                    <div class="card-header">Expenditure 4: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description4">Description</label>
+                                                    <input type="text" class="form-control" id="description4" name="description4" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="quantity5">Quantity</label>
-                                                <input type="text" class="form-control" id="quantity5" name="quantity5" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity4">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity4" name="quantity4" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="unitPrice5">Unit Price</label>
-                                                <input type="text" class="form-control" id="unitPrice5" name="unitPrice5" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice4">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice4" name="unitPrice4" required>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <div class="form-group">
-                                                <label for="amount5">Amount</label>
-                                                <input type="text" class="form-control" id="amount5" name="amount5" required>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount4">Amount</label>
+                                                    <input type="text" class="form-control" id="amount4" name="amount4" required>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                                   <!-- footer card  -->
-                            <div class="card-footer card-background-color">
-                                <div class="row align-items-center">
-                                    <div class="col-md-6">
-                                        <span id="totalAmount">Total Amount in TZS/USD</span>
-                                        <input class="form-control" type="text" name="totalAmount" id="totalAmount">
-                                    </div>
-                                    <div class="col-md-6 mt-4">
-                                        <button id="add" class="btn btn-info">Add more</button>
-                                        <button id="submit" type="submit" name="submit" class="btn btn-info">Submit</button>
+
+                                <!-- Expenditure 5 -->
+
+                                 <div class="card" id="expenditure5">
+                                    <div class="card-header">Expenditure 5: <i>Specify</i></div>
+                                    <div class="card-body card-background-color">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="description5">Description</label>
+                                                    <input type="text" class="form-control" id="description5" name="description5" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="quantity5">Quantity</label>
+                                                    <input type="text" class="form-control" id="quantity5" name="quantity5" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="unitPrice5">Unit Price</label>
+                                                    <input type="text" class="form-control" id="unitPrice5" name="unitPrice5" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="form-group">
+                                                    <label for="amount5">Amount</label>
+                                                    <input type="text" class="form-control" id="amount5" name="amount5" required>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                    <!-- footer card  -->
+                                <div class="card-footer card-background-color">
+                                    <div class="row align-items-center">
+                                        <div class="col-md-6">
+                                            <span id="totalAmount">Total Amount in TZS/USD</span>
+                                            <input class="form-control" type="text" name="totalAmount" id="totalAmount">
+                                        </div>
+                                        <div class="col-md-6 mt-4">
+                                            <button id="add" class="btn btn-info">Add more</button>
+                                            <button id="submit" type="submit" name="submit" class="btn btn-info">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ends of all cards and it footer  -->
                             </div>
-
-                            <!-- ends of all cards and it footer  -->
-
                         </div>  
                     </form>
-
+                    <!-- end of the form  -->
                 </div>
             </div>
         </div>
