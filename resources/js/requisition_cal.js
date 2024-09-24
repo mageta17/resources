@@ -12,9 +12,45 @@ document.addEventListener('DOMContentLoaded', function () {
         const unitPrice = parseFloat(unitPriceInput.value) || 0; // Default to 0 if not a number
         const amount = quantity * unitPrice; // Calculate total amount
         amountInput.value = amount.toFixed(2); // Set the calculated value
+
+        // After calculating individual amount, update the total amount
+        updateTotalAmount();
     };
 
-    // Function to add event listeners to existing cards
+    // Function to calculate the sum of all amount fields and update the total amount
+    const updateTotalAmount = () => {
+        let grandTotal = 0;
+
+        // Loop through all amount inputs and sum the values
+        for (let i = 1; i <= expenditureCount; i++) {
+            const amountInput = document.getElementById(`amount${i}`);
+
+            if (amountInput) {
+                const amountValue = parseFloat(amountInput.value) || 0; // Get value or default to 0
+                grandTotal += amountValue; // Add to grand total
+
+                // Update the totalAmount${i} field with the corresponding amount
+                const totalAmountField = document.getElementById(`totalAmount${i}`);
+                if (totalAmountField) {
+                    totalAmountField.value = amountValue.toFixed(2); // Set the individual total per input
+                }
+            }
+        }
+
+        // Update totalAmount1 with the grandTotal of all amounts
+        document.getElementById('totalAmount1').value = grandTotal.toFixed(2); // Set totalAmount1 to grandTotal
+
+        // Get the value of totalAmount1 as a number
+        const total1 = parseFloat(document.getElementById('totalAmount1').value) || 0; // Ensure total1 is a number
+
+        // Update totalAmount to be grandTotal + total1
+        document.getElementById('totalAmount').value = (grandTotal + total1).toFixed(2); // Update totalAmount
+
+        console.log('Grand Total:', grandTotal);
+        console.log('Total Amount 1:', total1);
+    };
+
+    // Function to add event listeners to existing and new cards
     const addEventListenersToCard = (count) => {
         const quantityInput = document.getElementById(`quantity${count}`);
         const unitPriceInput = document.getElementById(`unitPrice${count}`);
@@ -63,19 +99,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="col-md-6 mb-3">
                         <div class="form-group">
                             <label for="quantity${expenditureCount}">Quantity</label>
-                            <input type="number" class="form-control" id="quantity${expenditureCount}" name="quantity${expenditureCount}" value="0">
+                            <input type="number" class="form-control" id="quantity${expenditureCount}" name="quantity${expenditureCount}" value="">
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="form-group">
                             <label for="unitPrice${expenditureCount}">Unit Price</label>
-                            <input type="number" class="form-control" id="unitPrice${expenditureCount}" name="unitPrice${expenditureCount}" value="0">
+                            <input type="number" class="form-control" id="unitPrice${expenditureCount}" name="unitPrice${expenditureCount}" value="">
                         </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <div class="form-group">
                             <label for="amount${expenditureCount}">Amount</label>
-                            <input type="number" class="form-control" id="amount${expenditureCount}" name="amount${expenditureCount}" value="0" readonly>
+                            <input type="number" class="form-control" id="amount${expenditureCount}" name="amount${expenditureCount}" value="" readonly>
                         </div>
                     </div>
                 </div>
@@ -102,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Add event listener for the new "Add more" button in the new card
         document.getElementById(`add${expenditureCount}`).addEventListener('click', function (event) {
             event.preventDefault();
-            document.getElementById(`add`).click(); // Trigger the original "Add more" button
+            document.getElementById('add').click(); // Trigger the original "Add more" button
         });
     });
 });
