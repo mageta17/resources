@@ -389,7 +389,78 @@
         </div>
     </div>
 
-      
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        let expenditureCount = 5;
+
+            document.getElementById('add').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Hide the current footer
+            const currentFooter = document.querySelector('.card-footer');
+            if (currentFooter) {
+                currentFooter.style.display = 'none';
+            }
+
+            expenditureCount++;
+            const newExpenditure = document.createElement('div');
+            newExpenditure.classList.add('card');
+            newExpenditure.id = `expenditure${expenditureCount}`;
+            newExpenditure.innerHTML = `
+                <div class="card-header">Expenditure ${expenditureCount}: <i>Specify</i></div>
+                <div class="card-body card-background-color">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="description${expenditureCount}">Description</label>
+                                <input type="text" class="form-control" id="description${expenditureCount}" name="description${expenditureCount}" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="quantity${expenditureCount}">Quantity</label>
+                                <input type="text" class="form-control" id="quantity${expenditureCount}" name="quantity${expenditureCount}" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="unitPrice${expenditureCount}">Unit Price</label>
+                                <input type="text" class="form-control" id="unitPrice${expenditureCount}" name="unitPrice${expenditureCount}" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="form-group">
+                                <label for="amount${expenditureCount}">Amount</label>
+                                <input type="text" class="form-control" id="amount${expenditureCount}" name="amount${expenditureCount}" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer card-background-color">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <span id="totalAmount">Total Amount in TZS/USD</span>
+                            <input class="form-control" type="text" name="totalAmount" id="totalAmount${expenditureCount}">
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <button id="add${expenditureCount}" class="btn btn-info">Add more</button>
+                            <button id="submit${expenditureCount}" type="submit" name="submit" class="btn btn-info">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('expenditures').appendChild(newExpenditure);
+
+            // Add event listener for the new "Add more" button in the new card
+            document.getElementById(`add${expenditureCount}`).addEventListener('click', function (event) {
+                event.preventDefault();
+                document.getElementById(`add`).click(); // Trigger the original "Add more" button
+            });
+        });
+    });
+   </script>
+
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
