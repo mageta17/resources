@@ -371,7 +371,7 @@
                                     <div class="row align-items-center">
                                         <div class="col-md-6">
                                             <span id="totalAmount">Total Amount in TZS/USD</span>
-                                            <input class="form-control" type="number" name="totalAmount" value="" id="totalAmount1" readonly>
+                                            <input class="form-control" type="number" name="totalAmount1" value="" id="totalAmount1" readonly>
                                         </div>
                                         <div class="col-md-6 mt-4">
                                             <button id="add" class="btn btn-info">Add more</button>

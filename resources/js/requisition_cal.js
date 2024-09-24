@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateTotalAmount();
     };
 
-    // Function to calculate the sum of all amount fields and update the total amount
     const updateTotalAmount = () => {
         let grandTotal = 0;
 
@@ -40,11 +39,10 @@ document.addEventListener('DOMContentLoaded', function () {
         // Update totalAmount1 with the grandTotal of all amounts
         document.getElementById('totalAmount1').value = grandTotal.toFixed(2); // Set totalAmount1 to grandTotal
 
-        // Get the value of totalAmount1 as a number
-        const total1 = parseFloat(document.getElementById('totalAmount1').value) || 0; // Ensure total1 is a number
+        const total1 = parseFloat(document.getElementById('totalAmount1').value) || 0; 
 
-        // Update totalAmount to be grandTotal + total1
-        document.getElementById('totalAmount').value = (grandTotal + total1).toFixed(2); // Update totalAmount
+
+        document.getElementById('totalAmount').value = (grandTotal + total1).toFixed(2);
 
         console.log('Grand Total:', grandTotal);
         console.log('Total Amount 1:', total1);
@@ -59,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
         unitPriceInput.addEventListener('input', () => calculateAmount(count));
     };
 
-    // Add event listeners for the initially present cards
+    // Adding event listeners for the initially present cards
     for (let i = 1; i <= expenditureCount; i++) {
         addEventListenersToCard(i);
     }

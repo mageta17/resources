@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $date = mysqli_real_escape_string($connection, $_POST['date']);
         $project_name = mysqli_real_escape_string($connection, $_POST['project_name']);
         $amountInwords = mysqli_real_escape_string($connection, $_POST['amountInwords']);
+        $total_amount = mysqli_real_escape_string($connection, $_POST['totalAmount1']);
 
         //Arrya preparation for dynamic data 
         $descriptions = [];
@@ -22,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
 
         // Dynamic data  handling by sql concantination 
-        $sql = "INSERT INTO requisition_form (date, project_name, amountInwords, ";
+        $sql = "INSERT INTO requisition_form (date, project_name, amountInwords, total_amount,";
 
         for ($i = 1; $i <= 20; $i++) {
             $sql .= "description$i, quantity$i, unitPrice$i, amount$i";
@@ -31,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             }
         }
 
-        $sql .= ") VALUES ('$date', '$project_name', '$amountInwords', ";
+        $sql .= ") VALUES ('$date', '$project_name', '$amountInwords', '$total_amount', ";
 
         for ($i = 1; $i <= 20; $i++) {
             $description = $descriptions[$i] !== NULL ? "'$descriptions[$i]'" : 'NULL';
